@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>60-Day GMAT Prep Curriculum</title>
+<style>
+  :root{
+    --bg:#0f1220; --panel:#171b2e; --panel2:#1e2440; --ink:#e7eaf6; --muted:#9aa3c7;
+    --line:#2a3154; --accent:#6c8cff; --accent2:#37d6a5;
+    --q:#6c8cff; --v:#ff8bb0; --ir:#f0b429; --awa:#37d6a5; --mixed:#b28bff;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#f4f6fb; --panel:#ffffff; --panel2:#f0f3fb; --ink:#1a2036; --muted:#5b6485;
+      --line:#e2e7f5; --shadow:0 10px 30px rgba(30,45,90,.10);
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 80px}
+  header.hero{background:linear-gradient(135deg,#232a52,#151933);
+    border:1px solid var(--line);border-radius:20px;padding:34px 30px;box-shadow:var(--shadow);color:#fff}
+  .kicker{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;color:#aab4e6;font-weight:700}
+  h1{margin:.35em 0 .2em;font-size:2rem;line-height:1.15}
+  .sub{color:#c3cbef;max-width:64ch;margin:0}
+  .stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+  .stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+    border-radius:12px;padding:10px 14px;min-width:104px}
+  .stat b{display:block;font-size:1.4rem}
+  .stat span{font-size:.72rem;color:#c3cbef;text-transform:uppercase;letter-spacing:.06em}
+  .progress-card{margin-top:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    border-radius:12px;padding:12px 14px}
+  .bar{height:9px;background:rgba(255,255,255,.16);border-radius:99px;overflow:hidden;margin-top:8px}
+  .bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));
+    border-radius:99px;transition:width .4s ease}
+  section{margin-top:30px}
+  h2{font-size:1.25rem;margin:0 0 6px}
+  .lead{color:var(--muted);margin:0 0 16px;max-width:72ch}
+  .phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+  .phase{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+  .phase h3{margin:0 0 4px;font-size:1rem}
+  .phase .days{font-size:.75rem;color:var(--muted);font-weight:600}
+  .phase p{margin:8px 0 0;font-size:.86rem;color:var(--muted)}
+  .diff{display:inline-block;margin-top:10px;font-size:.7rem;font-weight:700;padding:3px 9px;border-radius:99px;
+    background:var(--panel2);border:1px solid var(--line)}
+  .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0 14px}
+  .filter{background:var(--panel);border:1px solid var(--line);color:var(--ink);
+    border-radius:99px;padding:7px 14px;font-size:.82rem;font-weight:600;cursor:pointer}
+  .filter[aria-pressed="true"]{border-color:var(--accent);color:#fff;background:var(--accent)}
+  @media (prefers-color-scheme:light){.filter[aria-pressed="true"]{color:#fff}}
+  .search{flex:1;min-width:180px;background:var(--panel);border:1px solid var(--line);color:var(--ink);
+    border-radius:99px;padding:8px 14px;font-size:.85rem}
+  .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;min-width:760px;background:var(--panel);font-size:.86rem}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{position:sticky;top:0;background:var(--panel2);font-size:.72rem;text-transform:uppercase;
+    letter-spacing:.05em;color:var(--muted);z-index:1}
+  tr:last-child td{border-bottom:none}
+  tr.done td{opacity:.5}
+  .daynum{font-weight:800;color:var(--muted)}
+  .tag{display:inline-block;font-size:.68rem;font-weight:800;padding:2px 8px;border-radius:99px;color:#0b0e1a}
+  .tag.Q{background:var(--q)}.tag.V{background:var(--v)}.tag.IR{background:var(--ir)}
+  .tag.AWA{background:var(--awa)}.tag.Mixed{background:var(--mixed)}.tag.Plan{background:var(--muted)}
+  .topic{font-weight:600}
+  .obj{color:var(--muted);font-size:.8rem;margin-top:2px}
+  td a.file{color:var(--accent);text-decoration:none;font-weight:600;font-size:.8rem;word-break:break-all}
+  td a.file:hover{text-decoration:underline}
+  .chk{width:16px;height:16px;accent-color:var(--accent2);cursor:pointer}
+  .phase-row td{background:var(--panel2);font-weight:800;font-size:.78rem;letter-spacing:.04em;
+    text-transform:uppercase;color:var(--accent2)}
+  footer{margin-top:40px;color:var(--muted);font-size:.8rem;text-align:center}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--ir);
+    border-radius:10px;padding:12px 16px;font-size:.84rem;color:var(--muted);margin-top:16px}
+  code{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.82em}
+  .reset{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:99px;
+    padding:6px 12px;font-size:.78rem;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="kicker">Study Program · 2 Months</div>
+    <h1>60-Day GMAT Prep Curriculum</h1>
+    <p class="sub">Your daily roadmap across Quantitative, Verbal, Integrated Reasoning, and Analytical Writing —
+      built to progress from fundamentals to full timed simulations. Check off each day as you complete its study app.</p>
+    <div class="stats">
+      <div class="stat"><b>60</b><span>Days</span></div>
+      <div class="stat"><b>59</b><span>Study apps</span></div>
+      <div class="stat"><b>4</b><span>Sections</span></div>
+      <div class="stat"><b>4</b><span>Phases</span></div>
+    </div>
+    <div class="progress-card">
+      <div style="display:flex;justify-content:space-between;font-size:.82rem">
+        <span>Your progress</span><span id="progText">0 / 59 apps</span>
+      </div>
+      <div class="bar"><i id="progBar"></i></div>
+    </div>
+  </header>
+
+  <section>
+    <h2>The four phases</h2>
+    <p class="lead">Difficulty ramps deliberately. Diagnostic checkpoints fall on Days 16 &amp; 36; a full-length simulation on Day 59.</p>
+    <div class="phases">
+      <div class="phase">
+        <h3>1 · Foundations</h3><div class="days">Days 2–16</div>
+        <p>Rebuild fundamentals and learn every question format from scratch.</p>
+        <span class="diff">Foundational</span>
+      </div>
+      <div class="phase">
+        <h3>2 · Core skill building</h3><div class="days">Days 17–36</div>
+        <p>Master the highest-frequency topics and core techniques.</p>
+        <span class="diff">Intermediate</span>
+      </div>
+      <div class="phase">
+        <h3>3 · Advanced application</h3><div class="days">Days 37–52</div>
+        <p>Hard problems, common traps, mixed-topic reasoning, and speed.</p>
+        <span class="diff">Advanced</span>
+      </div>
+      <div class="phase">
+        <h3>4 · Test readiness</h3><div class="days">Days 53–60</div>
+        <p>Timed section simulations, error-log targeting, and test-day strategy.</p>
+        <span class="diff">Mixed / exam-like</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Day-by-day plan</h2>
+    <p class="lead">Filter by section or search a topic. Each row links to that day's interactive study app (created on its scheduled day).</p>
+    <div class="toolbar">
+      <button class="filter" data-f="all" aria-pressed="true">All</button>
+      <button class="filter" data-f="Q" aria-pressed="false">Quant</button>
+      <button class="filter" data-f="V" aria-pressed="false">Verbal</button>
+      <button class="filter" data-f="IR" aria-pressed="false">IR</button>
+      <button class="filter" data-f="AWA" aria-pressed="false">AWA</button>
+      <button class="filter" data-f="Mixed" aria-pressed="false">Mixed</button>
+      <input class="search" id="search" type="search" placeholder="Search topic…">
+      <button class="reset" id="resetProg">Reset progress</button>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>✓</th><th>Day</th><th>Sec</th><th>Topic &amp; objective</th><th>Difficulty</th><th>Study app</th></tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="note">
+      <b>Naming convention:</b> <code>day-NN-&lt;section&gt;-&lt;topic-slug&gt;.html</code>.
+      Each daily app links back here and forward to the next day. The canonical machine-readable plan lives in
+      <code>curriculum.md</code>.
+    </div>
+  </section>
+
+  <footer>
+    Built on Day 1 · 60-Day GMAT Prep Program · Progress is stored locally in your browser.
+  </footer>
+</div>
+
+<script>
+const PLAN = [
+  {p:"1 — Foundations"},
+  {d:2,s:"Q",t:"Arithmetic: fractions, decimals & number basics",o:"Fluent fraction/decimal operations & order of operations.",diff:"Foundational",f:"day-02-quantitative-arithmetic.html"},
+  {d:3,s:"V",t:"Sentence Correction: grammar fundamentals",o:"Parts of speech, clauses, and SC question anatomy.",diff:"Foundational",f:"day-03-verbal-sentence-correction-grammar.html"},
+  {d:4,s:"Q",t:"Percents, ratios & proportions",o:"Convert %/fractions/ratios; percent change; proportions.",diff:"Foundational",f:"day-04-quantitative-percents-ratios.html"},
+  {d:5,s:"V",t:"Critical Reasoning: argument structure",o:"Identify conclusion, premises, and assumptions.",diff:"Foundational",f:"day-05-verbal-critical-reasoning-structure.html"},
+  {d:6,s:"Q",t:"Number properties: factors, multiples, divisibility",o:"Primes, factorization, GCF/LCM, divisibility rules.",diff:"Foundational",f:"day-06-quantitative-number-properties-factors.html"},
+  {d:7,s:"V",t:"Reading Comprehension: active reading & main idea",o:"Map a passage; find primary purpose & main idea.",diff:"Foundational",f:"day-07-verbal-reading-comprehension-main-idea.html"},
+  {d:8,s:"Q",t:"Algebra: linear equations & expressions",o:"Simplify expressions; solve linear equations/systems.",diff:"Foundational",f:"day-08-quantitative-algebra-linear.html"},
+  {d:9,s:"IR",t:"IR intro & Graphics Interpretation",o:"IR format; read charts, scatterplots, trends.",diff:"Foundational",f:"day-09-integrated-reasoning-graphics.html"},
+  {d:10,s:"V",t:"SC: subject-verb agreement & pronouns",o:"Agreement across modifiers; pronoun clarity.",diff:"Foundational",f:"day-10-verbal-sentence-correction-agreement.html"},
+  {d:11,s:"Q",t:"Algebra: exponents & roots",o:"Exponent rules, roots, scientific notation.",diff:"Foundational",f:"day-11-quantitative-algebra-exponents.html"},
+  {d:12,s:"AWA",t:"Analysis of an Argument: essay foundations",o:"AWA scoring; structure a 5-paragraph critique.",diff:"Foundational",f:"day-12-awa-argument-foundations.html"},
+  {d:13,s:"Q",t:"Data Sufficiency: format & strategy",o:"Master DS answer choices and decision process.",diff:"Foundational",f:"day-13-quantitative-data-sufficiency-intro.html"},
+  {d:14,s:"V",t:"CR: assumption questions",o:"Find necessary assumptions; negation test.",diff:"Foundational→Int.",f:"day-14-verbal-critical-reasoning-assumptions.html"},
+  {d:15,s:"Q",t:"Word problems: translating & linear word problems",o:"Translate English to equations; classic setups.",diff:"Foundational",f:"day-15-quantitative-word-problems-translation.html"},
+  {d:16,s:"Mixed",t:"Review & Diagnostic Checkpoint 1",o:"Consolidate Phase 1; self-diagnose weak areas.",diff:"Mixed",f:"day-16-mixed-checkpoint-1.html"},
+  {p:"2 — Core skill building"},
+  {d:17,s:"Q",t:"Number properties: odd/even, signs & remainders",o:"Parity, sign behavior, remainder patterns.",diff:"Intermediate",f:"day-17-quantitative-number-properties-remainders.html"},
+  {d:18,s:"V",t:"SC: modifiers",o:"Fix misplaced/dangling modifiers.",diff:"Intermediate",f:"day-18-verbal-sentence-correction-modifiers.html"},
+  {d:19,s:"Q",t:"Algebra: quadratic equations & factoring",o:"Factor quadratics; formula; special products.",diff:"Intermediate",f:"day-19-quantitative-algebra-quadratics.html"},
+  {d:20,s:"V",t:"RC: detail, inference & function questions",o:"Detail, inference & 'why did the author' questions.",diff:"Intermediate",f:"day-20-verbal-reading-comprehension-detail-inference.html"},
+  {d:21,s:"Q",t:"Algebra: inequalities & absolute value",o:"Solve/flip inequalities; absolute-value cases.",diff:"Intermediate",f:"day-21-quantitative-algebra-inequalities.html"},
+  {d:22,s:"IR",t:"Table Analysis",o:"Sort/interpret tables; true-false statement sets.",diff:"Intermediate",f:"day-22-integrated-reasoning-table-analysis.html"},
+  {d:23,s:"V",t:"CR: strengthen & weaken",o:"Affect the core assumption; avoid out-of-scope.",diff:"Intermediate",f:"day-23-verbal-critical-reasoning-strengthen-weaken.html"},
+  {d:24,s:"Q",t:"Ratios, rates & speed-distance-time",o:"D=RT; average speed; converging travel.",diff:"Intermediate",f:"day-24-quantitative-rates-speed-distance.html"},
+  {d:25,s:"V",t:"SC: parallelism",o:"Parallel structure in lists and comparisons.",diff:"Intermediate",f:"day-25-verbal-sentence-correction-parallelism.html"},
+  {d:26,s:"Q",t:"Work & rate problems",o:"Combined work rates; add rates not times.",diff:"Intermediate",f:"day-26-quantitative-work-rate.html"},
+  {d:27,s:"V",t:"CR: inference & drawing conclusions",o:"Must-be-true conclusions from premises.",diff:"Intermediate",f:"day-27-verbal-critical-reasoning-inference.html"},
+  {d:28,s:"Q",t:"Geometry: lines, angles & triangles",o:"Angle rules; triangle properties; triples; similarity.",diff:"Intermediate",f:"day-28-quantitative-geometry-triangles.html"},
+  {d:29,s:"IR",t:"Two-Part Analysis",o:"Two-column trade-off & simultaneous conditions.",diff:"Intermediate",f:"day-29-integrated-reasoning-two-part.html"},
+  {d:30,s:"V",t:"SC: verb tense & sequence",o:"Correct tense; sequence of events; subjunctive.",diff:"Intermediate",f:"day-30-verbal-sentence-correction-verb-tense.html"},
+  {d:31,s:"Q",t:"Geometry: quadrilaterals & polygons",o:"Area/perimeter; interior angles of polygons.",diff:"Intermediate",f:"day-31-quantitative-geometry-quadrilaterals.html"},
+  {d:32,s:"V",t:"RC: long passages & passage structure",o:"Track structure/tone; manage time in long passages.",diff:"Intermediate",f:"day-32-verbal-reading-comprehension-structure.html"},
+  {d:33,s:"Q",t:"Geometry: circles",o:"Circumference, area, arcs, sectors, inscribed angles.",diff:"Intermediate",f:"day-33-quantitative-geometry-circles.html"},
+  {d:34,s:"AWA",t:"Dissecting argument flaws & building templates",o:"Catalogue flaws; build reusable essay templates.",diff:"Intermediate",f:"day-34-awa-flaws-templates.html"},
+  {d:35,s:"Q",t:"Statistics: mean, median, mode & range",o:"Central tendency & spread; weighted averages.",diff:"Intermediate",f:"day-35-quantitative-statistics-descriptive.html"},
+  {d:36,s:"Mixed",t:"Review & Diagnostic Checkpoint 2",o:"Consolidate Phase 2; refine pacing; error log.",diff:"Mixed",f:"day-36-mixed-checkpoint-2.html"},
+  {p:"3 — Advanced application"},
+  {d:37,s:"Q",t:"Percent & interest: advanced applications",o:"Successive % change; simple vs. compound interest.",diff:"Advanced",f:"day-37-quantitative-percent-interest.html"},
+  {d:38,s:"V",t:"CR: evaluate, flaw & boldface",o:"Evaluate, describe-the-flaw, bold-face roles.",diff:"Advanced",f:"day-38-verbal-critical-reasoning-evaluate-boldface.html"},
+  {d:39,s:"Q",t:"Coordinate geometry",o:"Slope, distance, midpoint, line equations.",diff:"Int.→Adv.",f:"day-39-quantitative-coordinate-geometry.html"},
+  {d:40,s:"V",t:"SC: comparisons & idioms",o:"Logical/parallel comparisons; key idioms.",diff:"Advanced",f:"day-40-verbal-sentence-correction-comparisons-idioms.html"},
+  {d:41,s:"Q",t:"Statistics: standard deviation & data interpretation",o:"Reason about SD/variance; interpret displays.",diff:"Advanced",f:"day-41-quantitative-statistics-standard-deviation.html"},
+  {d:42,s:"IR",t:"Multi-Source Reasoning",o:"Synthesize tabbed text/table/graph sources.",diff:"Advanced",f:"day-42-integrated-reasoning-multi-source.html"},
+  {d:43,s:"Q",t:"Probability",o:"AND/OR, complements, 'at least one', dependence.",diff:"Advanced",f:"day-43-quantitative-probability.html"},
+  {d:44,s:"V",t:"RC: dense/science passages & tone",o:"Attack dense passages; author attitude.",diff:"Advanced",f:"day-44-verbal-reading-comprehension-dense-passages.html"},
+  {d:45,s:"Q",t:"Combinatorics: permutations & combinations",o:"nPr vs. nCr; arrangements, restrictions, grouping.",diff:"Advanced",f:"day-45-quantitative-combinatorics.html"},
+  {d:46,s:"V",t:"CR: complex argument types & paradox",o:"Resolve-the-paradox, complete-the-passage.",diff:"Advanced",f:"day-46-verbal-critical-reasoning-paradox.html"},
+  {d:47,s:"Q",t:"Data Sufficiency: advanced traps",o:"C-trap; combination pitfalls; DS across topics.",diff:"Advanced",f:"day-47-quantitative-data-sufficiency-advanced.html"},
+  {d:48,s:"V",t:"SC: advanced mixed & meaning-based",o:"Meaning-based decisions; multi-error sentences.",diff:"Advanced",f:"day-48-verbal-sentence-correction-advanced.html"},
+  {d:49,s:"Q",t:"Mixtures, overlapping sets & advanced word problems",o:"Alligation; two-set Venn/matrix; max/min.",diff:"Advanced",f:"day-49-quantitative-mixtures-sets.html"},
+  {d:50,s:"IR",t:"Mixed Integrated Reasoning set",o:"All four IR formats under time pressure.",diff:"Advanced",f:"day-50-integrated-reasoning-mixed.html"},
+  {d:51,s:"Q",t:"Sequences, functions & advanced algebra",o:"Arithmetic/geometric sequences; f(x); symbolism.",diff:"Advanced",f:"day-51-quantitative-sequences-functions.html"},
+  {d:52,s:"V",t:"Mixed Verbal timed set",o:"Blend SC/CR/RC under time; question triage.",diff:"Advanced",f:"day-52-verbal-mixed-timed.html"},
+  {p:"4 — Test readiness"},
+  {d:53,s:"Q",t:"Mixed Quant timed set & pacing",o:"Full-difficulty mixed quant with strict pacing.",diff:"Advanced/Mixed",f:"day-53-quantitative-mixed-timed.html"},
+  {d:54,s:"AWA",t:"Timed essay practice & self-scoring",o:"Full 30-min essay; self-score against rubric.",diff:"Advanced",f:"day-54-awa-timed-essay.html"},
+  {d:55,s:"IR",t:"Full IR section simulation",o:"12 questions / 30 min; all formats.",diff:"Mixed",f:"day-55-integrated-reasoning-simulation.html"},
+  {d:56,s:"V",t:"Full Verbal section simulation",o:"Timed verbal section; sustain accuracy.",diff:"Mixed",f:"day-56-verbal-simulation.html"},
+  {d:57,s:"Q",t:"Full Quant section simulation",o:"Timed quant section; sustain accuracy.",diff:"Mixed",f:"day-57-quantitative-simulation.html"},
+  {d:58,s:"Mixed",t:"Error-log review & weak-area targeting",o:"Analyze cumulative errors; drill top weaknesses.",diff:"Mixed",f:"day-58-mixed-error-log-review.html"},
+  {d:59,s:"Mixed",t:"Full-length test simulation & review",o:"All-sections mini-simulation; thorough review.",diff:"Mixed",f:"day-59-mixed-full-length-simulation.html"},
+  {d:60,s:"Mixed",t:"Final review, test-day strategy & confidence",o:"Lock in strategy; logistics; last-mile review.",diff:"Mixed",f:"day-60-mixed-final-review.html"},
+];
+
+const SECNAME={Q:"Quant",V:"Verbal",IR:"IR",AWA:"AWA",Mixed:"Mixed"};
+const KEY="gmat60-progress";
+let done = JSON.parse(localStorage.getItem(KEY) || "{}");
+const tbody=document.getElementById("tbody");
+
+function render(){
+  tbody.innerHTML="";
+  const q=(document.getElementById("search").value||"").toLowerCase();
+  const active=document.querySelector('.filter[aria-pressed="true"]').dataset.f;
+  let curPhase=null;
+  PLAN.forEach(row=>{
+    if(row.p){ curPhase=row.p; return; }
+    if(active!=="all" && row.s!==active) return;
+    if(q && !(row.t.toLowerCase().includes(q)||row.o.toLowerCase().includes(q))) return;
+    // phase header (only when unfiltered & no search, to keep grouping readable)
+    if(curPhase && active==="all" && !q){
+      const last=tbody.lastElementChild;
+      if(!last || last.dataset.phase!==curPhase){
+        const pr=document.createElement("tr");
+        pr.className="phase-row"; pr.dataset.phase=curPhase;
+        pr.innerHTML=`<td colspan="6">Phase ${curPhase}</td>`;
+        tbody.appendChild(pr);
+      }
+    }
+    const tr=document.createElement("tr");
+    tr.dataset.phase=curPhase;
+    if(done[row.d]) tr.className="done";
+    tr.innerHTML=`
+      <td><input class="chk" type="checkbox" data-d="${row.d}" ${done[row.d]?"checked":""}></td>
+      <td class="daynum">${row.d}</td>
+      <td><span class="tag ${row.s}">${SECNAME[row.s]}</span></td>
+      <td><div class="topic">${row.t}</div><div class="obj">${row.o}</div></td>
+      <td><span class="diff">${row.diff}</span></td>
+      <td><a class="file" href="${row.f}">${row.f}</a></td>`;
+    tbody.appendChild(tr);
+  });
+  document.querySelectorAll(".chk").forEach(c=>c.addEventListener("change",e=>{
+    const d=e.target.dataset.d;
+    if(e.target.checked) done[d]=true; else delete done[d];
+    localStorage.setItem(KEY,JSON.stringify(done));
+    e.target.closest("tr").classList.toggle("done",e.target.checked);
+    updateProg();
+  }));
+}
+function updateProg(){
+  const total=PLAN.filter(r=>r.d).length;
+  const n=Object.keys(done).length;
+  document.getElementById("progText").textContent=`${n} / ${total} apps`;
+  document.getElementById("progBar").style.width=(n/total*100)+"%";
+}
+document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".filter").forEach(x=>x.setAttribute("aria-pressed","false"));
+  b.setAttribute("aria-pressed","true"); render();
+}));
+document.getElementById("search").addEventListener("input",render);
+document.getElementById("resetProg").addEventListener("click",()=>{
+  if(confirm("Clear all progress?")){ done={}; localStorage.removeItem(KEY); render(); updateProg(); }
+});
+render(); updateProg();
+</script>
+</body>
+</html>
