@@ -8,6 +8,9 @@ curriculum, lesson library, and original question bank for the **GMAT Focus Edit
 written and reviewed by the people using it, and free for anyone to study, fork,
 translate, or remix.
 
+**▶ Study site: <https://dmdaudio.github.io/OpenMat/>** — practice with instant feedback,
+worked explanations, and hints, right in your browser.
+
 > **Status: early / bootstrapping.** OpenMat started as an auto-generated 60-day
 > study course. It is being reworked into a collaborative platform. The scaffolding
 > (contribution workflow, content schema, taxonomy) is in place; the content library
@@ -38,7 +41,21 @@ translate, or remix.
 | [`content/lessons/`](content/lessons/) | Concept lessons, one file per topic. |
 | [`content/schema/`](content/schema/) | JSON Schema files that validate question/lesson front-matter. |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | How to add a question or lesson, the originality rules, and the review workflow. |
-| [`curriculum.html`](curriculum.html) | The original interactive study-plan hub (legacy; kept while the new study site is built). |
+| [`docs/`](docs/) | The study site (static HTML/CSS/JS). Renders the content into a practice + browse + lessons experience. Deployed via GitHub Pages. |
+| [`scripts/`](scripts/) | `build.mjs` regenerates the site's content index from `content/`; `serve.mjs` serves the site locally. |
+| [`curriculum.html`](curriculum.html) | The original interactive study-plan hub (legacy). |
+
+## Run it locally
+
+No dependencies — just Node.
+
+```sh
+node scripts/build.mjs   # regenerate docs/data/content.json from content/
+node scripts/serve.mjs   # serve the site at http://localhost:8080
+```
+
+The `content.json` index is rebuilt automatically in CI whenever content changes, so the live
+site stays current — you only need `build.mjs` locally to preview your own additions.
 
 ## The GMAT Focus Edition
 

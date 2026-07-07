@@ -16,10 +16,10 @@ license: CC-BY-SA-4.0
 
 ## Question
 
-Is the positive integer $n$ divisible by 6?
+Is the positive integer \(n\) divisible by 6?
 
-1. $n$ is divisible by 3.
-2. $n$ is divisible by 4.
+1. \(n\) is divisible by 3.
+2. \(n\) is divisible by 4.
 
 *(Standard Data Sufficiency answer choices — see the DS section of
 [CONTENT_SCHEMA.md](../../../CONTENT_SCHEMA.md).)*
@@ -28,14 +28,14 @@ Is the positive integer $n$ divisible by 6?
 
 A number is divisible by 6 exactly when it is divisible by **both 2 and 3**.
 
-**Statement (1): $n$ is divisible by 3.** This tells us nothing about divisibility by 2.
-$n = 9$ (not divisible by 6) and $n = 12$ (divisible by 6) both satisfy it. **Not sufficient.**
+**Statement (1): \(n\) is divisible by 3.** This tells us nothing about divisibility by 2.
+\(n = 9\) (not divisible by 6) and \(n = 12\) (divisible by 6) both satisfy it. **Not sufficient.**
 
-**Statement (2): $n$ is divisible by 4.** Then $n$ is divisible by 2, but we know nothing about
-3. $n = 4$ (not divisible by 6) and $n = 12$ (divisible by 6) both satisfy it. **Not sufficient.**
+**Statement (2): \(n\) is divisible by 4.** Then \(n\) is divisible by 2, but we know nothing about
+3. \(n = 4\) (not divisible by 6) and \(n = 12\) (divisible by 6) both satisfy it. **Not sufficient.**
 
-**Together:** $n$ is divisible by 3 (from 1) and by 4, hence by 2 (from 2). Divisible by both 2
-and 3 means divisible by 6. Every such $n$ is a multiple of 12, and every multiple of 12 is
+**Together:** \(n\) is divisible by 3 (from 1) and by 4, hence by 2 (from 2). Divisible by both 2
+and 3 means divisible by 6. Every such \(n\) is a multiple of 12, and every multiple of 12 is
 divisible by 6. **Sufficient.**
 
 Neither statement alone works, but the two together do → **(C)**.

@@ -1,0 +1,133 @@
+{
+  "generatedAt": "2026-07-07T15:51:09.565Z",
+  "sections": {
+    "quant": "Quantitative",
+    "verbal": "Verbal",
+    "data-insights": "Data Insights"
+  },
+  "stats": {
+    "quant": {
+      "label": "Quantitative",
+      "questions": 1,
+      "lessons": 1
+    },
+    "verbal": {
+      "label": "Verbal",
+      "questions": 1,
+      "lessons": 0
+    },
+    "data-insights": {
+      "label": "Data Insights",
+      "questions": 1,
+      "lessons": 0
+    }
+  },
+  "counts": {
+    "questions": 3,
+    "lessons": 1
+  },
+  "questions": [
+    {
+      "id": "data-insights-data-sufficiency-divisibility-0001",
+      "section": "data-insights",
+      "topic": "data-sufficiency",
+      "subtopic": "divisibility",
+      "type": "data-sufficiency",
+      "difficulty": "easy",
+      "tags": [
+        "divisibility",
+        "number-properties"
+      ],
+      "choices": null,
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "Is the positive integer \\(n\\) divisible by 6?\n\n1. \\(n\\) is divisible by 3.\n2. \\(n\\) is divisible by 4.\n\n*(Standard Data Sufficiency answer choices — see the DS section of\n[CONTENT_SCHEMA.md](../../../CONTENT_SCHEMA.md).)*",
+      "explanation": "A number is divisible by 6 exactly when it is divisible by **both 2 and 3**.\n\n**Statement (1): \\(n\\) is divisible by 3.** This tells us nothing about divisibility by 2.\n\\(n = 9\\) (not divisible by 6) and \\(n = 12\\) (divisible by 6) both satisfy it. **Not sufficient.**\n\n**Statement (2): \\(n\\) is divisible by 4.** Then \\(n\\) is divisible by 2, but we know nothing about\n3. \\(n = 4\\) (not divisible by 6) and \\(n = 12\\) (divisible by 6) both satisfy it. **Not sufficient.**\n\n**Together:** \\(n\\) is divisible by 3 (from 1) and by 4, hence by 2 (from 2). Divisible by both 2\nand 3 means divisible by 6. Every such \\(n\\) is a multiple of 12, and every multiple of 12 is\ndivisible by 6. **Sufficient.**\n\nNeither statement alone works, but the two together do → **(C)**.\n\n**Watch out:** you don't need statement (2) to give divisibility by 4 specifically — divisibility\nby 2 would have been enough. The extra strength (4 instead of 2) is a distractor; it doesn't\nchange that you need *both* statements.",
+      "hints": [
+        "Rewrite the target: \"divisible by 6\" means divisible by which prime factors?",
+        "Each statement supplies one of the two things you need. Ask whether either supplies *both*."
+      ]
+    },
+    {
+      "id": "quant-algebra-linear-equations-0001",
+      "section": "quant",
+      "topic": "algebra",
+      "subtopic": "linear-equations",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "linear-equations",
+        "word-problem",
+        "systems"
+      ],
+      "choices": {
+        "A": "9",
+        "B": "13",
+        "C": "15",
+        "D": "17",
+        "E": "21"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A tip jar contains only $1 tokens and $2 tokens. There are 30 tokens in the jar with a\ncombined value of $47. How many $2 tokens are in the jar?",
+      "explanation": "Let \\(x\\) be the number of $1 tokens and \\(y\\) the number of $2 tokens.\n\nTwo facts give two equations:\n\n- Count of tokens: \\(x + y = 30\\)\n- Total value: \\(x + 2y = 47\\)\n\nSubtract the first equation from the second:\n\n\\[(x + 2y) - (x + y) = 47 - 30 \\implies y = 17\\]\n\nSo there are **17** two-dollar tokens (and \\(x = 30 - 17 = 13\\) one-dollar tokens).\n\nCheck: 13($1) + 17($2) = $13 + $34 = $47. ✓\n\n**The trap:** answer choice **B (13)** is the number of $1 tokens — the value you get if you\nsolve for the wrong variable. Always re-read what the question asks for before selecting.",
+      "hints": [
+        "You have two unknowns and two independent facts (how many tokens, and their total value). Set up two equations.",
+        "Subtracting one equation from the other eliminates \\(x\\) in a single step — no substitution needed."
+      ]
+    },
+    {
+      "id": "verbal-critical-reasoning-assumptions-0001",
+      "section": "verbal",
+      "topic": "critical-reasoning",
+      "subtopic": "assumptions",
+      "type": "critical-reasoning",
+      "difficulty": "medium",
+      "tags": [
+        "assumption",
+        "negation-test"
+      ],
+      "choices": {
+        "A": "Buses currently travel more slowly on Main Street than private cars do.",
+        "B": "The commuting time saved by bus riders will not be outweighed by additional time lost by drivers in the remaining, more crowded car lanes.",
+        "C": "A majority of the people who travel on Main Street currently ride the bus.",
+        "D": "The new dedicated lane will be used exclusively by buses and by no other vehicles.",
+        "E": "Commute times on streets other than Main Street will be unaffected by the change."
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "TransitCo argues that converting one of Main Street's three car lanes into a dedicated bus lane\nwill reduce the average commuting time for **everyone** who travels on Main Street, because\nbuses in the new lane will move faster than they do today.\n\nThe argument above depends on assuming which of the following?",
+      "explanation": "The conclusion is about the **average** commute time for **everyone** on Main Street — not just\nbus riders. But the plan takes a lane away from cars, so drivers are squeezed into fewer lanes\nand may lose time. For the average across all travelers to fall, the time bus riders save must\nnot be cancelled out (or worse) by the time drivers lose.\n\n**(B)** states exactly this. Use the **negation test**: negate (B) — \"the time saved by bus\nriders *is* outweighed by the extra time lost by drivers.\" If that's true, the average commute\ntime would rise or stay flat, and the conclusion collapses. Because negating (B) destroys the\nargument, (B) is a necessary assumption. **Correct.**\n\nWhy the others fail:\n\n- **(A)** Whether buses are currently slower than cars isn't required; the claim is only that\n  buses will be faster *than they are now*. Negating it doesn't break the argument.\n- **(C)** \"A majority ride the bus\" is far stronger than the argument needs. The average could\n  improve even if a large minority rides the bus. A necessary assumption must be something the\n  argument *can't do without* — this isn't.\n- **(D)** Enforcement details don't need to be perfect for the conclusion to hold; this is not\n  required.\n- **(E)** The conclusion is scoped to people traveling *on Main Street*, so effects on other\n  streets are out of scope.",
+      "hints": [
+        "The conclusion says \"everyone,\" but the plan only obviously helps one group. What has to be",
+        "Try the negation test on each choice: if negating it leaves the argument standing, it isn't a"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "quant-algebra-linear-equations",
+      "section": "quant",
+      "topic": "algebra",
+      "subtopic": "linear-equations",
+      "title": "Linear Equations & Systems",
+      "tags": [
+        "algebra",
+        "equations",
+        "systems",
+        "substitution",
+        "elimination"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nA **linear equation** relates unknowns raised only to the first power — no squares, roots, or\nproducts of variables. On the GMAT Focus Quant section, linear equations show up directly\n(\"solve for \\(x\\)\") and, more often, hidden inside word problems. The core skills are (1)\nisolating a variable and (2) solving a **system** of two equations in two unknowns.\n\n## Core concepts\n\n**Solving a single linear equation.** Do the same operation to both sides until the variable is\nalone:\n\n\\[3x + 7 = 22 \\implies 3x = 15 \\implies x = 5\\]\n\n**Systems of two equations.** When you have two unknowns, you need two independent equations.\n\nTwo standard methods:\n\n- **Substitution** — solve one equation for a variable, plug it into the other.\n- **Elimination** — add or subtract the equations to cancel one variable.\n\nElimination is usually faster when a variable already has matching (or easily matched)\ncoefficients.\n\n## Worked examples\n\n**Example 1 — elimination.**\n\n\\[\\begin{cases} x + y = 30 \\\\ x + 2y = 47 \\end{cases}\\]\n\nSubtract the first from the second: \\(y = 17\\). Then \\(x = 13\\). Done in one clean step because \\(x\\)\nhad the same coefficient in both.\n\n**Example 2 — substitution.**\n\n\\[\\begin{cases} y = 2x - 1 \\\\ 3x + y = 24 \\end{cases}\\]\n\nSubstitute the first into the second: \\(3x + (2x - 1) = 24 \\implies 5x = 25 \\implies x = 5\\), so\n\\(y = 9\\).\n\n## Common traps\n\n- **Answering for the wrong variable.** Word problems often solve most naturally for one unknown\n  but *ask* for the other. Circle what the question wants before you start.\n- **\"Not enough equations.\"** Two unknowns need two *independent* equations. Two equations that\n  are secretly the same equation (e.g. \\(2x + 2y = 60\\) and \\(x + y = 30\\)) give infinitely many\n  solutions, not a unique one — this idea is tested heavily in Data Sufficiency.\n- **Sign errors during elimination.** Subtracting an equation means subtracting *every* term,\n  including the right-hand side.\n\n## Key takeaways\n\n- One linear equation, one unknown: isolate the variable.\n- Two unknowns: get two independent equations, then eliminate or substitute.\n- In word problems, translate each fact into an equation, then re-read to see which unknown is\n  actually being asked for."
+    }
+  ]
+}

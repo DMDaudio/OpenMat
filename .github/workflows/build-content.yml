@@ -1,0 +1,42 @@
+name: Build content index
+
+# Regenerates docs/data/content.json whenever content or the builder changes,
+# and commits it back so GitHub Pages (served from /docs on main) stays current.
+# Triggers only on content/builder paths, and commits to docs/ — so it never loops.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/**"
+      - "scripts/build.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-content
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Build content index
+        run: node scripts/build.mjs
+      - name: Commit updated content index
+        run: |
+          git config user.name "openmat-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- docs/data/content.json; then
+            echo "Content index unchanged."
+          else
+            git add docs/data/content.json
+            git commit -m "chore: rebuild content index [skip ci]"
+            git push
+          fi

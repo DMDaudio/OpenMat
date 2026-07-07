@@ -146,6 +146,16 @@ should at minimum explain the concept and show at least one worked example.
 
 ---
 
+## Writing math and formatting
+
+Bodies are standard Markdown (paragraphs, `**bold**`, `-` lists). Two conventions:
+
+- **Math uses LaTeX with `\( \)` (inline) and `\[ \]` (display) delimiters** — rendered by KaTeX
+  on the study site. Example: `the equation \(x + 2y = 47\)` or a display block
+  `\[y = 17\]`. **Do not** use `$...$` for math.
+- **Currency is just a literal dollar sign** — write `$47`, `$2 tokens`. Because math uses
+  `\( \)` / `\[ \]`, dollar signs never get mistaken for math, so no escaping is needed.
+
 ## Validating locally
 
 Front-matter must conform to the JSON Schemas in [`content/schema/`](content/schema/). A

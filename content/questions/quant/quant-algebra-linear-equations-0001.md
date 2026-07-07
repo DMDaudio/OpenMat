@@ -27,25 +27,25 @@ combined value of $47. How many $2 tokens are in the jar?
 
 ## Explanation
 
-Let $x$ be the number of $1 tokens and $y$ the number of $2 tokens.
+Let \(x\) be the number of $1 tokens and \(y\) the number of $2 tokens.
 
 Two facts give two equations:
 
-- Count of tokens: $x + y = 30$
-- Total value: $x + 2y = 47$
+- Count of tokens: \(x + y = 30\)
+- Total value: \(x + 2y = 47\)
 
 Subtract the first equation from the second:
 
-$$(x + 2y) - (x + y) = 47 - 30 \implies y = 17$$
+\[(x + 2y) - (x + y) = 47 - 30 \implies y = 17\]
 
-So there are **17** two-dollar tokens (and $x = 30 - 17 = 13$ one-dollar tokens).
+So there are **17** two-dollar tokens (and \(x = 30 - 17 = 13\) one-dollar tokens).
 
-Check: $13(\$1) + 17(\$2) = \$13 + \$34 = \$47$. ✓
+Check: 13($1) + 17($2) = $13 + $34 = $47. ✓
 
-**The trap:** answer choice **B (13)** is the number of *$1* tokens — the value you get if you
+**The trap:** answer choice **B (13)** is the number of $1 tokens — the value you get if you
 solve for the wrong variable. Always re-read what the question asks for before selecting.
 
 ## Hints
 
 - You have two unknowns and two independent facts (how many tokens, and their total value). Set up two equations.
-- Subtracting one equation from the other eliminates $x$ in a single step — no substitution needed.
+- Subtracting one equation from the other eliminates \(x\) in a single step — no substitution needed.
