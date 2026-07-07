@@ -1,0 +1,49 @@
+name: "✍️ New question"
+description: "Propose an original practice question (or say you're working on one)."
+title: "[Question] <section>/<topic>: short description"
+labels: ["content", "question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing a question! For anything beyond a quick idea, a **pull request**
+        adding the file is usually better than an issue — see
+        [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md). Use this issue to claim a topic,
+        get early feedback, or propose a question you'd like someone else to write.
+  - type: dropdown
+    id: section
+    attributes:
+      label: Section
+      options: ["quant", "verbal", "data-insights"]
+    validations:
+      required: true
+  - type: input
+    id: topic
+    attributes:
+      label: Topic / subtopic
+      description: "Use slugs from curriculum.md, e.g. algebra / linear-equations."
+    validations:
+      required: true
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: Difficulty
+      options: ["easy", "medium", "hard"]
+    validations:
+      required: true
+  - type: textarea
+    id: draft
+    attributes:
+      label: Question draft (optional)
+      description: "Paste the stem, the answer choices, the correct answer, and an explanation if you have them."
+    validations:
+      required: false
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Confirmations
+      options:
+        - label: "This is my own original work — not copied or paraphrased from any real GMAT question or prep material."
+          required: true
+        - label: "I have solved it myself and confirmed exactly one answer choice is correct."
+          required: true

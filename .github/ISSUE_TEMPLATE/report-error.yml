@@ -1,0 +1,37 @@
+name: "🐞 Report a content error"
+description: "A wrong answer, a broken explanation, a mistagged topic, or a typo."
+title: "[Error] <file>: short description"
+labels: ["content", "error"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A wrong answer is worse than no question — thank you for flagging it. If you already know
+        the fix, a pull request is even more welcome.
+  - type: input
+    id: file
+    attributes:
+      label: Which file?
+      description: "Path or id, e.g. content/questions/quant/quant-algebra-linear-equations-0001.md"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type of problem
+      options:
+        - "Wrong answer / more than one correct choice"
+        - "Explanation is incorrect or unclear"
+        - "Mistagged (section / topic / difficulty)"
+        - "Possible copied / non-original content"
+        - "Typo or formatting"
+        - "Other"
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What's wrong, and what should it be?
+      description: "Show your reasoning — especially for a disputed answer."
+    validations:
+      required: true

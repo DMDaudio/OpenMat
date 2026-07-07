@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/DMDaudio/OpenMat/content/schema/question.schema.json",
+  "title": "OpenMat Question",
+  "description": "Schema for the YAML front-matter of a question file in content/questions/.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "section",
+    "topic",
+    "subtopic",
+    "type",
+    "difficulty",
+    "answer",
+    "author",
+    "reviewers",
+    "status",
+    "original",
+    "license"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^(quant|verbal|data-insights)-[a-z0-9-]+-[0-9]{4}$",
+      "description": "Unique id; equals the filename without .md. Format: <section>-<topic>-<subtopic>-NNNN."
+    },
+    "section": {
+      "type": "string",
+      "enum": ["quant", "verbal", "data-insights"]
+    },
+    "topic": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Topic slug from curriculum.md."
+    },
+    "subtopic": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Subtopic slug from curriculum.md."
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "problem-solving",
+        "critical-reasoning",
+        "reading-comprehension",
+        "data-sufficiency",
+        "multi-source-reasoning",
+        "table-analysis",
+        "graphics-interpretation",
+        "two-part-analysis"
+      ]
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["easy", "medium", "hard"]
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "uniqueItems": true
+    },
+    "choices": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[A-E]$" },
+      "additionalProperties": { "type": "string" },
+      "minProperties": 2,
+      "maxProperties": 5
+    },
+    "answer": {
+      "type": "string",
+      "description": "Correct choice letter for single-answer questions, or a compact multi-part string (e.g. 'Part1=C; Part2=A')."
+    },
+    "author": { "type": "string", "minLength": 1 },
+    "reviewers": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "in-review", "verified"]
+    },
+    "original": { "type": "boolean", "const": true },
+    "license": { "type": "string", "const": "CC-BY-SA-4.0" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "section": { "const": "quant" } } },
+      "then": { "properties": { "type": { "enum": ["problem-solving"] } } }
+    },
+    {
+      "if": { "properties": { "section": { "const": "verbal" } } },
+      "then": {
+        "properties": {
+          "type": { "enum": ["critical-reasoning", "reading-comprehension"] }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "section": { "const": "data-insights" } } },
+      "then": {
+        "properties": {
+          "type": {
+            "enum": [
+              "data-sufficiency",
+              "multi-source-reasoning",
+              "table-analysis",
+              "graphics-interpretation",
+              "two-part-analysis"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "comment": "verified questions must list at least one reviewer",
+      "if": { "properties": { "status": { "const": "verified" } } },
+      "then": { "properties": { "reviewers": { "minItems": 1 } } }
+    }
+  ]
+}

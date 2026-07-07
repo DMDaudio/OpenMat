@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📖 How to contribute
+    url: https://github.com/DMDaudio/OpenMat/blob/main/CONTRIBUTING.md
+    about: "Read this first — content format, originality rules, and the review workflow."
+  - name: 🗺️ Curriculum & topic taxonomy
+    url: https://github.com/DMDaudio/OpenMat/blob/main/curriculum.md
+    about: "The GMAT Focus syllabus and the topic/subtopic slugs to tag content against."

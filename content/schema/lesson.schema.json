@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/DMDaudio/OpenMat/content/schema/lesson.schema.json",
+  "title": "OpenMat Lesson",
+  "description": "Schema for the YAML front-matter of a lesson file in content/lessons/.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "section",
+    "topic",
+    "subtopic",
+    "title",
+    "author",
+    "reviewers",
+    "status",
+    "original",
+    "license"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^(quant|verbal|data-insights)-[a-z0-9-]+$",
+      "description": "Unique id; equals the filename without .md. Format: <section>-<topic>-<subtopic>."
+    },
+    "section": {
+      "type": "string",
+      "enum": ["quant", "verbal", "data-insights"]
+    },
+    "topic": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "subtopic": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "title": { "type": "string", "minLength": 1 },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "uniqueItems": true
+    },
+    "author": { "type": "string", "minLength": 1 },
+    "reviewers": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "in-review", "verified"]
+    },
+    "original": { "type": "boolean", "const": true },
+    "license": { "type": "string", "const": "CC-BY-SA-4.0" }
+  }
+}
