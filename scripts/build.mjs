@@ -135,7 +135,9 @@ async function buildQuestions() {
   const questions = [];
   for (const file of files) {
     const rel = relative(ROOT, file).replace(/\\/g, '/');
-    const raw = await readFile(file, 'utf8');
+    // Normalize CRLF/CR to LF so output is byte-identical regardless of the
+    // checkout's line endings (Windows dev vs. Linux CI) — prevents build churn.
+    const raw = (await readFile(file, 'utf8')).replace(/\r\n?/g, '\n');
     const { data, body } = parseFrontMatter(raw);
     checkRequired(data, REQUIRED_QUESTION, rel);
     const sections = splitSections(body);
@@ -168,7 +170,9 @@ async function buildLessons() {
   const lessons = [];
   for (const file of files) {
     const rel = relative(ROOT, file).replace(/\\/g, '/');
-    const raw = await readFile(file, 'utf8');
+    // Normalize CRLF/CR to LF so output is byte-identical regardless of the
+    // checkout's line endings (Windows dev vs. Linux CI) — prevents build churn.
+    const raw = (await readFile(file, 'utf8')).replace(/\r\n?/g, '\n');
     const { data, body } = parseFrontMatter(raw);
     checkRequired(data, REQUIRED_LESSON, rel);
     lessons.push({
