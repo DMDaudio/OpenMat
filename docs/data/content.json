@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 8,
-      "lessons": 3
+      "questions": 14,
+      "lessons": 4
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 20,
-    "lessons": 5
+    "questions": 26,
+    "lessons": 6
   },
   "questions": [
     {
@@ -310,6 +310,184 @@
       "hints": [
         "Don't list divisors — factor the number into primes first.",
         "If \\(N = p^a q^b\\), the divisor count is \\((a+1)(b+1)\\). Remember the \"+1\" accounts for using the prime zero times."
+      ]
+    },
+    {
+      "id": "quant-statistics-descriptive-0009",
+      "section": "quant",
+      "topic": "statistics",
+      "subtopic": "descriptive",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "weighted-average",
+        "mean"
+      ],
+      "choices": {
+        "A": "84",
+        "B": "85",
+        "C": "86",
+        "D": "87",
+        "E": "88"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "In a class, 10 students scored an average (arithmetic mean) of 80 on a test, and the other 15\nstudents scored an average of 90. What is the average score of all 25 students?",
+      "explanation": "You cannot simply average 80 and 90 — the two groups are different sizes, so the overall mean must be\na **weighted average**. Work with total points, not averages.\n\n- The 10 students contribute \\(10 \\times 80 = 800\\) points.\n- The 15 students contribute \\(15 \\times 90 = 1350\\) points.\n- Total points \\(= 800 + 1350 = 2150\\), spread over \\(25\\) students.\n\n\\[\\text{average} = \\frac{2150}{25} = 86\\]\n\nThe answer is **86**.\n\n**The trap:** answer **B (85)** is the simple average \\(\\tfrac{80 + 90}{2}\\), which ignores that the\nlarger group (15 students) scored higher. A weighted average is always pulled toward the bigger group,\nso it lands *above* the midpoint — closer to 90 than to 80.",
+      "hints": [
+        "Don't average the two averages — the groups aren't the same size.",
+        "Convert each group's average into a total number of points, add the totals, then divide by the total number of students."
+      ]
+    },
+    {
+      "id": "quant-statistics-descriptive-0010",
+      "section": "quant",
+      "topic": "statistics",
+      "subtopic": "descriptive",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "mean",
+        "median",
+        "outliers"
+      ],
+      "choices": {
+        "A": "6",
+        "B": "9",
+        "C": "15",
+        "D": "24",
+        "E": "66"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "For the set \\(\\{4, 7, 9, 10, 90\\}\\), by how much does the mean exceed the median?",
+      "explanation": "Compute the two measures separately.\n\n**Mean:**\n\n\\[\\frac{4 + 7 + 9 + 10 + 90}{5} = \\frac{120}{5} = 24\\]\n\n**Median:** the set is already sorted and has 5 values, so the median is the middle (3rd) value:\n\n\\[4,\\ 7,\\ \\underline{9},\\ 10,\\ 90 \\quad\\Rightarrow\\quad \\text{median} = 9\\]\n\nThe mean exceeds the median by \\(24 - 9 = 15\\).\n\nThe answer is **15**.\n\n**Why they differ:** the outlier \\(90\\) sits far above the rest. It drags the **mean** upward (it adds\n90 to the sum) but has no effect on the **median**, which only cares about the *position* of the middle\nvalue. Whenever a set has a large outlier, expect the mean to sit well above the median.\n\n**The traps:** **D (24)** is the mean itself and **B (9)** is the median itself — both are values you\ncompute on the way, not the difference the question asks for.",
+      "hints": [
+        "Find the mean and the median as two separate numbers, then subtract.",
+        "The set is already in order — the median of five values is just the middle one."
+      ]
+    },
+    {
+      "id": "quant-statistics-descriptive-0011",
+      "section": "quant",
+      "topic": "statistics",
+      "subtopic": "descriptive",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "median",
+        "even-count"
+      ],
+      "choices": {
+        "A": "8",
+        "B": "10",
+        "C": "12",
+        "D": "15",
+        "E": "17"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "The six numbers \\(3,\\ 5,\\ 8,\\ 12,\\ 15,\\ x\\) have a median of 10. What is the least possible value\nof \\(x\\)?",
+      "explanation": "With **six** numbers, the median is the average of the **3rd and 4th values** once the list is sorted.\nWe need that average to equal 10, so the 3rd and 4th values must sum to 20.\n\nSort the five fixed numbers: \\(3, 5, 8, 12, 15\\). Now see where \\(x\\) can land.\n\n- If \\(x \\ge 12\\), the sorted order starts \\(3, 5, 8, 12, \\dots\\), so the 3rd and 4th values are\n  \\(8\\) and \\(12\\): median \\(= \\tfrac{8 + 12}{2} = 10\\). ✓\n- If \\(8 < x < 12\\), the 3rd and 4th values are \\(8\\) and \\(x\\), giving median \\(\\tfrac{8 + x}{2}\\),\n  which is **less than** 10.\n- If \\(x \\le 8\\), the 3rd and 4th values are \\(5\\) and \\(8\\) (or smaller), giving a median of at most\n  \\(6.5\\).\n\nSo the median equals 10 exactly when \\(x \\ge 12\\). Checking the boundary \\(x = 12\\): the set becomes\n\\(3, 5, 8, 12, 12, 15\\), whose middle pair is \\(8\\) and \\(12\\) — median \\(10\\). ✓\n\nThe least possible value is **12**.\n\n**The trap:** answer **B (10)** assumes \\(x\\) *is* the median. But with an even count the median is a\nvalue *between* two data points, and here it happens to require \\(x\\) to be at least 12, not 10.",
+      "hints": [
+        "With six values the median is the average of the 3rd and 4th numbers in sorted order — so they must add to 20.",
+        "Try placing \\(x\\) in different positions relative to 8 and 12, and find the smallest \\(x\\) that pushes the 4th value up to 12."
+      ]
+    },
+    {
+      "id": "quant-statistics-descriptive-0012",
+      "section": "quant",
+      "topic": "statistics",
+      "subtopic": "descriptive",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "mean",
+        "sum",
+        "average-change"
+      ],
+      "choices": {
+        "A": "25",
+        "B": "28",
+        "C": "31",
+        "D": "43",
+        "E": "47"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "The average (arithmetic mean) of a set of 6 numbers is 22. When a seventh number is added to the set,\nthe average becomes 25. What is the seventh number?",
+      "explanation": "Averages are easiest to handle through **totals**, using sum \\(=\\) mean \\(\\times\\) count.\n\n- Sum of the original 6 numbers: \\(22 \\times 6 = 132\\).\n- Sum of all 7 numbers: \\(25 \\times 7 = 175\\).\n\nThe seventh number is the difference between the two sums:\n\n\\[175 - 132 = 43\\]\n\nThe answer is **43**.\n\n**Sanity check:** the new number must be large enough not only to sit above the old average of 22 but\nto pull the average of *all seven* values up by 3. Raising 7 numbers' average by 3 requires\n\\(7 \\times 3 = 21\\) extra points beyond the new average, so \\(25 + 21 = 46\\)… let's confirm directly:\nadding 43 raises the sum by \\(43\\), and \\(132 + 43 = 175 = 25 \\times 7\\). ✓\n\n**The traps:** **A (25)** is just the new average, and **B (28)** is the tempting \"\\(25 + 3\\)\" guess.\nBoth underestimate how far above the average a single new value must be to move the mean of the whole\nset.",
+      "hints": [
+        "Convert both averages into sums: sum = mean × count, for 6 numbers and then for 7.",
+        "The seventh number is simply (new sum) − (old sum)."
+      ]
+    },
+    {
+      "id": "quant-statistics-standard-deviation-0013",
+      "section": "quant",
+      "topic": "statistics",
+      "subtopic": "standard-deviation",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "standard-deviation",
+        "spread",
+        "conceptual"
+      ],
+      "choices": {
+        "A": "{2, 4, 6, 8, 10}",
+        "B": "{102, 104, 106, 108, 110}",
+        "C": "{6, 6, 6, 6, 6}",
+        "D": "{1, 5, 6, 7, 11}",
+        "E": "{5, 6, 6, 6, 7}"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "Each set below contains five numbers. Which set has the **greatest** standard deviation?\n\n- **A.** \\(\\{2, 4, 6, 8, 10\\}\\)\n- **B.** \\(\\{102, 104, 106, 108, 110\\}\\)\n- **C.** \\(\\{6, 6, 6, 6, 6\\}\\)\n- **D.** \\(\\{1, 5, 6, 7, 11\\}\\)\n- **E.** \\(\\{5, 6, 6, 6, 7\\}\\)",
+      "explanation": "Standard deviation measures how far the values sit from their **mean** — not how large the numbers\nare. Every set here has mean 6 except where noted, so compare the spreads directly. (You don't need\nthe actual SD; the sum of squared distances from the mean orders them correctly.)\n\n- **A** — mean 6, distances \\(-4, -2, 0, 2, 4\\); squared: \\(16+4+0+4+16 = 40\\).\n- **B** — mean 106, distances \\(-4, -2, 0, 2, 4\\); squared: \\(40\\). *Identical spread to A — just shifted up by 100.*\n- **C** — all values equal, so every distance is 0. Standard deviation \\(= 0\\), the smallest possible.\n- **D** — mean 6, distances \\(-5, -1, 0, 1, 5\\); squared: \\(25+1+0+1+25 = 52\\).\n- **E** — mean 6, distances \\(-1, 0, 0, 0, 1\\); squared: \\(2\\).\n\nSet **D** has the largest total squared distance (52), so it has the **greatest** standard deviation.\n\n**The trap:** answer **B** contains by far the largest *numbers*, which tempts you to pick it. But\nadding 100 to every value in A just slides the whole set up the number line without changing how spread\nout it is — A and B have the **same** standard deviation. Magnitude is not spread.",
+      "hints": [
+        "Standard deviation depends only on how far values are from their own mean, not on the size of the numbers — so a set of large numbers can have a small SD.",
+        "Each set's mean is easy to spot; compare the sums of squared distances from the mean rather than computing the actual standard deviations."
+      ]
+    },
+    {
+      "id": "quant-statistics-standard-deviation-0014",
+      "section": "quant",
+      "topic": "statistics",
+      "subtopic": "standard-deviation",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "standard-deviation",
+        "transformation",
+        "conceptual"
+      ],
+      "choices": {
+        "A": "6",
+        "B": "10",
+        "C": "16",
+        "D": "60",
+        "E": "Cannot be determined from the information given"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A set of numbers has a standard deviation of 6. If 10 is added to every number in the set, what is the\nstandard deviation of the resulting set?",
+      "explanation": "Standard deviation measures how far the values are spread from their **mean**. Adding the same\nconstant to every value shifts the entire set — and its mean — by that constant, so every value stays\nexactly as far from the (also-shifted) mean as before. The spread is unchanged.\n\nConcretely, if a value was \\(d\\) above the old mean, it is still \\(d\\) above the new mean after adding\n10 to everything. All the distances from the mean are identical, so the standard deviation is\nunchanged:\n\n\\[\\text{new standard deviation} = 6\\]\n\nThe answer is **6**.\n\n**The trap:** answer **C (16)** adds 10 to the standard deviation, and **B (10)** confuses the shift\namount with the spread. Adding a constant moves the data but does not stretch or compress it. (Contrast\nthis with *multiplying* every value by 10, which **would** multiply the standard deviation by 10.)",
+      "hints": [
+        "Standard deviation is about distance from the mean. What happens to those distances when you slide every value up by the same amount?",
+        "Adding a constant relocates the whole set; only stretching or shrinking it (multiplying) changes the spread."
       ]
     },
     {
@@ -625,6 +803,26 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nPercents and ratios are the most frequently tested arithmetic ideas on GMAT Focus Quant, and\nthey hide inside word problems everywhere. Master three moves: converting between forms, handling\npercent *change*, and scaling ratios.\n\n## Core concepts\n\n**Percent as a factor.** A percent is just a number over 100. The fastest way to apply a percent\nchange is to turn it into a **multiplier**:\n\n- Increase by \\(r\\%\\): multiply by \\(1 + \\tfrac{r}{100}\\). (+25% → \\(\\times 1.25\\))\n- Decrease by \\(r\\%\\): multiply by \\(1 - \\tfrac{r}{100}\\). (−20% → \\(\\times 0.80\\))\n\n**Successive changes multiply.** Two changes in a row are multiplied, never added:\n\n\\[(+25\\%)\\text{ then }(-20\\%): \\quad 1.25 \\times 0.80 = 1.00 \\quad (\\text{no net change})\\]\n\n**Percent change formula.**\n\n\\[\\text{percent change} = \\frac{\\text{new} - \\text{old}}{\\text{old}} \\times 100\\%\\]\n\nAlways divide by the **original** value, not the new one.\n\n**Ratios scale together.** A ratio \\(a : b\\) means the quantities are \\(ak\\) and \\(bk\\) for some\nmultiplier \\(k\\). If boys : girls \\(= 3 : 5\\) and there are 24 boys, then \\(k = 8\\), so there are\n\\(5 \\times 8 = 40\\) girls.\n\n## Worked examples\n\n**Percent change.** A stock rises from $80 to $100. Percent increase \\(= \\tfrac{100 - 80}{80} = \\tfrac{20}{80} = 25\\%\\).\nNote it later falls from $100 back to $80: that's \\(\\tfrac{-20}{100} = -20\\%\\) — a *smaller* percent, because the base is now larger.\n\n**Ratio scaling.** A recipe uses flour : sugar \\(= 7 : 2\\). To use 21 cups of flour, \\(k = 3\\), so\nyou need \\(2 \\times 3 = 6\\) cups of sugar.\n\n## Common traps\n\n- **Adding successive percents.** +25% then −20% is *not* +5%; it's \\(1.25 \\times 0.80 = 1.00\\).\n- **Wrong base.** Percent change always divides by the original amount. A rise then an equal-percent fall does not return to the start.\n- **Ratio ≠ actual count.** \\(3 : 5\\) does not mean 3 and 5 — it means \\(3k\\) and \\(5k\\). Find \\(k\\) first.\n\n## Key takeaways\n\n- Convert percent changes to multipliers and multiply them for successive changes.\n- Percent change = (new − old) / old.\n- A ratio \\(a : b\\) represents \\(ak\\) and \\(bk\\); solve for the multiplier \\(k\\), then scale."
+    },
+    {
+      "id": "quant-statistics-descriptive",
+      "section": "quant",
+      "topic": "statistics",
+      "subtopic": "descriptive",
+      "title": "Descriptive Statistics: Center & Spread",
+      "tags": [
+        "statistics",
+        "mean",
+        "median",
+        "mode",
+        "range",
+        "standard-deviation",
+        "weighted-average"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nDescriptive statistics on GMAT Focus Quant is almost entirely about two ideas: where a data set is\n**centered** (mean, median, mode) and how **spread out** it is (range, standard deviation). The\narithmetic is light — the exam tests whether you understand what each measure does, especially how\noutliers and transformations affect them. Master a handful of moves and this topic becomes free points.\n\n## Core concepts\n\n**Mean (arithmetic average).**\n\n\\[\\text{mean} = \\frac{\\text{sum of values}}{\\text{count}}\\]\n\nThe single most useful rearrangement is **sum = mean × count**. Most \"average\" problems are really\nabout the *sum*: find it, adjust it, and divide again.\n\n**Weighted average.** When groups have different sizes, you cannot just average the group averages —\nweight each by its count:\n\n\\[\\text{overall mean} = \\frac{n_1\\bar{x}_1 + n_2\\bar{x}_2}{n_1 + n_2}\\]\n\nThe result always lands *between* the two group averages, pulled toward the larger group.\n\n**Median.** The middle value once the data is sorted.\n\n- **Odd count:** the single middle value.\n- **Even count:** the average of the two middle values.\n\nAlways sort first. The median ignores *how far away* extreme values are — only their position matters.\n\n**Mode.** The value that appears most often. A set can have no mode, one mode, or several.\n\n**Range.** \\(\\text{range} = \\text{max} - \\text{min}\\). A crude measure of spread that depends on only\ntwo numbers.\n\n**Standard deviation (SD).** Measures the *typical distance of values from the mean*. You will almost\nnever compute it by hand on the GMAT; you reason about it:\n\n- SD is **0** only when every value is identical.\n- SD depends on **spread from the mean, not on the size of the numbers**. \\(\\{1,2,3\\}\\) and\n  \\(\\{101,102,103\\}\\) have the *same* SD.\n- **Adding a constant** to every value shifts the set but leaves the spread — and therefore the SD —\n  **unchanged**.\n- **Multiplying** every value by \\(k\\) multiplies the SD by \\(|k|\\).\n\n## Worked examples\n\n**Sum trick.** The average of 6 numbers is 22. A seventh number is added and the average becomes 25.\nThe seventh number? Old sum \\(= 22 \\times 6 = 132\\); new sum \\(= 25 \\times 7 = 175\\); the added number\nis \\(175 - 132 = 43\\). (Notice it is far above 25 — it had to *pull the average up* across all seven\nvalues.)\n\n**Outlier: mean vs. median.** For \\(\\{4, 7, 9, 10, 90\\}\\), the mean is \\(120/5 = 24\\) but the median is\n\\(9\\). The lone large value \\(90\\) drags the mean far above the median while leaving the median\nuntouched. When a distribution has a long tail, mean \\(\\ne\\) median.\n\n**Spread, not magnitude.** Which has the larger SD, \\(\\{2,4,6,8,10\\}\\) or \\(\\{102,104,106,108,110\\}\\)?\nNeither — they are identical shapes shifted by 100, so the SD is the same. Bigger numbers do not mean\nbigger spread.\n\n## Common traps\n\n- **Averaging averages.** With unequal group sizes, the simple average of two means is wrong — you must\n  weight by count.\n- **Forgetting to sort before taking the median.** The median is positional; unsorted data gives a\n  meaningless \"middle.\"\n- **Assuming mean = median.** True only for symmetric data. Any outlier or skew separates them, and the\n  mean moves toward the tail.\n- **Thinking \"big numbers ⇒ big standard deviation.\"** SD measures distance from the mean, not the\n  numbers' magnitude. Adding a constant changes the mean but never the SD.\n\n## Key takeaways\n\n- Turn average problems into **sum** problems: sum = mean × count.\n- Weighted averages weight by group size and always fall between the group means.\n- Sort first, then take the median; the median ignores how extreme the outliers are, but the mean does not.\n- Standard deviation is about spread from the mean: it is 0 only for identical values, unchanged by\n  adding a constant, and independent of how large the numbers themselves are."
     },
     {
       "id": "quant-word-problems-rates-speed-distance",
