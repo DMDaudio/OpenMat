@@ -214,6 +214,11 @@ details.hints summary { cursor: pointer; font-weight: 700; color: var(--primary)
 .prose-page ul { padding-left: 22px; }
 
 /* Profile */
+.authbox { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding: 16px 18px; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); margin-bottom: 22px; }
+.authbox.in { background: var(--good-soft); border-color: var(--good); }
+.authbox.out { background: var(--primary-soft); border-color: var(--primary); }
+.authbox.setup { background: var(--surface); }
+.authbox strong { display: block; }
 .prof-row { margin: 14px 0; }
 .prof-row-top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
 .prof-sec { font-weight: 700; color: var(--sec, var(--text)); }

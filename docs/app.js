@@ -99,6 +99,7 @@
       lastTs: Date.now(),
     };
     saveProgress(p);
+    cloudPush(p);
   }
 
   // ---- Timing / pacing -----------------------------------------------------
@@ -112,6 +113,89 @@
     const m = Math.floor(sec / 60);
     const s = sec % 60;
     return m + ":" + String(s).padStart(2, "0");
+  }
+
+  // ---- Accounts + cloud sync (optional; activates when config is present) ---
+  // Uses Supabase client-side auth + Row-Level Security. If config.js is empty
+  // or the Supabase library failed to load, the app stays fully local-only.
+  const CFG = window.OPENMAT_CONFIG || {};
+  const cloudEnabled = !!(CFG.supabaseUrl && CFG.supabaseAnonKey && window.supabase && window.supabase.createClient);
+  let sb = null;
+  let currentUser = null;
+  let pushTimer = null;
+  const authListeners = [];
+  function onAuthChange(fn) { authListeners.push(fn); }
+  function notifyAuth() { authListeners.forEach((fn) => { try { fn(currentUser); } catch (e) {} }); }
+
+  function mergeProgress(a, b) {
+    a = a || { answered: {} };
+    b = b || { answered: {} };
+    const out = { version: 2, handle: a.handle || b.handle || "", answered: {} };
+    const ids = new Set([...Object.keys(a.answered || {}), ...Object.keys(b.answered || {})]);
+    ids.forEach((id) => {
+      const ea = (a.answered || {})[id];
+      const eb = (b.answered || {})[id];
+      if (ea && eb) out.answered[id] = (eb.lastTs || 0) > (ea.lastTs || 0) ? eb : ea;
+      else out.answered[id] = ea || eb;
+    });
+    return out;
+  }
+
+  async function initAuth() {
+    if (!cloudEnabled) { notifyAuth(); return; }
+    try {
+      sb = window.supabase.createClient(CFG.supabaseUrl, CFG.supabaseAnonKey);
+      const { data } = await sb.auth.getSession();
+      currentUser = (data && data.session && data.session.user) || null;
+      if (currentUser) await syncFromCloud();
+      sb.auth.onAuthStateChange(async (_evt, session) => {
+        const was = currentUser;
+        currentUser = (session && session.user) || null;
+        if (currentUser && !was) await syncFromCloud();
+        notifyAuth();
+      });
+    } catch (e) {}
+    notifyAuth();
+  }
+
+  async function signIn() {
+    if (!sb) return;
+    await sb.auth.signInWithOAuth({
+      provider: "github",
+      options: { redirectTo: location.origin + location.pathname },
+    });
+  }
+  async function signOut() {
+    if (!sb) return;
+    try { await sb.auth.signOut(); } catch (e) {}
+    currentUser = null;
+    notifyAuth();
+  }
+
+  async function syncFromCloud() {
+    if (!sb || !currentUser) return;
+    try {
+      const { data } = await sb.from("progress").select("data").eq("user_id", currentUser.id).maybeSingle();
+      const cloud = data && data.data ? data.data : { version: 2, handle: "", answered: {} };
+      const merged = mergeProgress(loadProgress(), cloud);
+      saveProgress(merged);
+      await pushToCloud(merged);
+    } catch (e) {}
+  }
+  async function pushToCloud(p) {
+    if (!sb || !currentUser) return;
+    try {
+      await sb.from("progress").upsert(
+        { user_id: currentUser.id, data: p, updated_at: new Date().toISOString() },
+        { onConflict: "user_id" }
+      );
+    } catch (e) {}
+  }
+  // Debounced push used after each answer.
+  function cloudPush(p) {
+    if (!sb || !currentUser) return;
+    clearTimeout(pushTimer);
+    pushTimer = setTimeout(() => pushToCloud(p), 600);
   }
 
   // ---- Helpers ------------------------------------------------------------
@@ -570,7 +654,33 @@
     const s = computeProgressStats();
     app.innerHTML = "";
     app.appendChild(el('<h2 class="view-title">Your profile</h2>'));
-    app.appendChild(el('<p class="view-sub">Your study progress lives in this browser and is restored automatically when you return. Use export/import to move it between devices.</p>'));
+    app.appendChild(el('<p class="view-sub">Your study progress is saved automatically and restored when you return. Sign in to sync it across devices, or use export/import below.</p>'));
+
+    // Account / cloud-sync status
+    let authHtml;
+    if (!cloudEnabled) {
+      authHtml =
+        '<div class="authbox setup"><div><strong>Cloud sync — not set up yet</strong>' +
+        '<div class="sub">Accounts and cross-device sync activate once Supabase keys are added to <code>config.js</code>. Until then your progress is saved locally in this browser.</div></div>' +
+        '<a class="btn" href="https://github.com/DMDaudio/OpenMat/blob/main/SETUP.md" target="_blank" rel="noopener">Setup guide ↗</a></div>';
+    } else if (currentUser) {
+      const nm = (currentUser.user_metadata && (currentUser.user_metadata.user_name || currentUser.user_metadata.name)) || currentUser.email || "you";
+      authHtml =
+        '<div class="authbox in"><div><strong>Signed in as ' + escapeHtml(nm) + "</strong>" +
+        '<div class="sub">Your progress syncs to your account automatically. ✓</div></div>' +
+        '<button class="btn ghost" data-act="signout">Sign out</button></div>';
+    } else {
+      authHtml =
+        '<div class="authbox out"><div><strong>Sync across devices</strong>' +
+        '<div class="sub">Sign in with GitHub to save your progress to your account and pick up on any device.</div></div>' +
+        '<button class="btn primary" data-act="signin">Sign in with GitHub</button></div>';
+    }
+    const authBox = el(authHtml);
+    const si = authBox.querySelector('[data-act="signin"]');
+    const so = authBox.querySelector('[data-act="signout"]');
+    if (si) si.addEventListener("click", signIn);
+    if (so) so.addEventListener("click", signOut);
+    app.appendChild(authBox);
 
     // Headline stats
     const avg = s.timeCount ? formatTime(s.timeSum / s.timeCount) : "—";
@@ -605,7 +715,7 @@
     // Data controls
     const controls = el(
       '<div class="prose-page"><h2>Your data</h2>' +
-      "<p>Progress is saved in this browser only. Download a backup to keep it safe or move it to another device.</p>" +
+      "<p>Your progress is saved locally, and synced to your account whenever you're signed in. Download a backup to keep it safe or move it between devices manually.</p>" +
       '<div class="action-row">' +
       '<button class="btn" data-act="export">⬇ Export backup</button>' +
       '<button class="btn" data-act="import">⬆ Import backup</button>' +
@@ -626,6 +736,7 @@
           if (!parsed || typeof parsed !== "object" || !parsed.answered) throw new Error("Not an OpenMat backup.");
           parsed.version = 2;
           saveProgress(parsed);
+          cloudPush(parsed);
           viewProfile();
         } catch (e) {
           alert("Could not import that file: " + e.message);
@@ -636,7 +747,9 @@
     controls.querySelector('[data-act="reset"]').addEventListener("click", () => {
       if (confirm("Reset all your study progress? This cannot be undone (export a backup first if unsure).")) {
         const keep = loadProgress().handle || "";
-        saveProgress({ version: 2, handle: keep, answered: {} });
+        const cleared = { version: 2, handle: keep, answered: {} };
+        saveProgress(cleared);
+        cloudPush(cleared);
         viewProfile();
       }
     });
@@ -648,7 +761,7 @@
       "<p>OpenMat is built by its community. Enter your GitHub handle to highlight your contributions below.</p>" +
       '<div class="filters"><input type="text" data-handle placeholder="your-github-handle" value="' + escapeHtml(s.handle) + '" /></div>' +
       '<div data-contriblist class="contrib-list"><span class="sub">Loading contributors…</span></div>' +
-      '<p class="sub" style="margin-top:14px">Personal, cross-device contribution tracking would need accounts — see the roadmap. ' +
+      '<p class="sub" style="margin-top:14px">Signing in with GitHub highlights your row automatically. ' +
       '<a href="https://github.com/DMDaudio/OpenMat/graphs/contributors" target="_blank" rel="noopener">All contributors ↗</a></p>' +
       "</div>"
     );
@@ -657,13 +770,15 @@
       const p = loadProgress();
       p.handle = handleInput.value.trim().replace(/^@/, "");
       saveProgress(p);
+      cloudPush(p);
       renderContributors();
     });
     app.appendChild(contrib);
 
     const listEl = contrib.querySelector("[data-contriblist]");
     function renderContributors() {
-      const mine = (loadProgress().handle || "").toLowerCase();
+      const ghUser = currentUser && currentUser.user_metadata && currentUser.user_metadata.user_name;
+      const mine = String(ghUser || loadProgress().handle || "").toLowerCase();
       fetch("https://api.github.com/repos/DMDaudio/OpenMat/contributors?per_page=100")
         .then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
         .then((rows) => {
@@ -692,9 +807,11 @@
 
   const routes = { "": viewHome, practice: viewPractice, browse: viewBrowse, lessons: viewLessons, profile: viewProfile, about: viewAbout };
 
+  let currentRoute = "";
   function router() {
     stopTimer();
     const name = location.hash.replace(/^#\/?/, "").split("/")[0];
+    currentRoute = name;
     setActiveNav(name);
     (routes[name] || viewHome)();
   }
@@ -708,7 +825,10 @@
     .then((data) => {
       DATA = data;
       window.addEventListener("hashchange", router);
+      // Re-render the profile view when auth state changes (sign in/out, sync).
+      onAuthChange(() => { if (currentRoute === "profile") viewProfile(); });
       router();
+      initAuth();
     })
     .catch((err) => {
       app.innerHTML =

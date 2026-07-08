@@ -44,7 +44,18 @@ that tracks your progress (saved in your browser, with export/import to move it 
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | How to add a question or lesson, the originality rules, and the review workflow. |
 | [`docs/`](docs/) | The study site (static HTML/CSS/JS). Renders the content into a practice + browse + lessons experience. Deployed via GitHub Pages. |
 | [`scripts/`](scripts/) | `build.mjs` regenerates the site's content index from `content/`; `serve.mjs` serves the site locally. |
+| [`SETUP.md`](SETUP.md) | How to turn on optional GitHub sign-in + cross-device sync (Supabase). |
+| [`supabase/`](supabase/) | Database schema + Row-Level Security for the optional accounts backend. |
 | [`curriculum.html`](curriculum.html) | The original interactive study-plan hub (legacy). |
+
+## Accounts & sync (optional)
+
+Sign-in and cross-device progress sync are **built in but off by default** — the site works fully
+local-only until configured. It uses [Supabase](https://supabase.com) client-side auth + Row-Level
+Security, so there's still **no server to run and no cost** on the free tier. To enable it, follow
+[`SETUP.md`](SETUP.md) (~10 min: create a Supabase project, a GitHub OAuth app, run
+[`supabase/schema.sql`](supabase/schema.sql), and paste two public keys into
+[`docs/config.js`](docs/config.js)).
 
 ## Run it locally
 
