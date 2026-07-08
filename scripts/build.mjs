@@ -17,6 +17,13 @@ const OUT_FILE = join(ROOT, 'docs', 'data', 'content.json');
 
 const warnings = [];
 
+// Locale-independent, stable ordering by id (code-unit comparison) so the output
+// is byte-identical across platforms (Windows dev vs. Linux CI) — no build churn.
+function byId(a, b) {
+  const x = String(a.id), y = String(b.id);
+  return x < y ? -1 : x > y ? 1 : 0;
+}
+
 async function walk(dir) {
   let entries;
   try {
@@ -152,7 +159,7 @@ async function buildQuestions() {
       hints: parseHints(sections['hints']),
     });
   }
-  questions.sort((a, b) => String(a.id).localeCompare(String(b.id)));
+  questions.sort(byId);
   return questions;
 }
 
@@ -177,7 +184,7 @@ async function buildLessons() {
       body: body.trim(),
     });
   }
-  lessons.sort((a, b) => String(a.id).localeCompare(String(b.id)));
+  lessons.sort(byId);
   return lessons;
 }
 
