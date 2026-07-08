@@ -9,7 +9,8 @@ written and reviewed by the people using it, and free for anyone to study, fork,
 translate, or remix.
 
 **▶ Study site: <https://dmdaudio.github.io/OpenMat/>** — practice with instant feedback,
-worked explanations, and hints, right in your browser.
+worked explanations, hints, a per-question timer with GMAT-pace targets, and a local profile
+that tracks your progress (saved in your browser, with export/import to move it between devices).
 
 > **Status: early / bootstrapping.** OpenMat started as an auto-generated 60-day
 > study course. It is being reworked into a collaborative platform. The scaffolding

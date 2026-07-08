@@ -58,23 +58,60 @@
   }
 
   // ---- Progress (localStorage) --------------------------------------------
-  const STORE_KEY = "openmat.progress.v1";
+  // v2 shape: { version:2, handle:"", answered: { [id]: {result, timeSec, attempts, lastTs} } }
+  const STORE_KEY = "openmat.progress.v2";
+  const OLD_KEY = "openmat.progress.v1";
+
   function loadProgress() {
     try {
-      return JSON.parse(localStorage.getItem(STORE_KEY)) || { answered: {} };
-    } catch (e) {
-      return { answered: {} };
-    }
+      const raw = localStorage.getItem(STORE_KEY);
+      if (raw) {
+        const p = JSON.parse(raw);
+        if (!p.answered) p.answered = {};
+        return p;
+      }
+      // Migrate v1 ({ answered: { id: 'correct'|'wrong' } }) if present.
+      const old = localStorage.getItem(OLD_KEY);
+      if (old) {
+        const o = JSON.parse(old) || {};
+        const migrated = { version: 2, handle: "", answered: {} };
+        Object.keys(o.answered || {}).forEach((id) => {
+          migrated.answered[id] = { result: o.answered[id], timeSec: null, attempts: 1, lastTs: null };
+        });
+        saveProgress(migrated);
+        return migrated;
+      }
+    } catch (e) {}
+    return { version: 2, handle: "", answered: {} };
   }
   function saveProgress(p) {
     try {
       localStorage.setItem(STORE_KEY, JSON.stringify(p));
     } catch (e) {}
   }
-  function recordAnswer(id, correct) {
+  function recordAnswer(id, correct, timeSec) {
     const p = loadProgress();
-    p.answered[id] = correct ? "correct" : "wrong";
+    const prev = p.answered[id] || { attempts: 0 };
+    p.answered[id] = {
+      result: correct ? "correct" : "wrong",
+      timeSec: typeof timeSec === "number" ? Math.round(timeSec) : prev.timeSec ?? null,
+      attempts: (prev.attempts || 0) + 1,
+      lastTs: Date.now(),
+    };
     saveProgress(p);
+  }
+
+  // ---- Timing / pacing -----------------------------------------------------
+  // Per-question target pace on the GMAT Focus Edition (section minutes / questions).
+  const TARGET_SEC = { quant: 128, verbal: 117, "data-insights": 135 };
+  function targetFor(section) {
+    return TARGET_SEC[section] || 120;
+  }
+  function formatTime(sec) {
+    sec = Math.max(0, Math.round(sec));
+    const m = Math.floor(sec / 60);
+    const s = sec % 60;
+    return m + ":" + String(s).padStart(2, "0");
   }
 
   // ---- Helpers ------------------------------------------------------------
@@ -174,7 +211,14 @@
   }
 
   // Practice state persists across re-renders within a session.
-  const practice = { queue: [], index: 0, section: "all", difficulty: "all", answered: false, correctCount: 0, doneCount: 0 };
+  const practice = { queue: [], index: 0, section: "all", difficulty: "all", answered: false, correctCount: 0, doneCount: 0, timerId: null, startTs: 0, sessionSec: 0 };
+
+  function stopTimer() {
+    if (practice.timerId) {
+      clearInterval(practice.timerId);
+      practice.timerId = null;
+    }
+  }
 
   function buildPracticeQueue() {
     let pool = DATA.questions.slice();
@@ -185,6 +229,7 @@
     practice.answered = false;
     practice.correctCount = 0;
     practice.doneCount = 0;
+    practice.sessionSec = 0;
   }
 
   function filterBar(onChange) {
@@ -231,6 +276,7 @@
     if (!practice.queue.length) buildPracticeQueue();
 
     function renderPractice() {
+      stopTimer();
       holder.innerHTML = "";
       if (!practice.queue.length) {
         holder.appendChild(el('<div class="empty">No questions match this filter yet. <a href="https://github.com/DMDaudio/OpenMat/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Add one!</a></div>'));
@@ -241,7 +287,9 @@
           el(
             '<div class="card" style="text-align:center">' +
             "<h3>Set complete 🎉</h3>" +
-            "<p>You scored <strong>" + practice.correctCount + " / " + practice.doneCount + "</strong>.</p>" +
+            "<p>You scored <strong>" + practice.correctCount + " / " + practice.doneCount + "</strong>" +
+            (practice.doneCount ? " in " + formatTime(practice.sessionSec) + " — average " + formatTime(practice.sessionSec / practice.doneCount) + " per question" : "") +
+            ".</p>" +
             '<div class="action-row" style="justify-content:center">' +
             '<button class="btn primary" data-act="again">New set</button>' +
             '<a class="btn ghost" href="#/browse">Browse all</a>' +
@@ -262,6 +310,7 @@
         el(
           '<div class="practice-progress">' +
           "<span>Question " + (practice.index + 1) + " of " + practice.queue.length + "</span>" +
+          '<span class="timer" data-timer>&#9201; 0:00</span>' +
           '<span class="scorepill">Score ' + practice.correctCount + " / " + practice.doneCount + "</span>" +
           "</div>"
         )
@@ -282,13 +331,24 @@
       card.appendChild(feedback);
       holder.appendChild(card);
 
+      // Start the per-question timer (counts up until the question is answered).
+      const timerEl = card.querySelector("[data-timer]");
+      practice.startTs = Date.now();
+      practice.timerId = setInterval(() => {
+        if (timerEl) timerEl.textContent = "⏱ " + formatTime((Date.now() - practice.startTs) / 1000);
+      }, 1000);
+
       function onAnswer(letter) {
         if (practice.answered) return;
         practice.answered = true;
+        stopTimer();
+        const elapsed = (Date.now() - practice.startTs) / 1000;
+        practice.sessionSec += elapsed;
+        if (timerEl) timerEl.textContent = "⏱ " + formatTime(elapsed);
         const correct = letter === String(q.answer);
         practice.doneCount++;
         if (correct) practice.correctCount++;
-        recordAnswer(q.id, correct);
+        recordAnswer(q.id, correct, elapsed);
         const pill = card.querySelector(".scorepill");
         if (pill) pill.textContent = "Score " + practice.correctCount + " / " + practice.doneCount;
 
@@ -300,10 +360,14 @@
           else if (L === letter) b.classList.add("wrong");
         });
 
+        const tgt = targetFor(q.section);
+        const over = elapsed > tgt;
         feedback.innerHTML =
           '<div class="verdict ' + (correct ? "correct" : "wrong") + '">' +
           (correct ? "Correct! ✓" : "Not quite — the answer is " + escapeHtml(String(q.answer)) + ".") +
           "</div>" +
+          '<div class="pace ' + (over ? "over" : "under") + '">⏱ You took <strong>' + formatTime(elapsed) +
+          "</strong> · target ~" + formatTime(tgt) + " · " + (over ? "over pace" : "on pace") + "</div>" +
           '<div class="reveal"><h4>Explanation</h4><div class="prose">' +
           renderMarkdown(q.explanation) +
           "</div></div>";
@@ -462,9 +526,174 @@
       "</div>";
   }
 
-  const routes = { "": viewHome, practice: viewPractice, browse: viewBrowse, lessons: viewLessons, about: viewAbout };
+  // ---- Profile (local-first) ----------------------------------------------
+  function computeProgressStats() {
+    const p = loadProgress();
+    const ans = p.answered || {};
+    const perSection = {};
+    Object.keys(DATA.sections).forEach((s) => {
+      perSection[s] = { label: DATA.sections[s], total: 0, attempted: 0, correct: 0, timeSum: 0, timeCount: 0 };
+    });
+    let attempted = 0, correct = 0, timeSum = 0, timeCount = 0;
+    DATA.questions.forEach((q) => {
+      const sec = perSection[q.section];
+      if (sec) sec.total++;
+      const a = ans[q.id];
+      if (!a) return;
+      attempted++;
+      if (sec) sec.attempted++;
+      if (a.result === "correct") { correct++; if (sec) sec.correct++; }
+      if (typeof a.timeSec === "number") {
+        timeSum += a.timeSec; timeCount++;
+        if (sec) { sec.timeSum += a.timeSec; sec.timeCount++; }
+      }
+    });
+    return { totalQ: DATA.questions.length, attempted, correct, timeSum, timeCount, perSection, handle: p.handle || "" };
+  }
+
+  function pct(n, d) { return d ? Math.round((n / d) * 100) + "%" : "—"; }
+
+  function downloadProgress() {
+    const data = JSON.stringify(loadProgress(), null, 2);
+    const blob = new Blob([data], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "openmat-progress.json";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  function viewProfile() {
+    const s = computeProgressStats();
+    app.innerHTML = "";
+    app.appendChild(el('<h2 class="view-title">Your profile</h2>'));
+    app.appendChild(el('<p class="view-sub">Your study progress lives in this browser and is restored automatically when you return. Use export/import to move it between devices.</p>'));
+
+    // Headline stats
+    const avg = s.timeCount ? formatTime(s.timeSum / s.timeCount) : "—";
+    app.appendChild(
+      el(
+        '<div class="stat-grid">' +
+        '<div class="stat-card"><h3>Attempted</h3><div class="big">' + s.attempted + "</div><div class='sub'>of " + s.totalQ + " questions</div></div>" +
+        '<div class="stat-card"><h3>Accuracy</h3><div class="big">' + pct(s.correct, s.attempted) + "</div><div class='sub'>" + s.correct + " correct</div></div>" +
+        '<div class="stat-card"><h3>Avg. time</h3><div class="big">' + avg + "</div><div class='sub'>per question</div></div>" +
+        "</div>"
+      )
+    );
+
+    // Per-section breakdown
+    const secRows = Object.keys(s.perSection)
+      .map((k) => {
+        const d = s.perSection[k];
+        const acc = pct(d.correct, d.attempted);
+        const t = d.timeCount ? formatTime(d.timeSum / d.timeCount) : "—";
+        const coverage = d.total ? Math.round((d.attempted / d.total) * 100) : 0;
+        return (
+          '<div class="prof-row section-' + k + '">' +
+          '<div class="prof-row-top"><span class="prof-sec">' + escapeHtml(d.label) + "</span>" +
+          "<span class='prof-nums'>" + d.attempted + "/" + d.total + " attempted · " + acc + " correct · " + t + " avg</span></div>" +
+          '<div class="bar"><div class="bar-fill" style="width:' + coverage + '%"></div></div>' +
+          "</div>"
+        );
+      })
+      .join("");
+    app.appendChild(el('<div class="prose-page"><h2>By section</h2>' + secRows + "</div>"));
+
+    // Data controls
+    const controls = el(
+      '<div class="prose-page"><h2>Your data</h2>' +
+      "<p>Progress is saved in this browser only. Download a backup to keep it safe or move it to another device.</p>" +
+      '<div class="action-row">' +
+      '<button class="btn" data-act="export">⬇ Export backup</button>' +
+      '<button class="btn" data-act="import">⬆ Import backup</button>' +
+      '<button class="btn ghost" data-act="reset">Reset progress</button>' +
+      '<input type="file" accept="application/json" data-file style="display:none" />' +
+      "</div></div>"
+    );
+    controls.querySelector('[data-act="export"]').addEventListener("click", downloadProgress);
+    const fileInput = controls.querySelector("[data-file]");
+    controls.querySelector('[data-act="import"]').addEventListener("click", () => fileInput.click());
+    fileInput.addEventListener("change", () => {
+      const file = fileInput.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const parsed = JSON.parse(reader.result);
+          if (!parsed || typeof parsed !== "object" || !parsed.answered) throw new Error("Not an OpenMat backup.");
+          parsed.version = 2;
+          saveProgress(parsed);
+          viewProfile();
+        } catch (e) {
+          alert("Could not import that file: " + e.message);
+        }
+      };
+      reader.readAsText(file);
+    });
+    controls.querySelector('[data-act="reset"]').addEventListener("click", () => {
+      if (confirm("Reset all your study progress? This cannot be undone (export a backup first if unsure).")) {
+        const keep = loadProgress().handle || "";
+        saveProgress({ version: 2, handle: keep, answered: {} });
+        viewProfile();
+      }
+    });
+    app.appendChild(controls);
+
+    // Contributions (read-only from GitHub's public data)
+    const contrib = el(
+      '<div class="prose-page"><h2>Contributions</h2>' +
+      "<p>OpenMat is built by its community. Enter your GitHub handle to highlight your contributions below.</p>" +
+      '<div class="filters"><input type="text" data-handle placeholder="your-github-handle" value="' + escapeHtml(s.handle) + '" /></div>' +
+      '<div data-contriblist class="contrib-list"><span class="sub">Loading contributors…</span></div>' +
+      '<p class="sub" style="margin-top:14px">Personal, cross-device contribution tracking would need accounts — see the roadmap. ' +
+      '<a href="https://github.com/DMDaudio/OpenMat/graphs/contributors" target="_blank" rel="noopener">All contributors ↗</a></p>' +
+      "</div>"
+    );
+    const handleInput = contrib.querySelector("[data-handle]");
+    handleInput.addEventListener("change", () => {
+      const p = loadProgress();
+      p.handle = handleInput.value.trim().replace(/^@/, "");
+      saveProgress(p);
+      renderContributors();
+    });
+    app.appendChild(contrib);
+
+    const listEl = contrib.querySelector("[data-contriblist]");
+    function renderContributors() {
+      const mine = (loadProgress().handle || "").toLowerCase();
+      fetch("https://api.github.com/repos/DMDaudio/OpenMat/contributors?per_page=100")
+        .then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+        .then((rows) => {
+          if (!Array.isArray(rows) || !rows.length) { listEl.innerHTML = '<span class="sub">No contributors listed yet.</span>'; return; }
+          listEl.innerHTML = rows
+            .map((c) => {
+              const isMe = c.login && c.login.toLowerCase() === mine;
+              return (
+                '<a class="contrib' + (isMe ? " me" : "") + '" href="' + escapeHtml(c.html_url) + '" target="_blank" rel="noopener">' +
+                '<img src="' + escapeHtml(c.avatar_url) + '&s=48" alt="" width="28" height="28" loading="lazy" />' +
+                "<span>" + escapeHtml(c.login) + "</span>" +
+                '<span class="contrib-count">' + c.contributions + "</span>" +
+                (isMe ? '<span class="badge sec section-quant">you</span>' : "") +
+                "</a>"
+              );
+            })
+            .join("");
+        })
+        .catch(() => {
+          listEl.innerHTML = '<span class="sub">Couldn\'t load the live contributor list (GitHub rate limit). ' +
+            '<a href="https://github.com/DMDaudio/OpenMat/graphs/contributors" target="_blank" rel="noopener">View on GitHub ↗</a></span>';
+        });
+    }
+    renderContributors();
+  }
+
+  const routes = { "": viewHome, practice: viewPractice, browse: viewBrowse, lessons: viewLessons, profile: viewProfile, about: viewAbout };
 
   function router() {
+    stopTimer();
     const name = location.hash.replace(/^#\/?/, "").split("/")[0];
     setActiveNav(name);
     (routes[name] || viewHome)();
