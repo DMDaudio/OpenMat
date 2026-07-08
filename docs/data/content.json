@@ -1,5 +1,4 @@
 {
-  "generatedAt": "2026-07-07T15:56:19.943Z",
   "sections": {
     "quant": "Quantitative",
     "verbal": "Verbal",
@@ -8,25 +7,48 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 1,
-      "lessons": 1
+      "questions": 8,
+      "lessons": 3
     },
     "verbal": {
       "label": "Verbal",
-      "questions": 1,
-      "lessons": 0
+      "questions": 6,
+      "lessons": 1
     },
     "data-insights": {
       "label": "Data Insights",
-      "questions": 1,
-      "lessons": 0
+      "questions": 6,
+      "lessons": 1
     }
   },
   "counts": {
-    "questions": 3,
-    "lessons": 1
+    "questions": 20,
+    "lessons": 5
   },
   "questions": [
+    {
+      "id": "data-insights-data-sufficiency-algebra-0002",
+      "section": "data-insights",
+      "topic": "data-sufficiency",
+      "subtopic": "algebra",
+      "type": "data-sufficiency",
+      "difficulty": "medium",
+      "tags": [
+        "linear-systems",
+        "algebra"
+      ],
+      "choices": null,
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the value of \\(x\\)?\n\n1. \\(3x - y = 7\\)\n2. \\(x + y = 5\\)\n\n*(Standard Data Sufficiency answer choices — see the DS section of\n[CONTENT_SCHEMA.md](../../../CONTENT_SCHEMA.md).)*",
+      "explanation": "**Statement (1): \\(3x - y = 7\\).** One equation, two unknowns — infinitely many \\((x, y)\\) pairs.\n\\(x\\) is not pinned down. **Not sufficient.**\n\n**Statement (2): \\(x + y = 5\\).** Again one equation in two unknowns. **Not sufficient.**\n\n**Together:** two independent linear equations in two unknowns. Add them to eliminate \\(y\\):\n\n\\[(3x - y) + (x + y) = 7 + 5 \\implies 4x = 12 \\implies x = 3\\]\n\nA unique value, so the two statements together are sufficient. **Answer: (C).**\n\n**Watch out:** don't fall for the \"each alone\" trap. A single linear equation with two variables\nnever fixes one variable's value on its own.",
+      "hints": [
+        "One linear equation in two unknowns can't determine a single variable — you need a second, independent equation.",
+        "Check whether the two equations are independent (not multiples of each other); if so, together they solve the system."
+      ]
+    },
     {
       "id": "data-insights-data-sufficiency-divisibility-0001",
       "section": "data-insights",
@@ -48,6 +70,128 @@
       "hints": [
         "Rewrite the target: \"divisible by 6\" means divisible by which prime factors?",
         "Each statement supplies one of the two things you need. Ask whether either supplies *both*."
+      ]
+    },
+    {
+      "id": "data-insights-data-sufficiency-number-properties-0004",
+      "section": "data-insights",
+      "topic": "data-sufficiency",
+      "subtopic": "number-properties",
+      "type": "data-sufficiency",
+      "difficulty": "medium",
+      "tags": [
+        "parity",
+        "even-odd"
+      ],
+      "choices": null,
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(n\\) is an integer, is \\(n\\) even?\n\n1. \\(n^2\\) is even.\n2. \\(3n\\) is even.\n\n*(Standard Data Sufficiency answer choices — see the DS section of\n[CONTENT_SCHEMA.md](../../../CONTENT_SCHEMA.md).)*",
+      "explanation": "**Statement (1): \\(n^2\\) is even.** An odd integer squared is always odd (odd × odd = odd). So if\n\\(n^2\\) is even, \\(n\\) cannot be odd — \\(n\\) must be even. **Sufficient.**\n\n**Statement (2): \\(3n\\) is even.** Since 3 is odd, the parity of \\(3n\\) matches the parity of\n\\(n\\) (odd × odd = odd; odd × even = even). For \\(3n\\) to be even, \\(n\\) itself must be even.\n**Sufficient.**\n\nEach statement alone answers the question (\"yes, \\(n\\) is even\"), so the answer is **(D)**.\n\n**Key parity facts:** squaring preserves parity, and multiplying by an odd number preserves\nparity. Both statements exploit this, which is why each is independently sufficient.",
+      "hints": [
+        "Recall that odd² is odd and even² is even — so \\(n^2\\)'s parity tells you \\(n\\)'s parity.",
+        "Multiplying by the odd number 3 doesn't change whether a number is even or odd."
+      ]
+    },
+    {
+      "id": "data-insights-data-sufficiency-overlapping-sets-0006",
+      "section": "data-insights",
+      "topic": "data-sufficiency",
+      "subtopic": "overlapping-sets",
+      "type": "data-sufficiency",
+      "difficulty": "hard",
+      "tags": [
+        "overlapping-sets",
+        "insufficient"
+      ],
+      "choices": null,
+      "answer": "E",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "At a company of 50 employees, how many own **both** a car and a bicycle?\n\n1. 30 employees own a car.\n2. 25 employees own a bicycle.\n\n*(Standard Data Sufficiency answer choices — see the DS section of\n[CONTENT_SCHEMA.md](../../../CONTENT_SCHEMA.md).)*",
+      "explanation": "For two overlapping sets: (own at least one) = (car) + (bike) − (both), so\n\n\\[\\text{both} = \\text{car} + \\text{bike} - \\text{(at least one)}\\]\n\n**Statement (1):** only the car count — nothing about bikes or overlap. **Not sufficient.**\n\n**Statement (2):** only the bike count. **Not sufficient.**\n\n**Together:** we know car = 30 and bike = 25, so both \\(= 55 - \\text{(at least one)}\\). But we're\nnever told how many own *at least one* (equivalently, how many own *neither*). That number can\nvary:\n\n- If everyone owns at least one, \"at least one\" = 50, so both \\(= 55 - 50 = 5\\).\n- If all 25 bike owners also own cars, \"at least one\" = 30, so both \\(= 55 - 30 = 25\\).\n\nThe overlap could be anywhere from 5 to 25. Not determined. **Answer: (E).**\n\n**The trap:** answer **(C)** is tempting because two numbers \"feel\" like enough. But two totals\nalone can't fix the overlap — you need a third fact (the count owning neither, or the count\nowning at least one).",
+      "hints": [
+        "Overlap needs three of these four quantities: set A, set B, \"at least one,\" and \"both.\"",
+        "With only the two set totals, try to push the overlap to its maximum and minimum — if both are possible, the statements are insufficient."
+      ]
+    },
+    {
+      "id": "data-insights-data-sufficiency-statistics-0003",
+      "section": "data-insights",
+      "topic": "data-sufficiency",
+      "subtopic": "statistics",
+      "type": "data-sufficiency",
+      "difficulty": "medium",
+      "tags": [
+        "mean",
+        "statistics"
+      ],
+      "choices": null,
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the average (arithmetic mean) of a set of five numbers?\n\n1. The sum of the five numbers is 100.\n2. The five numbers are consecutive integers.\n\n*(Standard Data Sufficiency answer choices — see the DS section of\n[CONTENT_SCHEMA.md](../../../CONTENT_SCHEMA.md).)*",
+      "explanation": "The mean is (sum) ÷ (count). The count is given as 5, so all we need is the sum.\n\n**Statement (1): the sum is 100.** Then the mean is \\(100 \\div 5 = 20\\), no matter what the\nindividual numbers are. **Sufficient.**\n\n**Statement (2): the numbers are consecutive integers.** This fixes the *shape* of the set but\nnot its location. They could be \\(1,2,3,4,5\\) (mean 3) or \\(10,11,12,13,14\\) (mean 12). Different\nmeans. **Not sufficient.**\n\nSince (1) alone works and (2) alone does not, the answer is **(A)**.\n\n**Note:** you don't need the actual numbers to get a mean — the sum and the count are enough.\nStatement (2) is a tempting distractor because \"consecutive\" feels like a strong constraint, but\nit never tells you *which* consecutive integers.",
+      "hints": [
+        "Mean = sum ÷ count, and the count (5) is already known. What single fact would finish it?",
+        "\"Consecutive integers\" constrains the pattern but not the starting value — test two different runs to see if the mean is forced."
+      ]
+    },
+    {
+      "id": "data-insights-data-sufficiency-word-problems-0005",
+      "section": "data-insights",
+      "topic": "data-sufficiency",
+      "subtopic": "word-problems",
+      "type": "data-sufficiency",
+      "difficulty": "hard",
+      "tags": [
+        "systems",
+        "integer-constraints"
+      ],
+      "choices": null,
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A stationery store sells pens for $2 each and notebooks for $5 each. Yesterday it sold some of\neach. How many pens did it sell?\n\n1. The store's total revenue from these sales was $56.\n2. The store sold 19 items in total.\n\n*(Standard Data Sufficiency answer choices — see the DS section of\n[CONTENT_SCHEMA.md](../../../CONTENT_SCHEMA.md).)*",
+      "explanation": "Let \\(p\\) = pens sold and \\(n\\) = notebooks sold (both non-negative integers).\n\n**Statement (1): \\(2p + 5n = 56\\).** Many integer solutions: \\((p,n) = (28,0), (23,2), (18,4), \\dots, (3,10)\\).\n\\(p\\) is not determined. **Not sufficient.**\n\n**Statement (2): \\(p + n = 19\\).** One equation, two unknowns — many solutions. **Not sufficient.**\n\n**Together:** solve the system. From (2), \\(p = 19 - n\\). Substitute into (1):\n\n\\[2(19 - n) + 5n = 56 \\implies 38 + 3n = 56 \\implies 3n = 18 \\implies n = 6,\\ p = 13\\]\n\nA unique, valid solution (13 pens, 6 notebooks). **Answer: (C).**\n\n**Note:** even though statement (1) alone has integer solutions, it has *many* of them, so it\nisn't sufficient by itself. Only the second equation forces a single answer.",
+      "hints": [
+        "Translate each statement into an equation in \\(p\\) and \\(n\\); a single equation in two unknowns rarely pins down one variable.",
+        "With both equations you have a solvable 2×2 system — check that the solution is a valid (non-negative integer) count."
+      ]
+    },
+    {
+      "id": "quant-algebra-inequalities-absolute-value-0008",
+      "section": "quant",
+      "topic": "algebra",
+      "subtopic": "inequalities-absolute-value",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "absolute-value",
+        "inequalities",
+        "integer-solutions"
+      ],
+      "choices": {
+        "A": "7",
+        "B": "8",
+        "C": "9",
+        "D": "10",
+        "E": "11"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "How many integer values of \\(x\\) satisfy the inequality \\(|x - 3| < 5\\)?",
+      "explanation": "An absolute-value inequality \\(|A| < b\\) (with \\(b > 0\\)) unfolds into a **double inequality**\n\\(-b < A < b\\). Here:\n\n\\[|x - 3| < 5 \\implies -5 < x - 3 < 5\\]\n\nAdd 3 to all three parts:\n\n\\[-2 < x < 8\\]\n\nThe inequality is **strict**, so \\(x = -2\\) and \\(x = 8\\) are excluded. The integers strictly\nbetween \\(-2\\) and \\(8\\) are:\n\n\\[-1,\\ 0,\\ 1,\\ 2,\\ 3,\\ 4,\\ 5,\\ 6,\\ 7\\]\n\nThat's **9** integers.\n\n**Watch the endpoints:** because the sign is \\(<\\) and not \\(\\le\\), don't count \\(-2\\) or \\(8\\).\nMiscounting the boundaries is the most common error here.",
+      "hints": [
+        "Rewrite \\(|x-3| < 5\\) as \\(-5 < x - 3 < 5\\), then isolate \\(x\\).",
+        "The inequality is strict, so the endpoints are not included — count only the integers strictly between them."
       ]
     },
     {
@@ -81,6 +225,181 @@
       ]
     },
     {
+      "id": "quant-arithmetic-percents-ratios-0002",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "percents-ratios",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "percent-change",
+        "successive-percents"
+      ],
+      "choices": {
+        "A": "95% of the original",
+        "B": "100% of the original",
+        "C": "104% of the original",
+        "D": "105% of the original",
+        "E": "125% of the original"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "The price of a jacket is first increased by 25%, and then the new, higher price is decreased\nby 20%. The final price is what percent of the original price?",
+      "explanation": "Successive percent changes **multiply** — you cannot add or subtract the percentages.\n\nLet the original price be \\(P\\). After a 25% increase the price is \\(1.25P\\). Decreasing that by\n20% multiplies it by \\(0.80\\):\n\n\\[1.25P \\times 0.80 = 1.00P\\]\n\nSo the final price is exactly **100%** of the original — the two changes cancel.\n\n**The trap:** answer **D (105%)** comes from wrongly *adding* the changes (\\(+25\\% - 20\\% = +5\\%\\)).\nThat ignores that the 20% decrease applies to the *larger* post-increase price, not the original.",
+      "hints": [
+        "Percent changes compound multiplicatively. Turn each into a factor: +25% → \\(\\times 1.25\\), −20% → \\(\\times 0.80\\).",
+        "Multiply the factors together and compare to 1."
+      ]
+    },
+    {
+      "id": "quant-counting-probability-probability-0007",
+      "section": "quant",
+      "topic": "counting-probability",
+      "subtopic": "probability",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "probability",
+        "without-replacement",
+        "dependent-events"
+      ],
+      "choices": {
+        "A": "3/10",
+        "B": "9/25",
+        "C": "2/5",
+        "D": "1/2",
+        "E": "3/5"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A bag contains 3 red marbles and 2 blue marbles. Two marbles are drawn at random, one after\nthe other, **without replacement**. What is the probability that both marbles are red?",
+      "explanation": "For \"both\" events happening in sequence, multiply the probability of the first by the\nprobability of the second *given the first has happened*.\n\n- First marble red: \\(\\tfrac{3}{5}\\) (3 red out of 5 total).\n- Second marble red, given one red is already gone: now 2 red out of 4 remaining, \\(\\tfrac{2}{4} = \\tfrac{1}{2}\\).\n\n\\[P(\\text{both red}) = \\frac{3}{5} \\times \\frac{1}{2} = \\frac{3}{10}\\]\n\n**The trap:** answer **B (9/25)** treats the draws as *with replacement* \\(\\left(\\tfrac{3}{5}\\times\\tfrac{3}{5}\\right)\\).\nWithout replacement, the totals shrink between draws, so the second fraction has denominator 4,\nnot 5.",
+      "hints": [
+        "\"Without replacement\" means the second draw's totals change — the pool shrinks by one.",
+        "Multiply P(first red) by P(second red given the first was red)."
+      ]
+    },
+    {
+      "id": "quant-number-properties-factors-0003",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "factors-multiples",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "divisors",
+        "prime-factorization"
+      ],
+      "choices": {
+        "A": "6",
+        "B": "8",
+        "C": "10",
+        "D": "12",
+        "E": "14"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "How many positive divisors does 72 have?",
+      "explanation": "Listing all divisors by hand is slow and error-prone. Use the **prime factorization**.\n\n\\[72 = 8 \\times 9 = 2^3 \\times 3^2\\]\n\nFor a number written as \\(p^a \\times q^b \\times \\dots\\), the number of positive divisors is\n\\((a+1)(b+1)\\dots\\) — because each divisor independently uses the prime \\(p\\) to a power from\n\\(0\\) to \\(a\\), and \\(q\\) to a power from \\(0\\) to \\(b\\), and so on.\n\nHere that gives:\n\n\\[(3+1)(2+1) = 4 \\times 3 = 12\\]\n\nSo 72 has **12** positive divisors. (Check by listing: 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72 — twelve of them.)",
+      "hints": [
+        "Don't list divisors — factor the number into primes first.",
+        "If \\(N = p^a q^b\\), the divisor count is \\((a+1)(b+1)\\). Remember the \"+1\" accounts for using the prime zero times."
+      ]
+    },
+    {
+      "id": "quant-word-problems-overlapping-sets-0006",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "overlapping-sets",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "overlapping-sets",
+        "inclusion-exclusion"
+      ],
+      "choices": {
+        "A": "3",
+        "B": "5",
+        "C": "8",
+        "D": "10",
+        "E": "12"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "In a class of 30 students, 18 study French and 15 study Spanish. If 5 students study neither\nlanguage, how many students study both French and Spanish?",
+      "explanation": "Use the two-set inclusion-exclusion formula. First, the number studying **at least one**\nlanguage is everyone minus those studying neither:\n\n\\[30 - 5 = 25 \\text{ study at least one language}\\]\n\nNow apply:\n\n\\[\\text{(at least one)} = \\text{French} + \\text{Spanish} - \\text{both}\\]\n\\[25 = 18 + 15 - \\text{both} \\implies \\text{both} = 33 - 25 = 8\\]\n\nSo **8** students study both.\n\n**Why subtract \"both\":** the 18 French and 15 Spanish counts each include the both-language\nstudents, so adding 18 + 15 double-counts them once. Subtracting \"both\" removes the duplicate.",
+      "hints": [
+        "First find how many study at least one language (total minus \"neither\").",
+        "Then use: (at least one) = A + B − (both), and solve for \"both\"."
+      ]
+    },
+    {
+      "id": "quant-word-problems-rates-speed-distance-0004",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "rates-speed-distance",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "average-speed",
+        "harmonic-mean"
+      ],
+      "choices": {
+        "A": "45 mph",
+        "B": "48 mph",
+        "C": "50 mph",
+        "D": "52 mph",
+        "E": "55 mph"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A car travels from town A to town B at an average speed of 60 mph, and then returns along the\nsame road at an average speed of 40 mph. What is the car's average speed for the entire round\ntrip?",
+      "explanation": "Average speed is **total distance ÷ total time** — never the simple average of the two speeds.\n\nBecause the two legs cover the *same distance*, pick a convenient distance. Let each leg be 120\nmiles (a common multiple of 60 and 40):\n\n- Going: \\(120 \\div 60 = 2\\) hours\n- Returning: \\(120 \\div 40 = 3\\) hours\n\nTotal distance \\(= 240\\) miles; total time \\(= 5\\) hours.\n\n\\[\\text{average speed} = \\frac{240}{5} = 48 \\text{ mph}\\]\n\n**The trap:** answer **C (50 mph)** is the plain average of 60 and 40. That's wrong because the\ncar spends *more time* at the slower speed (3 hours at 40 vs. 2 hours at 60), which pulls the\naverage below 50.",
+      "hints": [
+        "Average speed = total distance / total time. Set the two speeds' simple average aside.",
+        "Choose a distance that both speeds divide evenly (e.g. 120), compute the time for each leg, then combine."
+      ]
+    },
+    {
+      "id": "quant-word-problems-work-rate-0005",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "work-rate",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "work-rate",
+        "combined-rates"
+      ],
+      "choices": {
+        "A": "2 hours",
+        "B": "2 hours 24 minutes",
+        "C": "2 hours 30 minutes",
+        "D": "5 hours",
+        "E": "10 hours"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "Machine A can fill a production order in 4 hours, and Machine B can fill the same order in 6\nhours. Working together at their constant rates, how long will they take to fill one order?",
+      "explanation": "Add **rates**, never times. Each machine's rate is the fraction of the order it completes per\nhour:\n\n- Machine A: \\(\\tfrac{1}{4}\\) order per hour\n- Machine B: \\(\\tfrac{1}{6}\\) order per hour\n\nCombined rate:\n\n\\[\\frac{1}{4} + \\frac{1}{6} = \\frac{3}{12} + \\frac{2}{12} = \\frac{5}{12} \\text{ order per hour}\\]\n\nTime is the reciprocal of the rate (for one whole order):\n\n\\[t = \\frac{1}{5/12} = \\frac{12}{5} = 2.4 \\text{ hours} = 2\\text{ hours }24\\text{ minutes}\\]\n\n**The trap:** answer **D (5 hours)** comes from averaging the two times \\((4+6)/2\\), and **A (2\nhours)** from wrongly adding rates as if both took the shorter time. Together they must be\nfaster than the faster machine alone (under 4 hours), which rules out C, D, and E immediately.",
+      "hints": [
+        "Convert each machine to a rate (order per hour) and add the rates.",
+        "The combined time is the reciprocal of the combined rate — and must be less than the faster machine's solo time."
+      ]
+    },
+    {
       "id": "verbal-critical-reasoning-assumptions-0001",
       "section": "verbal",
       "topic": "critical-reasoning",
@@ -108,9 +427,171 @@
         "The conclusion says \"everyone,\" but the plan only obviously helps one group. What has to be",
         "Try the negation test on each choice: if negating it leaves the argument standing, it isn't a"
       ]
+    },
+    {
+      "id": "verbal-critical-reasoning-evaluate-flaw-boldface-0004",
+      "section": "verbal",
+      "topic": "critical-reasoning",
+      "subtopic": "evaluate-flaw-boldface",
+      "type": "critical-reasoning",
+      "difficulty": "hard",
+      "tags": [
+        "flaw",
+        "reported-vs-actual"
+      ],
+      "choices": {
+        "A": "overlooks the possibility that the decline in reported thefts reflects a drop in reporting rather than a drop in thefts actually committed.",
+        "B": "provides no evidence that theft is a more serious problem than other crimes in the city.",
+        "C": "assumes that the anti-theft policy was intended to affect only theft and no other crime.",
+        "D": "relies on data from a single year, which may be too short a period to judge a trend.",
+        "E": "fails to specify exactly which acts the city classifies as theft."
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "The city's new anti-theft policy must be working. In the year since it took effect, the number\nof thefts **reported to police** fell by 15%.\n\nThe argument is most vulnerable to criticism on the grounds that it",
+      "explanation": "The conclusion (\"the policy is working\") assumes that fewer *reported* thefts means fewer\nthefts *actually happening*. But reported thefts and actual thefts are not the same thing —\nreporting rates can change on their own. If residents simply reported fewer thefts (say, because\nthey lost confidence that reports lead anywhere), the reported number could fall even if the\ntrue number of thefts held steady or rose.\n\n**(A)** names exactly this gap between *reported* and *actual* thefts. **Correct.**\n\nWhy the others are weaker:\n\n- **(B)** Whether theft is worse than other crimes is irrelevant to whether this policy worked.\n- **(C)** The argument never claims the policy affects only theft.\n- **(D)** A single year is a fair concern, but it's a minor quibble next to the reported-vs-actual gap, which can invalidate the evidence entirely.\n- **(E)** A definitional nitpick that doesn't undermine the core inference.",
+      "hints": [
+        "Pin down the conclusion's hidden assumption: it treats the *measure* (reported thefts) as identical to the *thing* it cares about (actual thefts).",
+        "The best flaw answer attacks that assumption directly, not a side issue like sample period or definitions."
+      ]
+    },
+    {
+      "id": "verbal-critical-reasoning-inference-0003",
+      "section": "verbal",
+      "topic": "critical-reasoning",
+      "subtopic": "inference",
+      "type": "critical-reasoning",
+      "difficulty": "medium",
+      "tags": [
+        "inference",
+        "must-be-true",
+        "syllogism"
+      ],
+      "choices": {
+        "A": "None of the items in the front window display is on sale.",
+        "B": "Every item that is not on sale is in the front window display.",
+        "C": "All of last season's items are on sale.",
+        "D": "Some items from last season's collection are in the front window display.",
+        "E": "Every item that is on sale is in the front window display."
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "Every item in the store that is on sale is from last season's collection. None of the items in\nthe store's front window display is from last season's collection.\n\nIf the statements above are true, which of the following must also be true?",
+      "explanation": "Chain the two facts about the same categories:\n\n- Every **on-sale** item is a **last-season** item. (on-sale → last-season)\n- **No** front-window item is a last-season item. (front-window → not last-season)\n\nIf something is on sale, it must be last season's; but nothing in the front window is last\nseason's. So nothing in the front window can be on sale.\n\nTherefore **(A): none of the front-window items is on sale.** This *must* be true. **Correct.**\n\nWhy the others fail:\n\n- **(B)** and **(E)** reverse the logic — the premises say nothing forces non-sale or sale items *into* the window.\n- **(C)** reverses the first premise: on-sale items are all last-season, but not every last-season item need be on sale.\n- **(D)** directly contradicts the second premise (nothing in the window is last-season).",
+      "hints": [
+        "Write each statement as an arrow (on-sale → last-season; front-window → not last-season) and look for a chain.",
+        "A valid inference *must* follow; eliminate any choice that merely *could* be true or that reverses a premise."
+      ]
+    },
+    {
+      "id": "verbal-critical-reasoning-strengthen-weaken-0002",
+      "section": "verbal",
+      "topic": "critical-reasoning",
+      "subtopic": "strengthen-weaken",
+      "type": "critical-reasoning",
+      "difficulty": "medium",
+      "tags": [
+        "weaken",
+        "alternative-cause"
+      ],
+      "choices": {
+        "A": "Standing desks are considerably more expensive to purchase than traditional sitting desks.",
+        "B": "During the six months after the desks were installed, several long-serving employees who had chronic back pain retired and were replaced by younger new hires.",
+        "C": "A majority of SunFit's employees said they preferred the new standing desks to their old ones.",
+        "D": "At a nearby company that did not install standing desks, reported back pain was unchanged over the same six months.",
+        "E": "Back pain is among the most common reasons for missed workdays in office jobs."
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "SunFit installed standing desks throughout its office. Over the following six months, the\nnumber of employees reporting back pain fell by 30% compared with the previous six months. This\nshows that standing desks reduce back pain.\n\nWhich of the following, if true, most seriously **weakens** the argument?",
+      "explanation": "The argument claims the desks *caused* the drop in back pain. To weaken a causal claim, the\nstrongest move is to supply an **alternative explanation** for the same drop.\n\n**(B)** does exactly this: if employees who had chronic back pain left and were replaced by\nyounger workers, the reported back pain could have fallen simply because the *group of people*\nchanged — not because standing desks helped anyone. This directly undercuts the causal link.\n**Correct.**\n\nWhy the others fail:\n\n- **(A)** Cost is irrelevant to whether the desks *reduce back pain*.\n- **(C)** Preference for the desks doesn't bear on their effect on back pain (and if anything\n  faintly supports the argument).\n- **(D)** This *strengthens* the argument — a comparison group without the desks saw no change,\n  which is what you'd expect if the desks caused SunFit's improvement.\n- **(E)** Background about back pain's importance; it says nothing about the cause of the drop.",
+      "hints": [
+        "The conclusion is causal (\"the desks reduced pain\"). The best weakener usually offers a *different* cause for the same result.",
+        "Watch for answers that actually strengthen the argument, like a control group that saw no change."
+      ]
+    },
+    {
+      "id": "verbal-reading-comprehension-detail-inference-0006",
+      "section": "verbal",
+      "topic": "reading-comprehension",
+      "subtopic": "detail-inference",
+      "type": "reading-comprehension",
+      "difficulty": "medium",
+      "tags": [
+        "inference",
+        "detail"
+      ],
+      "choices": {
+        "A": "maintaining a steady directional heading as the sun moves across the sky",
+        "B": "sensing whether sunlight is present at all",
+        "C": "learning the migration route from an earlier generation",
+        "D": "completing the entire round-trip migration within one generation",
+        "E": "increasing the total distance the butterflies are able to travel"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "*Read the passage and answer the question that follows.*\n\n> Monarch butterflies migrate thousands of miles to the same overwintering sites, yet no\n> individual makes the round trip twice: the monarchs that return in spring are several\n> generations removed from those that departed. This rules out learning the route from\n> experience. Instead, monarchs rely on a \"time-compensated sun compass.\" Cells in their\n> antennae track the time of day and adjust the insect's reading of the sun's position\n> accordingly, so it can hold a constant southward bearing even as the sun moves across the\n> sky. When researchers coated the antennae to block light from reaching them, the butterflies\n> could still detect the sun but could no longer keep a steady heading.\n\nAccording to the passage, the monarchs' antennae are necessary for",
+      "explanation": "The last sentence is the key: with the antennae blocked, the butterflies **could still detect\nthe sun** but **could no longer hold a steady heading**. So the antennae's specific job is\ntime-compensation — adjusting for the sun's movement so a constant bearing can be maintained.\n\n**(A)** states exactly that. **Correct.**\n\nWhy the others fail:\n\n- **(B)** The passage explicitly says that with antennae blocked they could *still* sense the sun, so light-detection is not what the antennae provide.\n- **(C)** The passage rules out learning the route (the returning generation never made the trip before).\n- **(D)** The migration spans *several* generations, not one — and this isn't a function of the antennae.\n- **(E)** Total distance is never linked to the antennae.",
+      "hints": [
+        "Anchor on the experiment: what did the butterflies *lose*, and what could they *still* do, when the antennae were blocked?",
+        "The answer is the specific capability that disappeared — not the one that remained."
+      ]
+    },
+    {
+      "id": "verbal-reading-comprehension-main-idea-0005",
+      "section": "verbal",
+      "topic": "reading-comprehension",
+      "subtopic": "main-idea",
+      "type": "reading-comprehension",
+      "difficulty": "medium",
+      "tags": [
+        "primary-purpose",
+        "main-idea"
+      ],
+      "choices": {
+        "A": "explain a phenomenon that undermines a once-standard approach to a problem, and note the debate it has prompted",
+        "B": "argue that road pricing is the only acceptable solution to traffic congestion",
+        "C": "describe the engineering methods used to widen urban highways",
+        "D": "compare the severity of traffic congestion across several major cities",
+        "E": "trace the development of economic thought over the past two centuries"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "*Read the passage and answer the question that follows.*\n\n> For much of the twentieth century, planners treated traffic congestion as a simple engineering\n> problem: build more road capacity, and jams would ease. Yet cities that widened their highways\n> often found that congestion returned to its former levels within a few years. The now widely\n> accepted explanation is \"induced demand\": adding capacity lowers the effective cost of\n> driving, which encourages more trips, longer commutes, and development farther from the\n> center, until the new lanes fill up. Some planners therefore argue that pricing road use,\n> rather than expanding it, is the only durable way to manage congestion. Critics respond that\n> road pricing can fall hardest on lower-income drivers — a concern that has slowed its adoption\n> despite its theoretical appeal.\n\nThe primary purpose of the passage is to",
+      "explanation": "Track the passage's arc. It opens with an old, standard view (build more roads), shows why that\nview fails (congestion returns), introduces the concept that explains the failure (induced\ndemand), and closes with a resulting proposal (road pricing) *and* the objection to it. That is\nan explanation of a complicating phenomenon plus the debate it has set off.\n\n**(A)** captures both moves — undermining a standard approach and noting the ensuing debate.\n**Correct.**\n\nWhy the others fail:\n\n- **(B)** Too strong and one-sided. The passage reports the pricing argument *and* its critics; it does not endorse pricing as \"the only acceptable\" solution.\n- **(C)** Engineering methods are never described — widening is only mentioned to show it fails.\n- **(D)** No cross-city comparison of severity is made.\n- **(E)** Far too broad; the passage is about one specific idea, not two centuries of economic thought.",
+      "hints": [
+        "Ask what the passage *does* paragraph by paragraph, not just what it's about.",
+        "The correct primary-purpose answer must cover the whole passage — including the closing debate — without overstating the author's position."
+      ]
     }
   ],
   "lessons": [
+    {
+      "id": "data-insights-data-sufficiency-fundamentals",
+      "section": "data-insights",
+      "topic": "data-sufficiency",
+      "subtopic": "fundamentals",
+      "title": "Data Sufficiency: How the Answer Choices Work",
+      "tags": [
+        "data-sufficiency",
+        "method",
+        "ad-bce"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nData Sufficiency (part of Data Insights on the GMAT Focus Edition) doesn't ask you to *solve* —\nit asks whether you *could*. You're given a question and two statements, and you decide which\nstatements provide enough information to answer it. The five answer choices are always the same,\nso learn them cold.\n\n## The five answer choices\n\n- **A** — Statement (1) ALONE is sufficient, but statement (2) alone is not.\n- **B** — Statement (2) ALONE is sufficient, but statement (1) alone is not.\n- **C** — BOTH statements TOGETHER are sufficient, but NEITHER alone is.\n- **D** — EACH statement ALONE is sufficient.\n- **E** — The statements TOGETHER are still NOT sufficient.\n\n## Core concepts\n\n**\"Sufficient\" means a single, definite answer.** For a *value* question (\"what is \\(x\\)?\"), a\nstatement is sufficient only if it pins down exactly one value. For a *yes/no* question (\"is\n\\(n\\) even?\"), a statement is sufficient if it always gives the same answer — a definite \"yes\" and\na definite \"no\" are *both* sufficient. An \"it depends\" is insufficient.\n\n**Use the AD / BCE decision tree.** Test statement (1) first:\n\n- If (1) is sufficient, the answer is **A or D**. (Now test (2): sufficient → D, not → A.)\n- If (1) is not sufficient, the answer is **B, C, or E**. (Test (2): if sufficient → B; if not, test them together → C if enough, E if not.)\n\n**Evaluate each statement independently first.** Don't let information from statement (1) leak\ninto your judgment of statement (2). Only combine them in the final \"together\" step.\n\n## Worked example\n\n*Is the integer \\(n\\) even?* (1) \\(n^2\\) is even. (2) \\(3n\\) is even.\n\n- (1): odd² is odd, so \\(n^2\\) even forces \\(n\\) even → definite \"yes\" → **sufficient**.\n- (2): 3 is odd, so \\(3n\\) even forces \\(n\\) even → definite \"yes\" → **sufficient**.\n\nEach alone gives a definite answer → **D**.\n\n## Common traps\n\n- **The C-trap.** Combining the statements often *feels* safe, but if either works alone the\n  answer is A, B, or D — and picking C loses the point. Always test each alone first.\n- **Solving too far.** You don't need the actual value, only whether it's *determined*. Stop as\n  soon as you know a unique answer exists.\n- **Forgetting yes/no can be \"definitely no.\"** A statement that guarantees \"no\" is sufficient.\n\n## Key takeaways\n\n- Memorize the five choices and the AD/BCE tree.\n- \"Sufficient\" = yields one definite answer (value) or a consistent yes/no.\n- Judge each statement alone before combining; beware the reflex to choose C."
+    },
     {
       "id": "quant-algebra-linear-equations",
       "section": "quant",
@@ -128,6 +609,56 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nA **linear equation** relates unknowns raised only to the first power — no squares, roots, or\nproducts of variables. On the GMAT Focus Quant section, linear equations show up directly\n(\"solve for \\(x\\)\") and, more often, hidden inside word problems. The core skills are (1)\nisolating a variable and (2) solving a **system** of two equations in two unknowns.\n\n## Core concepts\n\n**Solving a single linear equation.** Do the same operation to both sides until the variable is\nalone:\n\n\\[3x + 7 = 22 \\implies 3x = 15 \\implies x = 5\\]\n\n**Systems of two equations.** When you have two unknowns, you need two independent equations.\n\nTwo standard methods:\n\n- **Substitution** — solve one equation for a variable, plug it into the other.\n- **Elimination** — add or subtract the equations to cancel one variable.\n\nElimination is usually faster when a variable already has matching (or easily matched)\ncoefficients.\n\n## Worked examples\n\n**Example 1 — elimination.**\n\n\\[\\begin{cases} x + y = 30 \\\\ x + 2y = 47 \\end{cases}\\]\n\nSubtract the first from the second: \\(y = 17\\). Then \\(x = 13\\). Done in one clean step because \\(x\\)\nhad the same coefficient in both.\n\n**Example 2 — substitution.**\n\n\\[\\begin{cases} y = 2x - 1 \\\\ 3x + y = 24 \\end{cases}\\]\n\nSubstitute the first into the second: \\(3x + (2x - 1) = 24 \\implies 5x = 25 \\implies x = 5\\), so\n\\(y = 9\\).\n\n## Common traps\n\n- **Answering for the wrong variable.** Word problems often solve most naturally for one unknown\n  but *ask* for the other. Circle what the question wants before you start.\n- **\"Not enough equations.\"** Two unknowns need two *independent* equations. Two equations that\n  are secretly the same equation (e.g. \\(2x + 2y = 60\\) and \\(x + y = 30\\)) give infinitely many\n  solutions, not a unique one — this idea is tested heavily in Data Sufficiency.\n- **Sign errors during elimination.** Subtracting an equation means subtracting *every* term,\n  including the right-hand side.\n\n## Key takeaways\n\n- One linear equation, one unknown: isolate the variable.\n- Two unknowns: get two independent equations, then eliminate or substitute.\n- In word problems, translate each fact into an equation, then re-read to see which unknown is\n  actually being asked for."
+    },
+    {
+      "id": "quant-arithmetic-percents-ratios",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "percents-ratios",
+      "title": "Percents & Ratios",
+      "tags": [
+        "percents",
+        "ratios",
+        "percent-change"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nPercents and ratios are the most frequently tested arithmetic ideas on GMAT Focus Quant, and\nthey hide inside word problems everywhere. Master three moves: converting between forms, handling\npercent *change*, and scaling ratios.\n\n## Core concepts\n\n**Percent as a factor.** A percent is just a number over 100. The fastest way to apply a percent\nchange is to turn it into a **multiplier**:\n\n- Increase by \\(r\\%\\): multiply by \\(1 + \\tfrac{r}{100}\\). (+25% → \\(\\times 1.25\\))\n- Decrease by \\(r\\%\\): multiply by \\(1 - \\tfrac{r}{100}\\). (−20% → \\(\\times 0.80\\))\n\n**Successive changes multiply.** Two changes in a row are multiplied, never added:\n\n\\[(+25\\%)\\text{ then }(-20\\%): \\quad 1.25 \\times 0.80 = 1.00 \\quad (\\text{no net change})\\]\n\n**Percent change formula.**\n\n\\[\\text{percent change} = \\frac{\\text{new} - \\text{old}}{\\text{old}} \\times 100\\%\\]\n\nAlways divide by the **original** value, not the new one.\n\n**Ratios scale together.** A ratio \\(a : b\\) means the quantities are \\(ak\\) and \\(bk\\) for some\nmultiplier \\(k\\). If boys : girls \\(= 3 : 5\\) and there are 24 boys, then \\(k = 8\\), so there are\n\\(5 \\times 8 = 40\\) girls.\n\n## Worked examples\n\n**Percent change.** A stock rises from $80 to $100. Percent increase \\(= \\tfrac{100 - 80}{80} = \\tfrac{20}{80} = 25\\%\\).\nNote it later falls from $100 back to $80: that's \\(\\tfrac{-20}{100} = -20\\%\\) — a *smaller* percent, because the base is now larger.\n\n**Ratio scaling.** A recipe uses flour : sugar \\(= 7 : 2\\). To use 21 cups of flour, \\(k = 3\\), so\nyou need \\(2 \\times 3 = 6\\) cups of sugar.\n\n## Common traps\n\n- **Adding successive percents.** +25% then −20% is *not* +5%; it's \\(1.25 \\times 0.80 = 1.00\\).\n- **Wrong base.** Percent change always divides by the original amount. A rise then an equal-percent fall does not return to the start.\n- **Ratio ≠ actual count.** \\(3 : 5\\) does not mean 3 and 5 — it means \\(3k\\) and \\(5k\\). Find \\(k\\) first.\n\n## Key takeaways\n\n- Convert percent changes to multipliers and multiply them for successive changes.\n- Percent change = (new − old) / old.\n- A ratio \\(a : b\\) represents \\(ak\\) and \\(bk\\); solve for the multiplier \\(k\\), then scale."
+    },
+    {
+      "id": "quant-word-problems-rates-speed-distance",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "rates-speed-distance",
+      "title": "Rates: Speed, Distance & Time",
+      "tags": [
+        "rates",
+        "speed",
+        "distance",
+        "average-speed"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nNearly every rate problem rests on one relationship. Learn it, learn to organize the numbers,\nand learn the one trap that catches most test-takers: average speed.\n\n## Core concepts\n\n**The master equation.**\n\n\\[\\text{distance} = \\text{rate} \\times \\text{time}\\]\n\nRearranged as needed: \\(\\text{time} = \\dfrac{\\text{distance}}{\\text{rate}}\\) and\n\\(\\text{rate} = \\dfrac{\\text{distance}}{\\text{time}}\\).\n\n**Organize with a table.** For multi-part trips, make a row for each leg with columns\nDistance / Rate / Time. Fill in what you know, use \\(d = rt\\) to get the rest.\n\n**Average speed is total-over-total.**\n\n\\[\\text{average speed} = \\frac{\\text{total distance}}{\\text{total time}}\\]\n\nThis is almost never the simple average of the speeds, because time spent at each speed differs.\n\n## Worked examples\n\n**Basic.** A train travels 300 miles at 50 mph. Time \\(= \\tfrac{300}{50} = 6\\) hours.\n\n**Round trip (the classic trap).** You drive 120 miles at 60 mph, then return the same 120 miles\nat 40 mph. Times are \\(2\\) hours and \\(3\\) hours; total distance \\(240\\) miles, total time \\(5\\)\nhours:\n\n\\[\\text{average speed} = \\frac{240}{5} = 48 \\text{ mph}\\]\n\nNot 50. You spend more time at the slower speed, so the average is pulled below the midpoint.\n\n## Common traps\n\n- **Averaging the speeds.** For equal distances at two speeds, the average speed is the *harmonic*\n  mean, always **less** than the arithmetic mean. Compute total distance ÷ total time instead.\n- **Mismatched units.** Convert minutes to hours (or vice versa) before dividing; mixing them is a silent error.\n- **Combined/closing speed.** Two objects moving toward each other close the gap at the *sum* of\n  their speeds; moving apart, the same; one chasing the other, the *difference*.\n\n## Key takeaways\n\n- Everything comes from \\(d = rt\\); rearrange it for what you need.\n- Use a Distance/Rate/Time table for multi-leg trips.\n- Average speed = total distance / total time — never just the average of the speeds."
+    },
+    {
+      "id": "verbal-critical-reasoning-strengthen-weaken",
+      "section": "verbal",
+      "topic": "critical-reasoning",
+      "subtopic": "strengthen-weaken",
+      "title": "Critical Reasoning: Strengthen & Weaken",
+      "tags": [
+        "strengthen",
+        "weaken",
+        "assumptions",
+        "causation"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nStrengthen and Weaken questions are the most common Critical Reasoning type. Both turn on the\nsame skill: finding the argument's **assumption** — the unstated gap between its evidence and its\nconclusion — and then either protecting that gap (strengthen) or exposing it (weaken).\n\n## Core concepts\n\n**Map the argument first.** Separate the **conclusion** (the claim being pushed) from the\n**premises** (the support). Then ask: *what has to be true for the premises to lead to this\nconclusion?* That's the assumption.\n\n- **Weaken** = attack the assumption. The correct answer makes the conclusion *less likely* given the same evidence.\n- **Strengthen** = defend the assumption. The correct answer makes the conclusion *more likely*.\n\n**Causal arguments are the favorite target.** When an argument concludes \"X caused Y\" from the\nfact that X and Y occurred together, the assumption is \"nothing else explains Y.\" You can:\n\n- **Weaken** by offering an *alternative cause* for Y, or showing Y happened without X.\n- **Strengthen** by *ruling out* alternative causes, or showing that removing X removes Y.\n\n## Worked examples\n\n**Weaken.** *A store added self-checkout lanes; the next month, checkout complaints dropped.\nTherefore self-checkout reduced complaints.* This assumes nothing else changed. An answer noting\nthat the store also **doubled its staff that month** offers an alternative cause and weakens it.\n\n**Strengthen.** For the same argument, an answer stating that **staffing and product prices were\nunchanged that month** rules out alternatives and strengthens the causal claim.\n\n## Common traps\n\n- **Out-of-scope answers.** Choices about a related-but-irrelevant issue (cost, popularity,\n  fairness) feel weighty but don't touch the conclusion. Stay ruthlessly on the exact conclusion.\n- **Wrong direction.** Under time pressure it's easy to pick a strengthener on a weaken question.\n  Re-read the stem before committing.\n- **\"Too strong\" strengtheners.** You don't need an answer that *proves* the conclusion — just one\n  that makes it more likely. Beware distractors that overreach or introduce new assumptions.\n\n## Key takeaways\n\n- Find the conclusion, the premises, and the assumption bridging them.\n- Weaken = break the assumption (often via an alternative cause); Strengthen = protect it (often by ruling alternatives out).\n- Discard out-of-scope answers and always confirm which direction the stem asks for."
     }
   ]
 }

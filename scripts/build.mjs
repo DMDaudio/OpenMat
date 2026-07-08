@@ -195,7 +195,6 @@ async function main() {
   }
 
   const out = {
-    generatedAt: new Date().toISOString(),
     sections,
     stats,
     counts: { questions: questions.length, lessons: lessons.length },

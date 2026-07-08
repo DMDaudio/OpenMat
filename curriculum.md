@@ -48,7 +48,7 @@ now lives here (not in Quant).
 
 | `topic` | `type` | `subtopic` slugs |
 |---------|--------|------------------|
-| `data-sufficiency` | `data-sufficiency` | `divisibility`, `number-properties`, `algebra`, `statistics`, `word-problems`, `overlapping-sets` |
+| `data-sufficiency` | `data-sufficiency` | `fundamentals`, `divisibility`, `number-properties`, `algebra`, `statistics`, `word-problems`, `overlapping-sets` |
 | `table-analysis` | `table-analysis` | `sorting-filtering`, `ratios-thresholds` |
 | `graphics-interpretation` | `graphics-interpretation` | `charts-scatterplots`, `trends` |
 | `two-part-analysis` | `two-part-analysis` | `tradeoffs`, `simultaneous-conditions` |
@@ -67,14 +67,16 @@ The taxonomy is ordered so you can study a section top to bottom. A balanced pla
 
 ## Coverage status
 
-This is the ground floor. Track which topics have lessons and enough questions here as the bank
-grows (a contributor could automate this from the front-matter):
+Early days — the bank is growing. Rough coverage so far (a contributor could automate this
+count from the front-matter):
 
-- [ ] Quant — seed example in `algebra/linear-equations`
-- [ ] Verbal — seed example in `critical-reasoning/assumptions`
-- [ ] Data Insights — seed example in `data-sufficiency/divisibility`
+- **Quant** — arithmetic, number properties, algebra (linear, inequalities), word problems (rates, work, sets), counting & probability.
+- **Verbal** — Critical Reasoning (assumptions, strengthen/weaken, inference, flaw) and Reading Comprehension (main idea, detail/inference).
+- **Data Insights** — Data Sufficiency across fundamentals, divisibility, number properties, algebra, statistics, word problems, and overlapping sets.
 
-See [`content/`](content/) for what exists so far, and [CONTRIBUTING.md](CONTRIBUTING.md) to add more.
+Still thin everywhere, and the multi-part Data Insights formats (Table Analysis, Graphics
+Interpretation, Two-Part Analysis, Multi-Source Reasoning) need a study-site UI before content
+is added. See [`content/`](content/) for what exists, and [CONTRIBUTING.md](CONTRIBUTING.md) to add more.
 
 ---
 
