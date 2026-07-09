@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 16,
-      "lessons": 5
+      "questions": 22,
+      "lessons": 8
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 32,
-    "lessons": 8
+    "questions": 38,
+    "lessons": 11
   },
   "questions": [
     {
@@ -416,6 +416,182 @@
       "hints": [
         "Don't list divisors — factor the number into primes first.",
         "If \\(N = p^a q^b\\), the divisor count is \\((a+1)(b+1)\\). Remember the \"+1\" accounts for using the prime zero times."
+      ]
+    },
+    {
+      "id": "quant-number-properties-factors-multiples-0017",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "factors-multiples",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "lcm",
+        "cycles",
+        "multiples"
+      ],
+      "choices": {
+        "A": "6",
+        "B": "36",
+        "C": "54",
+        "D": "72",
+        "E": "216"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A red beacon flashes every 12 seconds and a green beacon flashes every 18 seconds. If both beacons\nflash at the same instant right now, how many seconds from now will they next flash at the same\ninstant?",
+      "explanation": "\"Flash together again\" means the first time that is a multiple of **both** 12 and 18 — the **least\ncommon multiple**.\n\nFactor each interval into primes:\n\n\\[12 = 2^2 \\cdot 3, \\qquad 18 = 2 \\cdot 3^2\\]\n\nThe LCM takes each prime at its **highest** power:\n\n\\[\\operatorname{lcm}(12, 18) = 2^2 \\cdot 3^2 = 36\\]\n\nSo the beacons next coincide after **36** seconds.\n\nWatch the two classic traps: \\(6\\) is the *greatest common divisor* (lower powers), not the LCM,\nand \\(12 \\times 18 = 216\\) is *a* common multiple but not the *least* one.",
+      "hints": [
+        "\"Line up again\" points to a common multiple — and you want the *least* one.",
+        "Factor both numbers into primes; the LCM uses the higher power of each prime, the GCD the lower."
+      ]
+    },
+    {
+      "id": "quant-number-properties-factors-multiples-0018",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "factors-multiples",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "prime-factorization",
+        "perfect-square"
+      ],
+      "choices": {
+        "A": "2",
+        "B": "5",
+        "C": "10",
+        "D": "15",
+        "E": "90"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the smallest positive integer \\(n\\) such that \\(90n\\) is the square of an integer?",
+      "explanation": "A perfect square has **only even exponents** in its prime factorization. Factor 90:\n\n\\[90 = 2 \\cdot 3^2 \\cdot 5\\]\n\nThe exponent of 3 is already even (2), but the exponents of 2 and 5 are each **odd** (1). To make\nevery exponent even, \\(n\\) must supply one more 2 and one more 5:\n\n\\[n = 2 \\cdot 5 = 10\\]\n\nCheck: \\(90 \\cdot 10 = 900 = 2^2 \\cdot 3^2 \\cdot 5^2 = 30^2\\). ✓\n\nSmaller candidates fail because they fix only one offending prime: \\(n = 2\\) leaves the 5 odd, and\n\\(n = 5\\) leaves the 2 odd. The answer is **10**.",
+      "hints": [
+        "Factor 90 into primes and look at which exponents are odd.",
+        "A perfect square needs every prime exponent to be even — multiply in exactly the primes required"
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0019",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "parity",
+        "must-be-true"
+      ],
+      "choices": {
+        "A": "\\(x + y\\) is odd",
+        "B": "\\(x + y\\) is even",
+        "C": "\\(x\\) is even",
+        "D": "\\(x - y\\) is odd",
+        "E": "\\(x^2 + y^2\\) is odd"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(x\\) and \\(y\\) are integers and the product \\(xy\\) is odd, which of the following must be true?",
+      "explanation": "A product is odd **only when every factor is odd**. So \\(xy\\) odd forces **both** \\(x\\) and \\(y\\) to\nbe odd. Now test each choice with \"odd, odd\":\n\n- **A.** odd \\(+\\) odd \\(=\\) even, so \\(x + y\\) is *not* odd. Eliminate.\n- **B.** odd \\(+\\) odd \\(=\\) **even**. This must be true. ✓\n- **C.** \\(x\\) is odd, not even. Eliminate.\n- **D.** odd \\(-\\) odd \\(=\\) even, so \\(x - y\\) is not odd. Eliminate.\n- **E.** \\(x^2\\) and \\(y^2\\) are both odd, and odd \\(+\\) odd \\(=\\) even, so \\(x^2 + y^2\\) is even, not\n  odd. Eliminate.\n\nOnly **B** holds. The answer is **\\(x + y\\) is even**.",
+      "hints": [
+        "What does an *odd product* tell you about each of the two factors?",
+        "Once you know the parity of \\(x\\) and \\(y\\), just apply odd/even sum rules to each choice."
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0020",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "signs",
+        "must-be-true"
+      ],
+      "choices": {
+        "A": "\\(x < 0\\)",
+        "B": "\\(y > 0\\)",
+        "C": "\\(z < 0\\)",
+        "D": "\\(xz > 0\\)",
+        "E": "\\(yz > 0\\)"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(x\\), \\(y\\), and \\(z\\) are nonzero numbers with \\(xyz < 0\\) and \\(xy > 0\\), which of the\nfollowing must be true?",
+      "explanation": "Work with the sign of each product.\n\nSince \\(xy > 0\\), \\(x\\) and \\(y\\) have the **same sign**, so their product is positive. Then\n\n\\[xyz = (xy) \\cdot z < 0 \\quad\\text{with}\\quad xy > 0 \\;\\Rightarrow\\; z < 0.\\]\n\nSo \\(z\\) must be negative — choice **C**.\n\nThe other choices aren't forced: \\(x\\) and \\(y\\) could **both** be positive or **both** be negative\n(either keeps \\(xy > 0\\)), so A and B fail. And because \\(x\\)'s sign is unknown while \\(z < 0\\), the\nproduct \\(xz\\) could be positive or negative, so D fails; the same reasoning kills E. The answer is\n**\\(z < 0\\)**.",
+      "hints": [
+        "Treat \\(xy\\) as a single quantity — its sign is given directly.",
+        "A product is negative when it has an odd number of negative factors; use that to pin down \\(z\\)."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0021",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "remainders",
+        "scaling"
+      ],
+      "choices": {
+        "A": "1",
+        "B": "2",
+        "C": "4",
+        "D": "5",
+        "E": "6"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When the positive integer \\(n\\) is divided by 7, the remainder is 4. What is the remainder when\n\\(3n\\) is divided by 7?",
+      "explanation": "To find the remainder of a product, you can reduce each part to its remainder first. Here \\(n\\)\nleaves remainder 4, so \\(3n\\) leaves the same remainder as \\(3 \\times 4 = 12\\).\n\nBut a remainder must be **less than the divisor**, and \\(12 > 7\\), so reduce once more:\n\n\\[12 = 7 \\cdot 1 + 5 \\quad\\Rightarrow\\quad 12 \\equiv 5 \\pmod 7.\\]\n\nSo the remainder is **5**.\n\nConfirm with a concrete value: the smallest such \\(n\\) is 4, and \\(3 \\cdot 4 = 12\\), which divided by\n7 leaves remainder 5. (Any valid \\(n\\), like 11 or 18, gives the same result.) A common slip is to\nanswer 4 — the *original* remainder — but multiplying by 3 changes it.",
+      "hints": [
+        "You don't need to know \\(n\\); reduce \\(3 \\times (\\text{remainder})\\) modulo 7.",
+        "If your intermediate result is 7 or more, subtract 7 until it drops below 7."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0022",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "remainders",
+        "simultaneous-conditions",
+        "lcm"
+      ],
+      "choices": {
+        "A": "13",
+        "B": "18",
+        "C": "23",
+        "D": "28",
+        "E": "38"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A positive integer \\(n\\) leaves a remainder of 3 when divided by 5 and a remainder of 2 when divided\nby 3. What is the least value of \\(n\\) that is greater than 10?",
+      "explanation": "List the numbers satisfying each condition and find where they first overlap.\n\nRemainder 3 mod 5: \\(3, 8, 13, 18, 23, 28, \\dots\\)\nRemainder 2 mod 3: \\(2, 5, 8, 11, 14, 17, 20, 23, \\dots\\)\n\nThe values common to both are \\(8, 23, 38, \\dots\\) (they repeat every\n\\(\\operatorname{lcm}(5, 3) = 15\\)). The first one **greater than 10** is **23**.\n\nCheck 23: \\(23 = 5 \\cdot 4 + 3\\) (remainder 3 ✓) and \\(23 = 3 \\cdot 7 + 2\\) (remainder 2 ✓).\n\nThe distractors satisfy only one condition: 13 and 18 both leave remainder 3 mod 5 but fail the\nmod-3 test (\\(13 \\equiv 1\\), \\(18 \\equiv 0\\)), and 28 leaves remainder 3 mod 5 but \\(28 \\equiv 1\n\\pmod 3\\). (38 satisfies both but isn't the *least* one over 10.) The answer is **23**.",
+      "hints": [
+        "Write out the first several numbers that fit each condition separately.",
+        "The values satisfying both repeat every LCM of the two divisors — find the first overlap above 10."
       ]
     },
     {
@@ -983,6 +1159,61 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nPercents and ratios are the most frequently tested arithmetic ideas on GMAT Focus Quant, and\nthey hide inside word problems everywhere. Master three moves: converting between forms, handling\npercent *change*, and scaling ratios.\n\n## Core concepts\n\n**Percent as a factor.** A percent is just a number over 100. The fastest way to apply a percent\nchange is to turn it into a **multiplier**:\n\n- Increase by \\(r\\%\\): multiply by \\(1 + \\tfrac{r}{100}\\). (+25% → \\(\\times 1.25\\))\n- Decrease by \\(r\\%\\): multiply by \\(1 - \\tfrac{r}{100}\\). (−20% → \\(\\times 0.80\\))\n\n**Successive changes multiply.** Two changes in a row are multiplied, never added:\n\n\\[(+25\\%)\\text{ then }(-20\\%): \\quad 1.25 \\times 0.80 = 1.00 \\quad (\\text{no net change})\\]\n\n**Percent change formula.**\n\n\\[\\text{percent change} = \\frac{\\text{new} - \\text{old}}{\\text{old}} \\times 100\\%\\]\n\nAlways divide by the **original** value, not the new one.\n\n**Ratios scale together.** A ratio \\(a : b\\) means the quantities are \\(ak\\) and \\(bk\\) for some\nmultiplier \\(k\\). If boys : girls \\(= 3 : 5\\) and there are 24 boys, then \\(k = 8\\), so there are\n\\(5 \\times 8 = 40\\) girls.\n\n## Worked examples\n\n**Percent change.** A stock rises from $80 to $100. Percent increase \\(= \\tfrac{100 - 80}{80} = \\tfrac{20}{80} = 25\\%\\).\nNote it later falls from $100 back to $80: that's \\(\\tfrac{-20}{100} = -20\\%\\) — a *smaller* percent, because the base is now larger.\n\n**Ratio scaling.** A recipe uses flour : sugar \\(= 7 : 2\\). To use 21 cups of flour, \\(k = 3\\), so\nyou need \\(2 \\times 3 = 6\\) cups of sugar.\n\n## Common traps\n\n- **Adding successive percents.** +25% then −20% is *not* +5%; it's \\(1.25 \\times 0.80 = 1.00\\).\n- **Wrong base.** Percent change always divides by the original amount. A rise then an equal-percent fall does not return to the start.\n- **Ratio ≠ actual count.** \\(3 : 5\\) does not mean 3 and 5 — it means \\(3k\\) and \\(5k\\). Find \\(k\\) first.\n\n## Key takeaways\n\n- Convert percent changes to multipliers and multiply them for successive changes.\n- Percent change = (new − old) / old.\n- A ratio \\(a : b\\) represents \\(ak\\) and \\(bk\\); solve for the multiplier \\(k\\), then scale."
+    },
+    {
+      "id": "quant-number-properties-factors-multiples",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "factors-multiples",
+      "title": "Factors, Multiples, Primes & Divisibility",
+      "tags": [
+        "factors",
+        "multiples",
+        "primes",
+        "gcd",
+        "lcm",
+        "divisibility"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nAlmost every Number Properties question rests on one skill: **breaking an integer into its\nprime factors**. Once you have the prime factorization, divisor counts, greatest common divisors,\nleast common multiples, and divisibility all follow mechanically. Get comfortable factoring fast\nand this whole topic gets easier.\n\n## Core concepts\n\n**Prime factorization.** Every integer greater than 1 is a unique product of primes. Split the\nnumber into any two factors and keep splitting until everything is prime.\n\n\\[360 = 36 \\times 10 = (2^2 \\cdot 3^2)(2 \\cdot 5) = 2^3 \\cdot 3^2 \\cdot 5\\]\n\n**Counting divisors.** If \\(N = p^a \\cdot q^b \\cdot r^c \\dots\\), the number of positive divisors is\n\n\\[(a+1)(b+1)(c+1)\\dots\\]\n\nThe \"+1\" is there because each divisor can use prime \\(p\\) to a power from \\(0\\) up to \\(a\\).\nFor \\(360 = 2^3 \\cdot 3^2 \\cdot 5^1\\): \\((3+1)(2+1)(1+1) = 24\\) divisors.\n\n**GCD (greatest common divisor).** Take each prime the two numbers **share**, using the **lower**\nexponent. **LCM (least common multiple).** Take **every** prime that appears in either number,\nusing the **higher** exponent.\n\n\\[12 = 2^2 \\cdot 3, \\quad 18 = 2 \\cdot 3^2 \\;\\Rightarrow\\; \\gcd = 2^1 \\cdot 3^1 = 6, \\quad \\operatorname{lcm} = 2^2 \\cdot 3^2 = 36\\]\n\nA useful identity for any two positive integers: \\(\\gcd(a,b) \\times \\operatorname{lcm}(a,b) = a \\times b\\).\n\n**Perfect squares** have only **even** exponents in their prime factorization (e.g.\n\\(900 = 2^2 \\cdot 3^2 \\cdot 5^2\\)). To turn a number into a perfect square, supply whatever primes\nare needed to make every exponent even.\n\n**Quick divisibility rules.** Divisible by 3 if the digit sum is divisible by 3; by 9 if the digit\nsum is divisible by 9; by 4 if the last two digits form a multiple of 4; by 6 if it passes the 2\n**and** 3 tests.\n\n## Worked examples\n\n**LCM in disguise.** Two signals flash every 12 and 18 seconds and just flashed together. When do\nthey next coincide? That is \\(\\operatorname{lcm}(12,18) = 36\\) seconds — *not* their product.\n\n**Smallest multiplier for a perfect square.** What is the smallest \\(n\\) making \\(90n\\) a perfect\nsquare? \\(90 = 2 \\cdot 3^2 \\cdot 5\\). The 2 and the 5 have odd exponents, so \\(n = 2 \\cdot 5 = 10\\)\nand \\(90 \\cdot 10 = 900 = 30^2\\).\n\n## Common traps\n\n- **Confusing GCD with LCM.** GCD is the *small* shared part (lower exponents); LCM is the *big*\n  covering number (higher exponents). \"How often do things line up again?\" is almost always LCM.\n- **Multiplying instead of taking the LCM.** \\(12 \\times 18 = 216\\) is a common multiple, but not\n  the *least* one.\n- **Forgetting 1 and the number itself** when counting divisors — the \\((a+1)(b+1)\\) formula\n  already includes them.\n\n## Key takeaways\n\n- Factor into primes first; divisor count, GCD, and LCM all read straight off the exponents.\n- Divisor count \\(= (a+1)(b+1)\\dots\\); GCD uses shared primes at the lower power; LCM uses all\n  primes at the higher power.\n- \\(\\gcd \\times \\operatorname{lcm} = a \\times b\\), and perfect squares have all-even exponents."
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "title": "Odds, Evens & Sign Rules",
+      "tags": [
+        "parity",
+        "odd",
+        "even",
+        "signs",
+        "positive",
+        "negative"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nMany \"which of the following **must** be true?\" questions never require you to find a value — only\nto track **parity** (odd/even) and **sign** (positive/negative). Memorize a handful of rules and\nthese become fast, reliable points.\n\n## Core concepts\n\n**Parity of sums.** odd \\(+\\) odd \\(=\\) even; even \\(+\\) even \\(=\\) even; odd \\(+\\) even \\(=\\) odd.\nA sum is **odd exactly when an odd number of its terms are odd.**\n\n**Parity of products.** A product is **odd only if every factor is odd.** If even one factor is\neven, the product is even. So \\(xy\\) odd \\(\\Rightarrow\\) both \\(x\\) and \\(y\\) are odd.\n\n**Consecutive integers.** Among any two consecutive integers, exactly one is even, so their product\nis always even. Among any three consecutive integers, the product is divisible by \\(3! = 6\\).\n\n**Sign rules for products.** A product is **negative when it has an odd number of negative\nfactors**, and **positive when it has an even number** (zero counts as even). So \\(xyz < 0\\) means\none or three of the factors are negative.\n\n**A \"must be true\" strategy.** When a question asks what *must* be true, try to build a\ncounterexample. If you can find even one case where a choice fails, eliminate it. What survives\nevery test is the answer.\n\n## Worked examples\n\n**Product forces parity.** If \\(xy\\) is odd, both \\(x\\) and \\(y\\) are odd, so \\(x + y\\) is even and\n\\(x^2 + y^2 = \\text{odd} + \\text{odd}\\) is even. Any choice claiming \\(x+y\\) is odd is out.\n\n**Chaining signs.** If \\(xyz < 0\\) and \\(xy > 0\\): \\(xy > 0\\) means \\(x\\) and \\(y\\) share a sign, so\ntheir product is positive; for the triple product to be negative, \\(z\\) must be **negative**. Note\nyou still can't pin down the signs of \\(x\\) and \\(y\\) individually.\n\n## Common traps\n\n- **Assuming \"integer\" means positive.** Integers include 0 and negatives. Test a negative and 0\n  against every \"must be true\" choice.\n- **Forgetting 0.** Zero is even, is neither positive nor negative, and makes any product it\n  touches equal 0.\n- **Reading \"could be true\" as \"must be true.\"** One counterexample kills a *must*-be-true choice,\n  even if it's true most of the time.\n\n## Key takeaways\n\n- Product is odd only if **all** factors are odd; a sum is odd only with an **odd count** of odd terms.\n- Product sign flips with each negative factor: odd number of negatives → negative.\n- For \"must be true,\" hunt for a counterexample — and always test negatives and 0."
+    },
+    {
+      "id": "quant-number-properties-remainders",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "title": "Remainders & Modular Thinking",
+      "tags": [
+        "remainders",
+        "modular",
+        "divisibility",
+        "cycles"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nA remainder question is really a statement about form. \"\\(n\\) leaves remainder 4 when divided by 7\"\njust means \\(n = 7k + 4\\) for some integer \\(k\\). Write that form down and most remainder problems\nturn into ordinary algebra or a short list.\n\n## Core concepts\n\n**The division form.** \"\\(n\\) divided by \\(d\\) leaves remainder \\(r\\)\" means\n\n\\[n = dq + r, \\qquad 0 \\le r < d\\]\n\nThe remainder is always **less than the divisor** — a remainder of 7 (mod 7) is impossible; it is 0.\n\n**Remainders add and multiply.** To find the remainder of a sum or product, you may reduce each\npiece to its remainder first. If \\(n\\) leaves remainder 4 mod 7, then \\(3n\\) leaves the remainder of\n\\(3 \\times 4 = 12\\), which is \\(12 - 7 = 5\\).\n\n**Testing the smallest case.** When only the remainder is given, plug in the smallest value that\nfits (here \\(n = 4\\)) — the remainder of any sum/product won't depend on which valid \\(n\\) you pick.\n\n**Two conditions at once.** \"\\(n\\) leaves remainder 3 mod 5 **and** remainder 2 mod 3\": list each,\n\n\\[n \\equiv 3 \\pmod 5: \\; 3, 8, 13, 18, 23, \\dots \\qquad n \\equiv 2 \\pmod 3: \\; 2, 5, 8, 11, 14, 17, 20, 23, \\dots\\]\n\nThe first common value is 8, and solutions then repeat every \\(\\operatorname{lcm}(5,3) = 15\\):\n\\(8, 23, 38, \\dots\\)\n\n## Worked examples\n\n**Scaling a remainder.** \\(n\\) leaves remainder 4 mod 7. Remainder of \\(3n\\) mod 7? Reduce:\n\\(3 \\cdot 4 = 12 \\equiv 5\\). So the remainder is **5**.\n\n**Combining two moduli.** Smallest \\(n > 10\\) with remainder 3 mod 5 and remainder 2 mod 3? From the\nlists above the pattern is \\(8, 23, 38, \\dots\\); the first one over 10 is **23**.\n\n## Common traps\n\n- **Remainder \\(\\ge\\) divisor.** The remainder must be strictly smaller than what you divide by.\n  Always reduce (e.g. \\(12 \\bmod 7 = 5\\)).\n- **Forgetting the small cases.** \\(n\\) could be the remainder itself (e.g. \\(n = 4\\)) — don't\n  assume \\(n\\) is large.\n- **Checking only one condition.** With two divisors, verify a candidate against **both** before\n  choosing it.\n\n## Key takeaways\n\n- Rewrite \"remainder \\(r\\) mod \\(d\\)\" as \\(n = dq + r\\) with \\(0 \\le r < d\\).\n- Reduce sums and products to their remainders, then reduce again if the result exceeds the divisor.\n- Two simultaneous conditions repeat every LCM of the divisors — list a few terms and find the overlap."
     },
     {
       "id": "quant-statistics-descriptive",
