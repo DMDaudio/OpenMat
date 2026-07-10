@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 16,
-      "lessons": 5
+      "questions": 20,
+      "lessons": 6
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 32,
-    "lessons": 8
+    "questions": 36,
+    "lessons": 9
   },
   "questions": [
     {
@@ -416,6 +416,126 @@
       "hints": [
         "Don't list divisors — factor the number into primes first.",
         "If \\(N = p^a q^b\\), the divisor count is \\((a+1)(b+1)\\). Remember the \"+1\" accounts for using the prime zero times."
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0019",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "parity",
+        "odd-even",
+        "must-be"
+      ],
+      "choices": {
+        "A": "xy",
+        "B": "x + 2y",
+        "C": "x - y",
+        "D": "x^2 + y^2",
+        "E": "2x + y"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(x\\) and \\(y\\) are integers and \\(x + y\\) is odd, which of the following must be even?",
+      "explanation": "A sum of two integers is odd exactly when **one is even and the other is odd**. So among \\(x\\) and\n\\(y\\), one is even and one is odd — you don't know which, but you know the parities differ.\n\nTest each option with that fact (and remember: even × anything = even; adding an even number\nnever changes parity):\n\n- **(A) \\(xy\\)** — one factor is even, so the product is **even**. This must be even. ✓\n- (B) \\(x + 2y\\) — \\(2y\\) is even, so this has the same parity as \\(x\\), which could be odd or even.\n  Not determined.\n- (C) \\(x - y\\) — a difference of one even and one odd is **odd**. Never even.\n- (D) \\(x^2 + y^2\\) — squaring preserves parity, so this is (even) + (odd) = **odd**. Never even.\n- (E) \\(2x + y\\) — \\(2x\\) is even, so this has the same parity as \\(y\\), which could be odd or even.\n  Not determined.\n\nOnly (A) is guaranteed to be even, so the answer is **A**.\n\nThe key trap is (C) and (D): both are guaranteed to have a *fixed* parity, but that parity is\n**odd**, not even — the opposite of what the question asks.",
+      "hints": [
+        "\"\\(x + y\\) is odd\" forces one of \\(x, y\\) to be even and the other odd.",
+        "A product with at least one even factor is always even; adding an even number never flips parity."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0017",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "remainders",
+        "modular-arithmetic"
+      ],
+      "choices": {
+        "A": "0",
+        "B": "1",
+        "C": "3",
+        "D": "5",
+        "E": "6"
+      },
+      "answer": "E",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When the positive integer \\(n\\) is divided by 7, the remainder is 4. What is the remainder when\n\\(2n + 5\\) is divided by 7?",
+      "explanation": "You do not need to know \\(n\\) — only its remainder. Write \\(n\\) in the standard division form:\n\n\\[n = 7k + 4\\]\n\nfor some non-negative integer \\(k\\). Substitute into \\(2n + 5\\):\n\n\\[2n + 5 = 2(7k + 4) + 5 = 14k + 8 + 5 = 14k + 13.\\]\n\nNow peel off the multiples of 7: \\(14k\\) is divisible by 7, and \\(13 = 7 + 6\\), so\n\n\\[14k + 13 = 7(2k + 1) + 6.\\]\n\nThe remainder is **6**.\n\nFaster still: replace \\(n\\) by its remainder from the start. \\(2(4) + 5 = 13\\), and\n\\(13 \\bmod 7 = 6\\). Reducing to the remainder before *and* after the arithmetic gives the same\nanswer with smaller numbers.\n\nThe trap answer is choosing 13 (or reducing incorrectly) — remember the remainder must be less\nthan the divisor 7, so you have to take one more step to get 6.",
+      "hints": [
+        "Write \\(n = 7k + 4\\) and substitute; the value of \\(k\\) will drop out.",
+        "Once you reach \\(14k + 13\\), the remainder is whatever is left after removing all multiples of 7."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0018",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "remainders",
+        "simultaneous-conditions",
+        "divisibility"
+      ],
+      "choices": {
+        "A": "2",
+        "B": "3",
+        "C": "5",
+        "D": "8",
+        "E": "11"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A positive integer \\(n\\) leaves a remainder of 3 when divided by 5 and a remainder of 2 when\ndivided by 3. What is the remainder when \\(n\\) is divided by 15?",
+      "explanation": "Two conditions on divisors 5 and 3 — and since 5 and 3 share no common factor, together they pin\n\\(n\\) down to a single remainder modulo \\(5 \\times 3 = 15\\).\n\nStart with the condition that has the larger divisor (fewer cases to scan). Numbers that leave\nremainder 3 when divided by 5 are:\n\n\\[3,\\ 8,\\ 13,\\ 18,\\ 23,\\ \\dots\\]\n\nNow test each against the second condition, \"remainder 2 when divided by 3\":\n\n- \\(3 \\div 3\\) leaves remainder 0 — no.\n- \\(8 \\div 3\\) leaves remainder 2 — **yes**.\n\nSo the smallest such \\(n\\) is 8, and every valid \\(n\\) is 8 more than a multiple of 15\n(\\(8, 23, 38, \\dots\\)). Therefore \\(n\\) leaves a remainder of **8** when divided by 15.\n\nCommon traps: adding the two remainders to get \\(3 + 2 = 5\\) (C), or picking one of the given\nremainders 3 (B) or 2 (A). None of those respects *both* conditions at once — only 8 does.",
+      "hints": [
+        "Because 5 and 3 have no common factor, the two conditions fix \\(n\\) modulo \\(5 \\times 3 = 15\\).",
+        "List the numbers satisfying one condition, then scan for the first that also satisfies the other."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0020",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "remainders",
+        "units-digit",
+        "cyclicity",
+        "exponents"
+      ],
+      "choices": {
+        "A": "0",
+        "B": "1",
+        "C": "3",
+        "D": "7",
+        "E": "9"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the remainder when \\(7^{100}\\) is divided by 10?",
+      "explanation": "The remainder when any integer is divided by 10 is simply its **units digit**, so the question is\nreally: what is the units digit of \\(7^{100}\\)?\n\nUnits digits of powers repeat in a short cycle. List the units digit of successive powers of 7:\n\n\\[7^1 = 7,\\quad 7^2 = 49,\\quad 7^3 = 343,\\quad 7^4 = 2401,\\quad 7^5 = 16807,\\ \\dots\\]\n\nThe units digits are \\(7, 9, 3, 1, 7, \\dots\\) — a cycle of length **4**: \\(\\{7, 9, 3, 1\\}\\).\n\nTo find where \\(7^{100}\\) lands, divide the exponent by the cycle length: \\(100 = 4 \\times 25\\), so\n\\(100\\) is a multiple of 4. An exponent that is a multiple of the cycle length maps to the **last**\nterm of the cycle, which is \\(1\\) (just as \\(7^4\\) ends in 1).\n\nSo the units digit of \\(7^{100}\\) is 1, and the remainder when \\(7^{100}\\) is divided by 10 is\n**1**.\n\nTrap answers come from misreading the cycle position: 7 (as if \\(7^{100}\\) behaved like \\(7^1\\)),\n9 (\\(7^2\\)), or 3 (\\(7^3\\)). The exponent being a multiple of 4 is the signal for the end of the\ncycle, not the start.",
+      "hints": [
+        "The remainder upon division by 10 is just the units digit.",
+        "Units digits of \\(7^n\\) cycle as \\(7, 9, 3, 1\\) with period 4 — reduce the exponent \\(100\\) modulo 4."
       ]
     },
     {
@@ -983,6 +1103,24 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nPercents and ratios are the most frequently tested arithmetic ideas on GMAT Focus Quant, and\nthey hide inside word problems everywhere. Master three moves: converting between forms, handling\npercent *change*, and scaling ratios.\n\n## Core concepts\n\n**Percent as a factor.** A percent is just a number over 100. The fastest way to apply a percent\nchange is to turn it into a **multiplier**:\n\n- Increase by \\(r\\%\\): multiply by \\(1 + \\tfrac{r}{100}\\). (+25% → \\(\\times 1.25\\))\n- Decrease by \\(r\\%\\): multiply by \\(1 - \\tfrac{r}{100}\\). (−20% → \\(\\times 0.80\\))\n\n**Successive changes multiply.** Two changes in a row are multiplied, never added:\n\n\\[(+25\\%)\\text{ then }(-20\\%): \\quad 1.25 \\times 0.80 = 1.00 \\quad (\\text{no net change})\\]\n\n**Percent change formula.**\n\n\\[\\text{percent change} = \\frac{\\text{new} - \\text{old}}{\\text{old}} \\times 100\\%\\]\n\nAlways divide by the **original** value, not the new one.\n\n**Ratios scale together.** A ratio \\(a : b\\) means the quantities are \\(ak\\) and \\(bk\\) for some\nmultiplier \\(k\\). If boys : girls \\(= 3 : 5\\) and there are 24 boys, then \\(k = 8\\), so there are\n\\(5 \\times 8 = 40\\) girls.\n\n## Worked examples\n\n**Percent change.** A stock rises from $80 to $100. Percent increase \\(= \\tfrac{100 - 80}{80} = \\tfrac{20}{80} = 25\\%\\).\nNote it later falls from $100 back to $80: that's \\(\\tfrac{-20}{100} = -20\\%\\) — a *smaller* percent, because the base is now larger.\n\n**Ratio scaling.** A recipe uses flour : sugar \\(= 7 : 2\\). To use 21 cups of flour, \\(k = 3\\), so\nyou need \\(2 \\times 3 = 6\\) cups of sugar.\n\n## Common traps\n\n- **Adding successive percents.** +25% then −20% is *not* +5%; it's \\(1.25 \\times 0.80 = 1.00\\).\n- **Wrong base.** Percent change always divides by the original amount. A rise then an equal-percent fall does not return to the start.\n- **Ratio ≠ actual count.** \\(3 : 5\\) does not mean 3 and 5 — it means \\(3k\\) and \\(5k\\). Find \\(k\\) first.\n\n## Key takeaways\n\n- Convert percent changes to multipliers and multiply them for successive changes.\n- Percent change = (new − old) / old.\n- A ratio \\(a : b\\) represents \\(ak\\) and \\(bk\\); solve for the multiplier \\(k\\), then scale."
+    },
+    {
+      "id": "quant-number-properties-remainders",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "title": "Remainders & Modular Thinking",
+      "tags": [
+        "number-properties",
+        "remainders",
+        "divisibility",
+        "units-digit",
+        "cyclicity"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nRemainder questions are a GMAT Focus favorite because they reward *thinking in terms of the\ndivisor* instead of grinding through big arithmetic. The whole topic rests on one identity: when\na positive integer \\(n\\) is divided by a positive divisor \\(d\\), there is a unique quotient \\(q\\)\nand remainder \\(r\\) with\n\n\\[n = qd + r, \\qquad 0 \\le r < d.\\]\n\nThe two constraints on \\(r\\) do a lot of work: the remainder is never negative, and it is always\n**strictly less than the divisor**. A \"remainder of 7 when divided by 5\" is impossible.\n\n## Core concepts\n\n**Write the number in the form \\(qd + r\\).** The fastest move on almost every remainder problem is\nto replace \"\\(n\\) leaves remainder \\(r\\) when divided by \\(d\\)\" with the algebraic statement\n\\(n = dk + r\\) for some integer \\(k\\), then substitute. You rarely need to know \\(n\\) itself.\n\n**Remainders add and multiply.** When you divide by \\(d\\), you can replace any number by its\nremainder before adding or multiplying, then take the remainder again at the end:\n\n\\[(a + b) \\bmod d = \\big((a \\bmod d) + (b \\bmod d)\\big) \\bmod d,\\]\n\\[(a \\times b) \\bmod d = \\big((a \\bmod d) \\times (b \\bmod d)\\big) \\bmod d.\\]\n\nThis is why you can find the remainder of a huge product without ever computing it.\n\n**Combining two conditions.** \"\\(n\\) leaves remainder 3 mod 5 and remainder 2 mod 3\" pins \\(n\\)\ndown modulo \\(15\\) (the two divisors multiplied, when they share no common factor). List the\nnumbers satisfying the harder condition and scan for the first that also satisfies the other.\n\n**Units digit = remainder mod 10.** The units digit of a number *is* its remainder upon division\nby 10. Powers cycle: \\(7^1,7^2,7^3,7^4\\) end in \\(7, 9, 3, 1\\) and then repeat with period 4. To\nfind the units digit of \\(7^{100}\\), reduce the exponent mod the cycle length.\n\n## Worked examples\n\n**Example 1 — substitute the form.** When \\(n\\) is divided by 7 the remainder is 4. What is the\nremainder when \\(2n + 5\\) is divided by 7?\n\nWrite \\(n = 7k + 4\\). Then \\(2n + 5 = 14k + 8 + 5 = 14k + 13 = 7(2k+1) + 6\\). The remainder is\n**6**. (Shortcut: work with the remainder only — \\(2\\times 4 + 5 = 13\\), and \\(13 \\bmod 7 = 6\\).)\n\n**Example 2 — combine conditions.** \\(n\\) leaves remainder 3 when divided by 5 and remainder 2\nwhen divided by 3. What is \\(n \\bmod 15\\)?\n\nNumbers that are \\(3\\) more than a multiple of 5: \\(3, 8, 13, 18, \\dots\\). Check each against\n\"remainder 2 mod 3\": \\(3 \\to 0\\), \\(8 \\to 2\\ \\checkmark\\). So \\(n \\equiv 8 \\pmod{15}\\).\n\n**Example 3 — cyclicity.** Units digit of \\(7^{100}\\)? The cycle \\(7, 9, 3, 1\\) has length 4, and\n\\(100\\) is a multiple of 4, so \\(7^{100}\\) lands on the **last** entry of the cycle: units digit\n**1**.\n\n## Common traps\n\n- **Remainder \\(\\ge\\) divisor.** The remainder must satisfy \\(0 \\le r < d\\). If your work produces\n  a remainder as large as the divisor, take one more step.\n- **Forgetting to reduce at the end.** \\(2\\times 4 + 5 = 13\\) is *not* the answer when dividing by\n  7 — you still have to take \\(13 \\bmod 7 = 6\\).\n- **Off-by-one in the cycle.** An exponent that is a multiple of the cycle length maps to the\n  *last* term of the cycle, not the first. \\(7^4\\) ends in 1, and so does \\(7^{100}\\).\n- **Assuming you must find \\(n\\).** You almost never need the actual number — the form \\(qd + r\\)\n  carries all the information the question uses.\n\n## Key takeaways\n\n- Replace \"leaves remainder \\(r\\) mod \\(d\\)\" with \\(n = dk + r\\) and substitute; the specific value\n  of \\(n\\) rarely matters.\n- You may reduce each term to its remainder *before* adding or multiplying, then reduce once more.\n- Two coprime divisors pin a number down modulo their product — list one condition and scan.\n- The units digit is the remainder mod 10; powers cycle, so reduce the exponent by the cycle length."
     },
     {
       "id": "quant-statistics-descriptive",
