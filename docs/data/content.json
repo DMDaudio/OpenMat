@@ -17,13 +17,13 @@
     },
     "data-insights": {
       "label": "Data Insights",
-      "questions": 8,
-      "lessons": 1
+      "questions": 10,
+      "lessons": 3
     }
   },
   "counts": {
-    "questions": 38,
-    "lessons": 10
+    "questions": 40,
+    "lessons": 12
   },
   "questions": [
     {
@@ -38,6 +38,7 @@
         "algebra"
       ],
       "choices": null,
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -62,6 +63,7 @@
         "powers"
       ],
       "choices": null,
+      "parts": null,
       "answer": "B",
       "author": "openmat",
       "reviewers": [],
@@ -85,6 +87,7 @@
         "number-properties"
       ],
       "choices": null,
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -108,6 +111,7 @@
         "lcm"
       ],
       "choices": null,
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -131,6 +135,7 @@
         "even-odd"
       ],
       "choices": null,
+      "parts": null,
       "answer": "D",
       "author": "openmat",
       "reviewers": [],
@@ -154,6 +159,7 @@
         "insufficient"
       ],
       "choices": null,
+      "parts": null,
       "answer": "E",
       "author": "openmat",
       "reviewers": [],
@@ -177,6 +183,7 @@
         "statistics"
       ],
       "choices": null,
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -200,6 +207,7 @@
         "integer-constraints"
       ],
       "choices": null,
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -209,6 +217,63 @@
       "hints": [
         "Translate each statement into an equation in \\(p\\) and \\(n\\); a single equation in two unknowns rarely pins down one variable.",
         "With both equations you have a solvable 2×2 system — check that the solution is a valid (non-negative integer) count."
+      ]
+    },
+    {
+      "id": "data-insights-table-analysis-ratios-thresholds-0010",
+      "section": "data-insights",
+      "topic": "table-analysis",
+      "subtopic": "ratios-thresholds",
+      "type": "table-analysis",
+      "difficulty": "medium",
+      "tags": [
+        "table-analysis",
+        "percent-change",
+        "thresholds"
+      ],
+      "choices": null,
+      "parts": {
+        "Claim1": "Yes|No",
+        "Claim2": "Yes|No",
+        "Claim3": "Yes|No"
+      },
+      "answer": "Claim1=No; Claim2=Yes; Claim3=Yes",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "The table shows units sold by three stores in the first two quarters of a year.\n\n| Store | Q1 units | Q2 units |\n|-------|---------:|---------:|\n| Alpha |      120 |      150 |\n| Beta  |      200 |      180 |\n| Gamma |       90 |      140 |\n\nFor each claim, select **Yes** if it is supported by the table and **No** if it is not.\n\n- **Claim 1.** Every store sold more units in Q2 than in Q1.\n- **Claim 2.** Beta had the greatest two-quarter total (Q1 + Q2) of the three stores.\n- **Claim 3.** Gamma's Q2 units were more than 40% above its Q1 units.",
+      "explanation": "Work one claim at a time; each is a quick check, not a calculation marathon.\n\n**Claim 1 — No.** Alpha (120 → 150) and Gamma (90 → 140) rose, but **Beta fell** from 200 to 180.\nA single counterexample makes an \"every\" statement false.\n\n**Claim 2 — Yes.** Compute the two-quarter totals: Alpha \\(= 120 + 150 = 270\\), Beta \\(= 200 + 180 = 380\\),\nGamma \\(= 90 + 140 = 230\\). Beta's 380 is the largest.\n\n**Claim 3 — Yes.** Gamma went from 90 to 140, an increase of 50. As a percent of the original,\n\n\\[\\frac{50}{90} \\approx 55.6\\% ,\\]\n\nwhich is more than 40%. (Shortcut: 40% of 90 is 36, so 90 + 36 = 126; since 140 > 126, the increase\nclears the 40% threshold.)\n\nSo the answers are **No, Yes, Yes**.\n\nThe trap on Claim 3 is dividing by the wrong base — percent change is always measured against the\n**original** value (90), not the new one (140).",
+      "hints": [
+        "For \"every\"-type claims, hunt for one counterexample before checking the rest.",
+        "Percent increase = (new − old) / **old**. Or compare against a threshold: 40% of 90 is 36."
+      ]
+    },
+    {
+      "id": "data-insights-two-part-analysis-simultaneous-conditions-0009",
+      "section": "data-insights",
+      "topic": "two-part-analysis",
+      "subtopic": "simultaneous-conditions",
+      "type": "two-part-analysis",
+      "difficulty": "medium",
+      "tags": [
+        "two-part-analysis",
+        "system-of-equations",
+        "simultaneous-conditions"
+      ],
+      "choices": null,
+      "parts": {
+        "Nuts": "$1|$2|$3|$4|$5|$6",
+        "Juice": "$1|$2|$3|$4|$5|$6"
+      },
+      "answer": "Nuts=$2; Juice=$3",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A vending machine sells only two items: a bag of nuts and a bottle of juice, each at a fixed\nwhole-dollar price. A customer notes two receipts:\n\n- 2 bags of nuts and 1 bottle of juice cost **$7** in total.\n- 1 bag of nuts and 2 bottles of juice cost **$8** in total.\n\nIn the first column select the price of one **bag of nuts**, and in the second column select the\nprice of one **bottle of juice**, consistent with both receipts. Make only one selection per column.",
+      "explanation": "Let \\(n\\) be the price of nuts and \\(j\\) the price of juice. The two receipts give a system:\n\n\\[2n + j = 7 \\qquad\\text{and}\\qquad n + 2j = 8.\\]\n\n**Add** the equations to exploit the symmetry:\n\n\\[(2n + j) + (n + 2j) = 7 + 8 \\;\\Rightarrow\\; 3n + 3j = 15 \\;\\Rightarrow\\; n + j = 5.\\]\n\nNow subtract \\(n + j = 5\\) from \\(2n + j = 7\\):\n\n\\[(2n + j) - (n + j) = 7 - 5 \\;\\Rightarrow\\; n = 2,\\]\n\nso \\(j = 5 - 2 = 3\\). Check the untouched equation: \\(n + 2j = 2 + 6 = 8\\). ✓\n\nSo **Nuts = $2** and **Juice = $3**.\n\nA common slip is to solve only the first equation and guess a pair that fits it (e.g. \\(n=3, j=1\\)\ngives \\(2(3)+1 = 7\\)) — but that pair fails the *second* condition (\\(3 + 2 = 5 \\ne 8\\)). In two-part\nquestions both conditions must hold simultaneously.",
+      "hints": [
+        "Write one equation per receipt, then combine them — adding these two makes the numbers collapse nicely.",
+        "A pair that satisfies only one condition is a trap; test your answer against **both** receipts."
       ]
     },
     {
@@ -230,6 +295,7 @@
         "D": "10",
         "E": "11"
       },
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -260,6 +326,7 @@
         "D": "17",
         "E": "21"
       },
+      "parts": null,
       "answer": "D",
       "author": "openmat",
       "reviewers": [],
@@ -290,6 +357,7 @@
         "D": "-5",
         "E": "13"
       },
+      "parts": null,
       "answer": "B",
       "author": "openmat",
       "reviewers": [],
@@ -319,6 +387,7 @@
         "D": "36",
         "E": "48"
       },
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -348,6 +417,7 @@
         "D": "105% of the original",
         "E": "125% of the original"
       },
+      "parts": null,
       "answer": "B",
       "author": "openmat",
       "reviewers": [],
@@ -378,6 +448,7 @@
         "D": "1/2",
         "E": "3/5"
       },
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -407,6 +478,7 @@
         "D": "12",
         "E": "14"
       },
+      "parts": null,
       "answer": "D",
       "author": "openmat",
       "reviewers": [],
@@ -437,6 +509,7 @@
         "D": "2x + y",
         "E": "xy + 1"
       },
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -467,6 +540,7 @@
         "D": "c < 0",
         "E": "b + c < 0"
       },
+      "parts": null,
       "answer": "B",
       "author": "openmat",
       "reviewers": [],
@@ -498,6 +572,7 @@
         "D": "n^2 - 1",
         "E": "3n"
       },
+      "parts": null,
       "answer": "B",
       "author": "openmat",
       "reviewers": [],
@@ -527,6 +602,7 @@
         "D": "3",
         "E": "5"
       },
+      "parts": null,
       "answer": "D",
       "author": "openmat",
       "reviewers": [],
@@ -557,6 +633,7 @@
         "D": "3",
         "E": "4"
       },
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -586,6 +663,7 @@
         "D": "22",
         "E": "27"
       },
+      "parts": null,
       "answer": "D",
       "author": "openmat",
       "reviewers": [],
@@ -615,6 +693,7 @@
         "D": "87",
         "E": "88"
       },
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -645,6 +724,7 @@
         "D": "24",
         "E": "66"
       },
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -674,6 +754,7 @@
         "D": "15",
         "E": "17"
       },
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -704,6 +785,7 @@
         "D": "43",
         "E": "47"
       },
+      "parts": null,
       "answer": "D",
       "author": "openmat",
       "reviewers": [],
@@ -734,6 +816,7 @@
         "D": "{1, 5, 6, 7, 11}",
         "E": "{5, 6, 6, 6, 7}"
       },
+      "parts": null,
       "answer": "D",
       "author": "openmat",
       "reviewers": [],
@@ -764,6 +847,7 @@
         "D": "60",
         "E": "Cannot be determined from the information given"
       },
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -793,6 +877,7 @@
         "D": "10",
         "E": "12"
       },
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -822,6 +907,7 @@
         "D": "52 mph",
         "E": "55 mph"
       },
+      "parts": null,
       "answer": "B",
       "author": "openmat",
       "reviewers": [],
@@ -851,6 +937,7 @@
         "D": "5 hours",
         "E": "10 hours"
       },
+      "parts": null,
       "answer": "B",
       "author": "openmat",
       "reviewers": [],
@@ -880,6 +967,7 @@
         "D": "Neighboring counties do not impose a tax on sugary drinks.",
         "E": "Obesity is a problem that taxation is unable to solve."
       },
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -909,6 +997,7 @@
         "D": "The new dedicated lane will be used exclusively by buses and by no other vehicles.",
         "E": "Commute times on streets other than Main Street will be unaffected by the change."
       },
+      "parts": null,
       "answer": "B",
       "author": "openmat",
       "reviewers": [],
@@ -938,6 +1027,7 @@
         "D": "relies on data from a single year, which may be too short a period to judge a trend.",
         "E": "fails to specify exactly which acts the city classifies as theft."
       },
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -968,6 +1058,7 @@
         "D": "Some items from last season's collection are in the front window display.",
         "E": "Every item that is on sale is in the front window display."
       },
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -997,6 +1088,7 @@
         "D": "At a nearby company that did not install standing desks, reported back pain was unchanged over the same six months.",
         "E": "Back pain is among the most common reasons for missed workdays in office jobs."
       },
+      "parts": null,
       "answer": "B",
       "author": "openmat",
       "reviewers": [],
@@ -1026,6 +1118,7 @@
         "D": "completing the entire round-trip migration within one generation",
         "E": "increasing the total distance the butterflies are able to travel"
       },
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -1055,6 +1148,7 @@
         "D": "compare the severity of traffic congestion across several major cities",
         "E": "trace the development of economic thought over the past two centuries"
       },
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -1084,6 +1178,7 @@
         "D": "neutral, presenting both sides without offering any judgment",
         "E": "alarmed by the risks the apps pose to their users"
       },
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -1112,6 +1207,39 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nData Sufficiency (part of Data Insights on the GMAT Focus Edition) doesn't ask you to *solve* —\nit asks whether you *could*. You're given a question and two statements, and you decide which\nstatements provide enough information to answer it. The five answer choices are always the same,\nso learn them cold.\n\n## The five answer choices\n\n- **A** — Statement (1) ALONE is sufficient, but statement (2) alone is not.\n- **B** — Statement (2) ALONE is sufficient, but statement (1) alone is not.\n- **C** — BOTH statements TOGETHER are sufficient, but NEITHER alone is.\n- **D** — EACH statement ALONE is sufficient.\n- **E** — The statements TOGETHER are still NOT sufficient.\n\n## Core concepts\n\n**\"Sufficient\" means a single, definite answer.** For a *value* question (\"what is \\(x\\)?\"), a\nstatement is sufficient only if it pins down exactly one value. For a *yes/no* question (\"is\n\\(n\\) even?\"), a statement is sufficient if it always gives the same answer — a definite \"yes\" and\na definite \"no\" are *both* sufficient. An \"it depends\" is insufficient.\n\n**Use the AD / BCE decision tree.** Test statement (1) first:\n\n- If (1) is sufficient, the answer is **A or D**. (Now test (2): sufficient → D, not → A.)\n- If (1) is not sufficient, the answer is **B, C, or E**. (Test (2): if sufficient → B; if not, test them together → C if enough, E if not.)\n\n**Evaluate each statement independently first.** Don't let information from statement (1) leak\ninto your judgment of statement (2). Only combine them in the final \"together\" step.\n\n## Worked example\n\n*Is the integer \\(n\\) even?* (1) \\(n^2\\) is even. (2) \\(3n\\) is even.\n\n- (1): odd² is odd, so \\(n^2\\) even forces \\(n\\) even → definite \"yes\" → **sufficient**.\n- (2): 3 is odd, so \\(3n\\) even forces \\(n\\) even → definite \"yes\" → **sufficient**.\n\nEach alone gives a definite answer → **D**.\n\n## Common traps\n\n- **The C-trap.** Combining the statements often *feels* safe, but if either works alone the\n  answer is A, B, or D — and picking C loses the point. Always test each alone first.\n- **Solving too far.** You don't need the actual value, only whether it's *determined*. Stop as\n  soon as you know a unique answer exists.\n- **Forgetting yes/no can be \"definitely no.\"** A statement that guarantees \"no\" is sufficient.\n\n## Key takeaways\n\n- Memorize the five choices and the AD/BCE tree.\n- \"Sufficient\" = yields one definite answer (value) or a consistent yes/no.\n- Judge each statement alone before combining; beware the reflex to choose C."
+    },
+    {
+      "id": "data-insights-table-analysis-ratios-thresholds",
+      "section": "data-insights",
+      "topic": "table-analysis",
+      "subtopic": "ratios-thresholds",
+      "title": "Table Analysis: Ratios & Thresholds",
+      "tags": [
+        "table-analysis",
+        "percent-change",
+        "ratios",
+        "thresholds"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nTable Analysis presents a sortable table and a set of **Yes/No** (or True/False) statements you\nmust judge one at a time. Each row of statements is graded independently, so a single question is\nreally several mini-questions. The skill is reading the table precisely and testing each claim with\nthe least arithmetic possible.\n\n## Core concepts\n\n**Read the claim's quantifier first.** \"Every,\" \"at least one,\" \"the greatest,\" \"more than\" — the\nquantifier tells you what evidence settles the claim. An \"every\"/\"all\" claim is disproved by **one**\ncounterexample; a \"there exists\" claim is proved by one supporting case. Find that one case fast.\n\n**Percent change is measured against the original.** For a jump from an old value to a new value,\n\n\\[\\text{percent change} = \\frac{\\text{new} - \\text{old}}{\\text{old}} \\times 100\\%.\\]\n\nAlways divide by the **old** value, not the new one — the most common table-analysis error.\n\n**Turn a threshold into a target number.** Instead of computing an exact percent, convert \"more than\n40% above 90\" into a concrete bar: 40% of 90 is 36, so the target is \\(90 + 36 = 126\\). Now you just\ncompare: is the new value above 126? This is faster and less error-prone than dividing.\n\n**Only compute what the claim needs.** You rarely need every cell. For \"greatest two-quarter total,\"\nsum each store's two columns and compare — ignore everything else.\n\n## Worked examples\n\nUsing a table with Q1/Q2 units — Alpha (120, 150), Beta (200, 180), Gamma (90, 140):\n\n**\"Every store grew in Q2.\" → No.** Beta fell from 200 to 180. One counterexample settles it; you\nneedn't check the others once you find it.\n\n**\"Beta had the greatest two-quarter total.\" → Yes.** Totals: 270, 380, 230. Beta's 380 wins.\n\n**\"Gamma rose more than 40% from Q1 to Q2.\" → Yes.** Threshold: 40% of 90 = 36, target 126. Since\n\\(140 > 126\\), the increase clears 40%. (Exact: \\(50/90 \\approx 55.6\\%\\).)\n\n## Common traps\n\n- **Dividing by the new value** when finding percent change — use the original as the base.\n- **Over-computing.** Don't calculate every percent; convert thresholds to target numbers and compare.\n- **Treating the statements as linked.** Each Yes/No row stands alone — judge it on its own evidence.\n\n## Key takeaways\n\n- Let the quantifier (\"every,\" \"at least one,\" \"greatest\") tell you what evidence to look for.\n- Percent change divides by the **original** value.\n- Convert a percent threshold into a concrete target number, then just compare.\n- Evaluate each statement independently and compute only what that statement requires."
+    },
+    {
+      "id": "data-insights-two-part-analysis-simultaneous-conditions",
+      "section": "data-insights",
+      "topic": "two-part-analysis",
+      "subtopic": "simultaneous-conditions",
+      "title": "Two-Part Analysis: Simultaneous Conditions",
+      "tags": [
+        "two-part-analysis",
+        "system-of-equations",
+        "simultaneous-conditions"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nTwo-Part Analysis questions give you a single scenario and ask for **two** answers — one per\ncolumn — chosen from a shared list of options. The two answers are usually linked, so the trap is\npicking a value that satisfies one condition while quietly breaking the other. Treat the two\ncolumns as **one system** to solve, not two independent questions.\n\n## Core concepts\n\n**Translate each condition into an equation or inequality.** Most two-part prompts hand you two\nconstraints. Name a variable for each column and write one relation per constraint. Two linked\nconstraints in two unknowns almost always pin down a unique pair.\n\n**Solve the system, don't guess-and-check one column.** With two linear equations, use elimination\n(add or subtract to cancel a variable) or substitution. A pair that fits only the first equation is\nexactly the distractor the question is built around.\n\n**Watch what each column actually asks for.** The columns can request different things — a value\nand a rate, a \"before\" and an \"after,\" a minimum and a maximum. Read the column headers carefully;\nthe two answers are not always the same *kind* of quantity.\n\n**Verify against every condition.** Before committing, plug your two answers back into **all** the\nconstraints, including the one you didn't use to solve. This single habit catches most two-part\nmistakes.\n\n## Worked examples\n\n**A linked system.** Two receipts: \\(2n + j = 7\\) and \\(n + 2j = 8\\). Adding gives\n\\(3n + 3j = 15\\), so \\(n + j = 5\\); subtracting that from the first gives \\(n = 2\\), hence \\(j = 3\\).\nCheck the second equation: \\(2 + 2(3) = 8\\). ✓ Column 1 = 2, Column 2 = 3.\n\n**Guarding against a partial fit.** In the example above, \\((n, j) = (3, 1)\\) satisfies the first\nreceipt (\\(2(3) + 1 = 7\\)) but not the second (\\(3 + 2 = 5 \\ne 8\\)). Only a pair that clears **both**\nconditions is correct.\n\n## Common traps\n\n- **Solving one column in isolation.** The columns are coupled — find the pair, not two separate answers.\n- **Grabbing the first pair that fits one equation.** Always test against the other condition too.\n- **Mixing up the columns.** Confirm which quantity each column wants before you select.\n\n## Key takeaways\n\n- Assign one variable per column and turn each condition into an equation or inequality.\n- Solve the constraints as a single system (elimination/substitution), then verify against all of them.\n- The classic distractor satisfies one condition but not the other — a full check kills it."
     },
     {
       "id": "quant-algebra-linear-equations",

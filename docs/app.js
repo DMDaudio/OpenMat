@@ -221,6 +221,25 @@
     if (q.type === "data-sufficiency") return DS_CHOICES;
     return {};
   }
+  // --- Multi-part questions (two-part-analysis, table-analysis, …) ----------
+  // A question declares `parts` as { PartKey: "Opt A|Opt B|Opt C" } and encodes
+  // its answer as "PartKey=Value; PartKey2=Value2".
+  function isMultiPart(q) {
+    return q.parts && typeof q.parts === "object" && Object.keys(q.parts).length > 0;
+  }
+  function partOptions(v) {
+    return String(v || "").split("|").map((s) => s.trim()).filter(Boolean);
+  }
+  function parsePartsAnswer(ans) {
+    const out = {};
+    String(ans || "").split(";").forEach((seg) => {
+      const i = seg.indexOf("=");
+      if (i === -1) return;
+      const k = seg.slice(0, i).trim();
+      if (k) out[k] = seg.slice(i + 1).trim();
+    });
+    return out;
+  }
   function shuffle(arr) {
     const a = arr.slice();
     for (let i = a.length - 1; i > 0; i--) {
@@ -386,8 +405,6 @@
 
       const q = DATA.questions.find((x) => x.id === practice.queue[practice.index]);
       practice.answered = false;
-      const choices = choicesFor(q);
-      const letters = Object.keys(choices);
 
       const card = el('<div class="card"></div>');
       card.appendChild(
@@ -402,54 +419,34 @@
       card.appendChild(el('<div class="card-meta">' + questionBadges(q) + "</div>"));
       card.appendChild(el('<div class="prose">' + renderMarkdown(q.prompt) + "</div>"));
 
-      const list = el('<div class="choices"></div>');
-      letters.forEach((L) => {
-        const btn = el(
-          '<button class="choice"><span class="letter">' + L + "</span><span>" + renderInline(choices[L]) + "</span></button>"
-        );
-        btn.addEventListener("click", () => onAnswer(L));
-        list.appendChild(btn);
-      });
-      card.appendChild(list);
       const feedback = el("<div></div>");
-      card.appendChild(feedback);
-      holder.appendChild(card);
-
-      // Start the per-question timer (counts up until the question is answered).
       const timerEl = card.querySelector("[data-timer]");
-      practice.startTs = Date.now();
-      practice.timerId = setInterval(() => {
-        if (timerEl) timerEl.textContent = "⏱ " + formatTime((Date.now() - practice.startTs) / 1000);
-      }, 1000);
+      function startTimer() {
+        // Counts up until the question is answered.
+        practice.startTs = Date.now();
+        practice.timerId = setInterval(() => {
+          if (timerEl) timerEl.textContent = "⏱ " + formatTime((Date.now() - practice.startTs) / 1000);
+        }, 1000);
+      }
+      function elapsedSec() {
+        const e = (Date.now() - practice.startTs) / 1000;
+        practice.sessionSec += e;
+        if (timerEl) timerEl.textContent = "⏱ " + formatTime(e);
+        return e;
+      }
 
-      function onAnswer(letter) {
-        if (practice.answered) return;
-        practice.answered = true;
-        stopTimer();
-        const elapsed = (Date.now() - practice.startTs) / 1000;
-        practice.sessionSec += elapsed;
-        if (timerEl) timerEl.textContent = "⏱ " + formatTime(elapsed);
-        const correct = letter === String(q.answer);
+      // Shared post-answer tail: score pill, pace line, explanation, hints, Next.
+      function finishQuestion(correct, elapsed, verdictHtml) {
         practice.doneCount++;
         if (correct) practice.correctCount++;
         recordAnswer(q.id, correct, elapsed);
         const pill = card.querySelector(".scorepill");
         if (pill) pill.textContent = "Score " + practice.correctCount + " / " + practice.doneCount;
 
-        const btns = list.querySelectorAll(".choice");
-        btns.forEach((b, i) => {
-          const L = letters[i];
-          b.disabled = true;
-          if (L === String(q.answer)) b.classList.add("correct");
-          else if (L === letter) b.classList.add("wrong");
-        });
-
         const tgt = targetFor(q.section);
         const over = elapsed > tgt;
         feedback.innerHTML =
-          '<div class="verdict ' + (correct ? "correct" : "wrong") + '">' +
-          (correct ? "Correct! ✓" : "Not quite — the answer is " + escapeHtml(String(q.answer)) + ".") +
-          "</div>" +
+          verdictHtml +
           '<div class="pace ' + (over ? "over" : "under") + '">⏱ You took <strong>' + formatTime(elapsed) +
           "</strong> · target ~" + formatTime(tgt) + " · " + (over ? "over pace" : "on pace") + "</div>" +
           '<div class="reveal"><h4>Explanation</h4><div class="prose">' +
@@ -457,13 +454,14 @@
           "</div></div>";
 
         if (q.hints && q.hints.length) {
-          const hints = el(
-            '<details class="hints"><summary>Show hints (' + q.hints.length + ")</summary>" +
-            '<ul class="hint-list">' +
-            q.hints.map((h) => "<li>" + renderInline(h) + "</li>").join("") +
-            "</ul></details>"
+          feedback.appendChild(
+            el(
+              '<details class="hints"><summary>Show hints (' + q.hints.length + ")</summary>" +
+              '<ul class="hint-list">' +
+              q.hints.map((h) => "<li>" + renderInline(h) + "</li>").join("") +
+              "</ul></details>"
+            )
           );
-          feedback.appendChild(hints);
         }
 
         const isLast = practice.index + 1 >= practice.queue.length;
@@ -478,6 +476,104 @@
           window.scrollTo({ top: 0, behavior: "smooth" });
         });
         feedback.appendChild(actions);
+      }
+
+      if (isMultiPart(q)) {
+        // Multi-part formats: one labeled row of options per part, all graded
+        // together on Submit (correct only if every part matches).
+        const partKeys = Object.keys(q.parts);
+        const key = parsePartsAnswer(q.answer);
+        const chosen = {};
+        const optButtons = {}; // partKey -> [buttons]
+        const partsWrap = el('<div class="parts"></div>');
+        const submitRow = el('<div class="action-row"><button class="btn primary" data-act="submit" disabled>Submit answer</button></div>');
+        const submitBtn = submitRow.querySelector('[data-act="submit"]');
+
+        partKeys.forEach((pk) => {
+          const block = el('<div class="part-block"><div class="part-label">' + escapeHtml(pk) + "</div></div>");
+          const optWrap = el('<div class="choices part-options"></div>');
+          optButtons[pk] = [];
+          partOptions(q.parts[pk]).forEach((opt) => {
+            const b = el('<button class="choice part-choice"><span>' + renderInline(opt) + "</span></button>");
+            b.dataset.val = opt;
+            b.addEventListener("click", () => {
+              if (practice.answered) return;
+              optButtons[pk].forEach((x) => x.classList.remove("selected"));
+              b.classList.add("selected");
+              chosen[pk] = opt;
+              submitBtn.disabled = partKeys.some((k) => chosen[k] === undefined);
+            });
+            optButtons[pk].push(b);
+            optWrap.appendChild(b);
+          });
+          block.appendChild(optWrap);
+          partsWrap.appendChild(block);
+        });
+        card.appendChild(partsWrap);
+        card.appendChild(submitRow);
+        card.appendChild(feedback);
+        holder.appendChild(card);
+        startTimer();
+
+        submitBtn.addEventListener("click", () => {
+          if (practice.answered) return;
+          practice.answered = true;
+          stopTimer();
+          const elapsed = elapsedSec();
+          submitRow.remove();
+          let allCorrect = true;
+          const misses = [];
+          partKeys.forEach((pk) => {
+            const right = (key[pk] || "").toLowerCase();
+            const mine = (chosen[pk] || "").toLowerCase();
+            const ok = right && mine === right;
+            if (!ok) { allCorrect = false; misses.push(escapeHtml(pk) + " → " + escapeHtml(key[pk] || "?")); }
+            optButtons[pk].forEach((b) => {
+              b.disabled = true;
+              const val = (b.dataset.val || "").toLowerCase();
+              if (val === right) b.classList.add("correct");
+              else if (val === mine) b.classList.add("wrong");
+            });
+          });
+          const verdictHtml =
+            '<div class="verdict ' + (allCorrect ? "correct" : "wrong") + '">' +
+            (allCorrect
+              ? "All parts correct! ✓"
+              : "Not quite — correct answers: " + misses.join("  ·  ")) +
+            "</div>";
+          finishQuestion(allCorrect, elapsed, verdictHtml);
+        });
+      } else {
+        const choices = choicesFor(q);
+        const letters = Object.keys(choices);
+        const list = el('<div class="choices"></div>');
+        letters.forEach((L) => {
+          const btn = el(
+            '<button class="choice"><span class="letter">' + L + "</span><span>" + renderInline(choices[L]) + "</span></button>"
+          );
+          btn.addEventListener("click", () => {
+            if (practice.answered) return;
+            practice.answered = true;
+            stopTimer();
+            const elapsed = elapsedSec();
+            const correct = L === String(q.answer);
+            list.querySelectorAll(".choice").forEach((b, i) => {
+              b.disabled = true;
+              if (letters[i] === String(q.answer)) b.classList.add("correct");
+              else if (letters[i] === L) b.classList.add("wrong");
+            });
+            const verdictHtml =
+              '<div class="verdict ' + (correct ? "correct" : "wrong") + '">' +
+              (correct ? "Correct! ✓" : "Not quite — the answer is " + escapeHtml(String(q.answer)) + ".") +
+              "</div>";
+            finishQuestion(correct, elapsed, verdictHtml);
+          });
+          list.appendChild(btn);
+        });
+        card.appendChild(list);
+        card.appendChild(feedback);
+        holder.appendChild(card);
+        startTimer();
       }
     }
 
@@ -536,13 +632,30 @@
         head.addEventListener("click", () => {
           row.classList.toggle("open");
           if (!built) {
-            const choices = choicesFor(q);
-            const choiceHtml = Object.keys(choices)
-              .map((L) => "<li><strong>" + L + ".</strong> " + renderInline(choices[L]) + "</li>")
-              .join("");
+            let optsHtml;
+            if (isMultiPart(q)) {
+              const key = parsePartsAnswer(q.answer);
+              optsHtml =
+                '<ul style="margin:12px 0">' +
+                Object.keys(q.parts)
+                  .map(
+                    (pk) =>
+                      "<li><strong>" + escapeHtml(pk) + ":</strong> " +
+                      partOptions(q.parts[pk]).map((o) => renderInline(o)).join(" · ") +
+                      " &rarr; <em>" + escapeHtml(key[pk] || "?") + "</em></li>"
+                  )
+                  .join("") +
+                "</ul>";
+            } else {
+              const choices = choicesFor(q);
+              const choiceHtml = Object.keys(choices)
+                .map((L) => "<li><strong>" + L + ".</strong> " + renderInline(choices[L]) + "</li>")
+                .join("");
+              optsHtml = choiceHtml ? '<ol type="A" style="margin:12px 0">' + choiceHtml + "</ol>" : "";
+            }
             body.innerHTML =
               '<div class="prose">' + renderMarkdown(q.prompt) + "</div>" +
-              (choiceHtml ? '<ol type="A" style="margin:12px 0">' + choiceHtml + "</ol>" : "") +
+              optsHtml +
               '<div class="reveal"><h4>Answer: ' + escapeHtml(String(q.answer)) + "</h4>" +
               '<div class="prose">' + renderMarkdown(q.explanation) + "</div></div>";
             built = true;
