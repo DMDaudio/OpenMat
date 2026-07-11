@@ -152,6 +152,10 @@ async function buildQuestions() {
       difficulty: data.difficulty,
       tags: Array.isArray(data.tags) ? data.tags : [],
       choices: data.choices && typeof data.choices === 'object' ? data.choices : null,
+      // Multi-part formats (two-part-analysis, table-analysis, …) declare one
+      // option list per part: { PartKey: "Opt A|Opt B|Opt C" }. Passed through
+      // so the study site can render a selector per part and grade them together.
+      parts: data.parts && typeof data.parts === 'object' ? data.parts : null,
       answer: String(data.answer ?? ''),
       author: data.author || '',
       reviewers: Array.isArray(data.reviewers) ? data.reviewers : [],

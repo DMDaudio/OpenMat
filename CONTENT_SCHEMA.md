@@ -95,9 +95,37 @@ Put statement (1) and statement (2) in the `## Question` body.
 ### Multi-part answers (two-part, table analysis, etc.)
 
 For types with more than one selectable answer (e.g. `two-part-analysis`, `table-analysis`),
-set `answer` to a compact string describing each part, and lay the options out clearly in the
-body. Example: `answer: "Part1=C; Part2=A"` or `answer: "Row1=Yes; Row2=No; Row3=Yes"`.
-Keep the body unambiguous about what each part refers to.
+add a `parts` map that lists the options for each part, and set `answer` to a compact
+`Key=Value` string (parts separated by `;`). The study site renders one selector per part and
+grades them together — the question is correct only if **every** part matches.
+
+```yaml
+parts:
+  Nuts: "$1|$2|$3|$4|$5|$6"
+  Juice: "$1|$2|$3|$4|$5|$6"
+answer: "Nuts=$2; Juice=$3"
+```
+
+```yaml
+parts:
+  Claim1: "Yes|No"
+  Claim2: "Yes|No"
+  Claim3: "Yes|No"
+answer: "Claim1=No; Claim2=Yes; Claim3=Yes"
+```
+
+Rules for `parts`:
+
+- **Part keys** (the labels shown above each selector) must be alphanumeric — use `Nuts`,
+  `Claim1`, `Row1`, etc. (letters, digits, `-`, `_`; **no spaces**). Number claims in the body
+  (e.g. "**Claim 1.** …") so the short key stays clear.
+- **Options** for each part are a single string of choices separated by `|`.
+- **`answer`** matches part keys to the correct option value: `Key=Value; Key2=Value2`. Matching is
+  case-insensitive and trimmed, so the answer values must be spelled the same as the options.
+- Lay the scenario, table, and what each part refers to out clearly in the `## Question` body.
+
+If you omit `parts`, you can still fall back to a plain compact `answer` string (e.g.
+`answer: "Part1=C; Part2=A"`) for a browse-only question, but it will not be gradeable in Practice.
 
 ---
 

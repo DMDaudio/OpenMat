@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 16,
-      "lessons": 5
+      "questions": 22,
+      "lessons": 7
     },
     "verbal": {
       "label": "Verbal",
@@ -17,13 +17,13 @@
     },
     "data-insights": {
       "label": "Data Insights",
-      "questions": 8,
-      "lessons": 1
+      "questions": 10,
+      "lessons": 3
     }
   },
   "counts": {
-    "questions": 32,
-    "lessons": 8
+    "questions": 40,
+    "lessons": 12
   },
   "questions": [
     {
@@ -38,6 +38,7 @@
         "algebra"
       ],
       "choices": null,
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -62,6 +63,7 @@
         "powers"
       ],
       "choices": null,
+      "parts": null,
       "answer": "B",
       "author": "openmat",
       "reviewers": [],
@@ -85,6 +87,7 @@
         "number-properties"
       ],
       "choices": null,
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -108,6 +111,7 @@
         "lcm"
       ],
       "choices": null,
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -131,6 +135,7 @@
         "even-odd"
       ],
       "choices": null,
+      "parts": null,
       "answer": "D",
       "author": "openmat",
       "reviewers": [],
@@ -154,6 +159,7 @@
         "insufficient"
       ],
       "choices": null,
+      "parts": null,
       "answer": "E",
       "author": "openmat",
       "reviewers": [],
@@ -177,6 +183,7 @@
         "statistics"
       ],
       "choices": null,
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -200,6 +207,7 @@
         "integer-constraints"
       ],
       "choices": null,
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -209,6 +217,63 @@
       "hints": [
         "Translate each statement into an equation in \\(p\\) and \\(n\\); a single equation in two unknowns rarely pins down one variable.",
         "With both equations you have a solvable 2×2 system — check that the solution is a valid (non-negative integer) count."
+      ]
+    },
+    {
+      "id": "data-insights-table-analysis-ratios-thresholds-0010",
+      "section": "data-insights",
+      "topic": "table-analysis",
+      "subtopic": "ratios-thresholds",
+      "type": "table-analysis",
+      "difficulty": "medium",
+      "tags": [
+        "table-analysis",
+        "percent-change",
+        "thresholds"
+      ],
+      "choices": null,
+      "parts": {
+        "Claim1": "Yes|No",
+        "Claim2": "Yes|No",
+        "Claim3": "Yes|No"
+      },
+      "answer": "Claim1=No; Claim2=Yes; Claim3=Yes",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "The table shows units sold by three stores in the first two quarters of a year.\n\n| Store | Q1 units | Q2 units |\n|-------|---------:|---------:|\n| Alpha |      120 |      150 |\n| Beta  |      200 |      180 |\n| Gamma |       90 |      140 |\n\nFor each claim, select **Yes** if it is supported by the table and **No** if it is not.\n\n- **Claim 1.** Every store sold more units in Q2 than in Q1.\n- **Claim 2.** Beta had the greatest two-quarter total (Q1 + Q2) of the three stores.\n- **Claim 3.** Gamma's Q2 units were more than 40% above its Q1 units.",
+      "explanation": "Work one claim at a time; each is a quick check, not a calculation marathon.\n\n**Claim 1 — No.** Alpha (120 → 150) and Gamma (90 → 140) rose, but **Beta fell** from 200 to 180.\nA single counterexample makes an \"every\" statement false.\n\n**Claim 2 — Yes.** Compute the two-quarter totals: Alpha \\(= 120 + 150 = 270\\), Beta \\(= 200 + 180 = 380\\),\nGamma \\(= 90 + 140 = 230\\). Beta's 380 is the largest.\n\n**Claim 3 — Yes.** Gamma went from 90 to 140, an increase of 50. As a percent of the original,\n\n\\[\\frac{50}{90} \\approx 55.6\\% ,\\]\n\nwhich is more than 40%. (Shortcut: 40% of 90 is 36, so 90 + 36 = 126; since 140 > 126, the increase\nclears the 40% threshold.)\n\nSo the answers are **No, Yes, Yes**.\n\nThe trap on Claim 3 is dividing by the wrong base — percent change is always measured against the\n**original** value (90), not the new one (140).",
+      "hints": [
+        "For \"every\"-type claims, hunt for one counterexample before checking the rest.",
+        "Percent increase = (new − old) / **old**. Or compare against a threshold: 40% of 90 is 36."
+      ]
+    },
+    {
+      "id": "data-insights-two-part-analysis-simultaneous-conditions-0009",
+      "section": "data-insights",
+      "topic": "two-part-analysis",
+      "subtopic": "simultaneous-conditions",
+      "type": "two-part-analysis",
+      "difficulty": "medium",
+      "tags": [
+        "two-part-analysis",
+        "system-of-equations",
+        "simultaneous-conditions"
+      ],
+      "choices": null,
+      "parts": {
+        "Nuts": "$1|$2|$3|$4|$5|$6",
+        "Juice": "$1|$2|$3|$4|$5|$6"
+      },
+      "answer": "Nuts=$2; Juice=$3",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A vending machine sells only two items: a bag of nuts and a bottle of juice, each at a fixed\nwhole-dollar price. A customer notes two receipts:\n\n- 2 bags of nuts and 1 bottle of juice cost **$7** in total.\n- 1 bag of nuts and 2 bottles of juice cost **$8** in total.\n\nIn the first column select the price of one **bag of nuts**, and in the second column select the\nprice of one **bottle of juice**, consistent with both receipts. Make only one selection per column.",
+      "explanation": "Let \\(n\\) be the price of nuts and \\(j\\) the price of juice. The two receipts give a system:\n\n\\[2n + j = 7 \\qquad\\text{and}\\qquad n + 2j = 8.\\]\n\n**Add** the equations to exploit the symmetry:\n\n\\[(2n + j) + (n + 2j) = 7 + 8 \\;\\Rightarrow\\; 3n + 3j = 15 \\;\\Rightarrow\\; n + j = 5.\\]\n\nNow subtract \\(n + j = 5\\) from \\(2n + j = 7\\):\n\n\\[(2n + j) - (n + j) = 7 - 5 \\;\\Rightarrow\\; n = 2,\\]\n\nso \\(j = 5 - 2 = 3\\). Check the untouched equation: \\(n + 2j = 2 + 6 = 8\\). ✓\n\nSo **Nuts = $2** and **Juice = $3**.\n\nA common slip is to solve only the first equation and guess a pair that fits it (e.g. \\(n=3, j=1\\)\ngives \\(2(3)+1 = 7\\)) — but that pair fails the *second* condition (\\(3 + 2 = 5 \\ne 8\\)). In two-part\nquestions both conditions must hold simultaneously.",
+      "hints": [
+        "Write one equation per receipt, then combine them — adding these two makes the numbers collapse nicely.",
+        "A pair that satisfies only one condition is a trap; test your answer against **both** receipts."
       ]
     },
     {
@@ -230,6 +295,7 @@
         "D": "10",
         "E": "11"
       },
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -260,6 +326,7 @@
         "D": "17",
         "E": "21"
       },
+      "parts": null,
       "answer": "D",
       "author": "openmat",
       "reviewers": [],
@@ -290,6 +357,7 @@
         "D": "-5",
         "E": "13"
       },
+      "parts": null,
       "answer": "B",
       "author": "openmat",
       "reviewers": [],
@@ -319,6 +387,7 @@
         "D": "36",
         "E": "48"
       },
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -348,6 +417,7 @@
         "D": "105% of the original",
         "E": "125% of the original"
       },
+      "parts": null,
       "answer": "B",
       "author": "openmat",
       "reviewers": [],
@@ -378,6 +448,7 @@
         "D": "1/2",
         "E": "3/5"
       },
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -407,6 +478,7 @@
         "D": "12",
         "E": "14"
       },
+      "parts": null,
       "answer": "D",
       "author": "openmat",
       "reviewers": [],
@@ -416,6 +488,191 @@
       "hints": [
         "Don't list divisors — factor the number into primes first.",
         "If \\(N = p^a q^b\\), the divisor count is \\((a+1)(b+1)\\). Remember the \"+1\" accounts for using the prime zero times."
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0017",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "parity",
+        "odd-even",
+        "must-be-true"
+      ],
+      "choices": {
+        "A": "xy",
+        "B": "x - y",
+        "C": "x^2 + y^2",
+        "D": "2x + y",
+        "E": "xy + 1"
+      },
+      "parts": null,
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(x\\) and \\(y\\) are integers and \\(x + y\\) is odd, which of the following must be even?",
+      "explanation": "If \\(x + y\\) is odd, then one of \\(x, y\\) is even and the other is odd (a sum is odd only when you\nmix parities). Test each choice against that fact.\n\n- **A. \\(xy\\)** — one factor is even, and a product with any even factor is even. So \\(xy\\) is\n  **always even**. ✓\n- **B. \\(x - y\\)** — a difference has the same parity as the corresponding sum, so \\(x - y\\) is\n  odd, just like \\(x + y\\).\n- **C. \\(x^2 + y^2\\)** — squaring preserves parity, so this is \\(\\text{even} + \\text{odd} = \\text{odd}\\).\n- **D. \\(2x + y\\)** — \\(2x\\) is even, so this has the parity of \\(y\\), which could be either. Not\n  guaranteed.\n- **E. \\(xy + 1\\)** — from A, \\(xy\\) is even, so \\(xy + 1\\) is odd.\n\nOnly choice **A** must be even.",
+      "hints": [
+        "A sum of two integers is odd only when one is even and one is odd — so exactly one of \\(x, y\\) is even here.",
+        "A product is even as soon as *any* factor is even."
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0018",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "signs",
+        "positive-negative",
+        "must-be-true"
+      ],
+      "choices": {
+        "A": "a > 0",
+        "B": "a < 0",
+        "C": "b > 0",
+        "D": "c < 0",
+        "E": "b + c < 0"
+      },
+      "parts": null,
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(a\\), \\(b\\), and \\(c\\) are nonzero numbers with \\(abc > 0\\) and \\(bc < 0\\), which of the\nfollowing must be true?",
+      "explanation": "The key is that you can recover the sign of one factor from the signs of the rest. Write \\(a\\) in\nterms of the two given products:\n\n\\[a = \\frac{abc}{bc} = \\frac{(\\text{positive})}{(\\text{negative})} < 0.\\]\n\nSo \\(a\\) must be **negative** — choice **B**.\n\nWhy the others fail: \\(bc < 0\\) tells you \\(b\\) and \\(c\\) have **opposite** signs, but not which is\nwhich. So \\(b\\) could be positive or negative (C not forced), \\(c\\) could be positive or negative\n(D not forced), and \\(b + c\\) could be positive or negative depending on magnitudes (E not forced).\nOnly the sign of \\(a\\) is pinned down.\n\nConcretely, \\(a = -2\\) works with either \\((b, c) = (3, -1)\\) or \\((b, c) = (-3, 1)\\): both give\n\\(bc < 0\\) and \\(abc = (-2)(bc) > 0\\). Across those cases \\(b\\), \\(c\\), and \\(b+c\\) all change sign,\nbut \\(a\\) stays negative.",
+      "hints": [
+        "Divide the two given products: \\(abc \\div bc\\) isolates \\(a\\).",
+        "\\(bc < 0\\) means \\(b\\) and \\(c\\) have opposite signs — so neither one's sign is determined alone."
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0019",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "parity",
+        "odd-even",
+        "consecutive-integers",
+        "must-be-true"
+      ],
+      "choices": {
+        "A": "n^2 + n",
+        "B": "n^2 + n + 1",
+        "C": "2n^2 + 3n",
+        "D": "n^2 - 1",
+        "E": "3n"
+      },
+      "parts": null,
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(n\\) is an integer, which of the following is always odd?",
+      "explanation": "The unlock is recognizing \\(n^2 + n = n(n+1)\\), the product of two **consecutive** integers. One of\nany two consecutive integers is even, so \\(n(n+1)\\) is **always even**. Now check each choice:\n\n- **A. \\(n^2 + n = n(n+1)\\)** — always even, never odd.\n- **B. \\(n^2 + n + 1\\)** — an even number plus 1 is **always odd**. ✓\n- **C. \\(2n^2 + 3n = n(2n + 3)\\)** — if \\(n\\) is even this is even; if \\(n\\) is odd it is odd. Not\n  always odd.\n- **D. \\(n^2 - 1\\)** — for \\(n = 3\\) this is 8 (even), for \\(n = 2\\) it is 3 (odd). Not always odd.\n- **E. \\(3n\\)** — has the same parity as \\(n\\), which varies.\n\nOnly **B** is odd for every integer \\(n\\).",
+      "hints": [
+        "Factor \\(n^2 + n\\). What do you notice about \\(n\\) and \\(n + 1\\)?",
+        "A product of two consecutive integers is always even — so \"that product plus 1\" is always odd."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0020",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "remainders",
+        "division"
+      ],
+      "choices": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "3",
+        "E": "5"
+      },
+      "parts": null,
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When the positive integer \\(n\\) is divided by 7, the remainder is 4. What is the remainder when\n\\(3n + 5\\) is divided by 7?",
+      "explanation": "Start from the division identity: \"\\(n\\) divided by 7 leaves remainder 4\" means\n\\(n = 7q + 4\\) for some integer \\(q \\ge 0\\). Substitute:\n\n\\[3n + 5 = 3(7q + 4) + 5 = 21q + 12 + 5 = 21q + 17.\\]\n\nThe \\(21q\\) term is a multiple of 7, so it contributes no remainder. That leaves the remainder of\n\\(17\\) on division by 7:\n\n\\[17 = 2 \\times 7 + 3,\\]\n\nso the remainder is **3**.\n\nShortcut: work with the remainder directly. Replace \\(n\\) by its remainder 4, compute\n\\(3(4) + 5 = 17\\), then reduce mod 7 to get 3. (Sanity check with \\(n = 11\\): \\(3(11) + 5 = 38 = 5 \\times 7 + 3\\). ✓)\n\nThe trap answer is **E (5)**, from stopping at \"\\(+5\\)\" without accounting for the \\(3 \\times 4 = 12\\),\nwhich itself contributes \\(12 = 7 + 5\\), i.e. another 5 — the two combine to 17, not 5.",
+      "hints": [
+        "Write \\(n = 7q + 4\\) and substitute into \\(3n + 5\\).",
+        "Any multiple of 7 drops out; you only need the remainder of the leftover constant."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0021",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "remainders",
+        "cyclicity",
+        "powers"
+      ],
+      "choices": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "3",
+        "E": "4"
+      },
+      "parts": null,
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the remainder when \\(3^{47}\\) is divided by 5?",
+      "explanation": "You never compute \\(3^{47}\\). Remainders of successive powers repeat in a **cycle**, so find the\ncycle and then locate the exponent within it. Take powers of 3 mod 5:\n\n- \\(3^1 = 3\\) → remainder 3\n- \\(3^2 = 9\\) → remainder 4\n- \\(3^3 = 27\\) → remainder 2\n- \\(3^4 = 81\\) → remainder 1\n- \\(3^5 = 243\\) → remainder 3 (the pattern restarts)\n\nSo the remainders cycle with **period 4**: \\(3, 4, 2, 1, \\;3, 4, 2, 1, \\dots\\)\n\nLocate the exponent 47 in the cycle by dividing by the period:\n\n\\[47 = 4 \\times 11 + 3,\\]\n\nso \\(3^{47}\\) sits at **position 3** in the cycle. The third entry is **2**, so the remainder is **2**.\n\nWatch the counting: a remainder of 0 in \"\\(47 \\bmod 4\\)\" would put you at the *end* of a cycle\n(position 4, remainder 1), not the start. Here the remainder is 3, giving position 3.",
+      "hints": [
+        "Compute the remainders of \\(3^1, 3^2, 3^3, \\dots\\) mod 5 until they repeat.",
+        "Divide the exponent by the cycle length; the remainder tells you the position within the cycle."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0022",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "remainders",
+        "simultaneous-conditions"
+      ],
+      "choices": {
+        "A": "12",
+        "B": "16",
+        "C": "17",
+        "D": "22",
+        "E": "27"
+      },
+      "parts": null,
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A positive integer \\(N\\) leaves a remainder of 2 when divided by 5 and a remainder of 1 when\ndivided by 3. What is the least value of \\(N\\) greater than 10?",
+      "explanation": "Handle the two conditions together by listing one and testing it against the other.\n\nNumbers that leave remainder 2 when divided by 5: \\(2, 7, 12, 17, 22, 27, \\dots\\)\n\nNow keep only those that also leave remainder 1 when divided by 3:\n\n- \\(2 \\to 2 \\bmod 3 = 2\\) ✗\n- \\(7 \\to 7 \\bmod 3 = 1\\) ✓\n- \\(12 \\to 12 \\bmod 3 = 0\\) ✗\n- \\(17 \\to 17 \\bmod 3 = 2\\) ✗\n- \\(22 \\to 22 \\bmod 3 = 1\\) ✓\n\nBoth conditions hold at \\(N = 7\\), and then again every \\(\\text{lcm}(5, 3) = 15\\): \\(7, 22, 37, \\dots\\)\nThe smallest such value **greater than 10** is **22**.\n\nCheck: \\(22 = 4 \\times 5 + 2\\) (remainder 2 mod 5 ✓) and \\(22 = 7 \\times 3 + 1\\) (remainder 1 mod 3 ✓).\n\nThe distractors each satisfy only one condition: 12 and 27 leave remainder 2 mod 5 but are\ndivisible by 3; 17 leaves remainder 2 mod 5 but remainder 2 (not 1) mod 3; 16 leaves remainder 1\nmod 5. Only 22 satisfies both.",
+      "hints": [
+        "List the numbers satisfying one condition, then test each against the other — don't try to guess.",
+        "Once you find the first value that works, the next ones repeat every \\(\\text{lcm}\\) of the two divisors."
       ]
     },
     {
@@ -436,6 +693,7 @@
         "D": "87",
         "E": "88"
       },
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -466,6 +724,7 @@
         "D": "24",
         "E": "66"
       },
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -495,6 +754,7 @@
         "D": "15",
         "E": "17"
       },
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -525,6 +785,7 @@
         "D": "43",
         "E": "47"
       },
+      "parts": null,
       "answer": "D",
       "author": "openmat",
       "reviewers": [],
@@ -555,6 +816,7 @@
         "D": "{1, 5, 6, 7, 11}",
         "E": "{5, 6, 6, 6, 7}"
       },
+      "parts": null,
       "answer": "D",
       "author": "openmat",
       "reviewers": [],
@@ -585,6 +847,7 @@
         "D": "60",
         "E": "Cannot be determined from the information given"
       },
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -614,6 +877,7 @@
         "D": "10",
         "E": "12"
       },
+      "parts": null,
       "answer": "C",
       "author": "openmat",
       "reviewers": [],
@@ -643,6 +907,7 @@
         "D": "52 mph",
         "E": "55 mph"
       },
+      "parts": null,
       "answer": "B",
       "author": "openmat",
       "reviewers": [],
@@ -672,6 +937,7 @@
         "D": "5 hours",
         "E": "10 hours"
       },
+      "parts": null,
       "answer": "B",
       "author": "openmat",
       "reviewers": [],
@@ -701,6 +967,7 @@
         "D": "Neighboring counties do not impose a tax on sugary drinks.",
         "E": "Obesity is a problem that taxation is unable to solve."
       },
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -730,6 +997,7 @@
         "D": "The new dedicated lane will be used exclusively by buses and by no other vehicles.",
         "E": "Commute times on streets other than Main Street will be unaffected by the change."
       },
+      "parts": null,
       "answer": "B",
       "author": "openmat",
       "reviewers": [],
@@ -759,6 +1027,7 @@
         "D": "relies on data from a single year, which may be too short a period to judge a trend.",
         "E": "fails to specify exactly which acts the city classifies as theft."
       },
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -789,6 +1058,7 @@
         "D": "Some items from last season's collection are in the front window display.",
         "E": "Every item that is on sale is in the front window display."
       },
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -818,6 +1088,7 @@
         "D": "At a nearby company that did not install standing desks, reported back pain was unchanged over the same six months.",
         "E": "Back pain is among the most common reasons for missed workdays in office jobs."
       },
+      "parts": null,
       "answer": "B",
       "author": "openmat",
       "reviewers": [],
@@ -847,6 +1118,7 @@
         "D": "completing the entire round-trip migration within one generation",
         "E": "increasing the total distance the butterflies are able to travel"
       },
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -876,6 +1148,7 @@
         "D": "compare the severity of traffic congestion across several major cities",
         "E": "trace the development of economic thought over the past two centuries"
       },
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -905,6 +1178,7 @@
         "D": "neutral, presenting both sides without offering any judgment",
         "E": "alarmed by the risks the apps pose to their users"
       },
+      "parts": null,
       "answer": "A",
       "author": "openmat",
       "reviewers": [],
@@ -933,6 +1207,39 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nData Sufficiency (part of Data Insights on the GMAT Focus Edition) doesn't ask you to *solve* —\nit asks whether you *could*. You're given a question and two statements, and you decide which\nstatements provide enough information to answer it. The five answer choices are always the same,\nso learn them cold.\n\n## The five answer choices\n\n- **A** — Statement (1) ALONE is sufficient, but statement (2) alone is not.\n- **B** — Statement (2) ALONE is sufficient, but statement (1) alone is not.\n- **C** — BOTH statements TOGETHER are sufficient, but NEITHER alone is.\n- **D** — EACH statement ALONE is sufficient.\n- **E** — The statements TOGETHER are still NOT sufficient.\n\n## Core concepts\n\n**\"Sufficient\" means a single, definite answer.** For a *value* question (\"what is \\(x\\)?\"), a\nstatement is sufficient only if it pins down exactly one value. For a *yes/no* question (\"is\n\\(n\\) even?\"), a statement is sufficient if it always gives the same answer — a definite \"yes\" and\na definite \"no\" are *both* sufficient. An \"it depends\" is insufficient.\n\n**Use the AD / BCE decision tree.** Test statement (1) first:\n\n- If (1) is sufficient, the answer is **A or D**. (Now test (2): sufficient → D, not → A.)\n- If (1) is not sufficient, the answer is **B, C, or E**. (Test (2): if sufficient → B; if not, test them together → C if enough, E if not.)\n\n**Evaluate each statement independently first.** Don't let information from statement (1) leak\ninto your judgment of statement (2). Only combine them in the final \"together\" step.\n\n## Worked example\n\n*Is the integer \\(n\\) even?* (1) \\(n^2\\) is even. (2) \\(3n\\) is even.\n\n- (1): odd² is odd, so \\(n^2\\) even forces \\(n\\) even → definite \"yes\" → **sufficient**.\n- (2): 3 is odd, so \\(3n\\) even forces \\(n\\) even → definite \"yes\" → **sufficient**.\n\nEach alone gives a definite answer → **D**.\n\n## Common traps\n\n- **The C-trap.** Combining the statements often *feels* safe, but if either works alone the\n  answer is A, B, or D — and picking C loses the point. Always test each alone first.\n- **Solving too far.** You don't need the actual value, only whether it's *determined*. Stop as\n  soon as you know a unique answer exists.\n- **Forgetting yes/no can be \"definitely no.\"** A statement that guarantees \"no\" is sufficient.\n\n## Key takeaways\n\n- Memorize the five choices and the AD/BCE tree.\n- \"Sufficient\" = yields one definite answer (value) or a consistent yes/no.\n- Judge each statement alone before combining; beware the reflex to choose C."
+    },
+    {
+      "id": "data-insights-table-analysis-ratios-thresholds",
+      "section": "data-insights",
+      "topic": "table-analysis",
+      "subtopic": "ratios-thresholds",
+      "title": "Table Analysis: Ratios & Thresholds",
+      "tags": [
+        "table-analysis",
+        "percent-change",
+        "ratios",
+        "thresholds"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nTable Analysis presents a sortable table and a set of **Yes/No** (or True/False) statements you\nmust judge one at a time. Each row of statements is graded independently, so a single question is\nreally several mini-questions. The skill is reading the table precisely and testing each claim with\nthe least arithmetic possible.\n\n## Core concepts\n\n**Read the claim's quantifier first.** \"Every,\" \"at least one,\" \"the greatest,\" \"more than\" — the\nquantifier tells you what evidence settles the claim. An \"every\"/\"all\" claim is disproved by **one**\ncounterexample; a \"there exists\" claim is proved by one supporting case. Find that one case fast.\n\n**Percent change is measured against the original.** For a jump from an old value to a new value,\n\n\\[\\text{percent change} = \\frac{\\text{new} - \\text{old}}{\\text{old}} \\times 100\\%.\\]\n\nAlways divide by the **old** value, not the new one — the most common table-analysis error.\n\n**Turn a threshold into a target number.** Instead of computing an exact percent, convert \"more than\n40% above 90\" into a concrete bar: 40% of 90 is 36, so the target is \\(90 + 36 = 126\\). Now you just\ncompare: is the new value above 126? This is faster and less error-prone than dividing.\n\n**Only compute what the claim needs.** You rarely need every cell. For \"greatest two-quarter total,\"\nsum each store's two columns and compare — ignore everything else.\n\n## Worked examples\n\nUsing a table with Q1/Q2 units — Alpha (120, 150), Beta (200, 180), Gamma (90, 140):\n\n**\"Every store grew in Q2.\" → No.** Beta fell from 200 to 180. One counterexample settles it; you\nneedn't check the others once you find it.\n\n**\"Beta had the greatest two-quarter total.\" → Yes.** Totals: 270, 380, 230. Beta's 380 wins.\n\n**\"Gamma rose more than 40% from Q1 to Q2.\" → Yes.** Threshold: 40% of 90 = 36, target 126. Since\n\\(140 > 126\\), the increase clears 40%. (Exact: \\(50/90 \\approx 55.6\\%\\).)\n\n## Common traps\n\n- **Dividing by the new value** when finding percent change — use the original as the base.\n- **Over-computing.** Don't calculate every percent; convert thresholds to target numbers and compare.\n- **Treating the statements as linked.** Each Yes/No row stands alone — judge it on its own evidence.\n\n## Key takeaways\n\n- Let the quantifier (\"every,\" \"at least one,\" \"greatest\") tell you what evidence to look for.\n- Percent change divides by the **original** value.\n- Convert a percent threshold into a concrete target number, then just compare.\n- Evaluate each statement independently and compute only what that statement requires."
+    },
+    {
+      "id": "data-insights-two-part-analysis-simultaneous-conditions",
+      "section": "data-insights",
+      "topic": "two-part-analysis",
+      "subtopic": "simultaneous-conditions",
+      "title": "Two-Part Analysis: Simultaneous Conditions",
+      "tags": [
+        "two-part-analysis",
+        "system-of-equations",
+        "simultaneous-conditions"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nTwo-Part Analysis questions give you a single scenario and ask for **two** answers — one per\ncolumn — chosen from a shared list of options. The two answers are usually linked, so the trap is\npicking a value that satisfies one condition while quietly breaking the other. Treat the two\ncolumns as **one system** to solve, not two independent questions.\n\n## Core concepts\n\n**Translate each condition into an equation or inequality.** Most two-part prompts hand you two\nconstraints. Name a variable for each column and write one relation per constraint. Two linked\nconstraints in two unknowns almost always pin down a unique pair.\n\n**Solve the system, don't guess-and-check one column.** With two linear equations, use elimination\n(add or subtract to cancel a variable) or substitution. A pair that fits only the first equation is\nexactly the distractor the question is built around.\n\n**Watch what each column actually asks for.** The columns can request different things — a value\nand a rate, a \"before\" and an \"after,\" a minimum and a maximum. Read the column headers carefully;\nthe two answers are not always the same *kind* of quantity.\n\n**Verify against every condition.** Before committing, plug your two answers back into **all** the\nconstraints, including the one you didn't use to solve. This single habit catches most two-part\nmistakes.\n\n## Worked examples\n\n**A linked system.** Two receipts: \\(2n + j = 7\\) and \\(n + 2j = 8\\). Adding gives\n\\(3n + 3j = 15\\), so \\(n + j = 5\\); subtracting that from the first gives \\(n = 2\\), hence \\(j = 3\\).\nCheck the second equation: \\(2 + 2(3) = 8\\). ✓ Column 1 = 2, Column 2 = 3.\n\n**Guarding against a partial fit.** In the example above, \\((n, j) = (3, 1)\\) satisfies the first\nreceipt (\\(2(3) + 1 = 7\\)) but not the second (\\(3 + 2 = 5 \\ne 8\\)). Only a pair that clears **both**\nconditions is correct.\n\n## Common traps\n\n- **Solving one column in isolation.** The columns are coupled — find the pair, not two separate answers.\n- **Grabbing the first pair that fits one equation.** Always test against the other condition too.\n- **Mixing up the columns.** Confirm which quantity each column wants before you select.\n\n## Key takeaways\n\n- Assign one variable per column and turn each condition into an equation or inequality.\n- Solve the constraints as a single system (elimination/substitution), then verify against all of them.\n- The classic distractor satisfies one condition but not the other — a full check kills it."
     },
     {
       "id": "quant-algebra-linear-equations",
@@ -983,6 +1290,40 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nPercents and ratios are the most frequently tested arithmetic ideas on GMAT Focus Quant, and\nthey hide inside word problems everywhere. Master three moves: converting between forms, handling\npercent *change*, and scaling ratios.\n\n## Core concepts\n\n**Percent as a factor.** A percent is just a number over 100. The fastest way to apply a percent\nchange is to turn it into a **multiplier**:\n\n- Increase by \\(r\\%\\): multiply by \\(1 + \\tfrac{r}{100}\\). (+25% → \\(\\times 1.25\\))\n- Decrease by \\(r\\%\\): multiply by \\(1 - \\tfrac{r}{100}\\). (−20% → \\(\\times 0.80\\))\n\n**Successive changes multiply.** Two changes in a row are multiplied, never added:\n\n\\[(+25\\%)\\text{ then }(-20\\%): \\quad 1.25 \\times 0.80 = 1.00 \\quad (\\text{no net change})\\]\n\n**Percent change formula.**\n\n\\[\\text{percent change} = \\frac{\\text{new} - \\text{old}}{\\text{old}} \\times 100\\%\\]\n\nAlways divide by the **original** value, not the new one.\n\n**Ratios scale together.** A ratio \\(a : b\\) means the quantities are \\(ak\\) and \\(bk\\) for some\nmultiplier \\(k\\). If boys : girls \\(= 3 : 5\\) and there are 24 boys, then \\(k = 8\\), so there are\n\\(5 \\times 8 = 40\\) girls.\n\n## Worked examples\n\n**Percent change.** A stock rises from $80 to $100. Percent increase \\(= \\tfrac{100 - 80}{80} = \\tfrac{20}{80} = 25\\%\\).\nNote it later falls from $100 back to $80: that's \\(\\tfrac{-20}{100} = -20\\%\\) — a *smaller* percent, because the base is now larger.\n\n**Ratio scaling.** A recipe uses flour : sugar \\(= 7 : 2\\). To use 21 cups of flour, \\(k = 3\\), so\nyou need \\(2 \\times 3 = 6\\) cups of sugar.\n\n## Common traps\n\n- **Adding successive percents.** +25% then −20% is *not* +5%; it's \\(1.25 \\times 0.80 = 1.00\\).\n- **Wrong base.** Percent change always divides by the original amount. A rise then an equal-percent fall does not return to the start.\n- **Ratio ≠ actual count.** \\(3 : 5\\) does not mean 3 and 5 — it means \\(3k\\) and \\(5k\\). Find \\(k\\) first.\n\n## Key takeaways\n\n- Convert percent changes to multipliers and multiply them for successive changes.\n- Percent change = (new − old) / old.\n- A ratio \\(a : b\\) represents \\(ak\\) and \\(bk\\); solve for the multiplier \\(k\\), then scale."
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "title": "Odds, Evens & Signs",
+      "tags": [
+        "parity",
+        "odd-even",
+        "signs",
+        "positive-negative"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nMany GMAT Focus Quant questions never ask you to compute a value — they ask what *must* be true\nabout whether an expression is odd or even, or positive or negative. These are **parity** and\n**sign** questions. You almost never need the actual numbers; you only need to track two-state\ninformation (odd/even, +/−) through the arithmetic. Learn the rules and you can answer in seconds.\n\n## Core concepts\n\n**Parity rules (odd/even).** An even number is a multiple of 2; an odd number is not. The only\nrules you need:\n\n- **Addition/subtraction:** the result is odd exactly when you combine one odd and one even.\n  even ± even = even, odd ± odd = even, even ± odd = **odd**.\n- **Multiplication:** a product is even if *any* factor is even. It is odd only when *every*\n  factor is odd. So \\(\\text{even} \\times \\text{anything} = \\text{even}\\).\n\nA useful consequence: \\(n(n+1)\\), the product of two **consecutive** integers, is always even —\none of any two consecutive integers is even. Likewise \\(n^2\\) has the same parity as \\(n\\).\n\n**Sign rules (positive/negative).** For a product or quotient, only the *count of negative\nfactors* matters:\n\n- An **even** number of negative factors → the result is **positive**.\n- An **odd** number of negative factors → the result is **negative**.\n\nZero is neither positive nor negative, and any product containing a zero factor is zero. Watch\nfor it — \"\\(xy > 0\\)\" quietly tells you neither \\(x\\) nor \\(y\\) is 0, while \"\\(xy \\ge 0\\)\" does not.\n\n**Recovering one sign from a product.** If you know the sign of a whole product and the signs of\nall but one factor, you can solve for the last one. If \\(abc > 0\\) and \\(bc < 0\\), then\n\\(a = \\dfrac{abc}{bc} = \\dfrac{(+)}{(-)} < 0\\).\n\n## Worked examples\n\n**Parity of an expression.** Is \\(n^2 + n + 1\\) odd or even for every integer \\(n\\)?\n\\(n^2 + n = n(n+1)\\) is a product of consecutive integers, so it is always even. Adding 1 makes\nthe whole expression **always odd** — no need to test cases.\n\n**Signs from constraints.** If \\(x < 0\\) and \\(xy^2 z > 0\\), what is the sign of \\(z\\)?\nSince \\(y^2 \\ge 0\\) and the product is nonzero, \\(y^2 > 0\\) (positive). The product's sign is\n\\((\\text{sign of } x)(\\text{sign of } y^2)(\\text{sign of } z) = (-)(+)(\\text{sign of } z) > 0\\),\nso \\(z\\) must be **negative**.\n\n## Common traps\n\n- **Assuming a variable is an integer.** Parity rules apply only to integers. If a problem\n  doesn't say \"integer,\" \\(x\\) could be \\(2.5\\) and \"odd/even\" is meaningless.\n- **Forgetting even × odd = even.** A product is even as soon as *one* factor is even; you do not\n  need both.\n- **Losing zero.** \\(x^2 \\ge 0\\), not \\(> 0\\), unless you know \\(x \\ne 0\\). A stray zero flips a\n  \"must be positive\" into \"could be zero.\"\n- **Squares don't erase parity.** \\(n^2\\) is odd when \\(n\\) is odd. Squaring changes the sign\n  situation (never negative) but not the parity.\n\n## Key takeaways\n\n- Sum/difference is odd only when mixing one odd and one even; a product is even whenever any\n  factor is even.\n- \\(n(n+1)\\) is always even; \\(n^2\\) has the same parity as \\(n\\).\n- For products/quotients, count the negatives: even count → positive, odd count → negative.\n- Track only the two-state information (odd/even, +/−); you rarely need the actual values."
+    },
+    {
+      "id": "quant-number-properties-remainders",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "title": "Remainders",
+      "tags": [
+        "remainders",
+        "division",
+        "modular-arithmetic",
+        "cyclicity"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nRemainder questions look intimidating but reduce to one equation and a few habits. The GMAT loves\nthem because they reward structure over brute force: you can answer \"what is the remainder when\n\\(3^{47}\\) is divided by 5?\" without ever computing \\(3^{47}\\).\n\n## Core concepts\n\n**The division identity.** When a positive integer \\(n\\) is divided by a positive integer \\(d\\),\nthere is a unique quotient \\(q\\) and remainder \\(r\\) with\n\n\\[n = qd + r, \\qquad 0 \\le r < d.\\]\n\nThe remainder is always at least 0 and strictly less than the divisor. Whenever a problem says\n\"the remainder is \\(r\\) when divided by \\(d\\),\" immediately write \\(n = qd + r\\) — that single\nsubstitution unlocks most questions.\n\n**Remainders add and multiply.** You can do arithmetic on remainders directly (this is modular\narithmetic). If \\(n\\) leaves remainder \\(r\\) on division by \\(d\\), then to find the remainder of\n\\(an + b\\), just compute \\(ar + b\\) and reduce mod \\(d\\). Substituting \\(n = qd + r\\) shows why:\nthe \\(qd\\) part is divisible by \\(d\\) and contributes nothing to the remainder.\n\n**Cyclicity of powers.** Remainders of \\(a^1, a^2, a^3, \\dots\\) on division by \\(d\\) eventually\nrepeat in a fixed-length cycle. Find the cycle, then use the exponent's position within it. For\n\\(3^k \\bmod 5\\): the remainders are \\(3, 4, 2, 1, 3, 4, 2, 1, \\dots\\) — a cycle of length 4. To get\n\\(3^{47}\\), note \\(47 = 4(11) + 3\\), so \\(3^{47}\\) sits at position 3 in the cycle → remainder \\(2\\).\n\n**Combining two conditions.** \"Leaves remainder 2 mod 5 and remainder 1 mod 3\" defines a single\nfamily of numbers. List the smaller list and check it against the other condition:\n\\(\\{2, 7, 12, 17, 22, \\dots\\}\\) against \"\\(\\equiv 1 \\bmod 3\\)\" first hits at \\(7\\), and then every\n\\(15\\) (\\(= 5 \\times 3\\)) after that: \\(7, 22, 37, \\dots\\).\n\n## Worked examples\n\n**Linear expression.** When \\(n\\) is divided by 7 the remainder is 4. What is the remainder when\n\\(3n + 5\\) is divided by 7? Work with the remainder: \\(3(4) + 5 = 17\\), and \\(17 = 2(7) + 3\\), so\nthe remainder is **3**. (Check with \\(n = 11\\): \\(3(11)+5 = 38 = 5(7)+3\\). ✓)\n\n**Power.** Remainder of \\(7^{100}\\) mod 4? \\(7 \\equiv 3 \\bmod 4\\), and powers of 3 mod 4 cycle\n\\(3, 1, 3, 1, \\dots\\) (length 2). Even exponent → position 2 → remainder **1**.\n\n## Common traps\n\n- **Remainder ≥ divisor.** A remainder must be less than the divisor. If your work gives a\n  remainder of 17 when dividing by 7, reduce it (\\(17 \\to 3\\)).\n- **Multiplying then forgetting to reduce.** \\(3 \\times 4 + 5 = 17\\) is not the answer mod 7 —\n  reduce it to 3.\n- **Assuming a unique number.** \"Remainder 3 when divided by 5\" describes infinitely many numbers\n  (\\(3, 8, 13, \\dots\\)); pick the smallest that fits, or keep it as \\(5q + 3\\).\n- **Miscounting the cycle position.** If the cycle has length 4 and the exponent is a multiple of\n  4, you are at the *end* of the cycle (position 4), not position 0.\n\n## Key takeaways\n\n- Write \\(n = qd + r\\) with \\(0 \\le r < d\\) the moment a remainder is mentioned.\n- Do arithmetic on the remainders themselves, then reduce mod \\(d\\).\n- For powers, find the repeating cycle of remainders and use the exponent's position in it.\n- For two simultaneous remainder conditions, list one and test against the other; solutions repeat\n  every \\(\\text{lcm}\\) of the divisors."
     },
     {
       "id": "quant-statistics-descriptive",

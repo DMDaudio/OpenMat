@@ -70,13 +70,14 @@ The taxonomy is ordered so you can study a section top to bottom. A balanced pla
 Early days — the bank is growing. Rough coverage so far (a contributor could automate this
 count from the front-matter):
 
-- **Quant** — arithmetic, number properties, algebra (linear, inequalities), word problems (rates, work, sets), counting & probability, statistics (mean, median, weighted average, standard deviation).
+- **Quant** — arithmetic, number properties (factors, odds/evens/signs, remainders), algebra (linear, inequalities), word problems (rates, work, sets), counting & probability, statistics (mean, median, weighted average, standard deviation).
 - **Verbal** — Critical Reasoning (assumptions, strengthen/weaken, inference, flaw) and Reading Comprehension (main idea, detail/inference).
-- **Data Insights** — Data Sufficiency across fundamentals, divisibility, number properties, algebra, statistics, word problems, and overlapping sets.
+- **Data Insights** — Data Sufficiency across fundamentals, divisibility, number properties, algebra, statistics, word problems, and overlapping sets; plus the first multi-part formats (Two-Part Analysis, Table Analysis).
 
-Still thin everywhere, and the multi-part Data Insights formats (Table Analysis, Graphics
-Interpretation, Two-Part Analysis, Multi-Source Reasoning) need a study-site UI before content
-is added. See [`content/`](content/) for what exists, and [CONTRIBUTING.md](CONTRIBUTING.md) to add more.
+Still thin everywhere. The study site now supports **multi-part Data Insights formats** (Two-Part
+Analysis and Table Analysis are gradeable in Practice via the `parts` field — see
+[CONTENT_SCHEMA.md](CONTENT_SCHEMA.md)); Graphics Interpretation and Multi-Source Reasoning still
+need content. See [`content/`](content/) for what exists, and [CONTRIBUTING.md](CONTRIBUTING.md) to add more.
 
 ---
 
