@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 16,
-      "lessons": 5
+      "questions": 21,
+      "lessons": 6
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 32,
-    "lessons": 8
+    "questions": 37,
+    "lessons": 9
   },
   "questions": [
     {
@@ -416,6 +416,153 @@
       "hints": [
         "Don't list divisors — factor the number into primes first.",
         "If \\(N = p^a q^b\\), the divisor count is \\((a+1)(b+1)\\). Remember the \"+1\" accounts for using the prime zero times."
+      ]
+    },
+    {
+      "id": "quant-number-properties-factors-0020",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "factors-multiples",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "lcm",
+        "divisors",
+        "prime-factorization"
+      ],
+      "choices": {
+        "A": "6",
+        "B": "8",
+        "C": "9",
+        "D": "12",
+        "E": "36"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "Let \\(N\\) be the smallest positive integer that is divisible by both 12 and 18. How many positive\ndivisors does \\(N\\) have?",
+      "explanation": "The smallest positive integer divisible by both is the **least common multiple**. Use prime\nfactorizations:\n\n\\[12 = 2^2 \\times 3, \\qquad 18 = 2 \\times 3^2.\\]\n\nThe LCM takes the **highest power of each prime** that appears:\n\n\\[N = \\operatorname{lcm}(12, 18) = 2^2 \\times 3^2 = 36.\\]\n\nNow count divisors. For \\(N = p^a \\times q^b\\), the number of positive divisors is\n\\((a+1)(b+1)\\), because each divisor uses \\(p\\) to a power from \\(0\\) to \\(a\\) and \\(q\\) to a power\nfrom \\(0\\) to \\(b\\):\n\n\\[(2+1)(2+1) = 3 \\times 3 = 9.\\]\n\nSo \\(N = 36\\) has **9** divisors: 1, 2, 3, 4, 6, 9, 12, 18, 36.\n\nWatch two traps: taking the *lowest* powers gives the GCD (6), not the LCM; and answering **36** by\nreporting \\(N\\) itself instead of its divisor count.",
+      "hints": [
+        "\"Smallest number divisible by both\" is the LCM — take the highest power of each prime.",
+        "For \\(N = p^a q^b\\), the divisor count is \\((a+1)(b+1)\\), not \\(N\\) itself."
+      ]
+    },
+    {
+      "id": "quant-number-properties-factors-0021",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "factors-multiples",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "divisors",
+        "multiples",
+        "prime-factorization"
+      ],
+      "choices": {
+        "A": "6",
+        "B": "8",
+        "C": "10",
+        "D": "12",
+        "E": "15"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "Let \\(n = 2^4 \\times 3^2 \\times 5\\). How many of the positive divisors of \\(n\\) are multiples of\n10?",
+      "explanation": "Every divisor of \\(n\\) has the form\n\n\\[2^a \\times 3^b \\times 5^c, \\qquad 0 \\le a \\le 4,\\ 0 \\le b \\le 2,\\ 0 \\le c \\le 1.\\]\n\nA number is a **multiple of 10** exactly when it is divisible by both 2 and 5 — that is, when\n\\(a \\ge 1\\) **and** \\(c \\ge 1\\). Count the allowed choices for each exponent under those constraints:\n\n- \\(a \\in \\{1, 2, 3, 4\\}\\): **4** choices (excluding \\(a = 0\\)).\n- \\(b \\in \\{0, 1, 2\\}\\): **3** choices (no restriction — the factor of 3 doesn't affect being a multiple of 10).\n- \\(c = 1\\): **1** choice (must include the single 5).\n\nMultiplying the independent choices:\n\n\\[4 \\times 3 \\times 1 = 12.\\]\n\nSo **12** of the divisors are multiples of 10.\n\nCommon trap: requiring \\(c \\ge 1\\) but forgetting to also force \\(a \\ge 1\\) (giving \\(5 \\times 3 = 15\\)),\nor dropping the free factor of 3 entirely (giving \\(4 \\times 1 = 4\\)).",
+      "hints": [
+        "A divisor is a multiple of 10 exactly when it contains at least one 2 **and** at least one 5.",
+        "Count exponent choices separately: force \\(a \\ge 1\\) and \\(c \\ge 1\\), leave \\(b\\) unrestricted, then multiply."
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0019",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "odd-even",
+        "parity"
+      ],
+      "choices": {
+        "A": "a + b is odd",
+        "B": "a - b is even",
+        "C": "a·b + 1 is odd",
+        "D": "a is even",
+        "E": "2a + b is even"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(a\\) and \\(b\\) are integers and the product \\(ab\\) is odd, which of the following **must** be\ntrue?\n\n- **A.** \\(a + b\\) is odd\n- **B.** \\(a - b\\) is even\n- **C.** \\(ab + 1\\) is odd\n- **D.** \\(a\\) is even\n- **E.** \\(2a + b\\) is even",
+      "explanation": "A product of integers is odd only when **every factor is odd**. So \\(ab\\) odd forces both \\(a\\) and\n\\(b\\) to be odd. Test each choice under \"both odd\":\n\n- **A.** odd \\(+\\) odd \\(=\\) even, so \\(a + b\\) is even, not odd. False.\n- **B.** odd \\(-\\) odd \\(=\\) even. **Always true.** ✓\n- **C.** \\(ab\\) is odd, so \\(ab + 1\\) is even, not odd. False.\n- **D.** \\(a\\) is odd, not even. False.\n- **E.** \\(2a\\) is even and \\(b\\) is odd, so \\(2a + b\\) is even \\(+\\) odd \\(=\\) odd. False.\n\nOnly **B** must hold. The key parity facts: odd \\(\\pm\\) odd is even, and a product is odd exactly\nwhen all factors are odd.\n\nThe tempting wrong answer is **A** — many students recall \"odd + odd\" but misremember it as odd.",
+      "hints": [
+        "For a product to be odd, what has to be true of *each* factor?",
+        "Once you know both are odd, use odd \\(\\pm\\) odd \\(=\\) even."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0017",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "remainders",
+        "divisibility"
+      ],
+      "choices": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "5",
+        "E": "6"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When a positive integer \\(n\\) is divided by 7, the remainder is 4. What is the remainder when\n\\(3n\\) is divided by 7?",
+      "explanation": "Write \\(n\\) with the division identity: \\(n = 7q + 4\\) for some integer \\(q\\). Then\n\n\\[3n = 3(7q + 4) = 21q + 12.\\]\n\nThe \\(21q\\) part is a multiple of 7 and contributes no remainder, so the remainder of \\(3n\\) is\njust the remainder of \\(12\\) on division by 7:\n\n\\[12 = 7 + 5,\\]\n\nwhich leaves **5**.\n\nThe shortcut: you can multiply the remainder directly. \\(3 \\times 4 = 12\\), then reduce mod 7 to\nget 5. You never need the actual value of \\(n\\).\n\nThe trap answer is **4** — reusing the original remainder as if multiplying by 3 didn't change it.",
+      "hints": [
+        "Write \\(n = 7q + 4\\) and multiply through by 3.",
+        "Multiply the remainder (\\(3 \\times 4 = 12\\)), then subtract 7 until it drops below 7."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0018",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "remainders",
+        "modular-arithmetic"
+      ],
+      "choices": {
+        "A": "11",
+        "B": "14",
+        "C": "18",
+        "D": "23",
+        "E": "32"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A positive integer \\(n\\) leaves a remainder of 3 when divided by 5 and a remainder of 4 when\ndivided by 7. What is the remainder when \\(n\\) is divided by 35?",
+      "explanation": "Two modular conditions together pin \\(n\\) down modulo \\(5 \\times 7 = 35\\), so there is a single\nremainder to find.\n\nList the numbers that leave remainder 4 on division by 7:\n\n\\[4,\\ 11,\\ 18,\\ 25,\\ 32,\\ \\dots\\]\n\nNow check which of these also leaves remainder 3 on division by 5 (i.e. ends in 3 or 8):\n\n- \\(4 \\to\\) remainder 4. No.\n- \\(11 \\to\\) remainder 1. No.\n- \\(18 \\to 18 = 3\\times 5 + 3\\), remainder 3. **Yes.**\n\nSo \\(n = 18\\) works, and every valid \\(n\\) has the form \\(35k + 18\\). Dividing any of them by 35\nleaves remainder **18**.\n\nCheck: \\(18 \\div 5 = 3\\) remainder 3 ✓, and \\(18 \\div 7 = 2\\) remainder 4 ✓.\n\nThe distractors 11, 23, and 32 satisfy exactly *one* of the two conditions, which is why scanning\nboth is essential.",
+      "hints": [
+        "Each condition alone allows infinitely many numbers; together they fix the remainder mod \\(5\\times7 = 35\\).",
+        "List multiples-plus-4 of 7 and stop at the first one that also leaves remainder 3 mod 5."
       ]
     },
     {
@@ -983,6 +1130,22 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nPercents and ratios are the most frequently tested arithmetic ideas on GMAT Focus Quant, and\nthey hide inside word problems everywhere. Master three moves: converting between forms, handling\npercent *change*, and scaling ratios.\n\n## Core concepts\n\n**Percent as a factor.** A percent is just a number over 100. The fastest way to apply a percent\nchange is to turn it into a **multiplier**:\n\n- Increase by \\(r\\%\\): multiply by \\(1 + \\tfrac{r}{100}\\). (+25% → \\(\\times 1.25\\))\n- Decrease by \\(r\\%\\): multiply by \\(1 - \\tfrac{r}{100}\\). (−20% → \\(\\times 0.80\\))\n\n**Successive changes multiply.** Two changes in a row are multiplied, never added:\n\n\\[(+25\\%)\\text{ then }(-20\\%): \\quad 1.25 \\times 0.80 = 1.00 \\quad (\\text{no net change})\\]\n\n**Percent change formula.**\n\n\\[\\text{percent change} = \\frac{\\text{new} - \\text{old}}{\\text{old}} \\times 100\\%\\]\n\nAlways divide by the **original** value, not the new one.\n\n**Ratios scale together.** A ratio \\(a : b\\) means the quantities are \\(ak\\) and \\(bk\\) for some\nmultiplier \\(k\\). If boys : girls \\(= 3 : 5\\) and there are 24 boys, then \\(k = 8\\), so there are\n\\(5 \\times 8 = 40\\) girls.\n\n## Worked examples\n\n**Percent change.** A stock rises from $80 to $100. Percent increase \\(= \\tfrac{100 - 80}{80} = \\tfrac{20}{80} = 25\\%\\).\nNote it later falls from $100 back to $80: that's \\(\\tfrac{-20}{100} = -20\\%\\) — a *smaller* percent, because the base is now larger.\n\n**Ratio scaling.** A recipe uses flour : sugar \\(= 7 : 2\\). To use 21 cups of flour, \\(k = 3\\), so\nyou need \\(2 \\times 3 = 6\\) cups of sugar.\n\n## Common traps\n\n- **Adding successive percents.** +25% then −20% is *not* +5%; it's \\(1.25 \\times 0.80 = 1.00\\).\n- **Wrong base.** Percent change always divides by the original amount. A rise then an equal-percent fall does not return to the start.\n- **Ratio ≠ actual count.** \\(3 : 5\\) does not mean 3 and 5 — it means \\(3k\\) and \\(5k\\). Find \\(k\\) first.\n\n## Key takeaways\n\n- Convert percent changes to multipliers and multiply them for successive changes.\n- Percent change = (new − old) / old.\n- A ratio \\(a : b\\) represents \\(ak\\) and \\(bk\\); solve for the multiplier \\(k\\), then scale."
+    },
+    {
+      "id": "quant-number-properties-remainders",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "title": "Remainders & Modular Thinking",
+      "tags": [
+        "remainders",
+        "divisibility",
+        "modular-arithmetic"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nA remainder question is really a question about *structure*: every integer can be written as\n\"a multiple of the divisor, plus a leftover.\" Once you write that down, most remainder problems\nturn into ordinary algebra. Focus Quant loves these because the slow way (plugging in numbers\nuntil something works) is beatable by a one-line setup.\n\n## Core concepts\n\n**The division identity.** When a positive integer \\(n\\) leaves remainder \\(r\\) on division by\n\\(d\\),\n\n\\[n = dq + r, \\qquad 0 \\le r < d\\]\n\nwhere \\(q\\) is the quotient. The remainder is always **non-negative and strictly less than the\ndivisor** — a remainder of \\(7\\) on division by \\(5\\) is impossible; reduce it.\n\n**Remainders add and multiply.** You can do arithmetic on remainders directly and only reduce at\nthe end. If \\(n\\) leaves remainder \\(r\\), then:\n\n- \\(kn\\) leaves the remainder of \\(kr\\) (then reduce mod \\(d\\)).\n- \\(n + m\\) leaves the remainder of \\(r_n + r_m\\) (then reduce).\n\nExample: \\(n\\) leaves remainder \\(4\\) on division by \\(7\\). Then \\(3n\\) leaves the remainder of\n\\(3 \\times 4 = 12\\), and \\(12 = 7 + 5\\), so the remainder is \\(5\\) — no need to know \\(n\\) itself.\n\n**Two conditions at once.** \"Remainder \\(3\\) mod \\(5\\) **and** remainder \\(4\\) mod \\(7\\)\" pins the\nnumber down modulo \\(5 \\times 7 = 35\\). List one condition (\\(4, 11, 18, 25, 32, \\dots\\) for\n\"\\(\\equiv 4 \\bmod 7\\)\") and scan for the first that also satisfies the other. Here \\(18\\) works, so\nevery such number is \\(35k + 18\\).\n\n**Remainder 0 means \"divisible.\"** \"Leaves no remainder\" and \"is a factor of\" are the same\nstatement — translate freely between them.\n\n## Worked examples\n\n**Multiplying a remainder.** \\(n\\) divided by \\(6\\) leaves remainder \\(5\\). Remainder of \\(4n\\)?\n\\(4 \\times 5 = 20 = 3\\times 6 + 2\\), so the remainder is \\(2\\).\n\n**Combining two moduli.** \\(n \\equiv 2 \\pmod 4\\) and \\(n \\equiv 3 \\pmod 5\\). Numbers that are\n\\(3 \\bmod 5\\): \\(3, 8, 13, 18, 23, \\dots\\); the first that is also \\(2 \\bmod 4\\) is \\(18\\)\n(\\(18 = 4\\times4 + 2\\)). So \\(n = 20k + 18\\).\n\n## Common traps\n\n- **Leaving an oversized remainder.** After multiplying or adding, always reduce so the remainder\n  is less than the divisor. \\(12 \\bmod 7\\) is \\(5\\), not \\(12\\).\n- **Assuming a unique value.** Conditions like \"remainder 3 mod 5\" describe an infinite family\n  \\(5k+3\\); test the smallest valid case and, if the answer could change, a second case.\n- **Ignoring 0 as a possibility.** The smallest non-negative value satisfying \"remainder \\(r\\)\" can\n  be \\(r\\) itself (when the quotient is 0). Don't assume \\(n > d\\).\n\n## Key takeaways\n\n- Write \\(n = dq + r\\) with \\(0 \\le r < d\\) — that single line unlocks most problems.\n- You can multiply or add remainders and reduce at the end; you rarely need the actual number.\n- Two modular conditions pin a value down modulo the product of the divisors — list and scan.\n- \"Remainder 0,\" \"divisible by,\" and \"is a factor of\" all say the same thing."
     },
     {
       "id": "quant-statistics-descriptive",
