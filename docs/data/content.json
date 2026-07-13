@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 16,
-      "lessons": 5
+      "questions": 21,
+      "lessons": 6
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 32,
-    "lessons": 8
+    "questions": 37,
+    "lessons": 9
   },
   "questions": [
     {
@@ -416,6 +416,156 @@
       "hints": [
         "Don't list divisors — factor the number into primes first.",
         "If \\(N = p^a q^b\\), the divisor count is \\((a+1)(b+1)\\). Remember the \"+1\" accounts for using the prime zero times."
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0017",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "parity",
+        "odd-even",
+        "must-be-true"
+      ],
+      "choices": {
+        "A": "\\(x - y\\)",
+        "B": "\\(xy\\)",
+        "C": "\\(x^2 + y^2\\)",
+        "D": "\\(x + 2y\\)",
+        "E": "\\(2x + y\\)"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(x\\) and \\(y\\) are integers and \\(x + y\\) is odd, which of the following must be even?",
+      "explanation": "If \\(x + y\\) is odd, then exactly one of \\(x\\) and \\(y\\) is odd and the other is even.\n\n- **A. \\(x - y\\):** subtraction has the same parity as addition, so \\(x - y\\) is **odd**, not even.\n  This is the classic trap.\n- **B. \\(xy\\):** the product of an even number and an odd number is always **even**. This must be even. ✓\n- **C. \\(x^2 + y^2\\):** a square keeps the parity of its base, so \\(x^2 + y^2\\) has the same parity as\n  \\(x + y\\), which is **odd**.\n- **D. \\(x + 2y\\):** \\(2y\\) is even, so this has the parity of \\(x\\). Since \\(x\\) could be the odd one\n  or the even one, this isn't guaranteed either way.\n- **E. \\(2x + y\\):** similarly has the parity of \\(y\\), which isn't fixed.\n\nOnly **B** is guaranteed even.",
+      "hints": [
+        "If \\(x + y\\) is odd, one of the two is even and the other is odd — write that down first.",
+        "A product is even whenever *any* factor is even."
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0018",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "signs",
+        "must-be-true",
+        "inequalities"
+      ],
+      "choices": {
+        "A": "\\(m > 0\\) and \\(n > 0\\)",
+        "B": "\\(m < 0\\) and \\(n < 0\\)",
+        "C": "\\(m\\) and \\(n\\) have opposite signs",
+        "D": "\\(m = -n\\)",
+        "E": "exactly one of \\(m, n\\) is zero"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(mn > 0\\) and \\(m + n < 0\\), which of the following must be true?",
+      "explanation": "Because \\(mn > 0\\), the product is positive, so \\(m\\) and \\(n\\) have the **same** sign (and neither is\nzero — a zero would make the product \\(0\\), not positive).\n\nSame sign leaves two possibilities: both positive or both negative. But \\(m + n < 0\\) is negative,\nand two positive numbers can't add to something negative. So both must be **negative**.\n\n- **A** is the opposite conclusion.\n- **C** would make the product negative, contradicting \\(mn > 0\\).\n- **D** (\\(m = -n\\)) would give \\(m + n = 0\\), not less than \\(0\\).\n- **E** would make \\(mn = 0\\), not positive.\n\nThe answer is **B**.",
+      "hints": [
+        "A positive product means the two numbers share a sign.",
+        "Can two positive numbers sum to a negative? Use that to pick between the two same-sign cases."
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0019",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "parity",
+        "consecutive-integers",
+        "must-be-true"
+      ],
+      "choices": {
+        "A": "\\(k^2 + 1\\)",
+        "B": "\\(k^2 + k\\)",
+        "C": "\\(2k + 1\\)",
+        "D": "\\(k^2 + k + 1\\)",
+        "E": "\\(3k\\)"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(k\\) is a positive integer, which of the following is always even?",
+      "explanation": "Test each choice against both parities of \\(k\\), or use parity rules directly.\n\n- **A. \\(k^2 + 1\\):** if \\(k\\) is even, \\(k^2\\) is even and \\(k^2 + 1\\) is **odd**. Not always even.\n- **B. \\(k^2 + k = k(k+1)\\):** this is the product of two **consecutive** integers, one of which is\n  always even. So \\(k(k+1)\\) is **always even**. ✓\n- **C. \\(2k + 1\\):** \\(2k\\) is even, so \\(2k + 1\\) is always **odd**.\n- **D. \\(k^2 + k + 1 = k(k+1) + 1\\):** an even number plus \\(1\\) is always **odd**.\n- **E. \\(3k\\):** has the parity of \\(k\\); if \\(k\\) is odd (e.g. \\(k = 1\\)), \\(3k = 3\\) is **odd**.\n\nOnly **B** is guaranteed even.",
+      "hints": [
+        "Try \\(k = 1\\) and \\(k = 2\\) in each choice and keep only the ones that stay even.",
+        "Factor \\(k^2 + k\\) — what do you know about the product of two consecutive integers?"
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0020",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "signs",
+        "product",
+        "cannot-be-true"
+      ],
+      "choices": {
+        "A": "All three integers are negative.",
+        "B": "Exactly one of the integers is negative.",
+        "C": "Exactly two of the integers are negative.",
+        "D": "One of the integers equals \\(-1\\).",
+        "E": "The sum of the three integers is positive."
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "The product of three integers is negative. Which of the following CANNOT be true?",
+      "explanation": "A product is negative only when it is nonzero and the **count of negative factors is odd** — so with\nthree integers, either **one** or **all three** are negative. (None can be zero, or the product would\nbe \\(0\\).)\n\n- **A. All three negative:** three negatives is an odd count → negative product. **Possible.**\n- **B. Exactly one negative:** one negative, two positive → negative product. **Possible.**\n- **C. Exactly two negative:** two negatives is an *even* count, so those two multiply to a positive,\n  and the third (nonzero) factor keeps it positive. The product would be **positive**, never negative.\n  This **cannot** be true. ✓\n- **D. One equals \\(-1\\):** e.g. \\(-1, 2, 3\\) gives \\(-6\\). **Possible.**\n- **E. Sum is positive:** e.g. \\(-1, 5, 5\\) gives product \\(-25\\) with sum \\(9 > 0\\). **Possible.**\n\nThe answer is **C**.",
+      "hints": [
+        "A negative product needs an *odd* number of negative factors.",
+        "Multiply out \"exactly two negatives\" with a small example — what sign do you always get?"
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0021",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "parity",
+        "coefficients",
+        "must-be-true"
+      ],
+      "choices": {
+        "A": "\\(pq\\)",
+        "B": "\\(p + q\\)",
+        "C": "\\(2p + q\\)",
+        "D": "\\(p + 1\\)",
+        "E": "\\(pq + 1\\)"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(p\\) and \\(q\\) are integers and \\(3p + 5q\\) is even, which of the following must be even?",
+      "explanation": "An odd coefficient doesn't change parity: \\(3p\\) has the parity of \\(p\\), and \\(5q\\) has the parity of\n\\(q\\). So \\(3p + 5q\\) has the parity of \\(p + q\\). For that to be even, \\(p\\) and \\(q\\) must have the\n**same parity** (both odd or both even).\n\n- **A. \\(pq\\):** both even → even, but both odd → odd. Not guaranteed.\n- **B. \\(p + q\\):** same parity means their sum is **even** every time. This must be even. ✓\n- **C. \\(2p + q\\):** \\(2p\\) is even, so this has the parity of \\(q\\), which could be odd or even.\n- **D. \\(p + 1\\):** flips the parity of \\(p\\); could be either.\n- **E. \\(pq + 1\\):** since \\(pq\\) isn't fixed (see A), neither is \\(pq + 1\\).\n\nThe answer is **B**.",
+      "hints": [
+        "Drop the coefficients: \\(3p + 5q\\) has the same parity as \\(p + q\\).",
+        "If \\(p + q\\) is even, what does that tell you about whether \\(p\\) and \\(q\\) match in parity?"
       ]
     },
     {
@@ -983,6 +1133,23 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nPercents and ratios are the most frequently tested arithmetic ideas on GMAT Focus Quant, and\nthey hide inside word problems everywhere. Master three moves: converting between forms, handling\npercent *change*, and scaling ratios.\n\n## Core concepts\n\n**Percent as a factor.** A percent is just a number over 100. The fastest way to apply a percent\nchange is to turn it into a **multiplier**:\n\n- Increase by \\(r\\%\\): multiply by \\(1 + \\tfrac{r}{100}\\). (+25% → \\(\\times 1.25\\))\n- Decrease by \\(r\\%\\): multiply by \\(1 - \\tfrac{r}{100}\\). (−20% → \\(\\times 0.80\\))\n\n**Successive changes multiply.** Two changes in a row are multiplied, never added:\n\n\\[(+25\\%)\\text{ then }(-20\\%): \\quad 1.25 \\times 0.80 = 1.00 \\quad (\\text{no net change})\\]\n\n**Percent change formula.**\n\n\\[\\text{percent change} = \\frac{\\text{new} - \\text{old}}{\\text{old}} \\times 100\\%\\]\n\nAlways divide by the **original** value, not the new one.\n\n**Ratios scale together.** A ratio \\(a : b\\) means the quantities are \\(ak\\) and \\(bk\\) for some\nmultiplier \\(k\\). If boys : girls \\(= 3 : 5\\) and there are 24 boys, then \\(k = 8\\), so there are\n\\(5 \\times 8 = 40\\) girls.\n\n## Worked examples\n\n**Percent change.** A stock rises from $80 to $100. Percent increase \\(= \\tfrac{100 - 80}{80} = \\tfrac{20}{80} = 25\\%\\).\nNote it later falls from $100 back to $80: that's \\(\\tfrac{-20}{100} = -20\\%\\) — a *smaller* percent, because the base is now larger.\n\n**Ratio scaling.** A recipe uses flour : sugar \\(= 7 : 2\\). To use 21 cups of flour, \\(k = 3\\), so\nyou need \\(2 \\times 3 = 6\\) cups of sugar.\n\n## Common traps\n\n- **Adding successive percents.** +25% then −20% is *not* +5%; it's \\(1.25 \\times 0.80 = 1.00\\).\n- **Wrong base.** Percent change always divides by the original amount. A rise then an equal-percent fall does not return to the start.\n- **Ratio ≠ actual count.** \\(3 : 5\\) does not mean 3 and 5 — it means \\(3k\\) and \\(5k\\). Find \\(k\\) first.\n\n## Key takeaways\n\n- Convert percent changes to multipliers and multiply them for successive changes.\n- Percent change = (new − old) / old.\n- A ratio \\(a : b\\) represents \\(ak\\) and \\(bk\\); solve for the multiplier \\(k\\), then scale."
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "title": "Odds, Evens & Signs",
+      "tags": [
+        "parity",
+        "odd-even",
+        "signs",
+        "number-properties"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nMany GMAT Focus Quant questions never ask you to compute a value — they ask what **must** be\ntrue about whether a number is odd or even, or positive or negative. These **parity** and **sign**\nquestions look abstract, but they collapse to a handful of fixed rules. Once you know the rules you\ncan answer in seconds, and when you don't, you can always fall back on **plugging in small numbers**.\n\n## Core concepts\n\n**Parity of sums and differences.** Addition and subtraction have the *same* parity behavior:\n\n\\[\\text{even} \\pm \\text{even} = \\text{even}, \\quad \\text{odd} \\pm \\text{odd} = \\text{even}, \\quad \\text{even} \\pm \\text{odd} = \\text{odd}\\]\n\nThe takeaway: \\(a + b\\) and \\(a - b\\) always have the **same** parity. A sum (or difference) is odd\n**only** when exactly one of the two numbers is odd.\n\n**Parity of products.** A product is even if **any** factor is even; it is odd **only** when **every**\nfactor is odd:\n\n\\[\\text{even} \\times \\text{anything} = \\text{even}, \\qquad \\text{odd} \\times \\text{odd} = \\text{odd}\\]\n\n**Two consecutive integers.** \\(k\\) and \\(k+1\\) are always one odd and one even, so their product\n\\(k(k+1)\\) is **always even**. This is why expressions like \\(k^2 + k = k(k+1)\\) are guaranteed even.\n\n**Signs of products and quotients.** For multiplication and division, only the *count* of negative\nfactors matters:\n\n- An **even** number of negative factors → **positive** result.\n- An **odd** number of negative factors → **negative** result.\n\nSo a product of three numbers is negative exactly when one or three of them are negative — never\nwhen exactly two are.\n\n**Zero is even, and it has no sign.** \\(0\\) is an even integer. It is neither positive nor negative,\nand any product containing a \\(0\\) is \\(0\\) — a case that quietly breaks \"must be positive/negative\"\nclaims, so watch for whether the problem says the numbers are *nonzero*.\n\n## Worked examples\n\n**Parity of an expression.** Is \\(3p + 5q\\) odd or even? The coefficients don't change parity:\n\\(3p\\) has the parity of \\(p\\), and \\(5q\\) has the parity of \\(q\\). So \\(3p + 5q\\) has the parity of\n\\(p + q\\) — it's even exactly when \\(p\\) and \\(q\\) share the same parity.\n\n**Sign of a quotient.** If \\(a < 0\\), \\(b > 0\\), \\(c < 0\\), then \\(\\dfrac{ab}{c}\\) has two negative\ninputs (\\(a\\) and \\(c\\)) — an even count — so the result is **positive**.\n\n## Common traps\n\n- **Assuming subtraction behaves differently from addition.** \\(x - y\\) has the *same* parity as\n  \\(x + y\\). If \\(x + y\\) is odd, so is \\(x - y\\).\n- **Forgetting the odd-count rule for signs.** \"Exactly two negatives\" gives a **positive** product,\n  not a negative one.\n- **Ignoring zero.** If the problem doesn't say \"nonzero,\" a variable could be \\(0\\) — which is even\n  and sign-less, and often kills a \"must be positive\" answer.\n- **Testing only one case.** When you plug in numbers to eliminate a \"must be true\" choice, try both\n  parities and both signs; one clean counterexample is enough to reject a choice.\n\n## Key takeaways\n\n- \\(a + b\\) and \\(a - b\\) always share parity; a sum/difference is odd only when exactly one term is odd.\n- A product is odd only if every factor is odd; a single even factor makes it even.\n- Consecutive integers \\(k(k+1)\\) are always even.\n- Sign of a product/quotient depends only on the parity of the *count* of negatives: even count → positive, odd count → negative.\n- Zero is even and sign-less — check whether variables are allowed to be zero."
     },
     {
       "id": "quant-statistics-descriptive",
