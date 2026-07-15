@@ -70,7 +70,7 @@ The taxonomy is ordered so you can study a section top to bottom. A balanced pla
 Early days — the bank is growing. Rough coverage so far (a contributor could automate this
 count from the front-matter):
 
-- **Quant** — arithmetic, number properties, algebra (linear, inequalities), word problems (rates, work, sets), counting & probability, statistics (mean, median, weighted average, standard deviation).
+- **Quant** — arithmetic, number properties (factors, remainders), algebra (linear, quadratics, inequalities), word problems (rates, work, sets), counting & probability, statistics (mean, median, weighted average, standard deviation).
 - **Verbal** — Critical Reasoning (assumptions, strengthen/weaken, inference, flaw) and Reading Comprehension (main idea, detail/inference).
 - **Data Insights** — Data Sufficiency across fundamentals, divisibility, number properties, algebra, statistics, word problems, and overlapping sets.
 

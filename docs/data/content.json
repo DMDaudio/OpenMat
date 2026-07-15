@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 16,
-      "lessons": 5
+      "questions": 22,
+      "lessons": 6
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 32,
-    "lessons": 8
+    "questions": 38,
+    "lessons": 9
   },
   "questions": [
     {
@@ -416,6 +416,184 @@
       "hints": [
         "Don't list divisors — factor the number into primes first.",
         "If \\(N = p^a q^b\\), the divisor count is \\((a+1)(b+1)\\). Remember the \"+1\" accounts for using the prime zero times."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0017",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "remainders",
+        "sum"
+      ],
+      "choices": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "3",
+        "E": "6"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When the positive integer \\(n\\) is divided by 5, the remainder is 3. What is the remainder when\n\\(n + 3\\) is divided by 5?",
+      "explanation": "Write \\(n\\) using the division identity: \\(n = 5q + 3\\) for some non-negative integer \\(q\\). Then\n\n\\[n + 3 = 5q + 6 = 5q + 5 + 1 = 5(q + 1) + 1.\\]\n\nThe part \\(5(q + 1)\\) is a multiple of 5, so the remainder is **1**.\n\nA quick check with a concrete value: take \\(n = 8\\) (which leaves remainder 3 on division by 5).\nThen \\(n + 3 = 11\\), and \\(11 = 5 \\times 2 + 1\\) — remainder 1.\n\n**The trap:** answer **E (6)** comes from adding the remainders \\(3 + 3 = 6\\) and stopping. But 6\nis larger than the divisor 5, so it is not a legal remainder — reduce once more: \\(6 = 5 + 1\\),\ngiving 1. Answer **D (3)** comes from assuming adding 3 leaves the remainder unchanged.",
+      "hints": [
+        "Write \\(n\\) as \\(5q + 3\\) and substitute into \\(n + 3\\).",
+        "A remainder must be less than the divisor — if you get 6, reduce it modulo 5 again."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0018",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "remainders",
+        "possible-values"
+      ],
+      "choices": {
+        "A": "20",
+        "B": "22",
+        "C": "23",
+        "D": "24",
+        "E": "25"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When a positive integer \\(n\\) is divided by 6, the remainder is 5. Which of the following could\nbe the value of \\(n\\)?",
+      "explanation": "By the division identity, \\(n = 6q + 5\\) for some non-negative integer \\(q\\), so the possible\nvalues are \\(5, 11, 17, 23, 29, \\dots\\) — each is 5 more than a multiple of 6. Equivalently,\n\\(n\\) leaves remainder 5, so \\(n - 5\\) must be divisible by 6.\n\nTest each choice by dividing by 6:\n\n- \\(20 = 6 \\times 3 + 2\\) — remainder 2.\n- \\(22 = 6 \\times 3 + 4\\) — remainder 4.\n- \\(23 = 6 \\times 3 + 5\\) — **remainder 5.** ✓\n- \\(24 = 6 \\times 4 + 0\\) — remainder 0.\n- \\(25 = 6 \\times 4 + 1\\) — remainder 1.\n\nOnly **23** works.\n\n**The trap:** a number ending in 5 (25) *feels* like it should leave remainder 5, but remainder\ndepends on division by 6, not on the last digit. Check \\(n - 5\\) for divisibility by 6 instead:\n\\(23 - 5 = 18 = 6 \\times 3\\). ✓",
+      "hints": [
+        "Every valid \\(n\\) has the form \\(6q + 5\\); equivalently \\(n - 5\\) is a multiple of 6.",
+        "Subtract 5 from each choice and ask whether the result is divisible by 6."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0019",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "remainders",
+        "squares",
+        "product"
+      ],
+      "choices": {
+        "A": "1",
+        "B": "2",
+        "C": "4",
+        "D": "5",
+        "E": "7"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When the positive integer \\(n\\) is divided by 9, the remainder is 7. What is the remainder when\n\\(n^2\\) is divided by 9?",
+      "explanation": "Because remainders multiply, the remainder of \\(n^2\\) modulo 9 depends only on the remainder of\n\\(n\\):\n\n\\[n^2 \\bmod 9 = (n \\bmod 9)^2 \\bmod 9 = 7^2 \\bmod 9 = 49 \\bmod 9.\\]\n\nNow \\(49 = 9 \\times 5 + 4\\), so the remainder is **4**.\n\nTo see why the quotient doesn't matter, expand \\(n = 9q + 7\\):\n\n\\[n^2 = (9q + 7)^2 = 81q^2 + 126q + 49.\\]\n\nBoth \\(81q^2\\) and \\(126q = 9(14q)\\) are multiples of 9, so only the \\(49\\) contributes to the\nremainder, again giving 4.\n\n**The trap:** answer **E (7)** comes from assuming the remainder is unchanged by squaring. Answer\n**A (1)** can come from mishandling \\(49 \\bmod 9\\) (e.g. using \\(9 \\times 6 = 54\\) and getting a\nnegative). Reduce carefully: the largest multiple of 9 below 49 is 45, leaving 4.",
+      "hints": [
+        "The remainder of \\(n^2\\) depends only on the remainder of \\(n\\): compute \\(7^2 \\bmod 9\\).",
+        "Find the largest multiple of 9 that is at most 49, then subtract."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0020",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "remainders",
+        "sum",
+        "combining"
+      ],
+      "choices": {
+        "A": "0",
+        "B": "2",
+        "C": "4",
+        "D": "6",
+        "E": "8"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When the positive integer \\(x\\) is divided by 12, the remainder is 5, and when the positive\ninteger \\(y\\) is divided by 12, the remainder is 11. What is the remainder when \\(x + y\\) is\ndivided by 12?",
+      "explanation": "Remainders add, so start by adding the two remainders, then reduce modulo 12:\n\n\\[(x + y) \\bmod 12 = (5 + 11) \\bmod 12 = 16 \\bmod 12.\\]\n\nSince \\(16 = 12 + 4\\), the remainder is **4**.\n\nConcretely, take \\(x = 5\\) and \\(y = 11\\): \\(x + y = 16 = 12 \\times 1 + 4\\) — remainder 4. Any\nother valid choice gives the same result, e.g. \\(x = 17,\\ y = 23\\): \\(x + y = 40 = 12 \\times 3 +\n4\\).\n\n**The trap:** answer **E (8)** treats 16 as if it were the remainder and subtracts 8 from 16 by\nmistake; answer that leaves **16** un-reduced isn't even offered because a remainder must be less\nthan 12. Always reduce the sum of remainders one more time.",
+      "hints": [
+        "Add the two remainders first: \\(5 + 11\\).",
+        "The result exceeds 12, so it is not yet a legal remainder — reduce modulo 12 again."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0021",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "remainders",
+        "cyclicity",
+        "powers"
+      ],
+      "choices": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "0"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the remainder when \\(7^{100}\\) is divided by 5?",
+      "explanation": "You never compute \\(7^{100}\\). Since remainders multiply, replace the base by its remainder:\n\\(7 \\equiv 2 \\pmod 5\\), so\n\n\\[7^{100} \\bmod 5 = 2^{100} \\bmod 5.\\]\n\nNow list the remainders of the powers of 2 modulo 5 until they repeat:\n\n\\[2^1 \\equiv 2,\\quad 2^2 \\equiv 4,\\quad 2^3 \\equiv 3,\\quad 2^4 \\equiv 1,\\quad 2^5 \\equiv 2,\\ \\dots\\]\n\nThe block \\(2, 4, 3, 1\\) repeats with period 4. The exponent 100 is a multiple of 4\n(\\(100 = 4 \\times 25\\)), so \\(2^{100}\\) lands on the **last** value of the block, which is **1**.\n\nCheck the idea in miniature: \\(2^4 = 16 = 5 \\times 3 + 1\\) leaves remainder 1, and every exponent\nthat is a multiple of 4 behaves the same way.\n\n**The trap:** answer **B (2)** comes from using the first term of the cycle instead of the term at\nposition \\(100 \\bmod 4\\). When the exponent is an exact multiple of the period, use the *last*\nvalue of the block, not the first.",
+      "hints": [
+        "Reduce the base first: \\(7 \\equiv 2 \\pmod 5\\), so you need \\(2^{100} \\bmod 5\\).",
+        "List remainders of \\(2^1, 2^2, 2^3, \\dots\\) modulo 5 until they cycle, then find where exponent 100 falls in the cycle."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0022",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "remainders",
+        "cannot-be-determined",
+        "divisors"
+      ],
+      "choices": {
+        "A": "1",
+        "B": "3",
+        "C": "5",
+        "D": "7",
+        "E": "It cannot be determined from the information given."
+      },
+      "answer": "E",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When the positive integer \\(n\\) is divided by 12, the remainder is 5. What is the remainder when\n\\(n\\) is divided by 8?",
+      "explanation": "Knowing the remainder for one divisor does **not** fix the remainder for an unrelated divisor. The\nvalid values of \\(n\\) are \\(n = 12q + 5\\): \\(5, 17, 29, 41, \\dots\\) Divide each by 8:\n\n- \\(n = 5\\): \\(5 = 8 \\times 0 + 5\\) — remainder **5**.\n- \\(n = 17\\): \\(17 = 8 \\times 2 + 1\\) — remainder **1**.\n- \\(n = 29\\): \\(29 = 8 \\times 3 + 5\\) — remainder **5**.\n- \\(n = 41\\): \\(41 = 8 \\times 5 + 1\\) — remainder **1**.\n\nThe remainder alternates between 5 and 1, so it is not determined — the answer is **E**.\n\nThis works because 8 does not divide 12. The remainder modulo a new divisor \\(d'\\) is fixed by the\nremainder modulo \\(d\\) only when \\(d'\\) divides \\(d\\) (for example, \\(n \\bmod 12 = 5\\) *does* fix\n\\(n \\bmod 6 = 5\\), since 6 divides 12). Here \\(8 \\nmid 12\\), so the extra multiples of 12 shift the\nremainder modulo 8.\n\n**The trap:** answer **C (5)** comes from testing only \\(n = 5\\) and assuming the remainder carries\nover. Always test at least two values of the form \\(12q + 5\\); the second one (17) already breaks\nthe pattern.",
+      "hints": [
+        "List several values \\(n = 12q + 5\\) and divide each by 8 — do they all give the same remainder?",
+        "A remainder modulo 12 fixes the remainder modulo \\(d'\\) only when \\(d'\\) divides 12; 8 does not."
       ]
     },
     {
@@ -983,6 +1161,23 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nPercents and ratios are the most frequently tested arithmetic ideas on GMAT Focus Quant, and\nthey hide inside word problems everywhere. Master three moves: converting between forms, handling\npercent *change*, and scaling ratios.\n\n## Core concepts\n\n**Percent as a factor.** A percent is just a number over 100. The fastest way to apply a percent\nchange is to turn it into a **multiplier**:\n\n- Increase by \\(r\\%\\): multiply by \\(1 + \\tfrac{r}{100}\\). (+25% → \\(\\times 1.25\\))\n- Decrease by \\(r\\%\\): multiply by \\(1 - \\tfrac{r}{100}\\). (−20% → \\(\\times 0.80\\))\n\n**Successive changes multiply.** Two changes in a row are multiplied, never added:\n\n\\[(+25\\%)\\text{ then }(-20\\%): \\quad 1.25 \\times 0.80 = 1.00 \\quad (\\text{no net change})\\]\n\n**Percent change formula.**\n\n\\[\\text{percent change} = \\frac{\\text{new} - \\text{old}}{\\text{old}} \\times 100\\%\\]\n\nAlways divide by the **original** value, not the new one.\n\n**Ratios scale together.** A ratio \\(a : b\\) means the quantities are \\(ak\\) and \\(bk\\) for some\nmultiplier \\(k\\). If boys : girls \\(= 3 : 5\\) and there are 24 boys, then \\(k = 8\\), so there are\n\\(5 \\times 8 = 40\\) girls.\n\n## Worked examples\n\n**Percent change.** A stock rises from $80 to $100. Percent increase \\(= \\tfrac{100 - 80}{80} = \\tfrac{20}{80} = 25\\%\\).\nNote it later falls from $100 back to $80: that's \\(\\tfrac{-20}{100} = -20\\%\\) — a *smaller* percent, because the base is now larger.\n\n**Ratio scaling.** A recipe uses flour : sugar \\(= 7 : 2\\). To use 21 cups of flour, \\(k = 3\\), so\nyou need \\(2 \\times 3 = 6\\) cups of sugar.\n\n## Common traps\n\n- **Adding successive percents.** +25% then −20% is *not* +5%; it's \\(1.25 \\times 0.80 = 1.00\\).\n- **Wrong base.** Percent change always divides by the original amount. A rise then an equal-percent fall does not return to the start.\n- **Ratio ≠ actual count.** \\(3 : 5\\) does not mean 3 and 5 — it means \\(3k\\) and \\(5k\\). Find \\(k\\) first.\n\n## Key takeaways\n\n- Convert percent changes to multipliers and multiply them for successive changes.\n- Percent change = (new − old) / old.\n- A ratio \\(a : b\\) represents \\(ak\\) and \\(bk\\); solve for the multiplier \\(k\\), then scale."
+    },
+    {
+      "id": "quant-number-properties-remainders",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "title": "Remainders",
+      "tags": [
+        "remainders",
+        "divisibility",
+        "cyclicity",
+        "number-properties"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nRemainders show up all over Focus Quant and Data Insights, and almost every question rests on a\nsingle identity plus a couple of rules for combining remainders. Learn the identity, learn how\nremainders behave under addition and multiplication, and learn the one trap that catches most\ntest-takers: assuming a remainder is determined when it isn't.\n\n## Core concepts\n\n**The division identity.** When a positive integer \\(n\\) is divided by a positive divisor \\(d\\),\nthere is a unique quotient \\(q\\) and remainder \\(r\\):\n\n\\[n = dq + r, \\qquad 0 \\le r < d\\]\n\nThe remainder is always at least \\(0\\) and strictly less than the divisor. So \"remainder 7\"\nimmediately tells you the divisor is **at least 8**.\n\n**Remainders add and multiply.** To find the remainder of a sum or product, you may replace each\nnumber by its own remainder first, then reduce again at the end:\n\n\\[(a + b) \\bmod d = \\big((a \\bmod d) + (b \\bmod d)\\big) \\bmod d\\]\n\\[(a \\times b) \\bmod d = \\big((a \\bmod d) \\times (b \\bmod d)\\big) \\bmod d\\]\n\nThat is why you never need the actual large number — only its remainder. For powers, this is just\nrepeated multiplication: \\(n^k \\bmod d\\) depends only on \\((n \\bmod d)^k \\bmod d\\).\n\n**Cyclicity for large powers.** The remainders of \\(2^1, 2^2, 2^3, \\dots\\) modulo \\(5\\) run\n\\(2, 4, 3, 1, 2, 4, 3, 1, \\dots\\) — a repeating block of length \\(4\\). For any base and divisor\nthe remainders of the powers eventually cycle. Find the cycle length, then use the exponent's\nposition within the cycle. To locate \\(2^{100}\\), note \\(100\\) is a multiple of the period \\(4\\),\nso it lands on the **last** value of the block.\n\n## Worked examples\n\n**Combining a sum.** When \\(x\\) is divided by \\(12\\) the remainder is \\(5\\), and when \\(y\\) is\ndivided by \\(12\\) the remainder is \\(11\\). The remainder of \\(x + y\\) is\n\n\\[(5 + 11) \\bmod 12 = 16 \\bmod 12 = 4.\\]\n\nNote \\(16\\) is not a legal remainder (it exceeds \\(12\\)); you must reduce once more.\n\n**A power modulo a small number.** The remainder of \\(7^{100}\\) divided by \\(5\\): since\n\\(7 \\equiv 2 \\pmod 5\\), this equals \\(2^{100} \\bmod 5\\). The powers of \\(2\\) cycle with period\n\\(4\\), and \\(100 = 4 \\times 25\\), so \\(2^{100}\\) sits at the end of a block — remainder \\(1\\).\n\n## Common traps\n\n- **Leaving an illegal remainder.** \\(5 + 11 = 16\\) is not the answer mod \\(12\\); a remainder must\n  be less than the divisor, so reduce again to \\(4\\).\n- **Assuming a smaller divisor is determined.** Knowing \\(n \\bmod 12 = 5\\) does **not** fix\n  \\(n \\bmod 8\\): \\(n = 5\\) gives remainder \\(5\\), but \\(n = 17\\) gives remainder \\(1\\). Unless the\n  new divisor divides the old one, test a few values of \\(n = dq + r\\) before concluding.\n- **Testing only one value.** When a question asks what \"must be true,\" plug in at least two\n  numbers of the form \\(dq + r\\) (e.g. \\(q = 0\\) and \\(q = 1\\)); a pattern from a single case is\n  often a coincidence.\n\n## Key takeaways\n\n- Everything follows from \\(n = dq + r\\) with \\(0 \\le r < d\\); a remainder of \\(r\\) forces the\n  divisor to be greater than \\(r\\).\n- Reduce each part first, combine, then reduce again — remainders add and multiply.\n- For big powers, find the repeating cycle of remainders and use the exponent's position in it.\n- A remainder for one divisor rarely fixes the remainder for a different divisor — test values before you commit."
     },
     {
       "id": "quant-statistics-descriptive",
