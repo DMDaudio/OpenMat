@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 16,
-      "lessons": 5
+      "questions": 22,
+      "lessons": 8
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 32,
-    "lessons": 8
+    "questions": 38,
+    "lessons": 11
   },
   "questions": [
     {
@@ -416,6 +416,184 @@
       "hints": [
         "Don't list divisors — factor the number into primes first.",
         "If \\(N = p^a q^b\\), the divisor count is \\((a+1)(b+1)\\). Remember the \"+1\" accounts for using the prime zero times."
+      ]
+    },
+    {
+      "id": "quant-number-properties-factors-multiples-0017",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "factors-multiples",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "gcf",
+        "lcm",
+        "factors"
+      ],
+      "choices": {
+        "A": "15",
+        "B": "30",
+        "C": "45",
+        "D": "54",
+        "E": "60"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "The greatest common factor of two positive integers is 6 and their least common multiple is 90.\nIf one of the integers is 18, what is the other integer?",
+      "explanation": "Use the identity that ties GCF and LCM to the two numbers:\n\n\\[\\text{GCF}(a,b) \\times \\text{LCM}(a,b) = a \\times b\\]\n\nHere \\(6 \\times 90 = 18 \\times b\\), so \\(540 = 18b\\) and \\(b = 30\\).\n\nCheck it directly: \\(18 = 2 \\cdot 3^2\\) and \\(30 = 2 \\cdot 3 \\cdot 5\\). The GCF takes the lower power\nof shared primes: \\(2 \\cdot 3 = 6\\) ✓. The LCM takes the higher power of all primes:\n\\(2 \\cdot 3^2 \\cdot 5 = 90\\) ✓.\n\n**The trap:** choice **A (15)** is \\(\\text{LCM} \\div \\text{GCF} = 90 \\div 6\\), a tempting but\nmeaningless combination here.",
+      "hints": [
+        "There's a fixed relationship between two numbers, their GCF, and their LCM.",
+        "\\(\\text{GCF} \\times \\text{LCM} = \\text{the product of the two numbers}\\)."
+      ]
+    },
+    {
+      "id": "quant-number-properties-factors-multiples-0018",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "factors-multiples",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "lcm",
+        "multiples",
+        "word-problem"
+      ],
+      "choices": {
+        "A": "60",
+        "B": "120",
+        "C": "160",
+        "D": "240",
+        "E": "480"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "Three lighthouses flash at regular intervals of 8, 12, and 20 seconds, respectively. If all three\nflash together at a certain instant, after how many seconds will they next all flash together?",
+      "explanation": "Repeating cycles line up again after the **least common multiple** of their periods, so find\n\\(\\text{LCM}(8, 12, 20)\\).\n\nFactor each into primes:\n\n\\[8 = 2^3, \\quad 12 = 2^2 \\cdot 3, \\quad 20 = 2^2 \\cdot 5\\]\n\nThe LCM takes the highest power of every prime that appears:\n\n\\[\\text{LCM} = 2^3 \\cdot 3 \\cdot 5 = 120\\]\n\nSo all three flash together again after **120 seconds**.\n\n**The trap:** choice **A (60)** is \\(\\text{LCM}(12, 20)\\) — it ignores the 8-second light, which needs\nthe full \\(2^3\\). Multiplying all three periods (\\(8 \\cdot 12 \\cdot 20 = 1920\\)) gives a common\nmultiple, but not the *least* one.",
+      "hints": [
+        "\"When do repeating cycles coincide again?\" is always an LCM question.",
+        "Factor each interval into primes and take the highest power of each prime."
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0019",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "parity",
+        "odd-even",
+        "must-be-true"
+      ],
+      "choices": {
+        "A": "\\(2n + 1\\)",
+        "B": "\\(3n\\)",
+        "C": "\\(n^2 + n\\)",
+        "D": "\\(n^2 + 1\\)",
+        "E": "\\(n^3 - n + 1\\)"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(n\\) is an integer, which of the following must be even?",
+      "explanation": "\"Must be even\" means even for **every** integer \\(n\\) — so a single odd result kills a choice.\n\n- **C: \\(n^2 + n = n(n+1)\\)** is the product of two *consecutive* integers. One of any two\n  consecutive integers is even, so the product is always even. **This is the answer.**\n\nCheck the others fail for at least one \\(n\\):\n\n- **A: \\(2n + 1\\)** is even plus 1 → always **odd**.\n- **B: \\(3n\\)** — at \\(n = 1\\) it's 3, odd.\n- **D: \\(n^2 + 1\\)** — at \\(n = 2\\) it's 5, odd.\n- **E: \\(n^3 - n + 1 = (n-1)n(n+1) + 1\\)** — the product of three consecutive integers is even, so\n  this is even + 1 → always **odd**.",
+      "hints": [
+        "\"Must be even\" fails the moment you find one odd result — try \\(n = 1\\) and \\(n = 2\\).",
+        "A product of consecutive integers is always even. Can you rewrite a choice in that form?"
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0020",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "signs",
+        "positive-negative",
+        "must-be-true"
+      ],
+      "choices": {
+        "A": "\\(x > 0\\)",
+        "B": "\\(y > 0\\)",
+        "C": "\\(x < 0\\)",
+        "D": "\\(x = y\\)",
+        "E": "\\(xy < 0\\)"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(xy > 0\\) and \\(x + y < 0\\), which of the following must be true?",
+      "explanation": "Read the two conditions together:\n\n- \\(xy > 0\\) means \\(x\\) and \\(y\\) have the **same sign** (both positive or both negative).\n- \\(x + y < 0\\) means their sum is negative.\n\nTwo positive numbers can't sum to something negative, so \"both positive\" is out. That leaves\n**both negative**. Therefore \\(x < 0\\) (and \\(y < 0\\)) must be true — **choice C**.\n\nWhy the others aren't forced: **A** and **B** claim a variable is positive — the opposite of what\nwe found. **D (\\(x = y\\))** isn't required (e.g. \\(x = -1, y = -2\\) works). **E (\\(xy < 0\\))**\ndirectly contradicts the given \\(xy > 0\\).",
+      "hints": [
+        "\\(xy > 0\\) tells you the two variables share a sign. Which sign?",
+        "If they had the same sign but summed to a negative, can they both be positive?"
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0021",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "remainders",
+        "divisibility"
+      ],
+      "choices": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "5",
+        "E": "6"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When the positive integer \\(n\\) is divided by 7, the remainder is 4. What is the remainder when\n\\(3n + 2\\) is divided by 7?",
+      "explanation": "Write \\(n\\) in the division form \\(n = 7k + 4\\), then substitute:\n\n\\[3n + 2 = 3(7k + 4) + 2 = 21k + 12 + 2 = 21k + 14 = 7(3k + 2)\\]\n\nThat is a multiple of 7, so the remainder is **0**.\n\nThe \\(21k\\) term is always divisible by 7, so only the constant part matters:\n\\(3 \\times 4 + 2 = 14\\), and \\(14\\) is itself a multiple of 7 — remainder 0.\n\nSanity check with the smallest \\(n\\): \\(n = 4 \\Rightarrow 3(4) + 2 = 14\\), and \\(14 \\div 7\\) leaves 0. ✓\n\n**The trap:** choice **D (5)** comes from forgetting the \"\\(+2\\)\" and taking the remainder of\n\\(3n = 12\\) (i.e. \\(12 - 7 = 5\\)).",
+      "hints": [
+        "Substitute \\(n = 7k + 4\\) into \\(3n + 2\\) and simplify.",
+        "The multiple-of-7 terms drop out; only the leftover constant sets the remainder."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0022",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "remainders",
+        "simultaneous-conditions"
+      ],
+      "choices": {
+        "A": "8",
+        "B": "13",
+        "C": "14",
+        "D": "18",
+        "E": "23"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When a positive integer \\(k\\) is divided by 5, the remainder is 3, and when \\(k\\) is divided by 4,\nthe remainder is 2. What is the smallest possible value of \\(k\\)?",
+      "explanation": "List the values that satisfy the first condition, then scan for one that also satisfies the second.\n\nRemainder 3 when divided by 5: \\(k = 3, 8, 13, 18, 23, \\dots\\)\n\nNow test each against \"remainder 2 when divided by 4\":\n\n- \\(3 \\div 4\\) → remainder 3. No.\n- \\(8 \\div 4\\) → remainder 0. No.\n- \\(13 \\div 4\\) → remainder 1. No.\n- \\(18 \\div 4 = 4\\) remainder 2. **Yes.**\n\nSo the smallest value is **18**. Confirm both conditions: \\(18 = 5(3) + 3\\) ✓ and\n\\(18 = 4(4) + 2\\) ✓.\n\n**The traps:** **A (8)** fits the mod-5 condition but is divisible by 4 (remainder 0, not 2).\n**C (14)** fits the mod-4 condition (remainder 2) but \\(14 \\div 5\\) leaves remainder 4, failing the\nmod-5 condition. Each wrong choice satisfies at most one of the two requirements.",
+      "hints": [
+        "List every value with remainder 3 mod 5, then check each against the mod-4 condition.",
+        "The answer must satisfy *both* conditions at once — don't stop at the first one."
       ]
     },
     {
@@ -983,6 +1161,57 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nPercents and ratios are the most frequently tested arithmetic ideas on GMAT Focus Quant, and\nthey hide inside word problems everywhere. Master three moves: converting between forms, handling\npercent *change*, and scaling ratios.\n\n## Core concepts\n\n**Percent as a factor.** A percent is just a number over 100. The fastest way to apply a percent\nchange is to turn it into a **multiplier**:\n\n- Increase by \\(r\\%\\): multiply by \\(1 + \\tfrac{r}{100}\\). (+25% → \\(\\times 1.25\\))\n- Decrease by \\(r\\%\\): multiply by \\(1 - \\tfrac{r}{100}\\). (−20% → \\(\\times 0.80\\))\n\n**Successive changes multiply.** Two changes in a row are multiplied, never added:\n\n\\[(+25\\%)\\text{ then }(-20\\%): \\quad 1.25 \\times 0.80 = 1.00 \\quad (\\text{no net change})\\]\n\n**Percent change formula.**\n\n\\[\\text{percent change} = \\frac{\\text{new} - \\text{old}}{\\text{old}} \\times 100\\%\\]\n\nAlways divide by the **original** value, not the new one.\n\n**Ratios scale together.** A ratio \\(a : b\\) means the quantities are \\(ak\\) and \\(bk\\) for some\nmultiplier \\(k\\). If boys : girls \\(= 3 : 5\\) and there are 24 boys, then \\(k = 8\\), so there are\n\\(5 \\times 8 = 40\\) girls.\n\n## Worked examples\n\n**Percent change.** A stock rises from $80 to $100. Percent increase \\(= \\tfrac{100 - 80}{80} = \\tfrac{20}{80} = 25\\%\\).\nNote it later falls from $100 back to $80: that's \\(\\tfrac{-20}{100} = -20\\%\\) — a *smaller* percent, because the base is now larger.\n\n**Ratio scaling.** A recipe uses flour : sugar \\(= 7 : 2\\). To use 21 cups of flour, \\(k = 3\\), so\nyou need \\(2 \\times 3 = 6\\) cups of sugar.\n\n## Common traps\n\n- **Adding successive percents.** +25% then −20% is *not* +5%; it's \\(1.25 \\times 0.80 = 1.00\\).\n- **Wrong base.** Percent change always divides by the original amount. A rise then an equal-percent fall does not return to the start.\n- **Ratio ≠ actual count.** \\(3 : 5\\) does not mean 3 and 5 — it means \\(3k\\) and \\(5k\\). Find \\(k\\) first.\n\n## Key takeaways\n\n- Convert percent changes to multipliers and multiply them for successive changes.\n- Percent change = (new − old) / old.\n- A ratio \\(a : b\\) represents \\(ak\\) and \\(bk\\); solve for the multiplier \\(k\\), then scale."
+    },
+    {
+      "id": "quant-number-properties-factors-multiples",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "factors-multiples",
+      "title": "Factors, Multiples, GCF & LCM",
+      "tags": [
+        "factors",
+        "multiples",
+        "gcf",
+        "lcm",
+        "prime-factorization"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nAlmost every number-properties question rests on one idea: **prime factorization**. Once you can\nbreak an integer into its primes, counting its divisors, finding a greatest common factor (GCF),\nor a least common multiple (LCM) all become mechanical. GMAT Focus rewards doing this quickly\ninstead of listing factors by hand.\n\n## Core concepts\n\n**Prime factorization.** Every integer greater than 1 is a unique product of primes. Write it in\nexponent form: \\(72 = 2^3 \\times 3^2\\), \\(90 = 2 \\times 3^2 \\times 5\\).\n\n**Counting divisors.** If \\(N = p^a \\times q^b \\times \\dots\\), the number of positive divisors is\n\\[(a+1)(b+1)\\dots\\]\nEach prime can appear in a divisor to a power from \\(0\\) up to its exponent — that's the \"+1\".\n\n**Greatest common factor (GCF).** For each prime the two numbers share, take the **lower** power.\n\\[18 = 2 \\cdot 3^2, \\quad 30 = 2 \\cdot 3 \\cdot 5 \\;\\Rightarrow\\; \\text{GCF} = 2 \\cdot 3 = 6\\]\n\n**Least common multiple (LCM).** For every prime that appears in either number, take the **higher**\npower.\n\\[\\text{LCM}(18, 30) = 2 \\cdot 3^2 \\cdot 5 = 90\\]\n\n**The key identity.** For any two positive integers,\n\\[\\text{GCF}(a,b) \\times \\text{LCM}(a,b) = a \\times b\\]\nThis lets you find one quantity when you know the other three.\n\n## Worked examples\n\n**Divisor count.** \\(200 = 2^3 \\cdot 5^2\\), so it has \\((3+1)(2+1) = 12\\) positive divisors.\n\n**When do events coincide?** Two lights blink every 6 and every 8 seconds. They next blink\ntogether after \\(\\text{LCM}(6,8)\\) seconds. \\(6 = 2 \\cdot 3\\), \\(8 = 2^3\\), so LCM \\(= 2^3 \\cdot 3 = 24\\)\nseconds. LCM answers \"when do repeating cycles line up again.\"\n\n## Common traps\n\n- **Swapping GCF and LCM rules.** GCF takes the *lower* power of *shared* primes; LCM takes the\n  *higher* power of *all* primes. Mixing them up is the most common mistake.\n- **Forgetting 1 and the number itself are divisors.** The \\((a+1)(b+1)\\) formula already counts them.\n- **Using the product \\(a \\times b\\) when the LCM is what's asked** (e.g. \"when do the cycles meet?\").\n  The product is a common multiple, but rarely the *least* one.\n\n## Key takeaways\n\n- Factor into primes first — then divisor count, GCF, and LCM all follow mechanically.\n- GCF = lowest powers of shared primes; LCM = highest powers of all primes.\n- \\(\\text{GCF} \\times \\text{LCM} = a \\times b\\) — memorize it; it turns many problems into one division.\n- LCM answers \"when do repeating cycles coincide\"; GCF answers \"largest equal groups.\""
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "title": "Odds, Evens & Sign Rules",
+      "tags": [
+        "parity",
+        "odd-even",
+        "signs",
+        "positive-negative"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nParity (odd vs. even) and sign (positive vs. negative) questions look like arithmetic but are\nreally about **rules that always hold**. When a question asks what *must* be true, you're testing\na rule — not plugging in one lucky number. Knowing the handful of rules below lets you answer\ninstantly, and testing values lets you kill \"must be true\" traps.\n\n## Core concepts\n\n**Parity of sums and differences.** Same parity → even; different parity → odd.\n\\[\\text{even} \\pm \\text{even} = \\text{even}, \\quad \\text{odd} \\pm \\text{odd} = \\text{even}, \\quad \\text{even} \\pm \\text{odd} = \\text{odd}\\]\n\n**Parity of products.** A product is **even if *any* factor is even**; it is odd only when **every**\nfactor is odd.\n\\[\\text{even} \\times \\text{anything} = \\text{even}, \\quad \\text{odd} \\times \\text{odd} = \\text{odd}\\]\n\n**A power keeps the base's parity.** \\(n^k\\) is odd exactly when \\(n\\) is odd. So \\(n^2\\) and \\(n\\)\nalways share parity — useful for \"must be even\" questions.\n\n**Consecutive integers.** Any two consecutive integers have opposite parity, so their **product is\nalways even**: \\(n(n+1)\\) is even for every integer \\(n\\).\n\n**Sign rules for products.** A product is positive when the number of negative factors is **even**,\nnegative when it's **odd**. For two numbers: \\(xy > 0\\) means *same sign*; \\(xy < 0\\) means *opposite\nsigns*.\n\n## Worked examples\n\n**Must-be-even.** Is \\(n^2 + n\\) always even? Factor: \\(n^2 + n = n(n+1)\\), a product of consecutive\nintegers — always even. Yes.\n\n**Reading two conditions together.** If \\(xy > 0\\) and \\(x + y < 0\\): same sign (from \\(xy>0\\)) plus a\nnegative sum forces **both** \\(x\\) and \\(y\\) negative. So \\(x < 0\\) must be true.\n\n## Common traps\n\n- **Assuming \"integer\" without being told.** Sign/parity rules apply to integers. If a variable\n  could be a fraction, \"odd/even\" doesn't apply.\n- **Zero is even, and zero is neither positive nor negative.** Watch for it in \"must be true\" and\n  \"could be\" questions.\n- **Confirming with one value instead of the rule.** For *must be true*, a single example can only\n  *disprove* a choice, never prove it. Find a counterexample to eliminate.\n\n## Key takeaways\n\n- Product is even if any factor is even; odd only if all factors are odd.\n- \\(n\\) and \\(n^2\\) share parity; \\(n(n+1)\\) is always even.\n- \\(xy > 0\\) → same sign; \\(xy < 0\\) → opposite signs; count negatives to get a product's sign.\n- For \"must be true,\" attack each choice with a counterexample; anything that survives is forced."
+    },
+    {
+      "id": "quant-number-properties-remainders",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "title": "Remainders & Modular Thinking",
+      "tags": [
+        "remainders",
+        "modular-arithmetic",
+        "divisibility"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nA remainder question is really the statement \"\\(n\\) is a multiple of \\(d\\), plus a little extra.\"\nWriting that extra as an equation — \\(n = dq + r\\) — turns nearly every remainder problem into\nstraightforward algebra. The two reliable tools are the **division equation** and, when a problem\nis small, **testing the smallest value** that fits.\n\n## Core concepts\n\n**The division equation.** When \\(n\\) divided by \\(d\\) leaves remainder \\(r\\),\n\\[n = dq + r, \\quad 0 \\le r < d\\]\nwhere \\(q\\) is the quotient. The remainder is always at least 0 and strictly less than the divisor.\n\n**Remainders combine.** To find the remainder of a sum, product, or multiple, you can work with the\nremainders themselves. If \\(n\\) leaves remainder \\(4\\) on division by \\(7\\), then \\(3n\\) leaves the\nsame remainder as \\(3 \\times 4 = 12\\), i.e. \\(12 - 7 = 5\\). Reduce at each step to keep numbers small.\n\n**Substitute the general form.** For \"\\(n\\) has remainder \\(4\\) mod \\(7\\); find the remainder of\n\\(3n+2\\),\" write \\(n = 7k + 4\\):\n\\[3n + 2 = 3(7k+4) + 2 = 21k + 14 = 7(3k + 2)\\]\nThat's a multiple of 7, so the remainder is \\(0\\). The \\(21k\\) term is always divisible by 7, so only\nthe constant part decides the remainder.\n\n**Two simultaneous conditions.** \"Remainder 3 mod 5 and remainder 2 mod 4\" — list one sequence and\nscan for a value that fits the other. \\(3, 8, 13, 18, \\dots\\) (mod 5); the first that is also\n\\(\\equiv 2 \\pmod 4\\) is \\(18\\).\n\n## Worked examples\n\n**Constant-only shortcut.** \\(n = 7k + 4\\Rightarrow 3n+2 = 7(3k+2)\\), remainder \\(\\mathbf{0}\\).\nOnly the \"+4 → +12 → +2 after adding 2 → then ×... \" reasoning matters; drop the \\(7k\\).\n\n**Smallest common value.** Numbers with remainder 3 mod 5: \\(3, 8, 13, 18\\). Check each against\nmod 4: \\(18 \\div 4 = 4\\) r \\(2\\). So \\(18\\) is the smallest value satisfying both.\n\n## Common traps\n\n- **A remainder can't equal or exceed the divisor.** \"Remainder 7 on division by 5\" is impossible —\n  it would reduce to remainder 2.\n- **Forgetting remainder 0 is allowed.** If the algebra gives a clean multiple, the answer is 0.\n- **Testing only one value for \"could be.\"** A single value proves *possible*; ruling something out\n  needs the general form \\(n = dq + r\\).\n\n## Key takeaways\n\n- Write \\(n = dq + r\\) with \\(0 \\le r < d\\) — this equation solves most remainder problems.\n- To combine remainders, reduce at each step; multiples of the divisor drop out.\n- For simultaneous conditions, list one sequence and scan for the first term fitting the other.\n- A remainder is always less than the divisor, and 0 is a valid remainder."
     },
     {
       "id": "quant-statistics-descriptive",
