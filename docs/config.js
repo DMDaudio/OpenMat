@@ -9,6 +9,6 @@
 // While these are empty, OpenMat runs fully local-only (progress saved in the
 // browser). See SETUP.md for the step-by-step setup.
 window.OPENMAT_CONFIG = {
-  supabaseUrl: "",
-  supabaseAnonKey: "",
+  supabaseUrl: "https://rkuympxokdvhgvdxldcr.supabase.co",
+  supabaseAnonKey: "sb_publishable_sBAjncHNH0xT783C3H_BQA_3d-errff",
 };
