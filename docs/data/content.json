@@ -7,12 +7,12 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 16,
-      "lessons": 5
+      "questions": 21,
+      "lessons": 7
     },
     "verbal": {
       "label": "Verbal",
-      "questions": 8,
+      "questions": 9,
       "lessons": 2
     },
     "data-insights": {
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 32,
-    "lessons": 8
+    "questions": 38,
+    "lessons": 10
   },
   "questions": [
     {
@@ -302,6 +302,66 @@
       ]
     },
     {
+      "id": "quant-arithmetic-exponents-roots-0017",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "exponents",
+        "powers-of-two",
+        "substitution"
+      ],
+      "choices": {
+        "A": "35",
+        "B": "64",
+        "C": "128",
+        "D": "256",
+        "E": "512"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(2^x = 32\\), what is the value of \\(2^{x+3}\\)?",
+      "explanation": "You don't even need to solve for \\(x\\). Use the product rule to split the exponent:\n\\[2^{x+3} = 2^x \\cdot 2^3.\\]\n\nYou're told \\(2^x = 32\\), and \\(2^3 = 8\\), so\n\\[2^{x+3} = 32 \\cdot 8 = 256.\\]\n\n(If you prefer to find \\(x\\): \\(2^x = 32 = 2^5\\), so \\(x = 5\\), and \\(2^{5+3} = 2^8 = 256\\).)\n**Correct: (D).**\n\n**The trap:** choice **(A) 35** comes from adding \\(32 + 3\\) — treating the exponent's \"+3\" as\nif it were added to the value. Exponents add when powers of the same base are *multiplied*, so\nthe \"+3\" multiplies by \\(2^3 = 8\\).",
+      "hints": [
+        "\\(2^{x+3}\\) can be rewritten as \\(2^x \\cdot 2^3\\) — and you already know \\(2^x\\).",
+        "\"+3\" in the exponent is not \"+3\" in the value; it means one more factor of \\(2^3\\)."
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0018",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "exponents",
+        "factoring",
+        "same-base"
+      ],
+      "choices": {
+        "A": "5",
+        "B": "6",
+        "C": "7",
+        "D": "8",
+        "E": "21"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(3^n + 3^n + 3^n = 3^7\\), what is the value of \\(n\\)?",
+      "explanation": "There is no rule that lets you add exponents when powers are *added*, so don't touch the 7 yet.\nInstead, notice the left side is three identical copies of \\(3^n\\):\n\\[3^n + 3^n + 3^n = 3 \\cdot 3^n.\\]\n\nNow use the product rule, since \\(3 = 3^1\\):\n\\[3 \\cdot 3^n = 3^{1} \\cdot 3^{n} = 3^{\\,n+1}.\\]\n\nSo the equation becomes \\(3^{\\,n+1} = 3^7\\). Same base means equal exponents:\n\\[n + 1 = 7 \\implies n = 6.\\]\n**Correct: (B).**\n\nWhy the others fail:\n\n- **(C) 7** treats \\(3^n + 3^n + 3^n\\) as if it were just \\(3^n\\), ignoring the coefficient of 3.\n- **(E) 21** comes from multiplying the \"3 copies\" into the exponent (\\(3 \\times 7\\)) — combining\n  the count of terms with the exponent, which no rule permits.\n- **(A) 5** and **(D) 8** are off-by-one slips on \\(n + 1 = 7\\).",
+      "hints": [
+        "You can't add the exponents. Factor the left side: how many copies of \\(3^n\\) are there?",
+        "Three copies of \\(3^n\\) is \\(3 \\cdot 3^n\\), and \\(3 = 3^1\\)."
+      ]
+    },
+    {
       "id": "quant-arithmetic-fractions-decimals-0015",
       "section": "quant",
       "topic": "arithmetic",
@@ -416,6 +476,96 @@
       "hints": [
         "Don't list divisors — factor the number into primes first.",
         "If \\(N = p^a q^b\\), the divisor count is \\((a+1)(b+1)\\). Remember the \"+1\" accounts for using the prime zero times."
+      ]
+    },
+    {
+      "id": "quant-number-properties-factors-multiples-0021",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "factors-multiples",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "factors-multiples",
+        "counting",
+        "inclusion-exclusion"
+      ],
+      "choices": {
+        "A": "30",
+        "B": "33",
+        "C": "34",
+        "D": "50",
+        "E": "66"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "How many positive integers less than 100 are divisible by neither 2 nor 3?",
+      "explanation": "The integers in play are \\(1, 2, \\ldots, 99\\) — that's 99 numbers. It's easier to **count what to\nthrow away** (multiples of 2 or 3) and subtract, using inclusion–exclusion.\n\n- Divisible by 2: \\(\\left\\lfloor \\tfrac{99}{2} \\right\\rfloor = 49\\).\n- Divisible by 3: \\(\\left\\lfloor \\tfrac{99}{3} \\right\\rfloor = 33\\).\n- Divisible by both 2 and 3 (i.e. by 6): \\(\\left\\lfloor \\tfrac{99}{6} \\right\\rfloor = 16\\).\n\nBy inclusion–exclusion, the count divisible by 2 **or** 3 is\n\\[49 + 33 - 16 = 66.\\]\n\nSo the count divisible by **neither** is\n\\[99 - 66 = 33.\\]\n**Correct: (B).**\n\n**Traps:**\n\n- **(E) 66** is the number divisible by 2 or 3 — the complement of what's asked.\n- **Forgetting to subtract the overlap (16)** double-counts multiples of 6 and gives \\(99 - 82 = 17\\),\n  or leads to other wrong totals; inclusion–exclusion prevents this.",
+      "hints": [
+        "Count the \"bad\" numbers (multiples of 2 or 3) and subtract from 99.",
+        "Don't double-count: multiples of 6 are in both the \"÷2\" and \"÷3\" groups, so subtract them once."
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0020",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "odd-even",
+        "parity",
+        "consecutive-integers"
+      ],
+      "choices": {
+        "A": "n²",
+        "B": "n + 2",
+        "C": "3n",
+        "D": "n² + n",
+        "E": "2n + 1"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(n\\) is an odd integer, which of the following must be even?",
+      "explanation": "Track the parity of each expression when \\(n\\) is odd.\n\n- **(A)** \\(n^2\\): odd \\(\\times\\) odd \\(=\\) odd. Not even.\n- **(B)** \\(n + 2\\): odd \\(+\\) even \\(=\\) odd. Not even.\n- **(C)** \\(3n\\): odd \\(\\times\\) odd \\(=\\) odd. Not even.\n- **(D)** \\(n^2 + n = n(n + 1)\\): this is a product of **two consecutive integers**, \\(n\\) and\n  \\(n + 1\\). Of any two consecutive integers, exactly one is even, so their product is always\n  even. **Even — correct.**\n- **(E)** \\(2n + 1\\): even \\(+\\) odd \\(=\\) odd. Not even.\n\nSo only (D) is guaranteed even. **Correct: (D).**\n\nNote the reasoning for (D) doesn't even require \\(n\\) to be odd — \\(n^2 + n = n(n+1)\\) is even for\n*every* integer \\(n\\), because consecutive integers always include one even number. Recognizing\n\\(n^2 + n\\) as \\(n(n+1)\\) is the key move.",
+      "hints": [
+        "Test each choice with a small odd number like \\(n = 3\\), then confirm it always holds.",
+        "Factor (D): \\(n^2 + n = n(n+1)\\). What's special about two consecutive integers?"
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0019",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "remainders",
+        "divisibility",
+        "substitution"
+      ],
+      "choices": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "9"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When the positive integer \\(n\\) is divided by 5, the remainder is 3. What is the remainder when\n\\(3n\\) is divided by 5?",
+      "explanation": "Write \\(n\\) in the form that captures \"remainder 3 when divided by 5\":\n\\[n = 5k + 3\\]\nfor some non-negative integer \\(k\\). Then\n\\[3n = 3(5k + 3) = 15k + 9.\\]\n\nThe term \\(15k\\) is a multiple of 5, so it contributes remainder 0. That leaves the 9:\n\\[9 = 5 + 4,\\]\nso the remainder when \\(3n\\) is divided by 5 is **4**. **Correct: (D).**\n\n**Shortcut:** remainders pass through multiplication. The remainder of \\(3 \\times 3 = 9\\),\nreduced mod 5, is 4.\n\n**Traps:**\n\n- **(E) 9** forgets the final step — a remainder when dividing by 5 must be less than 5, so 9\n  must be reduced.\n- **(C) 3** assumes multiplying \\(n\\) by 3 leaves the remainder unchanged. It does not.\n\nYou can confirm with a concrete value: \\(n = 8\\) leaves remainder 3 over 5, and\n\\(3n = 24 = 5 \\cdot 4 + 4\\) — remainder 4.",
+      "hints": [
+        "Represent \\(n\\) as \\(5k + 3\\) and multiply through by 3.",
+        "Any final remainder over 5 has to be one of \\(0,1,2,3,4\\) — reduce if you land on 9."
       ]
     },
     {
@@ -801,6 +951,36 @@
       ]
     },
     {
+      "id": "verbal-critical-reasoning-paradox-0009",
+      "section": "verbal",
+      "topic": "critical-reasoning",
+      "subtopic": "paradox",
+      "type": "critical-reasoning",
+      "difficulty": "medium",
+      "tags": [
+        "paradox",
+        "resolve-explain",
+        "critical-reasoning"
+      ],
+      "choices": {
+        "A": "The chain's downtown locations have higher rent than its suburban locations.",
+        "B": "Most customers who buy the loyalty subscription would have made the same purchases without it.",
+        "C": "Customers with the loyalty subscription visit the stores far more often and buy additional, full-price items while there.",
+        "D": "The loyalty subscription was introduced at the same time as a new advertising campaign.",
+        "E": "Competing coffee chains have not introduced similar loyalty subscriptions."
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A coffee chain sells a $20 annual loyalty subscription that entitles the holder to a free drink\nevery day. A typical drink costs $4, so a subscriber who redeems the offer even once a week\nreceives far more in free drinks than the subscription costs. Yet since introducing the\nsubscription, the chain's overall profit has **increased**.\n\nWhich of the following, if true, best helps to explain the increase in profit?",
+      "explanation": "This is a **paradox (resolve/explain)** question: two facts seem to clash — the chain gives away\ndrinks worth far more than the $20 fee, yet profit went *up*. The correct answer is the one that\nlets **both** facts be true at once by supplying a missing piece of the picture.\n\n**(C)** does exactly that. If subscribers now visit far more often and buy **additional\nfull-price items** on those visits, the extra revenue from those purchases can more than offset\nthe cost of the free drinks. The give-away drives traffic that generates its own profit — both\nfacts hold. **Correct.**\n\nWhy the others fail:\n\n- **(A)** Rent differences between locations don't connect the subscription to higher profit; it's\n  off-topic.\n- **(B)** This makes the paradox *worse* — if subscribers would have bought the same things\n  anyway, the free drinks are pure lost margin, deepening the puzzle rather than resolving it.\n- **(D)** A simultaneous ad campaign is a tempting alternate cause, but it doesn't explain how the\n  chain profits *despite* giving away drinks worth more than the fee; it just raises a new\n  question about attribution.\n- **(E)** What competitors do or don't do says nothing about why *this* chain's profit rose given\n  the give-away.",
+      "hints": [
+        "A paradox answer must let **both** surprising facts be true — don't pick something that only",
+        "The puzzle is \"gives away more than $20 in drinks, yet earns more.\" What else might a frequent"
+      ]
+    },
+    {
       "id": "verbal-critical-reasoning-strengthen-weaken-0002",
       "section": "verbal",
       "topic": "critical-reasoning",
@@ -969,6 +1149,23 @@
       "body": "## Overview\n\nA quadratic equation has the form \\(ax^2 + bx + c = 0\\). On GMAT Focus Quant, most quadratics are\nbuilt to **factor cleanly**, so factoring — not the quadratic formula — is usually the fast route.\n\n## Core concepts\n\n**Factoring \\(x^2 + bx + c\\).** Find two numbers that **multiply to \\(c\\)** and **add to \\(b\\)**.\nThen \\(x^2 + bx + c = (x + p)(x + q)\\), and the solutions make each factor zero.\n\nExample: \\(x^2 - 5x + 6\\). Two numbers multiplying to \\(+6\\) and adding to \\(-5\\) are \\(-2\\) and\n\\(-3\\), so \\((x-2)(x-3) = 0\\) and \\(x = 2\\) or \\(x = 3\\).\n\n**Sum and product shortcut.** For \\(x^2 + bx + c = 0\\):\n\n\\[\\text{sum of roots} = -b, \\qquad \\text{product of roots} = c\\]\n\nThis lets you answer \"sum/product of solutions\" questions without fully solving.\n\n**Special products** worth recognizing instantly:\n\n\\[a^2 - b^2 = (a-b)(a+b), \\quad (a+b)^2 = a^2 + 2ab + b^2, \\quad (a-b)^2 = a^2 - 2ab + b^2\\]\n\n**The quadratic formula** (fallback when factoring is ugly):\n\n\\[x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\\]\n\n## Worked examples\n\n**Factor and solve.** \\(x^2 + 2x - 15 = 0 \\Rightarrow (x+5)(x-3) = 0 \\Rightarrow x = -5 \\text{ or } 3\\).\n\n**Difference of squares.** \\(x^2 - 49 = 0 \\Rightarrow (x-7)(x+7) = 0 \\Rightarrow x = \\pm 7\\).\n\n## Common traps\n\n- **Confusing sum and product of roots.** Sum is \\(-b\\), product is \\(c\\). Read which the question wants.\n- **Dropping a solution.** A quadratic usually has *two* roots — check whether the question wants both, their sum, or only positive values.\n- **Sign errors in factoring.** Verify by expanding your factors back out.\n\n## Key takeaways\n\n- Factor into \\((x + p)(x + q)\\) where \\(pq = c\\) and \\(p + q = b\\); each factor set to zero gives a root.\n- Sum of roots \\(= -b\\), product \\(= c\\) — a fast shortcut.\n- Recognize the difference of squares and perfect-square forms on sight."
     },
     {
+      "id": "quant-arithmetic-exponents-roots",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "title": "Exponents and Roots",
+      "tags": [
+        "exponents",
+        "roots",
+        "powers",
+        "rules-of-exponents"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nExponent questions on the GMAT rarely test heavy computation. They test whether you can\n**rewrite** expressions into a common base and apply a small set of rules cleanly. Get the base\nconsistent, and most problems collapse in one or two steps.\n\n## Core concepts\n\nFor any nonzero base \\(a\\) and integers \\(m, n\\):\n\n- **Product rule** — same base, add exponents: \\(a^m \\cdot a^n = a^{m+n}\\).\n- **Quotient rule** — same base, subtract exponents: \\(\\dfrac{a^m}{a^n} = a^{m-n}\\).\n- **Power of a power** — multiply exponents: \\((a^m)^n = a^{mn}\\).\n- **Zero exponent** — \\(a^0 = 1\\) for any \\(a \\neq 0\\).\n- **Negative exponent** — a reciprocal: \\(a^{-n} = \\dfrac{1}{a^n}\\).\n- **Fractional exponent** — a root: \\(a^{1/n} = \\sqrt[n]{a}\\), and \\(a^{m/n} = \\sqrt[n]{a^m}\\).\n\nThe single most useful move is **matching bases**. Since \\(4 = 2^2\\), \\(8 = 2^3\\), \\(9 = 3^2\\),\n\\(27 = 3^3\\), you can turn a messy fraction of different bases into one base and just subtract\nexponents.\n\nTwo rules that do **not** exist (the classic traps):\n\n- \\(a^m + a^n \\neq a^{m+n}\\). Addition of powers is **not** a rule — you must factor instead.\n- \\((a + b)^2 \\neq a^2 + b^2\\). Expand it: \\((a+b)^2 = a^2 + 2ab + b^2\\).\n\n## Worked examples\n\n**Example 1 — match the base.** Simplify \\(\\dfrac{4^{10}}{2^{15}}\\).\n\nRewrite \\(4^{10} = (2^2)^{10} = 2^{20}\\). Then \\(\\dfrac{2^{20}}{2^{15}} = 2^{20-15} = 2^5 = 32\\).\n\n**Example 2 — factor a sum of equal powers.** If \\(3^n + 3^n + 3^n = 3^7\\), find \\(n\\).\n\nYou cannot add the exponents. Instead, three copies of \\(3^n\\) is \\(3 \\cdot 3^n = 3^{1+n}\\).\nSo \\(3^{n+1} = 3^7\\), which gives \\(n + 1 = 7\\), so \\(n = 6\\).\n\n**Example 3 — negative and fractional exponents.** Evaluate \\(27^{-2/3}\\).\n\nWork outward: \\(27^{1/3} = 3\\), then \\(3^2 = 9\\), and the negative sign takes the reciprocal:\n\\(27^{-2/3} = \\dfrac{1}{9}\\).\n\n## Common traps\n\n- **Adding powers as if it were a rule.** When you see \\(2^x + 2^x\\), factor: it equals\n  \\(2 \\cdot 2^x = 2^{x+1}\\), not \\(2^{2x}\\) or \\(4^x\\)... well, \\(2^{x+1}\\) *is* correct; the\n  point is to factor rather than invent an addition rule.\n- **Forgetting to convert to a common base** before applying the quotient rule. \\(\\tfrac{4^{10}}{2^{15}}\\)\n  is not \\(2^{10-15}\\) — the numerator's base must become 2 first.\n- **Mishandling the negative sign vs. the exponent.** \\(-2^4 = -16\\) (the exponent binds before\n  the sign), but \\((-2)^4 = 16\\).\n- **Answering the wrong quantity.** If they ask for \\(2^{x+3}\\) and you find \\(x\\), remember to\n  finish the substitution.\n\n## Key takeaways\n\n- Convert everything to a **common base**, then add/subtract/multiply exponents by the rules.\n- **Sums of powers are factored, not combined** — there is no addition rule for exponents.\n- A fractional exponent is a root; a negative exponent is a reciprocal. Apply them one at a time.\n- Memorize small powers of 2 and 3 (\\(2^1\\ldots2^{10}\\), \\(3^1\\ldots3^4\\)) to move quickly."
+    },
+    {
       "id": "quant-arithmetic-percents-ratios",
       "section": "quant",
       "topic": "arithmetic",
@@ -983,6 +1180,23 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nPercents and ratios are the most frequently tested arithmetic ideas on GMAT Focus Quant, and\nthey hide inside word problems everywhere. Master three moves: converting between forms, handling\npercent *change*, and scaling ratios.\n\n## Core concepts\n\n**Percent as a factor.** A percent is just a number over 100. The fastest way to apply a percent\nchange is to turn it into a **multiplier**:\n\n- Increase by \\(r\\%\\): multiply by \\(1 + \\tfrac{r}{100}\\). (+25% → \\(\\times 1.25\\))\n- Decrease by \\(r\\%\\): multiply by \\(1 - \\tfrac{r}{100}\\). (−20% → \\(\\times 0.80\\))\n\n**Successive changes multiply.** Two changes in a row are multiplied, never added:\n\n\\[(+25\\%)\\text{ then }(-20\\%): \\quad 1.25 \\times 0.80 = 1.00 \\quad (\\text{no net change})\\]\n\n**Percent change formula.**\n\n\\[\\text{percent change} = \\frac{\\text{new} - \\text{old}}{\\text{old}} \\times 100\\%\\]\n\nAlways divide by the **original** value, not the new one.\n\n**Ratios scale together.** A ratio \\(a : b\\) means the quantities are \\(ak\\) and \\(bk\\) for some\nmultiplier \\(k\\). If boys : girls \\(= 3 : 5\\) and there are 24 boys, then \\(k = 8\\), so there are\n\\(5 \\times 8 = 40\\) girls.\n\n## Worked examples\n\n**Percent change.** A stock rises from $80 to $100. Percent increase \\(= \\tfrac{100 - 80}{80} = \\tfrac{20}{80} = 25\\%\\).\nNote it later falls from $100 back to $80: that's \\(\\tfrac{-20}{100} = -20\\%\\) — a *smaller* percent, because the base is now larger.\n\n**Ratio scaling.** A recipe uses flour : sugar \\(= 7 : 2\\). To use 21 cups of flour, \\(k = 3\\), so\nyou need \\(2 \\times 3 = 6\\) cups of sugar.\n\n## Common traps\n\n- **Adding successive percents.** +25% then −20% is *not* +5%; it's \\(1.25 \\times 0.80 = 1.00\\).\n- **Wrong base.** Percent change always divides by the original amount. A rise then an equal-percent fall does not return to the start.\n- **Ratio ≠ actual count.** \\(3 : 5\\) does not mean 3 and 5 — it means \\(3k\\) and \\(5k\\). Find \\(k\\) first.\n\n## Key takeaways\n\n- Convert percent changes to multipliers and multiply them for successive changes.\n- Percent change = (new − old) / old.\n- A ratio \\(a : b\\) represents \\(ak\\) and \\(bk\\); solve for the multiplier \\(k\\), then scale."
+    },
+    {
+      "id": "quant-number-properties-remainders",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "title": "Remainders",
+      "tags": [
+        "remainders",
+        "divisibility",
+        "modular-arithmetic",
+        "cyclicity"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nA remainder question is really a question about **structure**: what an integer looks like when\nyou write it in terms of the divisor. Once you write \\(n = dq + r\\), most remainder problems\nbecome simple substitution or a short search over cases.\n\n## Core concepts\n\n**The division identity.** When a positive integer \\(n\\) is divided by a positive divisor \\(d\\),\nthere is a unique quotient \\(q\\) and remainder \\(r\\) with\n\\[n = dq + r, \\qquad 0 \\le r < d.\\]\nThe remainder is always at least 0 and strictly less than the divisor. \"Divided by 5\" means the\nremainder is one of \\(0, 1, 2, 3, 4\\).\n\n**Remainders travel through addition and multiplication.** If you only care about the remainder\nof a sum or product, you can replace each number by its own remainder first:\n\n- remainder of \\((a + b)\\) = remainder of (remainder of \\(a\\) + remainder of \\(b\\));\n- remainder of \\((a \\cdot b)\\) = remainder of (remainder of \\(a\\) \\(\\times\\) remainder of \\(b\\)).\n\nThen reduce again if the result is still \\(\\ge d\\). This lets you handle huge numbers without\never computing them.\n\n**Units digits cycle.** The units digit of a power repeats on a short cycle, which is a\nremainder-mod-10 fact. For example, powers of 3 cycle \\(3, 9, 7, 1, 3, 9, 7, 1, \\ldots\\) with\nperiod 4.\n\n## Worked examples\n\n**Example 1 — substitute the form.** When \\(n\\) is divided by 5 the remainder is 3. What is the\nremainder when \\(3n\\) is divided by 5?\n\nWrite \\(n = 5k + 3\\). Then \\(3n = 15k + 9\\). Since \\(15k\\) is a multiple of 5, only the 9\nmatters, and \\(9 = 5 + 4\\), so the remainder is **4**. (Shortcut with the multiplication rule:\nremainder of \\(3 \\times 3 = 9\\), reduce mod 5 to get 4.)\n\n**Example 2 — combine two conditions.** A number leaves remainder 2 when divided by 3 and\nremainder 2 when divided by 4. What is the smallest such positive integer greater than 2?\n\nNumbers that are 2 more than a multiple of both 3 and 4 are 2 more than a multiple of 12:\n\\(12m + 2\\). The smallest above 2 is \\(14\\).\n\n**Example 3 — units digit via cyclicity.** What is the units digit of \\(3^{23}\\)?\n\nThe cycle of the units digit of powers of 3 has length 4: \\(3, 9, 7, 1\\). Divide the exponent by\n4: \\(23 = 4 \\cdot 5 + 3\\), so we are at position 3 in the cycle, which is **7**.\n\n## Common traps\n\n- **Remainder of at least the divisor.** A remainder when dividing by 5 can never be 5 or more.\n  If your arithmetic gives 9, reduce it (\\(9 \\bmod 5 = 4\\)).\n- **Assuming the remainder is unchanged when you scale.** Multiplying \\(n\\) by 3 does *not* keep\n  the remainder at 3 — you must recompute (Example 1).\n- **Zero is a valid remainder.** \"Divisible by \\(d\\)\" is exactly \"remainder 0.\"\n- **Off-by-one on cyclicity.** A remainder of 0 in the exponent lands on the *last* term of the\n  cycle, not the first.\n\n## Key takeaways\n\n- Write \\(n = dq + r\\) with \\(0 \\le r < d\\); substitute and simplify.\n- Remainders pass cleanly through addition and multiplication — reduce early, reduce often.\n- For units digits of powers, find the cycle length and take the exponent mod that length.\n- Always sanity-check that your final remainder is less than the divisor."
     },
     {
       "id": "quant-statistics-descriptive",
