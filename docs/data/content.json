@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 16,
-      "lessons": 5
+      "questions": 21,
+      "lessons": 6
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 32,
-    "lessons": 8
+    "questions": 37,
+    "lessons": 9
   },
   "questions": [
     {
@@ -597,6 +597,156 @@
       ]
     },
     {
+      "id": "quant-word-problems-mixtures-0017",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "mixtures",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "mixtures",
+        "concentration",
+        "weighted-average"
+      ],
+      "choices": {
+        "A": "15%",
+        "B": "20%",
+        "C": "22.5%",
+        "D": "25%",
+        "E": "45%"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A lab technician combines 30 liters of a 10% saline solution with 20 liters of a 35% saline\nsolution. What is the concentration of salt in the resulting mixture?",
+      "explanation": "Percentages don't add — **amounts** do. Convert each solution to its actual amount of salt:\n\n- \\(0.10 \\times 30 = 3\\) liters of salt\n- \\(0.35 \\times 20 = 7\\) liters of salt\n\nTotal salt is \\(3 + 7 = 10\\) liters in \\(30 + 20 = 50\\) liters of solution:\n\n\\[\\frac{10}{50} = 0.20 = 20\\%.\\]\n\nSo the mixture is **20%** saline.\n\n**The trap:** choice **(C) 22.5%** is the plain average of 10% and 35%. That average is only\ncorrect when the two volumes are equal. Here there is more of the weaker (10%) solution, so the\nresult is pulled below the midpoint, toward 20%.",
+      "hints": [
+        "Don't average the two percentages — figure out how many liters of *salt* each solution",
+        "Add the salt amounts, then divide by the total volume of the combined solution."
+      ]
+    },
+    {
+      "id": "quant-word-problems-mixtures-0018",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "mixtures",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "mixtures",
+        "pure-component",
+        "concentration"
+      ],
+      "choices": {
+        "A": "4",
+        "B": "5",
+        "C": "6",
+        "D": "8",
+        "E": "10"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A container holds 50 liters of a solution that is 12% acid. How many liters of **pure acid**\nmust be added so that the resulting solution is 20% acid?",
+      "explanation": "Let \\(x\\) be the liters of pure acid added. Pure acid counts as 100% acid, so it adds \\(x\\) liters\nof acid *and* \\(x\\) liters of volume.\n\n- Acid before: \\(0.12 \\times 50 = 6\\) liters. After adding: \\(6 + x\\).\n- Total volume after: \\(50 + x\\).\n\nSet the new concentration to 20%:\n\n\\[\\frac{6 + x}{50 + x} = 0.20.\\]\n\nMultiply out: \\(6 + x = 0.20(50 + x) = 10 + 0.2x\\), so \\(0.8x = 4\\) and \\(x = 5\\).\n\nAdding **5** liters of pure acid works. Check: acid \\(= 11\\) liters in \\(55\\) liters total,\nand \\(\\tfrac{11}{55} = 20\\%\\). ✓\n\n**The trap:** choice **(A) 4** comes from forgetting that the added acid also increases the total\nvolume — i.e. solving \\(6 + x = 0.20\\times 50\\). You must let the denominator grow too.",
+      "hints": [
+        "Pure acid raises both the amount of acid *and* the total volume — track both.",
+        "Write \\(\\frac{6 + x}{50 + x} = 0.20\\) and solve for \\(x\\); don't hold the total at 50."
+      ]
+    },
+    {
+      "id": "quant-word-problems-mixtures-0019",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "mixtures",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "mixtures",
+        "dilution",
+        "water"
+      ],
+      "choices": {
+        "A": "10",
+        "B": "18",
+        "C": "20",
+        "D": "30",
+        "E": "40"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A tank contains 60 liters of a 30% alcohol solution. How many liters of **water** must be added\nto dilute it to a 20% alcohol solution?",
+      "explanation": "Adding water changes the total volume but adds **no** alcohol, so the amount of alcohol stays\nfixed while the denominator grows.\n\nAlcohol present: \\(0.30 \\times 60 = 18\\) liters, and this never changes.\n\nLet \\(w\\) be the liters of water added. The new total volume is \\(60 + w\\), and we need:\n\n\\[\\frac{18}{60 + w} = 0.20.\\]\n\nSo \\(60 + w = \\dfrac{18}{0.20} = 90\\), giving \\(w = 30\\).\n\nAdd **30** liters of water. Check: \\(18\\) liters of alcohol in \\(90\\) liters is \\(20\\%\\). ✓\n\n**The trap:** choice **(B) 18** is the (unchanging) amount of alcohol, not the water to add;\nchoice **(C) 20** tempts you to knock off \"10 percentage points\" of the 60 liters. Anchor on the\nfixed alcohol amount instead.",
+      "hints": [
+        "Water is 0% alcohol — the number of liters of alcohol is the same before and after.",
+        "Keep the alcohol amount constant in the numerator and solve \\(\\frac{18}{60+w}=0.20\\)."
+      ]
+    },
+    {
+      "id": "quant-word-problems-mixtures-0020",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "mixtures",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "mixtures",
+        "replacement",
+        "concentration"
+      ],
+      "choices": {
+        "A": "6",
+        "B": "8",
+        "C": "10",
+        "D": "12",
+        "E": "15"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A 40-liter tank is completely filled with a 25% antifreeze solution. Some of the solution is\ndrained off and replaced with an equal volume of **pure antifreeze**, leaving the tank full at\n40% antifreeze. How many liters were drained and replaced?",
+      "explanation": "Let \\(x\\) be the liters drained (and then replaced with pure antifreeze). Because you put back\nexactly what you took out, the total volume stays **40 liters** throughout — that is what makes\nthis a \"replacement\" problem rather than a simple addition.\n\nDraining \\(x\\) liters removes solution at its *current* 25% concentration, so it removes\n\\(0.25x\\) liters of antifreeze. Antifreeze remaining:\n\n\\[0.25 \\times 40 - 0.25x = 10 - 0.25x.\\]\n\nNow add \\(x\\) liters of pure antifreeze (100%):\n\n\\[10 - 0.25x + x = 10 + 0.75x.\\]\n\nThis must equal \\(40\\%\\) of the still-40-liter tank, i.e. \\(0.40 \\times 40 = 16\\):\n\n\\[10 + 0.75x = 16 \\implies 0.75x = 6 \\implies x = 8.\\]\n\nSo **8** liters were drained and replaced. Check: after draining 8 L you have \\(10 - 2 = 8\\) L of\nantifreeze; adding 8 L pure gives \\(16\\) L in \\(40\\) L \\(= 40\\%\\). ✓\n\n**The trap:** it's tempting to treat draining \\(x\\) liters as removing \\(x\\) liters of pure\nantifreeze, or to let the volume change. Draining removes solution at 25%, and the replacement\nkeeps the total fixed at 40 liters.",
+      "hints": [
+        "The volume stays 40 liters the whole time — you replace exactly what you remove.",
+        "Draining \\(x\\) liters removes \\(0.25x\\) liters of antifreeze (the *current* concentration),"
+      ]
+    },
+    {
+      "id": "quant-word-problems-mixtures-0021",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "mixtures",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "mixtures",
+        "alligation",
+        "ratio"
+      ],
+      "choices": {
+        "A": "1:2",
+        "B": "2:3",
+        "C": "1:1",
+        "D": "3:2",
+        "E": "2:1"
+      },
+      "answer": "E",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A merchant blends tea worth $8 per kilogram with tea worth $14 per kilogram to produce a mixture\nworth $10 per kilogram. In what ratio, cheaper tea to more expensive tea, should the two be mixed?",
+      "explanation": "Let the blend use \\(c\\) kg of the $8 tea and \\(d\\) kg of the $14 tea. The total cost equals the\nblend's value:\n\n\\[8c + 14d = 10(c + d).\\]\n\nExpand: \\(8c + 14d = 10c + 10d\\), so \\(4d = 2c\\), giving \\(\\dfrac{c}{d} = \\dfrac{4}{2} = 2\\).\n\nThe ratio cheaper : dearer is **2 : 1**.\n\n**Alligation shortcut:** the mean price $10 is $2 above the cheaper tea and $4 below the dearer\ntea. Cross-assign those distances: cheaper : dearer \\(= 4 : 2 = 2 : 1\\). The mixture sits closer\nto $8, so you need *more* of the cheaper tea — which matches a 2:1 ratio.\n\nCheck: 2 kg at $8 plus 1 kg at $14 is \\($16 + $14 = $30\\) for 3 kg, or $10 per kg. ✓\n\n**The trap:** choice **(A) 1:2** reverses the ratio — a classic alligation error where the\ndistances get assigned to the wrong solution. Sanity-check by asking which tea you need *more* of:\nsince $10 is nearer $8, the cheaper tea dominates.",
+      "hints": [
+        "Set up \\(8c + 14d = 10(c+d)\\) and solve for the ratio \\(c:d\\).",
+        "Or use alligation: the distances from the mean ($2 and $4) give the ratio, but cross-assigned —"
+      ]
+    },
+    {
       "id": "quant-word-problems-overlapping-sets-0006",
       "section": "quant",
       "topic": "word-problems",
@@ -1003,6 +1153,23 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nDescriptive statistics on GMAT Focus Quant is almost entirely about two ideas: where a data set is\n**centered** (mean, median, mode) and how **spread out** it is (range, standard deviation). The\narithmetic is light — the exam tests whether you understand what each measure does, especially how\noutliers and transformations affect them. Master a handful of moves and this topic becomes free points.\n\n## Core concepts\n\n**Mean (arithmetic average).**\n\n\\[\\text{mean} = \\frac{\\text{sum of values}}{\\text{count}}\\]\n\nThe single most useful rearrangement is **sum = mean × count**. Most \"average\" problems are really\nabout the *sum*: find it, adjust it, and divide again.\n\n**Weighted average.** When groups have different sizes, you cannot just average the group averages —\nweight each by its count:\n\n\\[\\text{overall mean} = \\frac{n_1\\bar{x}_1 + n_2\\bar{x}_2}{n_1 + n_2}\\]\n\nThe result always lands *between* the two group averages, pulled toward the larger group.\n\n**Median.** The middle value once the data is sorted.\n\n- **Odd count:** the single middle value.\n- **Even count:** the average of the two middle values.\n\nAlways sort first. The median ignores *how far away* extreme values are — only their position matters.\n\n**Mode.** The value that appears most often. A set can have no mode, one mode, or several.\n\n**Range.** \\(\\text{range} = \\text{max} - \\text{min}\\). A crude measure of spread that depends on only\ntwo numbers.\n\n**Standard deviation (SD).** Measures the *typical distance of values from the mean*. You will almost\nnever compute it by hand on the GMAT; you reason about it:\n\n- SD is **0** only when every value is identical.\n- SD depends on **spread from the mean, not on the size of the numbers**. \\(\\{1,2,3\\}\\) and\n  \\(\\{101,102,103\\}\\) have the *same* SD.\n- **Adding a constant** to every value shifts the set but leaves the spread — and therefore the SD —\n  **unchanged**.\n- **Multiplying** every value by \\(k\\) multiplies the SD by \\(|k|\\).\n\n## Worked examples\n\n**Sum trick.** The average of 6 numbers is 22. A seventh number is added and the average becomes 25.\nThe seventh number? Old sum \\(= 22 \\times 6 = 132\\); new sum \\(= 25 \\times 7 = 175\\); the added number\nis \\(175 - 132 = 43\\). (Notice it is far above 25 — it had to *pull the average up* across all seven\nvalues.)\n\n**Outlier: mean vs. median.** For \\(\\{4, 7, 9, 10, 90\\}\\), the mean is \\(120/5 = 24\\) but the median is\n\\(9\\). The lone large value \\(90\\) drags the mean far above the median while leaving the median\nuntouched. When a distribution has a long tail, mean \\(\\ne\\) median.\n\n**Spread, not magnitude.** Which has the larger SD, \\(\\{2,4,6,8,10\\}\\) or \\(\\{102,104,106,108,110\\}\\)?\nNeither — they are identical shapes shifted by 100, so the SD is the same. Bigger numbers do not mean\nbigger spread.\n\n## Common traps\n\n- **Averaging averages.** With unequal group sizes, the simple average of two means is wrong — you must\n  weight by count.\n- **Forgetting to sort before taking the median.** The median is positional; unsorted data gives a\n  meaningless \"middle.\"\n- **Assuming mean = median.** True only for symmetric data. Any outlier or skew separates them, and the\n  mean moves toward the tail.\n- **Thinking \"big numbers ⇒ big standard deviation.\"** SD measures distance from the mean, not the\n  numbers' magnitude. Adding a constant changes the mean but never the SD.\n\n## Key takeaways\n\n- Turn average problems into **sum** problems: sum = mean × count.\n- Weighted averages weight by group size and always fall between the group means.\n- Sort first, then take the median; the median ignores how extreme the outliers are, but the mean does not.\n- Standard deviation is about spread from the mean: it is 0 only for identical values, unchanged by\n  adding a constant, and independent of how large the numbers themselves are."
+    },
+    {
+      "id": "quant-word-problems-mixtures",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "mixtures",
+      "title": "Mixtures & Solutions",
+      "tags": [
+        "mixtures",
+        "concentration",
+        "alligation",
+        "weighted-average"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nMixture problems ask what happens to a concentration when you combine solutions, add a pure\ningredient, dilute with water, or swap part of a batch. They look varied, but almost all of them\nyield to a single habit: **track the amount of the pure component, not the percentage.**\n\n## Core concepts\n\n**The one equation that matters.**\n\n\\[\\text{amount of component} = \\text{concentration} \\times \\text{total volume}\\]\n\nPercentages don't add; **amounts do.** When you mix solutions, the total amount of the component\nis conserved — sum the amounts, then divide by the new total volume to get the new concentration.\n\n**Special ingredients.**\n\n- **Pure component** (e.g. pure acid, pure antifreeze) is at concentration \\(100\\% = 1\\).\n- **Water** contributes volume but \\(0\\) of the component — it dilutes.\n\n**Alligation (a shortcut for two-solution blends).** To hit a target concentration \\(m\\) by mixing\na weaker solution \\(a\\) with a stronger one \\(b\\), the quantities are in the ratio\n\n\\[\\frac{\\text{amount of } a}{\\text{amount of } b} = \\frac{b - m}{m - a}\\]\n\nThe mean sits *closer* to whichever solution you use more of — this is just the weighted-average\nidea read backwards.\n\n## Worked examples\n\n**Combining two solutions.** Mix 30 L of 10% saline with 20 L of 35% saline.\nAmounts of salt: \\(0.10\\times 30 = 3\\) L and \\(0.35\\times 20 = 7\\) L, so \\(10\\) L of salt in\n\\(50\\) L total:\n\n\\[\\frac{10}{50} = 20\\%.\\]\n\nNote it is **not** the plain average \\(\\tfrac{10+35}{2}=22.5\\%\\) — there's more of the weaker\nsolution, so the result is pulled toward 10%.\n\n**Adding a pure ingredient.** You have 50 L of 12% acid and want 20% acid. Add \\(x\\) L of pure\nacid. The acid amount becomes \\(0.12\\times 50 + x = 6 + x\\); the volume becomes \\(50 + x\\):\n\n\\[\\frac{6 + x}{50 + x} = 0.20 \\implies 6 + x = 10 + 0.2x \\implies 0.8x = 4 \\implies x = 5.\\]\n\n## Common traps\n\n- **Averaging the percentages.** \\(\\tfrac{a+b}{2}\\) is right only when the two volumes are equal.\n  Otherwise weight by volume — or just add the amounts.\n- **Forgetting the volume also changes.** When you add acid or water, both the numerator *and*\n  the denominator move. Don't hold the total fixed unless the problem says you removed the same\n  amount you added.\n- **\"Replace\" problems.** Draining \\(x\\) liters of a solution removes \\(x\\) liters *of the\n  component's current concentration*, not \\(x\\) liters of pure component. Compute what's left,\n  then add the replacement.\n\n## Key takeaways\n\n- Convert every percentage to an **amount** (\\(\\text{concentration}\\times\\text{volume}\\)) and add\n  those; amounts are conserved, percentages are not.\n- Water is 0%, pure ingredient is 100% — plug those in like any other solution.\n- For a two-way blend to a target, alligation gives the mixing ratio directly: distances from\n  the mean, cross-assigned."
     },
     {
       "id": "quant-word-problems-rates-speed-distance",
