@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 16,
-      "lessons": 5
+      "questions": 22,
+      "lessons": 6
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 32,
-    "lessons": 8
+    "questions": 38,
+    "lessons": 9
   },
   "questions": [
     {
@@ -390,6 +390,65 @@
       ]
     },
     {
+      "id": "quant-number-properties-factors-0001",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "factors-multiples",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "multiples",
+        "counting"
+      ],
+      "choices": {
+        "A": "15",
+        "B": "16",
+        "C": "17",
+        "D": "18",
+        "E": "20"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "How many multiples of 6 are there between 1 and 100, inclusive?",
+      "explanation": "A multiple of 6 has the form \\(6k\\) for a positive integer \\(k\\). The largest one that does not\nexceed 100 satisfies \\(6k \\le 100\\), so \\(k \\le 16.67\\), meaning \\(k\\) runs from 1 to 16.\n\nYou can also just divide and take the whole-number part:\n\n\\[\\left\\lfloor \\frac{100}{6} \\right\\rfloor = 16\\]\n\nCheck the endpoints: \\(6 \\times 16 = 96 \\le 100\\) and \\(6 \\times 17 = 102 > 100\\). So there are\n**16** multiples of 6 in the range.",
+      "hints": [
+        "Every multiple of 6 looks like \\(6 \\times (\\text{an integer})\\). What is the biggest such number that stays at or below 100?",
+        "Divide 100 by 6 and keep only the whole-number part."
+      ]
+    },
+    {
+      "id": "quant-number-properties-factors-0002",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "factors-multiples",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "gcd",
+        "lcm",
+        "product-identity"
+      ],
+      "choices": {
+        "A": "6",
+        "B": "18",
+        "C": "36",
+        "D": "72",
+        "E": "216"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "The product of two positive integers is 216, and their greatest common divisor is 6. What is\ntheir least common multiple?",
+      "explanation": "For any two positive integers, the greatest common divisor and least common multiple are tied to\ntheir product by the identity\n\n\\[\\gcd(a,b) \\times \\operatorname{lcm}(a,b) = a \\times b\\]\n\nSubstituting the given values:\n\n\\[6 \\times \\operatorname{lcm}(a,b) = 216 \\implies \\operatorname{lcm}(a,b) = \\frac{216}{6} = 36\\]\n\nSo the least common multiple is **36**. (The two numbers are 12 and 18, whose product is 216,\nGCD is 6, and LCM is 36 — consistent.)",
+      "hints": [
+        "There is a direct relationship between the GCD, the LCM, and the product of two numbers.",
+        "\\(\\gcd \\times \\operatorname{lcm} = a \\times b\\). Solve for the one unknown."
+      ]
+    },
+    {
       "id": "quant-number-properties-factors-0003",
       "section": "quant",
       "topic": "number-properties",
@@ -416,6 +475,125 @@
       "hints": [
         "Don't list divisors — factor the number into primes first.",
         "If \\(N = p^a q^b\\), the divisor count is \\((a+1)(b+1)\\). Remember the \"+1\" accounts for using the prime zero times."
+      ]
+    },
+    {
+      "id": "quant-number-properties-factors-0004",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "factors-multiples",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "prime-factorization",
+        "perfect-squares",
+        "divisor-count"
+      ],
+      "choices": {
+        "A": "6",
+        "B": "8",
+        "C": "9",
+        "D": "12",
+        "E": "18"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(n = 2^4 \\times 3^3 \\times 5^2\\), how many of the positive divisors of \\(n\\) are perfect\nsquares?",
+      "explanation": "A divisor of \\(n\\) is formed by choosing an exponent for each prime, from \\(0\\) up to the exponent\nin \\(n\\):\n\n\\[d = 2^a \\times 3^b \\times 5^c, \\quad 0 \\le a \\le 4,\\; 0 \\le b \\le 3,\\; 0 \\le c \\le 2\\]\n\nThat divisor is a **perfect square** exactly when every exponent is **even** (a perfect square has\neven powers of all its primes). Count the even choices for each:\n\n- \\(a \\in \\{0, 2, 4\\}\\) — **3** options\n- \\(b \\in \\{0, 2\\}\\) — **2** options\n- \\(c \\in \\{0, 2\\}\\) — **2** options\n\nSince the choices are independent, multiply:\n\n\\[3 \\times 2 \\times 2 = 12\\]\n\nSo **12** of the divisors of \\(n\\) are perfect squares.",
+      "hints": [
+        "A perfect square has an even exponent on every prime in its factorization.",
+        "For each prime, count only the even exponents available (including 0), then multiply the counts."
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0001",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "parity",
+        "odd-even",
+        "must-be"
+      ],
+      "choices": {
+        "A": "x + y",
+        "B": "xy",
+        "C": "x - y",
+        "D": "x^2 - y",
+        "E": "3x + y"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(x\\) is an odd integer and \\(y\\) is an even integer, which of the following must be even?",
+      "explanation": "Use the parity rules: odd + even = odd, odd − even = odd, odd × even = even, and odd × odd = odd.\nTest each choice with \\(x\\) odd and \\(y\\) even.\n\n- **A.** \\(x + y\\) = odd + even = **odd**.\n- **B.** \\(xy\\) = odd × even = **even**. ✓\n- **C.** \\(x - y\\) = odd − even = **odd**.\n- **D.** \\(x^2 - y\\): \\(x^2\\) is odd × odd = odd, and odd − even = **odd**.\n- **E.** \\(3x + y\\): \\(3x\\) is odd × odd = odd, and odd + even = **odd**.\n\nOnly \\(xy\\) is guaranteed even (any product that includes an even factor is even). The answer is\n**B**.",
+      "hints": [
+        "A product is even the moment any one of its factors is even.",
+        "Odd ± even is always odd, and an odd number squared stays odd."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0001",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "remainders",
+        "division"
+      ],
+      "choices": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When a positive integer \\(n\\) is divided by 7, the remainder is 4. What is the remainder when\n\\(3n + 5\\) is divided by 7?",
+      "explanation": "Write \\(n\\) in terms of its division by 7:\n\n\\[n = 7k + 4\\]\n\nfor some non-negative integer \\(k\\). Then\n\n\\[3n + 5 = 3(7k + 4) + 5 = 21k + 12 + 5 = 21k + 17\\]\n\nThe \\(21k\\) term is a multiple of 7, so it contributes remainder 0. That leaves the remainder of\n17 upon division by 7:\n\n\\[17 = 7 \\times 2 + 3\\]\n\nSo the remainder is **3**. (Sanity check with \\(n = 4\\): \\(3(4) + 5 = 17\\), and \\(17 \\div 7\\)\nleaves 3.)",
+      "hints": [
+        "Replace \\(n\\) with \\(7k + 4\\) and expand — any multiple of 7 drops out of the remainder.",
+        "Reduce the leftover constant modulo 7."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0002",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "remainders",
+        "cyclicity",
+        "powers"
+      ],
+      "choices": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "3",
+        "E": "4"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the remainder when \\(7^{100}\\) is divided by 5?",
+      "explanation": "Only the remainder of the base matters, so reduce it first: \\(7 \\equiv 2 \\pmod 5\\). The problem\nbecomes the remainder of \\(2^{100}\\) upon division by 5.\n\nLook at the pattern of remainders of successive powers of 2 mod 5 — they **cycle**:\n\n\\[2^1 \\equiv 2,\\quad 2^2 \\equiv 4,\\quad 2^3 \\equiv 3,\\quad 2^4 \\equiv 1,\\quad 2^5 \\equiv 2,\\ \\dots\\]\n\nThe cycle has length 4: \\((2, 4, 3, 1)\\), repeating. The exponent that gives remainder 1 is any\nmultiple of 4. Since \\(100 = 4 \\times 25\\) is a multiple of 4, it lands on the end of a full\ncycle:\n\n\\[2^{100} = (2^4)^{25} \\equiv 1^{25} = 1 \\pmod 5\\]\n\nSo the remainder is **1**.",
+      "hints": [
+        "First reduce the base modulo 5: \\(7 \\equiv 2\\), so you only need powers of 2.",
+        "Powers of 2 mod 5 repeat every 4 steps. Where does exponent 100 fall in that cycle?"
       ]
     },
     {
@@ -983,6 +1161,25 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nPercents and ratios are the most frequently tested arithmetic ideas on GMAT Focus Quant, and\nthey hide inside word problems everywhere. Master three moves: converting between forms, handling\npercent *change*, and scaling ratios.\n\n## Core concepts\n\n**Percent as a factor.** A percent is just a number over 100. The fastest way to apply a percent\nchange is to turn it into a **multiplier**:\n\n- Increase by \\(r\\%\\): multiply by \\(1 + \\tfrac{r}{100}\\). (+25% → \\(\\times 1.25\\))\n- Decrease by \\(r\\%\\): multiply by \\(1 - \\tfrac{r}{100}\\). (−20% → \\(\\times 0.80\\))\n\n**Successive changes multiply.** Two changes in a row are multiplied, never added:\n\n\\[(+25\\%)\\text{ then }(-20\\%): \\quad 1.25 \\times 0.80 = 1.00 \\quad (\\text{no net change})\\]\n\n**Percent change formula.**\n\n\\[\\text{percent change} = \\frac{\\text{new} - \\text{old}}{\\text{old}} \\times 100\\%\\]\n\nAlways divide by the **original** value, not the new one.\n\n**Ratios scale together.** A ratio \\(a : b\\) means the quantities are \\(ak\\) and \\(bk\\) for some\nmultiplier \\(k\\). If boys : girls \\(= 3 : 5\\) and there are 24 boys, then \\(k = 8\\), so there are\n\\(5 \\times 8 = 40\\) girls.\n\n## Worked examples\n\n**Percent change.** A stock rises from $80 to $100. Percent increase \\(= \\tfrac{100 - 80}{80} = \\tfrac{20}{80} = 25\\%\\).\nNote it later falls from $100 back to $80: that's \\(\\tfrac{-20}{100} = -20\\%\\) — a *smaller* percent, because the base is now larger.\n\n**Ratio scaling.** A recipe uses flour : sugar \\(= 7 : 2\\). To use 21 cups of flour, \\(k = 3\\), so\nyou need \\(2 \\times 3 = 6\\) cups of sugar.\n\n## Common traps\n\n- **Adding successive percents.** +25% then −20% is *not* +5%; it's \\(1.25 \\times 0.80 = 1.00\\).\n- **Wrong base.** Percent change always divides by the original amount. A rise then an equal-percent fall does not return to the start.\n- **Ratio ≠ actual count.** \\(3 : 5\\) does not mean 3 and 5 — it means \\(3k\\) and \\(5k\\). Find \\(k\\) first.\n\n## Key takeaways\n\n- Convert percent changes to multipliers and multiply them for successive changes.\n- Percent change = (new − old) / old.\n- A ratio \\(a : b\\) represents \\(ak\\) and \\(bk\\); solve for the multiplier \\(k\\), then scale."
+    },
+    {
+      "id": "quant-number-properties-factors-multiples",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "factors-multiples",
+      "title": "Factors, Multiples & Prime Factorization",
+      "tags": [
+        "number-properties",
+        "factors",
+        "multiples",
+        "primes",
+        "gcd",
+        "lcm"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nAlmost every \"clever\" number-properties problem on the GMAT Focus Quant section becomes routine\nonce you write the number as a product of primes. **Prime factorization** is the master key:\ncounting divisors, finding a GCD or LCM, testing divisibility, and spotting perfect squares all\nfall out of it directly. This lesson builds that one skill and shows the handful of formulas it\nunlocks.\n\n## Core concepts\n\n**Factors vs. multiples.** A **factor** (divisor) of \\(N\\) divides \\(N\\) with no remainder; a\n**multiple** of \\(N\\) is \\(N\\) times an integer. So the factors of 12 are \\(\\{1,2,3,4,6,12\\}\\),\nwhile its multiples are \\(12, 24, 36, \\dots\\) — a finite list versus an infinite one.\n\n**Prime factorization.** Every integer greater than 1 factors uniquely into primes:\n\n\\[72 = 2^3 \\times 3^2, \\qquad 360 = 2^3 \\times 3^2 \\times 5\\]\n\n**Counting divisors.** If \\(N = p^a \\times q^b \\times \\dots\\), the number of positive divisors is\n\n\\[(a+1)(b+1)\\dots\\]\n\nbecause each divisor picks an exponent for \\(p\\) from \\(0\\) to \\(a\\), independently for \\(q\\), and\nso on. For \\(72 = 2^3 \\times 3^2\\): \\((3+1)(2+1) = 12\\) divisors.\n\n**GCD and LCM from primes.** Line up the shared primes:\n\n- **GCD** — take the **lowest** power of each prime the numbers share.\n- **LCM** — take the **highest** power of every prime that appears.\n\nFor \\(12 = 2^2 \\times 3\\) and \\(18 = 2 \\times 3^2\\): \\(\\gcd = 2^1 \\times 3^1 = 6\\) and\n\\(\\operatorname{lcm} = 2^2 \\times 3^2 = 36\\).\n\n**The product identity.** For any two positive integers,\n\n\\[\\gcd(a,b) \\times \\operatorname{lcm}(a,b) = a \\times b\\]\n\nThis turns many two-number problems into one line of arithmetic.\n\n## Worked examples\n\n**Example 1 — counting perfect-square divisors.** How many divisors of \\(N = 2^4 \\times 3^2\\)\nare perfect squares? A divisor is a perfect square exactly when every prime exponent is **even**.\nFor \\(2^4\\) the choices are \\(0, 2, 4\\) (three options); for \\(3^2\\) they are \\(0, 2\\) (two\noptions). That gives \\(3 \\times 2 = 6\\) perfect-square divisors.\n\n**Example 2 — the product identity.** Two positive integers have product 216 and GCD 6. Their\nLCM is \\(216 / 6 = 36\\). No listing required.\n\n## Common traps\n\n- **1 is not prime.** It has exactly one divisor. The smallest prime is 2 (the only even prime).\n- **Forgetting the \"+1\" in the divisor count.** The exponent can be \\(0\\) (the prime used zero\n  times), so a prime raised to \\(a\\) contributes \\(a+1\\) choices, not \\(a\\).\n- **Swapping GCD and LCM.** GCD uses the *lowest* shared powers and is at most the smaller number;\n  LCM uses the *highest* powers and is at least the larger number.\n- **The product identity is for two numbers only.** \\(\\gcd \\times \\operatorname{lcm} = a \\times b\\)\n  does not extend to three or more integers.\n\n## Key takeaways\n\n- Factor into primes first — divisor counts, GCD, LCM, and divisibility all follow mechanically.\n- Divisor count of \\(p^a q^b \\dots\\) is \\((a+1)(b+1)\\dots\\); perfect-square divisors need all\n  exponents even.\n- GCD = lowest shared prime powers; LCM = highest prime powers overall.\n- For two numbers, \\(\\gcd \\times \\operatorname{lcm} = \\) their product."
     },
     {
       "id": "quant-statistics-descriptive",
