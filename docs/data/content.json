@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 16,
-      "lessons": 5
+      "questions": 23,
+      "lessons": 6
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 32,
-    "lessons": 8
+    "questions": 39,
+    "lessons": 9
   },
   "questions": [
     {
@@ -299,6 +299,215 @@
       "hints": [
         "Factor into \\((x - r_1)(x - r_2)\\); the roots make each factor zero.",
         "Or use the coefficient shortcut: sum of roots \\(= -b\\), product \\(= c\\)."
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0017",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "exponents",
+        "power-rules"
+      ],
+      "choices": {
+        "A": "4",
+        "B": "8",
+        "C": "16",
+        "D": "64",
+        "E": "512"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the value of \\(\\dfrac{2^{5} \\cdot 2^{3}}{2^{6}}\\)?",
+      "explanation": "Keep everything in base 2 and just track exponents. When you multiply like bases you **add**\nexponents; when you divide, you **subtract**:\n\n\\[\\frac{2^{5} \\cdot 2^{3}}{2^{6}} = 2^{\\,5 + 3 - 6} = 2^{2} = 4\\]\n\n**The trap:** answer **E (512)** comes from *multiplying* the exponents in the numerator\n(\\(5 \\times 3 = 15\\), then \\(15 - 6 = 9\\), giving \\(2^{9} = 512\\)). You add exponents when the bases\nare multiplied, not multiply them. Answer **D (64)** is \\(2^{6}\\), what you get if you drop one of\nthe numerator terms.",
+      "hints": [
+        "Rewrite the whole expression as a single power of 2.",
+        "Multiply like bases → add exponents; divide → subtract exponents."
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0018",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "exponents",
+        "negative-exponent",
+        "zero-exponent"
+      ],
+      "choices": {
+        "A": "0",
+        "B": "1/9",
+        "C": "10/9",
+        "D": "2",
+        "E": "9"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the value of \\(3^{-2} + 3^{0}\\)?",
+      "explanation": "Two rules do all the work here. A **negative exponent** means take the reciprocal, and **anything\nnonzero raised to the 0 power is 1**:\n\n\\[3^{-2} = \\frac{1}{3^{2}} = \\frac{1}{9}, \\qquad 3^{0} = 1\\]\n\nSo the sum is\n\n\\[\\frac{1}{9} + 1 = \\frac{1}{9} + \\frac{9}{9} = \\frac{10}{9}\\]\n\n**The traps:** answer **B (1/9)** drops the \\(3^{0} = 1\\) term (a studier who thinks \\(3^0 = 0\\)).\nAnswer **D (2)** comes from mistakenly treating \\(3^{-2}\\) as \\(1\\) as well. A negative exponent is\nnever a negative number, so **A (0)** and **E (9)** are out.",
+      "hints": [
+        "A negative exponent means \"reciprocal,\" not \"negative\": \\(3^{-2} = \\tfrac{1}{3^2}\\).",
+        "Remember that \\(3^{0} = 1\\), not \\(0\\)."
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0019",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "exponents",
+        "common-base",
+        "equations"
+      ],
+      "choices": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(2^{\\,x+1} = 8^{\\,x-1}\\), what is the value of \\(x\\)?",
+      "explanation": "The two sides have different bases, so first rewrite them with the **same base**. Since\n\\(8 = 2^{3}\\):\n\n\\[8^{\\,x-1} = \\left(2^{3}\\right)^{x-1} = 2^{\\,3(x-1)} = 2^{\\,3x-3}\\]\n\nNow both sides are powers of 2, so the exponents must be equal:\n\n\\[x + 1 = 3x - 3 \\;\\Rightarrow\\; 4 = 2x \\;\\Rightarrow\\; x = 2\\]\n\nCheck: \\(2^{2+1} = 2^{3} = 8\\) and \\(8^{2-1} = 8^{1} = 8\\). ✓\n\n**The trap:** answer **A (1)** comes from forgetting to distribute the 3, i.e. writing the exponent\nas \\(3x - 1\\) instead of \\(3(x-1) = 3x - 3\\). Distributing carefully is the whole question.",
+      "hints": [
+        "Rewrite \\(8\\) as a power of \\(2\\) so both sides share a base.",
+        "When two equal powers have the same base, set the exponents equal — and distribute the exponent"
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0020",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "exponents",
+        "fractional-exponents",
+        "roots"
+      ],
+      "choices": {
+        "A": "6",
+        "B": "9",
+        "C": "18",
+        "D": "54",
+        "E": "729"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the value of \\(27^{2/3}\\)?",
+      "explanation": "A fractional exponent \\(m/n\\) means \"take the \\(n\\)th root, then raise to the \\(m\\)th power.\" The\ndenominator is the root; the numerator is the power. Take the root first to keep the numbers small:\n\n\\[27^{2/3} = \\left(27^{1/3}\\right)^{2} = \\left(\\sqrt[3]{27}\\right)^{2} = 3^{2} = 9\\]\n\n**The traps:**\n\n- **E (729)** ignores the cube-root denominator and just squares: \\(27^{2} = 729\\).\n- **A (6)** multiplies the root by the numerator instead of raising to it: \\(3 \\times 2 = 6\\).\n- **C (18)** and **D (54)** treat the exponent as ordinary multiplication (\\(27 \\times \\tfrac{2}{3} = 18\\),\n  or \\(27 \\times 2 = 54\\)) rather than as a root-and-power.",
+      "hints": [
+        "The denominator of the exponent is a root; the numerator is a power.",
+        "\\(27^{2/3} = (\\sqrt[3]{27})^{2}\\) — take the cube root first."
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0021",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "roots",
+        "radicals",
+        "simplifying"
+      ],
+      "choices": {
+        "A": "\\(2\\sqrt{17}\\)",
+        "B": "\\(15\\sqrt{2}\\)",
+        "C": "\\(8\\sqrt{2}\\)",
+        "D": "\\(4\\sqrt{2}\\)",
+        "E": "\\(34\\sqrt{2}\\)"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is \\(\\sqrt{50} + \\sqrt{18}\\) in simplest form?",
+      "explanation": "You can only add radicals once the parts **under** the root match, so simplify each one by pulling\nout perfect squares:\n\n\\[\\sqrt{50} = \\sqrt{25 \\cdot 2} = 5\\sqrt{2}, \\qquad \\sqrt{18} = \\sqrt{9 \\cdot 2} = 3\\sqrt{2}\\]\n\nNow both terms are multiples of \\(\\sqrt{2}\\), so add the coefficients:\n\n\\[5\\sqrt{2} + 3\\sqrt{2} = 8\\sqrt{2}\\]\n\n**The traps:**\n\n- **A (\\(2\\sqrt{17}\\))** comes from illegally merging the roots: \\(\\sqrt{50} + \\sqrt{18} \\neq \\sqrt{68}\\).\n  Square roots do not add that way.\n- **B (\\(15\\sqrt{2}\\))** multiplies the coefficients (\\(5 \\times 3\\)) instead of adding them.",
+      "hints": [
+        "Simplify each radical first by factoring out the largest perfect square.",
+        "You can add radicals only when the number under the root is the same — then add the coefficients."
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0022",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "exponents",
+        "factoring-powers",
+        "common-base"
+      ],
+      "choices": {
+        "A": "3",
+        "B": "6",
+        "C": "10",
+        "D": "12",
+        "E": "48"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(2^{n} + 2^{n} + 2^{n} + 2^{n} = 2^{12}\\), what is the value of \\(n\\)?",
+      "explanation": "The left side is **four copies of the same term**, so factor — do not treat it as a new base.\nAdding four equal terms is multiplying by 4:\n\n\\[2^{n} + 2^{n} + 2^{n} + 2^{n} = 4 \\cdot 2^{n}\\]\n\nNow write the coefficient as a power of 2 so both sides share a base. Since \\(4 = 2^{2}\\):\n\n\\[4 \\cdot 2^{n} = 2^{2} \\cdot 2^{n} = 2^{\\,n+2}\\]\n\nSetting \\(2^{\\,n+2} = 2^{12}\\) gives \\(n + 2 = 12\\), so \\(n = 10\\).\n\n**The traps:**\n\n- **A (3)** treats the sum as a *product* of the four terms, \\((2^{n})^{4} = 2^{4n} = 2^{12}\\),\n  giving \\(4n = 12\\). Adding equal powers is not the same as multiplying them.\n- **B (6)** correctly writes \\(4 \\cdot 2^{n}\\) but then *multiplies* the exponents (\\(2 \\cdot n = 12\\))\n  instead of adding: \\(2^{2} \\cdot 2^{n} = 2^{n+2}\\), not \\(2^{2n}\\).\n- **D (12)** simply ignores the coefficient of 4.",
+      "hints": [
+        "Four copies of \\(2^{n}\\) is \\(4 \\cdot 2^{n}\\), not \\((2^{n})^{4}\\).",
+        "Rewrite \\(4\\) as \\(2^{2}\\), then combine with \\(2^{n}\\) by **adding** exponents."
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0023",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "exponents",
+        "common-base",
+        "factoring-powers"
+      ],
+      "choices": {
+        "A": "1/9",
+        "B": "2",
+        "C": "8",
+        "D": "9",
+        "E": "\\(3^{38}\\)"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(x = 3^{20}\\) and \\(y = 3^{18}\\), what is the value of \\(\\dfrac{x - y}{y}\\)?",
+      "explanation": "Do not try to evaluate \\(3^{20}\\) or \\(3^{18}\\) — they are enormous. Split the fraction so the huge\npowers turn into a ratio you can simplify:\n\n\\[\\frac{x - y}{y} = \\frac{x}{y} - \\frac{y}{y} = \\frac{3^{20}}{3^{18}} - 1\\]\n\nDividing like bases means **subtracting** exponents:\n\n\\[\\frac{3^{20}}{3^{18}} = 3^{\\,20 - 18} = 3^{2} = 9\\]\n\nSo the value is \\(9 - 1 = 8\\).\n\n**The traps:**\n\n- **D (9)** is \\(\\dfrac{x}{y} = 3^{2}\\) — correct so far, but it forgets to subtract the \\(\\dfrac{y}{y} = 1\\)\n  term.\n- **B (2)** stops at the exponent difference \\(20 - 18 = 2\\), as if the whole expression equaled\n  \\(3^{20-18}\\) without the \"\\(-1\\)\".\n- **E (\\(3^{38}\\))** comes from *multiplying* the powers (adding exponents \\(20 + 18\\)) instead of\n  dividing.",
+      "hints": [
+        "Break \\(\\dfrac{x - y}{y}\\) into \\(\\dfrac{x}{y} - 1\\) before touching the exponents.",
+        "Dividing like bases subtracts exponents: \\(\\dfrac{3^{20}}{3^{18}} = 3^{2}\\)."
       ]
     },
     {
@@ -967,6 +1176,23 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nA quadratic equation has the form \\(ax^2 + bx + c = 0\\). On GMAT Focus Quant, most quadratics are\nbuilt to **factor cleanly**, so factoring — not the quadratic formula — is usually the fast route.\n\n## Core concepts\n\n**Factoring \\(x^2 + bx + c\\).** Find two numbers that **multiply to \\(c\\)** and **add to \\(b\\)**.\nThen \\(x^2 + bx + c = (x + p)(x + q)\\), and the solutions make each factor zero.\n\nExample: \\(x^2 - 5x + 6\\). Two numbers multiplying to \\(+6\\) and adding to \\(-5\\) are \\(-2\\) and\n\\(-3\\), so \\((x-2)(x-3) = 0\\) and \\(x = 2\\) or \\(x = 3\\).\n\n**Sum and product shortcut.** For \\(x^2 + bx + c = 0\\):\n\n\\[\\text{sum of roots} = -b, \\qquad \\text{product of roots} = c\\]\n\nThis lets you answer \"sum/product of solutions\" questions without fully solving.\n\n**Special products** worth recognizing instantly:\n\n\\[a^2 - b^2 = (a-b)(a+b), \\quad (a+b)^2 = a^2 + 2ab + b^2, \\quad (a-b)^2 = a^2 - 2ab + b^2\\]\n\n**The quadratic formula** (fallback when factoring is ugly):\n\n\\[x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\\]\n\n## Worked examples\n\n**Factor and solve.** \\(x^2 + 2x - 15 = 0 \\Rightarrow (x+5)(x-3) = 0 \\Rightarrow x = -5 \\text{ or } 3\\).\n\n**Difference of squares.** \\(x^2 - 49 = 0 \\Rightarrow (x-7)(x+7) = 0 \\Rightarrow x = \\pm 7\\).\n\n## Common traps\n\n- **Confusing sum and product of roots.** Sum is \\(-b\\), product is \\(c\\). Read which the question wants.\n- **Dropping a solution.** A quadratic usually has *two* roots — check whether the question wants both, their sum, or only positive values.\n- **Sign errors in factoring.** Verify by expanding your factors back out.\n\n## Key takeaways\n\n- Factor into \\((x + p)(x + q)\\) where \\(pq = c\\) and \\(p + q = b\\); each factor set to zero gives a root.\n- Sum of roots \\(= -b\\), product \\(= c\\) — a fast shortcut.\n- Recognize the difference of squares and perfect-square forms on sight."
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "title": "Exponents & Roots",
+      "tags": [
+        "exponents",
+        "roots",
+        "radicals",
+        "powers"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nMost GMAT Focus exponent questions reward you for **rewriting everything in the same base** and\nthen just tracking the exponents. Almost nothing here needs a calculator — the whole game is a\nhandful of rules applied cleanly and, above all, **not confusing multiplication of bases with\naddition of exponents**.\n\n## Core concepts\n\n**The power rules.** For any nonzero base \\(a\\):\n\n\\[a^m \\cdot a^n = a^{m+n}, \\qquad \\frac{a^m}{a^n} = a^{m-n}, \\qquad (a^m)^n = a^{mn}\\]\n\nRead them carefully: you **add** exponents when you *multiply* like bases, and you **multiply**\nexponents when you *raise a power to a power*. Mixing these two up is the single most common\nexponent error on the test.\n\n**Zero and negative exponents.**\n\n\\[a^0 = 1 \\ (a \\neq 0), \\qquad a^{-n} = \\frac{1}{a^n}\\]\n\nA negative exponent means \"reciprocal,\" not \"negative number\": \\(2^{-3} = \\tfrac{1}{8}\\), not \\(-8\\).\n\n**Fractional exponents are roots.**\n\n\\[a^{1/n} = \\sqrt[n]{a}, \\qquad a^{m/n} = \\left(\\sqrt[n]{a}\\right)^{m} = \\sqrt[n]{a^{m}}\\]\n\nSo \\(27^{2/3} = \\left(\\sqrt[3]{27}\\right)^2 = 3^2 = 9\\). Take the root first when it keeps the numbers\nsmall.\n\n**Roots simplify by pulling out perfect squares.** \\(\\sqrt{ab} = \\sqrt{a}\\,\\sqrt{b}\\), so\n\n\\[\\sqrt{50} = \\sqrt{25 \\cdot 2} = 5\\sqrt{2}\\]\n\nYou can only **add or subtract** radicals when the part under the root matches:\n\\(5\\sqrt{2} + 3\\sqrt{2} = 8\\sqrt{2}\\). You may **never** merge \\(\\sqrt{a} + \\sqrt{b}\\) into\n\\(\\sqrt{a+b}\\).\n\n**Factoring out a common power** cracks the hardest questions. Terms like \\(2^n + 2^n\\) are not a\nnew base — they collapse:\n\n\\[2^n + 2^n = 2 \\cdot 2^n = 2^{n+1}, \\qquad 3^{k+1} - 3^{k} = 3^{k}(3 - 1) = 2\\cdot 3^{k}\\]\n\n## Worked examples\n\n**Same-base equation.** Solve \\(2^{x+1} = 8^{x-1}\\). Rewrite \\(8 = 2^3\\), so the right side is\n\\(2^{3(x-1)} = 2^{3x-3}\\). Same base ⟹ equal exponents: \\(x + 1 = 3x - 3\\), giving \\(2x = 4\\) and\n\\(x = 2\\).\n\n**Collapse a sum of equal powers.** If \\(2^n + 2^n + 2^n + 2^n = 2^{12}\\), the left side is\n\\(4 \\cdot 2^n = 2^2 \\cdot 2^n = 2^{n+2}\\). So \\(n + 2 = 12\\) and \\(n = 10\\).\n\n**Ratio of powers.** With \\(x = 3^{20}\\) and \\(y = 3^{18}\\), \\(\\dfrac{x}{y} = 3^{20-18} = 3^2 = 9\\).\n\n## Common traps\n\n- **Multiplying exponents when you should add them** (and vice versa). \\(2^5 \\cdot 2^3 = 2^8\\), not\n  \\(2^{15}\\).\n- **Reading a negative exponent as a negative number.** \\(3^{-2} = \\tfrac{1}{9}\\), and \\(3^0 = 1\\)\n  (not \\(0\\)).\n- **Merging unlike radicals.** \\(\\sqrt{50} + \\sqrt{18} \\neq \\sqrt{68}\\); simplify each first, then add.\n- **Treating a sum of powers as a new base.** \\(2^n + 2^n\\) is \\(2^{n+1}\\), not \\(4^n\\) or \\(2^{2n}\\).\n\n## Key takeaways\n\n- Get everything into a **common base**, then just manipulate exponents.\n- Multiply like bases → **add** exponents; raise a power to a power → **multiply** exponents.\n- \\(a^0 = 1\\), \\(a^{-n} = 1/a^n\\), and \\(a^{m/n} = \\sqrt[n]{a^m}\\).\n- Simplify radicals by pulling out perfect squares; only combine radicals with the same radicand.\n- Sums of equal powers **factor**: \\(k\\) copies of \\(a^n\\) is \\(k \\cdot a^n\\)."
     },
     {
       "id": "quant-arithmetic-percents-ratios",
