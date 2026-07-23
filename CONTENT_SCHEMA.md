@@ -56,7 +56,7 @@ license: CC-BY-SA-4.0
 
 | Field | Required | Type | Notes |
 |-------|----------|------|-------|
-| `id` | yes | string | Unique. Must equal the filename without `.md`. Format: `<section>-<topic>-<subtopic>-NNNN`. |
+| `id` | yes | string | Unique. Must equal the filename without `.md`. Format: `<section>-<topic>-<subtopic>-NNNN`. `NNNN` is a 4-digit sequence number **unique within the subtopic** — pick the next unused number for that exact subtopic (a brand-new subtopic starts at `0001`). Per-subtopic numbering keeps parallel branches from colliding; see [CONTRIBUTING.md](CONTRIBUTING.md#file-naming--location). |
 | `section` | yes | enum | `quant` \| `verbal` \| `data-insights`. |
 | `topic` | yes | string | A topic slug from [`curriculum.md`](curriculum.md). |
 | `subtopic` | yes | string | A subtopic slug from [`curriculum.md`](curriculum.md). |

@@ -1,5 +1,5 @@
 ---
-id: quant-counting-probability-combinatorics-0022
+id: quant-counting-probability-combinatorics-0006
 section: quant
 topic: counting-probability
 subtopic: combinatorics
