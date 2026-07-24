@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 16,
-      "lessons": 5
+      "questions": 30,
+      "lessons": 7
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 32,
-    "lessons": 8
+    "questions": 46,
+    "lessons": 10
   },
   "questions": [
     {
@@ -302,6 +302,215 @@
       ]
     },
     {
+      "id": "quant-arithmetic-exponents-roots-0017",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "exponents",
+        "power-rules"
+      ],
+      "choices": {
+        "A": "4",
+        "B": "8",
+        "C": "16",
+        "D": "64",
+        "E": "512"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the value of \\(\\dfrac{2^{5} \\cdot 2^{3}}{2^{6}}\\)?",
+      "explanation": "Keep everything in base 2 and just track exponents. When you multiply like bases you **add**\nexponents; when you divide, you **subtract**:\n\n\\[\\frac{2^{5} \\cdot 2^{3}}{2^{6}} = 2^{\\,5 + 3 - 6} = 2^{2} = 4\\]\n\n**The trap:** answer **E (512)** comes from *multiplying* the exponents in the numerator\n(\\(5 \\times 3 = 15\\), then \\(15 - 6 = 9\\), giving \\(2^{9} = 512\\)). You add exponents when the bases\nare multiplied, not multiply them. Answer **D (64)** is \\(2^{6}\\), what you get if you drop one of\nthe numerator terms.",
+      "hints": [
+        "Rewrite the whole expression as a single power of 2.",
+        "Multiply like bases → add exponents; divide → subtract exponents."
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0018",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "exponents",
+        "negative-exponent",
+        "zero-exponent"
+      ],
+      "choices": {
+        "A": "0",
+        "B": "1/9",
+        "C": "10/9",
+        "D": "2",
+        "E": "9"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the value of \\(3^{-2} + 3^{0}\\)?",
+      "explanation": "Two rules do all the work here. A **negative exponent** means take the reciprocal, and **anything\nnonzero raised to the 0 power is 1**:\n\n\\[3^{-2} = \\frac{1}{3^{2}} = \\frac{1}{9}, \\qquad 3^{0} = 1\\]\n\nSo the sum is\n\n\\[\\frac{1}{9} + 1 = \\frac{1}{9} + \\frac{9}{9} = \\frac{10}{9}\\]\n\n**The traps:** answer **B (1/9)** drops the \\(3^{0} = 1\\) term (a studier who thinks \\(3^0 = 0\\)).\nAnswer **D (2)** comes from mistakenly treating \\(3^{-2}\\) as \\(1\\) as well. A negative exponent is\nnever a negative number, so **A (0)** and **E (9)** are out.",
+      "hints": [
+        "A negative exponent means \"reciprocal,\" not \"negative\": \\(3^{-2} = \\tfrac{1}{3^2}\\).",
+        "Remember that \\(3^{0} = 1\\), not \\(0\\)."
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0019",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "exponents",
+        "common-base",
+        "equations"
+      ],
+      "choices": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(2^{\\,x+1} = 8^{\\,x-1}\\), what is the value of \\(x\\)?",
+      "explanation": "The two sides have different bases, so first rewrite them with the **same base**. Since\n\\(8 = 2^{3}\\):\n\n\\[8^{\\,x-1} = \\left(2^{3}\\right)^{x-1} = 2^{\\,3(x-1)} = 2^{\\,3x-3}\\]\n\nNow both sides are powers of 2, so the exponents must be equal:\n\n\\[x + 1 = 3x - 3 \\;\\Rightarrow\\; 4 = 2x \\;\\Rightarrow\\; x = 2\\]\n\nCheck: \\(2^{2+1} = 2^{3} = 8\\) and \\(8^{2-1} = 8^{1} = 8\\). ✓\n\n**The trap:** answer **A (1)** comes from forgetting to distribute the 3, i.e. writing the exponent\nas \\(3x - 1\\) instead of \\(3(x-1) = 3x - 3\\). Distributing carefully is the whole question.",
+      "hints": [
+        "Rewrite \\(8\\) as a power of \\(2\\) so both sides share a base.",
+        "When two equal powers have the same base, set the exponents equal — and distribute the exponent"
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0020",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "exponents",
+        "fractional-exponents",
+        "roots"
+      ],
+      "choices": {
+        "A": "6",
+        "B": "9",
+        "C": "18",
+        "D": "54",
+        "E": "729"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the value of \\(27^{2/3}\\)?",
+      "explanation": "A fractional exponent \\(m/n\\) means \"take the \\(n\\)th root, then raise to the \\(m\\)th power.\" The\ndenominator is the root; the numerator is the power. Take the root first to keep the numbers small:\n\n\\[27^{2/3} = \\left(27^{1/3}\\right)^{2} = \\left(\\sqrt[3]{27}\\right)^{2} = 3^{2} = 9\\]\n\n**The traps:**\n\n- **E (729)** ignores the cube-root denominator and just squares: \\(27^{2} = 729\\).\n- **A (6)** multiplies the root by the numerator instead of raising to it: \\(3 \\times 2 = 6\\).\n- **C (18)** and **D (54)** treat the exponent as ordinary multiplication (\\(27 \\times \\tfrac{2}{3} = 18\\),\n  or \\(27 \\times 2 = 54\\)) rather than as a root-and-power.",
+      "hints": [
+        "The denominator of the exponent is a root; the numerator is a power.",
+        "\\(27^{2/3} = (\\sqrt[3]{27})^{2}\\) — take the cube root first."
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0021",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "roots",
+        "radicals",
+        "simplifying"
+      ],
+      "choices": {
+        "A": "\\(2\\sqrt{17}\\)",
+        "B": "\\(15\\sqrt{2}\\)",
+        "C": "\\(8\\sqrt{2}\\)",
+        "D": "\\(4\\sqrt{2}\\)",
+        "E": "\\(34\\sqrt{2}\\)"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is \\(\\sqrt{50} + \\sqrt{18}\\) in simplest form?",
+      "explanation": "You can only add radicals once the parts **under** the root match, so simplify each one by pulling\nout perfect squares:\n\n\\[\\sqrt{50} = \\sqrt{25 \\cdot 2} = 5\\sqrt{2}, \\qquad \\sqrt{18} = \\sqrt{9 \\cdot 2} = 3\\sqrt{2}\\]\n\nNow both terms are multiples of \\(\\sqrt{2}\\), so add the coefficients:\n\n\\[5\\sqrt{2} + 3\\sqrt{2} = 8\\sqrt{2}\\]\n\n**The traps:**\n\n- **A (\\(2\\sqrt{17}\\))** comes from illegally merging the roots: \\(\\sqrt{50} + \\sqrt{18} \\neq \\sqrt{68}\\).\n  Square roots do not add that way.\n- **B (\\(15\\sqrt{2}\\))** multiplies the coefficients (\\(5 \\times 3\\)) instead of adding them.",
+      "hints": [
+        "Simplify each radical first by factoring out the largest perfect square.",
+        "You can add radicals only when the number under the root is the same — then add the coefficients."
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0022",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "exponents",
+        "factoring-powers",
+        "common-base"
+      ],
+      "choices": {
+        "A": "3",
+        "B": "6",
+        "C": "10",
+        "D": "12",
+        "E": "48"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(2^{n} + 2^{n} + 2^{n} + 2^{n} = 2^{12}\\), what is the value of \\(n\\)?",
+      "explanation": "The left side is **four copies of the same term**, so factor — do not treat it as a new base.\nAdding four equal terms is multiplying by 4:\n\n\\[2^{n} + 2^{n} + 2^{n} + 2^{n} = 4 \\cdot 2^{n}\\]\n\nNow write the coefficient as a power of 2 so both sides share a base. Since \\(4 = 2^{2}\\):\n\n\\[4 \\cdot 2^{n} = 2^{2} \\cdot 2^{n} = 2^{\\,n+2}\\]\n\nSetting \\(2^{\\,n+2} = 2^{12}\\) gives \\(n + 2 = 12\\), so \\(n = 10\\).\n\n**The traps:**\n\n- **A (3)** treats the sum as a *product* of the four terms, \\((2^{n})^{4} = 2^{4n} = 2^{12}\\),\n  giving \\(4n = 12\\). Adding equal powers is not the same as multiplying them.\n- **B (6)** correctly writes \\(4 \\cdot 2^{n}\\) but then *multiplies* the exponents (\\(2 \\cdot n = 12\\))\n  instead of adding: \\(2^{2} \\cdot 2^{n} = 2^{n+2}\\), not \\(2^{2n}\\).\n- **D (12)** simply ignores the coefficient of 4.",
+      "hints": [
+        "Four copies of \\(2^{n}\\) is \\(4 \\cdot 2^{n}\\), not \\((2^{n})^{4}\\).",
+        "Rewrite \\(4\\) as \\(2^{2}\\), then combine with \\(2^{n}\\) by **adding** exponents."
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0023",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "exponents",
+        "common-base",
+        "factoring-powers"
+      ],
+      "choices": {
+        "A": "1/9",
+        "B": "2",
+        "C": "8",
+        "D": "9",
+        "E": "\\(3^{38}\\)"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(x = 3^{20}\\) and \\(y = 3^{18}\\), what is the value of \\(\\dfrac{x - y}{y}\\)?",
+      "explanation": "Do not try to evaluate \\(3^{20}\\) or \\(3^{18}\\) — they are enormous. Split the fraction so the huge\npowers turn into a ratio you can simplify:\n\n\\[\\frac{x - y}{y} = \\frac{x}{y} - \\frac{y}{y} = \\frac{3^{20}}{3^{18}} - 1\\]\n\nDividing like bases means **subtracting** exponents:\n\n\\[\\frac{3^{20}}{3^{18}} = 3^{\\,20 - 18} = 3^{2} = 9\\]\n\nSo the value is \\(9 - 1 = 8\\).\n\n**The traps:**\n\n- **D (9)** is \\(\\dfrac{x}{y} = 3^{2}\\) — correct so far, but it forgets to subtract the \\(\\dfrac{y}{y} = 1\\)\n  term.\n- **B (2)** stops at the exponent difference \\(20 - 18 = 2\\), as if the whole expression equaled\n  \\(3^{20-18}\\) without the \"\\(-1\\)\".\n- **E (\\(3^{38}\\))** comes from *multiplying* the powers (adding exponents \\(20 + 18\\)) instead of\n  dividing.",
+      "hints": [
+        "Break \\(\\dfrac{x - y}{y}\\) into \\(\\dfrac{x}{y} - 1\\) before touching the exponents.",
+        "Dividing like bases subtracts exponents: \\(\\dfrac{3^{20}}{3^{18}} = 3^{2}\\)."
+      ]
+    },
+    {
       "id": "quant-arithmetic-fractions-decimals-0015",
       "section": "quant",
       "topic": "arithmetic",
@@ -416,6 +625,213 @@
       "hints": [
         "Don't list divisors — factor the number into primes first.",
         "If \\(N = p^a q^b\\), the divisor count is \\((a+1)(b+1)\\). Remember the \"+1\" accounts for using the prime zero times."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0024",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "remainders",
+        "sums"
+      ],
+      "choices": {
+        "A": "2",
+        "B": "3",
+        "C": "5",
+        "D": "7",
+        "E": "12"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When the positive integer \\(n\\) is divided by 9, the remainder is 5. What is the remainder when\n\\(n + 7\\) is divided by 9?",
+      "explanation": "You don't need to know \\(n\\) itself. Adding 7 to \\(n\\) adds 7 to the remainder, and then you reduce\nmod 9:\n\n\\[\\text{remainder of } (n+7) = \\text{remainder of } (5 + 7) = \\text{remainder of } 12 = 12 - 9 = 3.\\]\n\nYou can confirm with the smallest such \\(n\\): \\(n = 5\\) gives \\(n + 7 = 12\\), and \\(12 \\div 9\\) leaves\nremainder **3**.\n\n**Traps:** answer **E (12)** is \\(5 + 7\\) with the final reduction forgotten. Answer **D (7)** is\njust the number being added, as if the original remainder didn't matter. Answer **C (5)** assumes\nadding 7 leaves the remainder unchanged. Answer **A (2)** comes from *subtracting* the remainders\n(\\(7 - 5\\)) instead of adding.",
+      "hints": [
+        "You never need the actual value of \\(n\\) — work with its remainder.",
+        "Add the remainders, then reduce mod 9 one more time."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0025",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "remainders",
+        "division-identity"
+      ],
+      "choices": {
+        "A": "31",
+        "B": "42",
+        "C": "46",
+        "D": "52",
+        "E": "66"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When a positive integer is divided by 6, the quotient is 7 and the remainder is 4. What is the\ninteger?",
+      "explanation": "Every division fits the identity\n\n\\[n = (\\text{divisor})(\\text{quotient}) + (\\text{remainder}).\\]\n\nHere the divisor is 6, the quotient is 7, and the remainder is 4, so\n\n\\[n = 6 \\times 7 + 4 = 42 + 4 = 46.\\]\n\nCheck: \\(46 \\div 6 = 7\\) with \\(46 - 42 = 4\\) left over. ✓\n\n**Traps:** answer **A (31)** swaps the quotient and remainder (\\(6 \\times 4 + 7\\)). Answer\n**B (42)** is \\(6 \\times 7\\) with the remainder dropped. Answer **D (52)** multiplies by one too many\n(\\(6 \\times 8 + 4\\)). Answer **E (66)** treats the problem as \\(6 \\times (7 + 4)\\).",
+      "hints": [
+        "Use \\(n = \\text{divisor} \\times \\text{quotient} + \\text{remainder}\\).",
+        "Keep the quotient and the remainder in their correct roles — one gets multiplied, one gets added."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0026",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "remainders",
+        "products"
+      ],
+      "choices": {
+        "A": "1",
+        "B": "2",
+        "C": "4",
+        "D": "8",
+        "E": "11"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When the positive integers \\(a\\) and \\(b\\) are each divided by 12, the remainders are 5 and 8\nrespectively. What is the remainder when the product \\(ab\\) is divided by 12?",
+      "explanation": "To get the remainder of a product, multiply the remainders and then reduce mod 12:\n\n\\[\\text{remainder of } ab = \\text{remainder of } (5 \\times 8) = \\text{remainder of } 40.\\]\n\nSince \\(40 = 12 \\times 3 + 4\\), the remainder is **4**.\n\nConfirm with the smallest values: \\(a = 5\\), \\(b = 8\\), so \\(ab = 40\\), and \\(40 \\div 12\\) leaves\nremainder **4**. ✓\n\n**Traps:** answer **A (1)** *adds* the remainders (\\(5 + 8 = 13\\), then \\(13 - 12 = 1\\)) instead of\nmultiplying them. Answer **D (8)** and answer **E (11)** come from botching the final reduction of\n40 (subtracting 32 or 29 rather than a multiple of 12). The key discipline: combine the remainders\nthe same way the numbers are combined — here, multiply — then reduce one last time.",
+      "hints": [
+        "The remainder of a product is the remainder of (remainder \\(\\times\\) remainder).",
+        "\\(5 \\times 8 = 40\\) is not the final answer — reduce 40 modulo 12."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0027",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "remainders",
+        "powers",
+        "cyclicity",
+        "units-digit"
+      ],
+      "choices": {
+        "A": "1",
+        "B": "3",
+        "C": "7",
+        "D": "9",
+        "E": "0"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the remainder when \\(7^{20}\\) is divided by 10?",
+      "explanation": "Dividing by 10 asks for the **units digit**. The units digit of powers of 7 repeats in a cycle of\nlength 4:\n\n\\[7^1 \\to 7, \\quad 7^2 \\to 9, \\quad 7^3 \\to 3, \\quad 7^4 \\to 1, \\quad 7^5 \\to 7, \\ \\dots\\]\n\nTo find where \\(7^{20}\\) lands, divide the exponent by the cycle length: \\(20 = 4 \\times 5\\), so 20 is\na multiple of 4 and \\(7^{20}\\) sits at the **end** of a cycle — the same spot as \\(7^4\\), whose units\ndigit is **1**. The remainder when \\(7^{20}\\) is divided by 10 is **1**.\n\n**Traps:** answer **C (7)** treats \"\\(20 \\div 4\\) has remainder 0\" as if it pointed to the *first*\nentry (7) — but a remainder of 0 means the *last* entry of the cycle, not the first. Answers\n**D (9)** and **B (3)** are the units digits of \\(7^2\\) and \\(7^3\\), chosen by miscounting the\nposition. Answer **E (0)** wrongly assumes any large power is divisible by 10.",
+      "hints": [
+        "Remainder mod 10 is just the units digit.",
+        "Units digits of \\(7^n\\) cycle 7, 9, 3, 1; use \"exponent mod 4,\" and treat a result of 0 as the end"
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0028",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "remainders",
+        "simultaneous-conditions"
+      ],
+      "choices": {
+        "A": "12",
+        "B": "16",
+        "C": "17",
+        "D": "22",
+        "E": "31"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "The positive integer \\(n\\) leaves a remainder of 2 when divided by 5 and a remainder of 1 when\ndivided by 3. What is the least possible value of \\(n\\) that is greater than 10?",
+      "explanation": "List the numbers that satisfy each condition and find the overlap.\n\n- Remainder 2 when divided by 5: \\(2, 7, 12, 17, 22, 27, \\dots\\)\n- Remainder 1 when divided by 3: \\(1, 4, 7, 10, 13, 16, 19, 22, 25, \\dots\\)\n\nThe values in **both** lists are \\(7, 22, 37, \\dots\\) — they repeat every \\(\\text{lcm}(5, 3) = 15\\).\nThe smallest one greater than 10 is **22**.\n\nCheck: \\(22 = 5 \\times 4 + 2\\) (remainder 2) and \\(22 = 3 \\times 7 + 1\\) (remainder 1). ✓\n\n**Traps:** answer **A (12)** satisfies only the mod-5 condition (\\(12 \\div 3\\) leaves remainder 0).\nAnswer **B (16)** satisfies only the mod-3 condition (\\(16 \\div 5\\) leaves remainder 1). Answer\n**C (17)** leaves remainder 2 mod 5 but remainder 2 mod 3, so it fails the second condition. Answer\n**E (31)** leaves remainder 1 mod 5, satisfying neither cleanly. Only 22 meets both.",
+      "hints": [
+        "Write out the numbers that fit each condition separately, then look for the first common value.",
+        "Above the first overlap, solutions repeat every lcm of the two divisors."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0029",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "remainders",
+        "squares",
+        "could-be"
+      ],
+      "choices": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "6",
+        "E": "0"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "The positive integer \\(n\\) is such that \\(n^2\\) leaves a remainder of 4 when divided by 7. Which of\nthe following could be the remainder when \\(n\\) is divided by 7?",
+      "explanation": "The remainder of \\(n^2\\) depends only on the remainder of \\(n\\), so test every possible remainder\n\\(r = 0, 1, 2, \\dots, 6\\) and see which give \\(r^2 \\equiv 4 \\pmod 7\\):\n\n\\[0^2 \\to 0,\\quad 1^2 \\to 1,\\quad 2^2 \\to 4,\\quad 3^2 \\to 2,\\quad 4^2 \\to 2,\\quad 5^2 \\to 4,\\quad 6^2 \\to 1.\\]\n\n(For example, \\(5^2 = 25 = 7 \\times 3 + 4\\).) The value 4 appears when \\(r = 2\\) or \\(r = 5\\). Of the\nanswer choices, only **2** is possible.\n\nCheck: if \\(n = 2\\), then \\(n^2 = 4\\), and \\(4 \\div 7\\) leaves remainder 4. ✓\n\n**Traps:** answer **C (4)** assumes \\(n\\) leaves the *same* remainder as \\(n^2\\) — but a number and\nits square rarely share a remainder (here \\(4^2 = 16\\) leaves remainder 2, not 4). Answers **B (3)**,\n**D (6)**, and **E (0)** all fail: their squares leave remainders 2, 1, and 0 respectively.",
+      "hints": [
+        "The remainder of \\(n^2\\) depends only on the remainder of \\(n\\), so just test \\(r = 0\\) through 6.",
+        "Don't assume \\(n\\) and \\(n^2\\) leave the same remainder — square each candidate and check."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0030",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "remainders",
+        "simultaneous-conditions",
+        "lcm"
+      ],
+      "choices": {
+        "A": "1",
+        "B": "5",
+        "C": "7",
+        "D": "9",
+        "E": "11"
+      },
+      "answer": "E",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When the positive integer \\(n\\) is divided by 4, the remainder is 3, and when \\(n\\) is divided by 6,\nthe remainder is 5. What is the remainder when \\(n\\) is divided by 12?",
+      "explanation": "Find a number that satisfies both conditions, then reduce mod 12. List each:\n\n- Remainder 3 when divided by 4: \\(3, 7, 11, 15, 19, 23, \\dots\\)\n- Remainder 5 when divided by 6: \\(5, 11, 17, 23, 29, \\dots\\)\n\nThe first common value is **11**. Both divisors go into \\(\\text{lcm}(4, 6) = 12\\), so the solutions\nrepeat every 12: \\(11, 23, 35, \\dots\\), all of which leave remainder **11** when divided by 12.\n\nCheck: \\(11 = 4 \\times 2 + 3\\) (remainder 3) and \\(11 = 6 \\times 1 + 5\\) (remainder 5). ✓\n\n**Traps:** answers **B (5)** and **C (7)** grab one of the given remainders (or their sum minus one)\nwithout combining the conditions. Answer **D (9)** and answer **A (1)** come from guessing a value\nthat fits only one of the two divisions. A shortcut worth noticing: each condition says \\(n\\) is one\nshort of a multiple (\\(n + 1\\) is divisible by 4 **and** by 6, hence by 12), so \\(n\\) is one less than\na multiple of 12 — remainder **11**.",
+      "hints": [
+        "Find the smallest \\(n\\) satisfying both conditions, then take its remainder mod 12.",
+        "Notice that \\(n + 1\\) is divisible by both 4 and 6 — what does that say about \\(n + 1\\) and 12?"
       ]
     },
     {
@@ -969,6 +1385,23 @@
       "body": "## Overview\n\nA quadratic equation has the form \\(ax^2 + bx + c = 0\\). On GMAT Focus Quant, most quadratics are\nbuilt to **factor cleanly**, so factoring — not the quadratic formula — is usually the fast route.\n\n## Core concepts\n\n**Factoring \\(x^2 + bx + c\\).** Find two numbers that **multiply to \\(c\\)** and **add to \\(b\\)**.\nThen \\(x^2 + bx + c = (x + p)(x + q)\\), and the solutions make each factor zero.\n\nExample: \\(x^2 - 5x + 6\\). Two numbers multiplying to \\(+6\\) and adding to \\(-5\\) are \\(-2\\) and\n\\(-3\\), so \\((x-2)(x-3) = 0\\) and \\(x = 2\\) or \\(x = 3\\).\n\n**Sum and product shortcut.** For \\(x^2 + bx + c = 0\\):\n\n\\[\\text{sum of roots} = -b, \\qquad \\text{product of roots} = c\\]\n\nThis lets you answer \"sum/product of solutions\" questions without fully solving.\n\n**Special products** worth recognizing instantly:\n\n\\[a^2 - b^2 = (a-b)(a+b), \\quad (a+b)^2 = a^2 + 2ab + b^2, \\quad (a-b)^2 = a^2 - 2ab + b^2\\]\n\n**The quadratic formula** (fallback when factoring is ugly):\n\n\\[x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\\]\n\n## Worked examples\n\n**Factor and solve.** \\(x^2 + 2x - 15 = 0 \\Rightarrow (x+5)(x-3) = 0 \\Rightarrow x = -5 \\text{ or } 3\\).\n\n**Difference of squares.** \\(x^2 - 49 = 0 \\Rightarrow (x-7)(x+7) = 0 \\Rightarrow x = \\pm 7\\).\n\n## Common traps\n\n- **Confusing sum and product of roots.** Sum is \\(-b\\), product is \\(c\\). Read which the question wants.\n- **Dropping a solution.** A quadratic usually has *two* roots — check whether the question wants both, their sum, or only positive values.\n- **Sign errors in factoring.** Verify by expanding your factors back out.\n\n## Key takeaways\n\n- Factor into \\((x + p)(x + q)\\) where \\(pq = c\\) and \\(p + q = b\\); each factor set to zero gives a root.\n- Sum of roots \\(= -b\\), product \\(= c\\) — a fast shortcut.\n- Recognize the difference of squares and perfect-square forms on sight."
     },
     {
+      "id": "quant-arithmetic-exponents-roots",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "title": "Exponents & Roots",
+      "tags": [
+        "exponents",
+        "roots",
+        "radicals",
+        "powers"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nMost GMAT Focus exponent questions reward you for **rewriting everything in the same base** and\nthen just tracking the exponents. Almost nothing here needs a calculator — the whole game is a\nhandful of rules applied cleanly and, above all, **not confusing multiplication of bases with\naddition of exponents**.\n\n## Core concepts\n\n**The power rules.** For any nonzero base \\(a\\):\n\n\\[a^m \\cdot a^n = a^{m+n}, \\qquad \\frac{a^m}{a^n} = a^{m-n}, \\qquad (a^m)^n = a^{mn}\\]\n\nRead them carefully: you **add** exponents when you *multiply* like bases, and you **multiply**\nexponents when you *raise a power to a power*. Mixing these two up is the single most common\nexponent error on the test.\n\n**Zero and negative exponents.**\n\n\\[a^0 = 1 \\ (a \\neq 0), \\qquad a^{-n} = \\frac{1}{a^n}\\]\n\nA negative exponent means \"reciprocal,\" not \"negative number\": \\(2^{-3} = \\tfrac{1}{8}\\), not \\(-8\\).\n\n**Fractional exponents are roots.**\n\n\\[a^{1/n} = \\sqrt[n]{a}, \\qquad a^{m/n} = \\left(\\sqrt[n]{a}\\right)^{m} = \\sqrt[n]{a^{m}}\\]\n\nSo \\(27^{2/3} = \\left(\\sqrt[3]{27}\\right)^2 = 3^2 = 9\\). Take the root first when it keeps the numbers\nsmall.\n\n**Roots simplify by pulling out perfect squares.** \\(\\sqrt{ab} = \\sqrt{a}\\,\\sqrt{b}\\), so\n\n\\[\\sqrt{50} = \\sqrt{25 \\cdot 2} = 5\\sqrt{2}\\]\n\nYou can only **add or subtract** radicals when the part under the root matches:\n\\(5\\sqrt{2} + 3\\sqrt{2} = 8\\sqrt{2}\\). You may **never** merge \\(\\sqrt{a} + \\sqrt{b}\\) into\n\\(\\sqrt{a+b}\\).\n\n**Factoring out a common power** cracks the hardest questions. Terms like \\(2^n + 2^n\\) are not a\nnew base — they collapse:\n\n\\[2^n + 2^n = 2 \\cdot 2^n = 2^{n+1}, \\qquad 3^{k+1} - 3^{k} = 3^{k}(3 - 1) = 2\\cdot 3^{k}\\]\n\n## Worked examples\n\n**Same-base equation.** Solve \\(2^{x+1} = 8^{x-1}\\). Rewrite \\(8 = 2^3\\), so the right side is\n\\(2^{3(x-1)} = 2^{3x-3}\\). Same base ⟹ equal exponents: \\(x + 1 = 3x - 3\\), giving \\(2x = 4\\) and\n\\(x = 2\\).\n\n**Collapse a sum of equal powers.** If \\(2^n + 2^n + 2^n + 2^n = 2^{12}\\), the left side is\n\\(4 \\cdot 2^n = 2^2 \\cdot 2^n = 2^{n+2}\\). So \\(n + 2 = 12\\) and \\(n = 10\\).\n\n**Ratio of powers.** With \\(x = 3^{20}\\) and \\(y = 3^{18}\\), \\(\\dfrac{x}{y} = 3^{20-18} = 3^2 = 9\\).\n\n## Common traps\n\n- **Multiplying exponents when you should add them** (and vice versa). \\(2^5 \\cdot 2^3 = 2^8\\), not\n  \\(2^{15}\\).\n- **Reading a negative exponent as a negative number.** \\(3^{-2} = \\tfrac{1}{9}\\), and \\(3^0 = 1\\)\n  (not \\(0\\)).\n- **Merging unlike radicals.** \\(\\sqrt{50} + \\sqrt{18} \\neq \\sqrt{68}\\); simplify each first, then add.\n- **Treating a sum of powers as a new base.** \\(2^n + 2^n\\) is \\(2^{n+1}\\), not \\(4^n\\) or \\(2^{2n}\\).\n\n## Key takeaways\n\n- Get everything into a **common base**, then just manipulate exponents.\n- Multiply like bases → **add** exponents; raise a power to a power → **multiply** exponents.\n- \\(a^0 = 1\\), \\(a^{-n} = 1/a^n\\), and \\(a^{m/n} = \\sqrt[n]{a^m}\\).\n- Simplify radicals by pulling out perfect squares; only combine radicals with the same radicand.\n- Sums of equal powers **factor**: \\(k\\) copies of \\(a^n\\) is \\(k \\cdot a^n\\)."
+    },
+    {
       "id": "quant-arithmetic-percents-ratios",
       "section": "quant",
       "topic": "arithmetic",
@@ -983,6 +1416,23 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nPercents and ratios are the most frequently tested arithmetic ideas on GMAT Focus Quant, and\nthey hide inside word problems everywhere. Master three moves: converting between forms, handling\npercent *change*, and scaling ratios.\n\n## Core concepts\n\n**Percent as a factor.** A percent is just a number over 100. The fastest way to apply a percent\nchange is to turn it into a **multiplier**:\n\n- Increase by \\(r\\%\\): multiply by \\(1 + \\tfrac{r}{100}\\). (+25% → \\(\\times 1.25\\))\n- Decrease by \\(r\\%\\): multiply by \\(1 - \\tfrac{r}{100}\\). (−20% → \\(\\times 0.80\\))\n\n**Successive changes multiply.** Two changes in a row are multiplied, never added:\n\n\\[(+25\\%)\\text{ then }(-20\\%): \\quad 1.25 \\times 0.80 = 1.00 \\quad (\\text{no net change})\\]\n\n**Percent change formula.**\n\n\\[\\text{percent change} = \\frac{\\text{new} - \\text{old}}{\\text{old}} \\times 100\\%\\]\n\nAlways divide by the **original** value, not the new one.\n\n**Ratios scale together.** A ratio \\(a : b\\) means the quantities are \\(ak\\) and \\(bk\\) for some\nmultiplier \\(k\\). If boys : girls \\(= 3 : 5\\) and there are 24 boys, then \\(k = 8\\), so there are\n\\(5 \\times 8 = 40\\) girls.\n\n## Worked examples\n\n**Percent change.** A stock rises from $80 to $100. Percent increase \\(= \\tfrac{100 - 80}{80} = \\tfrac{20}{80} = 25\\%\\).\nNote it later falls from $100 back to $80: that's \\(\\tfrac{-20}{100} = -20\\%\\) — a *smaller* percent, because the base is now larger.\n\n**Ratio scaling.** A recipe uses flour : sugar \\(= 7 : 2\\). To use 21 cups of flour, \\(k = 3\\), so\nyou need \\(2 \\times 3 = 6\\) cups of sugar.\n\n## Common traps\n\n- **Adding successive percents.** +25% then −20% is *not* +5%; it's \\(1.25 \\times 0.80 = 1.00\\).\n- **Wrong base.** Percent change always divides by the original amount. A rise then an equal-percent fall does not return to the start.\n- **Ratio ≠ actual count.** \\(3 : 5\\) does not mean 3 and 5 — it means \\(3k\\) and \\(5k\\). Find \\(k\\) first.\n\n## Key takeaways\n\n- Convert percent changes to multipliers and multiply them for successive changes.\n- Percent change = (new − old) / old.\n- A ratio \\(a : b\\) represents \\(ak\\) and \\(bk\\); solve for the multiplier \\(k\\), then scale."
+    },
+    {
+      "id": "quant-number-properties-remainders",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "title": "Remainders",
+      "tags": [
+        "remainders",
+        "divisibility",
+        "modular-arithmetic",
+        "number-properties"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nRemainder questions look like they need long division, but almost none of them do. The whole\ntopic rests on one identity and a few rules for how remainders behave when you **add**,\n**multiply**, and take **powers**. Master those and you can answer most remainder questions in\nunder a minute — often just by picking the smallest number that fits and testing it.\n\n## Core concepts\n\n**The division identity.** When a positive integer \\(n\\) is divided by a positive divisor \\(d\\),\nthere is a unique quotient \\(q\\) and remainder \\(r\\) with\n\n\\[n = dq + r, \\qquad 0 \\le r < d.\\]\n\nThe remainder is always **less than the divisor** (a remainder of 7 is impossible when dividing\nby 5). Reading a word problem, \"quotient 7, remainder 4, divisor 6\" becomes\n\\(n = 6\\cdot 7 + 4 = 46\\) — nothing more.\n\n**Remainders add and multiply, then reduce.** If you only care about the remainder mod \\(d\\), you\nmay replace any number by its remainder at every step, as long as you **reduce again at the end**:\n\n\\[\\text{rem}(a+b) = \\text{rem}\\big(\\text{rem}(a) + \\text{rem}(b)\\big), \\qquad\n\\text{rem}(ab) = \\text{rem}\\big(\\text{rem}(a)\\cdot \\text{rem}(b)\\big).\\]\n\nSo if \\(a\\) leaves remainder 5 and \\(b\\) leaves remainder 8 when divided by 12, then \\(ab\\) leaves\nthe remainder of \\(5\\times 8 = 40\\), which is \\(40 - 36 = 4\\). The single most common mistake is\nstopping at 40 (or at \\(5+8=13\\)) and forgetting the final reduction.\n\n**Powers cycle.** Remainders of \\(a^1, a^2, a^3, \\dots\\) repeat in a short cycle. Dividing by 10\nis the same as asking for the **units digit**, and units digits cycle with period at most 4:\n\n\\[7^1 \\to 7,\\quad 7^2 \\to 9,\\quad 7^3 \\to 3,\\quad 7^4 \\to 1,\\quad 7^5 \\to 7,\\ \\dots\\]\n\nTo find \\(7^{20} \\bmod 10\\), note the cycle length is 4 and \\(20\\) is a multiple of 4, so \\(7^{20}\\)\nlands on the **last** entry of the cycle: remainder **1**. Match the exponent to its position with\n\"exponent mod cycle-length,\" and remember that a remainder of 0 means the *end* of the cycle, not\nthe start.\n\n**Pick the smallest number that fits.** \"\\(n\\) leaves remainder 2 when divided by 5\" just means\n\\(n\\) is one of \\(2, 7, 12, 17, \\dots\\). For two conditions at once, list each and find the first\noverlap; the pattern then repeats every \\(\\text{lcm}\\) of the divisors.\n\n## Worked examples\n\n**Translate and compute.** A positive integer divided by 6 gives quotient 7 and remainder 4.\nThe integer is \\(6\\cdot 7 + 4 = 46\\). (Swapping quotient and remainder — \\(6\\cdot 4 + 7 = 31\\) — is\nthe classic trap.)\n\n**Combine two conditions.** Find the smallest integer above 10 that leaves remainder 2 mod 5 and\nremainder 1 mod 3. Numbers \\(\\equiv 2 \\pmod 5\\): \\(2, 7, 12, 17, 22, \\dots\\); of these, the ones\n\\(\\equiv 1 \\pmod 3\\) are \\(7, 22, 37, \\dots\\) (they repeat every \\(\\text{lcm}(5,3)=15\\)). The first\none above 10 is **22**.\n\n**Reason with squares.** If \\(n^2\\) leaves remainder 4 when divided by 7, what can \\(n\\) leave?\nTest each possible remainder \\(r = 0,1,\\dots,6\\): \\(r^2 \\bmod 7\\) gives \\(0,1,4,2,2,4,1\\). The value\n4 appears at \\(r = 2\\) and \\(r = 5\\), so \\(n\\) leaves remainder **2 or 5** — *not* 4. The remainder of\n\\(n\\) is generally **not** the same as the remainder of \\(n^2\\).\n\n## Common traps\n\n- **Forgetting to reduce at the end.** \\(5\\times 8 = 40\\) is not the answer when dividing by 12; the\n  remainder is \\(40 - 36 = 4\\).\n- **Adding remainders when the numbers are multiplied** (or vice versa). Combine remainders the\n  same way you combine the numbers, then reduce.\n- **Swapping quotient and remainder** in \\(n = dq + r\\).\n- **A remainder as large as the divisor.** Dividing by \\(d\\), the remainder must be \\(0\\) to \\(d-1\\).\n- **Assuming \\(n\\) and \\(n^2\\) (or \\(n\\) and \\(2n\\)) share a remainder.** They usually don't — test it.\n\n## Key takeaways\n\n- Everything flows from \\(n = dq + r\\) with \\(0 \\le r < d\\).\n- To combine numbers, combine their remainders **and reduce again**: works for sums and products.\n- Powers of a number cycle; use \"exponent mod cycle-length,\" and treat a result of 0 as the end of\n  the cycle.\n- For \"which could be\" and two-condition problems, list the smallest values that fit and look for\n  the overlap; it repeats every lcm of the divisors."
     },
     {
       "id": "quant-statistics-descriptive",
