@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 23,
-      "lessons": 6
+      "questions": 30,
+      "lessons": 7
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 39,
-    "lessons": 9
+    "questions": 46,
+    "lessons": 10
   },
   "questions": [
     {
@@ -628,6 +628,213 @@
       ]
     },
     {
+      "id": "quant-number-properties-remainders-0024",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "remainders",
+        "sums"
+      ],
+      "choices": {
+        "A": "2",
+        "B": "3",
+        "C": "5",
+        "D": "7",
+        "E": "12"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When the positive integer \\(n\\) is divided by 9, the remainder is 5. What is the remainder when\n\\(n + 7\\) is divided by 9?",
+      "explanation": "You don't need to know \\(n\\) itself. Adding 7 to \\(n\\) adds 7 to the remainder, and then you reduce\nmod 9:\n\n\\[\\text{remainder of } (n+7) = \\text{remainder of } (5 + 7) = \\text{remainder of } 12 = 12 - 9 = 3.\\]\n\nYou can confirm with the smallest such \\(n\\): \\(n = 5\\) gives \\(n + 7 = 12\\), and \\(12 \\div 9\\) leaves\nremainder **3**.\n\n**Traps:** answer **E (12)** is \\(5 + 7\\) with the final reduction forgotten. Answer **D (7)** is\njust the number being added, as if the original remainder didn't matter. Answer **C (5)** assumes\nadding 7 leaves the remainder unchanged. Answer **A (2)** comes from *subtracting* the remainders\n(\\(7 - 5\\)) instead of adding.",
+      "hints": [
+        "You never need the actual value of \\(n\\) — work with its remainder.",
+        "Add the remainders, then reduce mod 9 one more time."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0025",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "remainders",
+        "division-identity"
+      ],
+      "choices": {
+        "A": "31",
+        "B": "42",
+        "C": "46",
+        "D": "52",
+        "E": "66"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When a positive integer is divided by 6, the quotient is 7 and the remainder is 4. What is the\ninteger?",
+      "explanation": "Every division fits the identity\n\n\\[n = (\\text{divisor})(\\text{quotient}) + (\\text{remainder}).\\]\n\nHere the divisor is 6, the quotient is 7, and the remainder is 4, so\n\n\\[n = 6 \\times 7 + 4 = 42 + 4 = 46.\\]\n\nCheck: \\(46 \\div 6 = 7\\) with \\(46 - 42 = 4\\) left over. ✓\n\n**Traps:** answer **A (31)** swaps the quotient and remainder (\\(6 \\times 4 + 7\\)). Answer\n**B (42)** is \\(6 \\times 7\\) with the remainder dropped. Answer **D (52)** multiplies by one too many\n(\\(6 \\times 8 + 4\\)). Answer **E (66)** treats the problem as \\(6 \\times (7 + 4)\\).",
+      "hints": [
+        "Use \\(n = \\text{divisor} \\times \\text{quotient} + \\text{remainder}\\).",
+        "Keep the quotient and the remainder in their correct roles — one gets multiplied, one gets added."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0026",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "remainders",
+        "products"
+      ],
+      "choices": {
+        "A": "1",
+        "B": "2",
+        "C": "4",
+        "D": "8",
+        "E": "11"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When the positive integers \\(a\\) and \\(b\\) are each divided by 12, the remainders are 5 and 8\nrespectively. What is the remainder when the product \\(ab\\) is divided by 12?",
+      "explanation": "To get the remainder of a product, multiply the remainders and then reduce mod 12:\n\n\\[\\text{remainder of } ab = \\text{remainder of } (5 \\times 8) = \\text{remainder of } 40.\\]\n\nSince \\(40 = 12 \\times 3 + 4\\), the remainder is **4**.\n\nConfirm with the smallest values: \\(a = 5\\), \\(b = 8\\), so \\(ab = 40\\), and \\(40 \\div 12\\) leaves\nremainder **4**. ✓\n\n**Traps:** answer **A (1)** *adds* the remainders (\\(5 + 8 = 13\\), then \\(13 - 12 = 1\\)) instead of\nmultiplying them. Answer **D (8)** and answer **E (11)** come from botching the final reduction of\n40 (subtracting 32 or 29 rather than a multiple of 12). The key discipline: combine the remainders\nthe same way the numbers are combined — here, multiply — then reduce one last time.",
+      "hints": [
+        "The remainder of a product is the remainder of (remainder \\(\\times\\) remainder).",
+        "\\(5 \\times 8 = 40\\) is not the final answer — reduce 40 modulo 12."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0027",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "remainders",
+        "powers",
+        "cyclicity",
+        "units-digit"
+      ],
+      "choices": {
+        "A": "1",
+        "B": "3",
+        "C": "7",
+        "D": "9",
+        "E": "0"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the remainder when \\(7^{20}\\) is divided by 10?",
+      "explanation": "Dividing by 10 asks for the **units digit**. The units digit of powers of 7 repeats in a cycle of\nlength 4:\n\n\\[7^1 \\to 7, \\quad 7^2 \\to 9, \\quad 7^3 \\to 3, \\quad 7^4 \\to 1, \\quad 7^5 \\to 7, \\ \\dots\\]\n\nTo find where \\(7^{20}\\) lands, divide the exponent by the cycle length: \\(20 = 4 \\times 5\\), so 20 is\na multiple of 4 and \\(7^{20}\\) sits at the **end** of a cycle — the same spot as \\(7^4\\), whose units\ndigit is **1**. The remainder when \\(7^{20}\\) is divided by 10 is **1**.\n\n**Traps:** answer **C (7)** treats \"\\(20 \\div 4\\) has remainder 0\" as if it pointed to the *first*\nentry (7) — but a remainder of 0 means the *last* entry of the cycle, not the first. Answers\n**D (9)** and **B (3)** are the units digits of \\(7^2\\) and \\(7^3\\), chosen by miscounting the\nposition. Answer **E (0)** wrongly assumes any large power is divisible by 10.",
+      "hints": [
+        "Remainder mod 10 is just the units digit.",
+        "Units digits of \\(7^n\\) cycle 7, 9, 3, 1; use \"exponent mod 4,\" and treat a result of 0 as the end"
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0028",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "remainders",
+        "simultaneous-conditions"
+      ],
+      "choices": {
+        "A": "12",
+        "B": "16",
+        "C": "17",
+        "D": "22",
+        "E": "31"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "The positive integer \\(n\\) leaves a remainder of 2 when divided by 5 and a remainder of 1 when\ndivided by 3. What is the least possible value of \\(n\\) that is greater than 10?",
+      "explanation": "List the numbers that satisfy each condition and find the overlap.\n\n- Remainder 2 when divided by 5: \\(2, 7, 12, 17, 22, 27, \\dots\\)\n- Remainder 1 when divided by 3: \\(1, 4, 7, 10, 13, 16, 19, 22, 25, \\dots\\)\n\nThe values in **both** lists are \\(7, 22, 37, \\dots\\) — they repeat every \\(\\text{lcm}(5, 3) = 15\\).\nThe smallest one greater than 10 is **22**.\n\nCheck: \\(22 = 5 \\times 4 + 2\\) (remainder 2) and \\(22 = 3 \\times 7 + 1\\) (remainder 1). ✓\n\n**Traps:** answer **A (12)** satisfies only the mod-5 condition (\\(12 \\div 3\\) leaves remainder 0).\nAnswer **B (16)** satisfies only the mod-3 condition (\\(16 \\div 5\\) leaves remainder 1). Answer\n**C (17)** leaves remainder 2 mod 5 but remainder 2 mod 3, so it fails the second condition. Answer\n**E (31)** leaves remainder 1 mod 5, satisfying neither cleanly. Only 22 meets both.",
+      "hints": [
+        "Write out the numbers that fit each condition separately, then look for the first common value.",
+        "Above the first overlap, solutions repeat every lcm of the two divisors."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0029",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "remainders",
+        "squares",
+        "could-be"
+      ],
+      "choices": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "6",
+        "E": "0"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "The positive integer \\(n\\) is such that \\(n^2\\) leaves a remainder of 4 when divided by 7. Which of\nthe following could be the remainder when \\(n\\) is divided by 7?",
+      "explanation": "The remainder of \\(n^2\\) depends only on the remainder of \\(n\\), so test every possible remainder\n\\(r = 0, 1, 2, \\dots, 6\\) and see which give \\(r^2 \\equiv 4 \\pmod 7\\):\n\n\\[0^2 \\to 0,\\quad 1^2 \\to 1,\\quad 2^2 \\to 4,\\quad 3^2 \\to 2,\\quad 4^2 \\to 2,\\quad 5^2 \\to 4,\\quad 6^2 \\to 1.\\]\n\n(For example, \\(5^2 = 25 = 7 \\times 3 + 4\\).) The value 4 appears when \\(r = 2\\) or \\(r = 5\\). Of the\nanswer choices, only **2** is possible.\n\nCheck: if \\(n = 2\\), then \\(n^2 = 4\\), and \\(4 \\div 7\\) leaves remainder 4. ✓\n\n**Traps:** answer **C (4)** assumes \\(n\\) leaves the *same* remainder as \\(n^2\\) — but a number and\nits square rarely share a remainder (here \\(4^2 = 16\\) leaves remainder 2, not 4). Answers **B (3)**,\n**D (6)**, and **E (0)** all fail: their squares leave remainders 2, 1, and 0 respectively.",
+      "hints": [
+        "The remainder of \\(n^2\\) depends only on the remainder of \\(n\\), so just test \\(r = 0\\) through 6.",
+        "Don't assume \\(n\\) and \\(n^2\\) leave the same remainder — square each candidate and check."
+      ]
+    },
+    {
+      "id": "quant-number-properties-remainders-0030",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "remainders",
+        "simultaneous-conditions",
+        "lcm"
+      ],
+      "choices": {
+        "A": "1",
+        "B": "5",
+        "C": "7",
+        "D": "9",
+        "E": "11"
+      },
+      "answer": "E",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "When the positive integer \\(n\\) is divided by 4, the remainder is 3, and when \\(n\\) is divided by 6,\nthe remainder is 5. What is the remainder when \\(n\\) is divided by 12?",
+      "explanation": "Find a number that satisfies both conditions, then reduce mod 12. List each:\n\n- Remainder 3 when divided by 4: \\(3, 7, 11, 15, 19, 23, \\dots\\)\n- Remainder 5 when divided by 6: \\(5, 11, 17, 23, 29, \\dots\\)\n\nThe first common value is **11**. Both divisors go into \\(\\text{lcm}(4, 6) = 12\\), so the solutions\nrepeat every 12: \\(11, 23, 35, \\dots\\), all of which leave remainder **11** when divided by 12.\n\nCheck: \\(11 = 4 \\times 2 + 3\\) (remainder 3) and \\(11 = 6 \\times 1 + 5\\) (remainder 5). ✓\n\n**Traps:** answers **B (5)** and **C (7)** grab one of the given remainders (or their sum minus one)\nwithout combining the conditions. Answer **D (9)** and answer **A (1)** come from guessing a value\nthat fits only one of the two divisions. A shortcut worth noticing: each condition says \\(n\\) is one\nshort of a multiple (\\(n + 1\\) is divisible by 4 **and** by 6, hence by 12), so \\(n\\) is one less than\na multiple of 12 — remainder **11**.",
+      "hints": [
+        "Find the smallest \\(n\\) satisfying both conditions, then take its remainder mod 12.",
+        "Notice that \\(n + 1\\) is divisible by both 4 and 6 — what does that say about \\(n + 1\\) and 12?"
+      ]
+    },
+    {
       "id": "quant-statistics-descriptive-0009",
       "section": "quant",
       "topic": "statistics",
@@ -1209,6 +1416,23 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nPercents and ratios are the most frequently tested arithmetic ideas on GMAT Focus Quant, and\nthey hide inside word problems everywhere. Master three moves: converting between forms, handling\npercent *change*, and scaling ratios.\n\n## Core concepts\n\n**Percent as a factor.** A percent is just a number over 100. The fastest way to apply a percent\nchange is to turn it into a **multiplier**:\n\n- Increase by \\(r\\%\\): multiply by \\(1 + \\tfrac{r}{100}\\). (+25% → \\(\\times 1.25\\))\n- Decrease by \\(r\\%\\): multiply by \\(1 - \\tfrac{r}{100}\\). (−20% → \\(\\times 0.80\\))\n\n**Successive changes multiply.** Two changes in a row are multiplied, never added:\n\n\\[(+25\\%)\\text{ then }(-20\\%): \\quad 1.25 \\times 0.80 = 1.00 \\quad (\\text{no net change})\\]\n\n**Percent change formula.**\n\n\\[\\text{percent change} = \\frac{\\text{new} - \\text{old}}{\\text{old}} \\times 100\\%\\]\n\nAlways divide by the **original** value, not the new one.\n\n**Ratios scale together.** A ratio \\(a : b\\) means the quantities are \\(ak\\) and \\(bk\\) for some\nmultiplier \\(k\\). If boys : girls \\(= 3 : 5\\) and there are 24 boys, then \\(k = 8\\), so there are\n\\(5 \\times 8 = 40\\) girls.\n\n## Worked examples\n\n**Percent change.** A stock rises from $80 to $100. Percent increase \\(= \\tfrac{100 - 80}{80} = \\tfrac{20}{80} = 25\\%\\).\nNote it later falls from $100 back to $80: that's \\(\\tfrac{-20}{100} = -20\\%\\) — a *smaller* percent, because the base is now larger.\n\n**Ratio scaling.** A recipe uses flour : sugar \\(= 7 : 2\\). To use 21 cups of flour, \\(k = 3\\), so\nyou need \\(2 \\times 3 = 6\\) cups of sugar.\n\n## Common traps\n\n- **Adding successive percents.** +25% then −20% is *not* +5%; it's \\(1.25 \\times 0.80 = 1.00\\).\n- **Wrong base.** Percent change always divides by the original amount. A rise then an equal-percent fall does not return to the start.\n- **Ratio ≠ actual count.** \\(3 : 5\\) does not mean 3 and 5 — it means \\(3k\\) and \\(5k\\). Find \\(k\\) first.\n\n## Key takeaways\n\n- Convert percent changes to multipliers and multiply them for successive changes.\n- Percent change = (new − old) / old.\n- A ratio \\(a : b\\) represents \\(ak\\) and \\(bk\\); solve for the multiplier \\(k\\), then scale."
+    },
+    {
+      "id": "quant-number-properties-remainders",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "remainders",
+      "title": "Remainders",
+      "tags": [
+        "remainders",
+        "divisibility",
+        "modular-arithmetic",
+        "number-properties"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nRemainder questions look like they need long division, but almost none of them do. The whole\ntopic rests on one identity and a few rules for how remainders behave when you **add**,\n**multiply**, and take **powers**. Master those and you can answer most remainder questions in\nunder a minute — often just by picking the smallest number that fits and testing it.\n\n## Core concepts\n\n**The division identity.** When a positive integer \\(n\\) is divided by a positive divisor \\(d\\),\nthere is a unique quotient \\(q\\) and remainder \\(r\\) with\n\n\\[n = dq + r, \\qquad 0 \\le r < d.\\]\n\nThe remainder is always **less than the divisor** (a remainder of 7 is impossible when dividing\nby 5). Reading a word problem, \"quotient 7, remainder 4, divisor 6\" becomes\n\\(n = 6\\cdot 7 + 4 = 46\\) — nothing more.\n\n**Remainders add and multiply, then reduce.** If you only care about the remainder mod \\(d\\), you\nmay replace any number by its remainder at every step, as long as you **reduce again at the end**:\n\n\\[\\text{rem}(a+b) = \\text{rem}\\big(\\text{rem}(a) + \\text{rem}(b)\\big), \\qquad\n\\text{rem}(ab) = \\text{rem}\\big(\\text{rem}(a)\\cdot \\text{rem}(b)\\big).\\]\n\nSo if \\(a\\) leaves remainder 5 and \\(b\\) leaves remainder 8 when divided by 12, then \\(ab\\) leaves\nthe remainder of \\(5\\times 8 = 40\\), which is \\(40 - 36 = 4\\). The single most common mistake is\nstopping at 40 (or at \\(5+8=13\\)) and forgetting the final reduction.\n\n**Powers cycle.** Remainders of \\(a^1, a^2, a^3, \\dots\\) repeat in a short cycle. Dividing by 10\nis the same as asking for the **units digit**, and units digits cycle with period at most 4:\n\n\\[7^1 \\to 7,\\quad 7^2 \\to 9,\\quad 7^3 \\to 3,\\quad 7^4 \\to 1,\\quad 7^5 \\to 7,\\ \\dots\\]\n\nTo find \\(7^{20} \\bmod 10\\), note the cycle length is 4 and \\(20\\) is a multiple of 4, so \\(7^{20}\\)\nlands on the **last** entry of the cycle: remainder **1**. Match the exponent to its position with\n\"exponent mod cycle-length,\" and remember that a remainder of 0 means the *end* of the cycle, not\nthe start.\n\n**Pick the smallest number that fits.** \"\\(n\\) leaves remainder 2 when divided by 5\" just means\n\\(n\\) is one of \\(2, 7, 12, 17, \\dots\\). For two conditions at once, list each and find the first\noverlap; the pattern then repeats every \\(\\text{lcm}\\) of the divisors.\n\n## Worked examples\n\n**Translate and compute.** A positive integer divided by 6 gives quotient 7 and remainder 4.\nThe integer is \\(6\\cdot 7 + 4 = 46\\). (Swapping quotient and remainder — \\(6\\cdot 4 + 7 = 31\\) — is\nthe classic trap.)\n\n**Combine two conditions.** Find the smallest integer above 10 that leaves remainder 2 mod 5 and\nremainder 1 mod 3. Numbers \\(\\equiv 2 \\pmod 5\\): \\(2, 7, 12, 17, 22, \\dots\\); of these, the ones\n\\(\\equiv 1 \\pmod 3\\) are \\(7, 22, 37, \\dots\\) (they repeat every \\(\\text{lcm}(5,3)=15\\)). The first\none above 10 is **22**.\n\n**Reason with squares.** If \\(n^2\\) leaves remainder 4 when divided by 7, what can \\(n\\) leave?\nTest each possible remainder \\(r = 0,1,\\dots,6\\): \\(r^2 \\bmod 7\\) gives \\(0,1,4,2,2,4,1\\). The value\n4 appears at \\(r = 2\\) and \\(r = 5\\), so \\(n\\) leaves remainder **2 or 5** — *not* 4. The remainder of\n\\(n\\) is generally **not** the same as the remainder of \\(n^2\\).\n\n## Common traps\n\n- **Forgetting to reduce at the end.** \\(5\\times 8 = 40\\) is not the answer when dividing by 12; the\n  remainder is \\(40 - 36 = 4\\).\n- **Adding remainders when the numbers are multiplied** (or vice versa). Combine remainders the\n  same way you combine the numbers, then reduce.\n- **Swapping quotient and remainder** in \\(n = dq + r\\).\n- **A remainder as large as the divisor.** Dividing by \\(d\\), the remainder must be \\(0\\) to \\(d-1\\).\n- **Assuming \\(n\\) and \\(n^2\\) (or \\(n\\) and \\(2n\\)) share a remainder.** They usually don't — test it.\n\n## Key takeaways\n\n- Everything flows from \\(n = dq + r\\) with \\(0 \\le r < d\\).\n- To combine numbers, combine their remainders **and reduce again**: works for sums and products.\n- Powers of a number cycle; use \"exponent mod cycle-length,\" and treat a result of 0 as the end of\n  the cycle.\n- For \"which could be\" and two-condition problems, list the smallest values that fit and look for\n  the overlap; it repeats every lcm of the divisors."
     },
     {
       "id": "quant-statistics-descriptive",
