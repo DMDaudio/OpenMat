@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 16,
-      "lessons": 5
+      "questions": 23,
+      "lessons": 6
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 32,
-    "lessons": 8
+    "questions": 39,
+    "lessons": 9
   },
   "questions": [
     {
@@ -357,6 +357,214 @@
       "hints": [
         "Percent changes compound multiplicatively. Turn each into a factor: +25% → \\(\\times 1.25\\), −20% → \\(\\times 0.80\\).",
         "Multiply the factors together and compare to 1."
+      ]
+    },
+    {
+      "id": "quant-counting-probability-combinatorics-0017",
+      "section": "quant",
+      "topic": "counting-probability",
+      "subtopic": "combinatorics",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "combinatorics",
+        "fundamental-counting-principle"
+      ],
+      "choices": {
+        "A": "8",
+        "B": "10",
+        "C": "11",
+        "D": "20",
+        "E": "40"
+      },
+      "answer": "E",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A café's lunch special lets a customer choose exactly one of 5 main dishes, one of 4 side dishes,\nand one of 2 drinks. How many different lunch specials can be assembled?",
+      "explanation": "The three choices are made independently, one after another, so by the **fundamental counting\nprinciple** you multiply the number of options at each stage:\n\n\\[5 \\times 4 \\times 2 = 40\\]\n\nEvery one of the 5 mains can pair with every one of the 4 sides, and each of those 20 pairings can\npair with either of the 2 drinks — \\(20 \\times 2 = 40\\).\n\n**The trap:** answer **C (11)** comes from *adding* \\(5 + 4 + 2\\), which counts how many individual\nmenu items exist, not how many complete specials can be built. Independent stages multiply; they\nnever add. The other wrong answers each drop a stage: **D (20)** is \\(5 \\times 4\\) (forgetting the\ndrink), **B (10)** is \\(5 \\times 2\\) (forgetting the side), and **A (8)** is \\(4 \\times 2\\)\n(forgetting the main).",
+      "hints": [
+        "Picking a main, then a side, then a drink is a sequence of independent choices.",
+        "For independent stages, multiply the counts — don't add them."
+      ]
+    },
+    {
+      "id": "quant-counting-probability-combinatorics-0018",
+      "section": "quant",
+      "topic": "counting-probability",
+      "subtopic": "combinatorics",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "combinatorics",
+        "factorial",
+        "arrangements"
+      ],
+      "choices": {
+        "A": "5",
+        "B": "20",
+        "C": "25",
+        "D": "60",
+        "E": "120"
+      },
+      "answer": "E",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "In how many different orders can 5 distinct books be arranged in a row on a shelf?",
+      "explanation": "Arranging \\(n\\) **distinct** items in a row is a straight factorial count. There are 5 choices for\nthe leftmost slot, then 4 for the next (one book is already placed), then 3, then 2, then 1:\n\n\\[5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120\\]\n\n**The trap:** answer **B (20)** stops after two factors (\\(5 \\times 4\\)), as if only the first two\npositions mattered — but every one of the 5 positions still needs to be filled. **C (25)** squares\nthe count (\\(5^2\\)), which would let a book repeat in multiple slots; here each book is used exactly\nonce. **D (60)** is \\(5!/2\\), an unwarranted division by 2 (there is no symmetry to remove — the\nbooks are all different and the shelf has a fixed left-to-right order). **A (5)** just counts the\nbooks, not their orderings.",
+      "hints": [
+        "Fill the positions one at a time: how many books can go first, then second, and so on?",
+        "Arranging \\(n\\) distinct items in a row is \\(n!\\)."
+      ]
+    },
+    {
+      "id": "quant-counting-probability-combinatorics-0019",
+      "section": "quant",
+      "topic": "counting-probability",
+      "subtopic": "combinatorics",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "combinatorics",
+        "permutations",
+        "order-matters"
+      ],
+      "choices": {
+        "A": "24",
+        "B": "56",
+        "C": "336",
+        "D": "512",
+        "E": "40320"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A club has 8 members. It must select a president, a vice-president, and a treasurer, and no member\nmay hold more than one of these positions. In how many different ways can the three positions be\nfilled?",
+      "explanation": "The three positions are **distinct roles**, so order matters — being president is different from\nbeing treasurer. Fill the roles one at a time: 8 people can be president, then 7 remain for\nvice-president, then 6 for treasurer:\n\n\\[8 \\times 7 \\times 6 = 336\\]\n\nThis is the permutation \\({}_8P_3 = \\dfrac{8!}{5!} = 336\\).\n\n**The trap:** answer **B (56)** is \\(\\binom{8}{3}\\), the number of ways to choose an *unordered*\ngroup of 3 — but that ignores which of the three named jobs each person gets. Because the roles are\ndistinct, each group of 3 can be arranged in \\(3! = 6\\) ways, and \\(56 \\times 6 = 336\\). **D (512)**\nis \\(8^3\\), which would allow the same person to hold several positions (repetition), forbidden\nhere. **E (40320)** is \\(8!\\), arranging all 8 members. **A (24)** is \\(8 \\times 3\\), a\nmultiplication that has no counting meaning.",
+      "hints": [
+        "The three positions are different jobs — does swapping two people's jobs create a new outcome?",
+        "When order matters, use \\({}_nP_k = n(n-1)\\cdots\\); with no repeats allowed, the pool shrinks by"
+      ]
+    },
+    {
+      "id": "quant-counting-probability-combinatorics-0020",
+      "section": "quant",
+      "topic": "counting-probability",
+      "subtopic": "combinatorics",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "combinatorics",
+        "combinations",
+        "order-does-not-matter"
+      ],
+      "choices": {
+        "A": "35",
+        "B": "70",
+        "C": "105",
+        "D": "210",
+        "E": "343"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "From a group of 7 people, how many different 3-person committees can be formed? (All committee\nmembers serve in the same capacity — no titles or ranking.)",
+      "explanation": "A committee is an **unordered** group: choosing Ann, Ben, then Cara gives the same committee as\nchoosing Cara, Ben, then Ann. So this is a combination:\n\n\\[\\binom{7}{3} = \\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = \\frac{210}{6} = 35\\]\n\n**The trap:** answer **D (210)** is \\(7 \\times 6 \\times 5 = {}_7P_3\\) — it counts the *ordered*\nselections, treating each rearrangement of the same three people as different. Since order does not\nmatter, you must divide by \\(3! = 6\\) to collapse those duplicates. **B (70)** divides by 3 instead\nof \\(3!\\), and **C (105)** divides by 2 instead of \\(3!\\) — both are the \"remembered to divide, but\nby the wrong number\" error. **E (343)** is \\(7^3\\), which allows repeats and order, neither of which\napplies.",
+      "hints": [
+        "Does reordering the same three people create a different committee?",
+        "A combination is the ordered count divided by \\(k!\\) — for a group of 3, divide by \\(3! = 6\\), not"
+      ]
+    },
+    {
+      "id": "quant-counting-probability-combinatorics-0021",
+      "section": "quant",
+      "topic": "counting-probability",
+      "subtopic": "combinatorics",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "combinatorics",
+        "combinations",
+        "restricted-selection"
+      ],
+      "choices": {
+        "A": "16",
+        "B": "60",
+        "C": "120",
+        "D": "126",
+        "E": "3024"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A 4-person committee is to be formed from a pool of 5 men and 4 women, and it must contain\n**exactly 2 men and 2 women**. How many different committees are possible?",
+      "explanation": "Handle the two requirements as independent stages and **multiply**. Choosing the men and choosing\nthe women are separate unordered selections:\n\n\\[\\binom{5}{2} \\times \\binom{4}{2} = \\frac{5 \\times 4}{2} \\times \\frac{4 \\times 3}{2} = 10 \\times 6 = 60\\]\n\nEach of the 10 possible pairs of men can be teamed with each of the 6 possible pairs of women, so\nthe counts multiply.\n\n**The trap:** answer **A (16)** *adds* the two combinations (\\(10 + 6\\)) instead of multiplying —\nbut you need one pair from each group *together*, which is a product, not a sum. **D (126)** is\n\\(\\binom{9}{4}\\), the number of ways to pick any 4 of the 9 people while **ignoring** the 2-and-2\nrestriction. **C (120)** counts the women as an *ordered* pair, using \\({}_4P_2 = 12\\) instead of\n\\(\\binom{4}{2} = 6\\) (\\(10 \\times 12 = 120\\)) — but committee members have no order. **E (3024)** is\n\\({}_9P_4\\), ordering all four choices and dropping the restriction entirely.",
+      "hints": [
+        "Split the committee into \"pick the men\" and \"pick the women\" — two separate choices.",
+        "Each subgroup is unordered (a combination); then combine the two independent choices by"
+      ]
+    },
+    {
+      "id": "quant-counting-probability-combinatorics-0022",
+      "section": "quant",
+      "topic": "counting-probability",
+      "subtopic": "combinatorics",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "combinatorics",
+        "arrangements",
+        "identical-items"
+      ],
+      "choices": {
+        "A": "60",
+        "B": "90",
+        "C": "120",
+        "D": "360",
+        "E": "720"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "How many distinct arrangements can be made of all the letters of the word **BANANA**?",
+      "explanation": "BANANA has 6 letters, but they are not all distinct: **A** appears 3 times, **N** appears 2 times,\nand **B** appears once. If the 6 letters were all different there would be \\(6! = 720\\)\narrangements — but swapping two identical A's (or the two N's) produces no new visible word, so\n\\(6!\\) overcounts. Divide by a factorial for each repeated letter:\n\n\\[\\frac{6!}{3!\\,\\cdot\\,2!} = \\frac{720}{6 \\times 2} = \\frac{720}{12} = 60\\]\n\n**The trap:** answer **E (720)** is \\(6!\\), treating all six letters as distinguishable. **D (360)**\ndivides by only \\(2!\\) (correcting for the two N's but forgetting the three A's), and **C (120)**\ndivides by only \\(3!\\) (correcting for the A's but forgetting the N's). **B (90)** comes from\n\\(720 / (3! + 2!) = 720/8\\) — *adding* the repeat-factorials in the denominator instead of\nmultiplying them.",
+      "hints": [
+        "All-distinct letters would give \\(6!\\); repeated letters make some of those arrangements",
+        "Divide by the factorial of each repeated letter's count, and multiply those factorials together"
+      ]
+    },
+    {
+      "id": "quant-counting-probability-combinatorics-0023",
+      "section": "quant",
+      "topic": "counting-probability",
+      "subtopic": "combinatorics",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "combinatorics",
+        "circular-arrangements"
+      ],
+      "choices": {
+        "A": "6",
+        "B": "36",
+        "C": "60",
+        "D": "120",
+        "E": "720"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "Six friends are to be seated around a circular table with six chairs. Two seatings are considered\nthe same if one can be obtained from the other by rotating everyone around the table. How many\ndistinct seatings are possible?",
+      "explanation": "Around a circle there is no fixed \"first\" seat, so the \\(6!\\) arrangements you would count for a\nstraight row overcount by a factor of 6 — every seating looks identical to the 5 other seatings you\nget by rotating everyone one chair over. The clean way to handle this is to **fix one person's\nseat** as a reference point and arrange the remaining 5 people relative to that person:\n\n\\[(6-1)! = 5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120\\]\n\n**The trap:** answer **E (720)** is \\(6!\\), the count for a *row* of labeled seats — it treats each\nof the 6 rotations of the same circular seating as different. **C (60)** takes the row count and\nfurther divides by 2 (\\(6!/(6 \\cdot 2)\\)), correcting for reflections as well — appropriate for a\nflippable object like a bracelet, but the problem only calls rotations equivalent, not mirror\nimages. **B (36)** is \\(6^2\\) and **A (6)** just counts the people, neither of which is an\narrangement count.",
+      "hints": [
+        "On a circle there is no fixed starting seat, so rotating everyone gives the same seating.",
+        "Anchor one person's chair and arrange the other \\(n-1\\) around them: \\((n-1)!\\)."
       ]
     },
     {
@@ -983,6 +1191,24 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nPercents and ratios are the most frequently tested arithmetic ideas on GMAT Focus Quant, and\nthey hide inside word problems everywhere. Master three moves: converting between forms, handling\npercent *change*, and scaling ratios.\n\n## Core concepts\n\n**Percent as a factor.** A percent is just a number over 100. The fastest way to apply a percent\nchange is to turn it into a **multiplier**:\n\n- Increase by \\(r\\%\\): multiply by \\(1 + \\tfrac{r}{100}\\). (+25% → \\(\\times 1.25\\))\n- Decrease by \\(r\\%\\): multiply by \\(1 - \\tfrac{r}{100}\\). (−20% → \\(\\times 0.80\\))\n\n**Successive changes multiply.** Two changes in a row are multiplied, never added:\n\n\\[(+25\\%)\\text{ then }(-20\\%): \\quad 1.25 \\times 0.80 = 1.00 \\quad (\\text{no net change})\\]\n\n**Percent change formula.**\n\n\\[\\text{percent change} = \\frac{\\text{new} - \\text{old}}{\\text{old}} \\times 100\\%\\]\n\nAlways divide by the **original** value, not the new one.\n\n**Ratios scale together.** A ratio \\(a : b\\) means the quantities are \\(ak\\) and \\(bk\\) for some\nmultiplier \\(k\\). If boys : girls \\(= 3 : 5\\) and there are 24 boys, then \\(k = 8\\), so there are\n\\(5 \\times 8 = 40\\) girls.\n\n## Worked examples\n\n**Percent change.** A stock rises from $80 to $100. Percent increase \\(= \\tfrac{100 - 80}{80} = \\tfrac{20}{80} = 25\\%\\).\nNote it later falls from $100 back to $80: that's \\(\\tfrac{-20}{100} = -20\\%\\) — a *smaller* percent, because the base is now larger.\n\n**Ratio scaling.** A recipe uses flour : sugar \\(= 7 : 2\\). To use 21 cups of flour, \\(k = 3\\), so\nyou need \\(2 \\times 3 = 6\\) cups of sugar.\n\n## Common traps\n\n- **Adding successive percents.** +25% then −20% is *not* +5%; it's \\(1.25 \\times 0.80 = 1.00\\).\n- **Wrong base.** Percent change always divides by the original amount. A rise then an equal-percent fall does not return to the start.\n- **Ratio ≠ actual count.** \\(3 : 5\\) does not mean 3 and 5 — it means \\(3k\\) and \\(5k\\). Find \\(k\\) first.\n\n## Key takeaways\n\n- Convert percent changes to multipliers and multiply them for successive changes.\n- Percent change = (new − old) / old.\n- A ratio \\(a : b\\) represents \\(ak\\) and \\(bk\\); solve for the multiplier \\(k\\), then scale."
+    },
+    {
+      "id": "quant-counting-probability-combinatorics",
+      "section": "quant",
+      "topic": "counting-probability",
+      "subtopic": "combinatorics",
+      "title": "Combinatorics: Counting Without Listing",
+      "tags": [
+        "combinatorics",
+        "counting",
+        "permutations",
+        "combinations",
+        "factorial"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nCombinatorics is the art of counting arrangements and selections **without writing them all\nout**. On GMAT Focus Quant the numbers are kept small on purpose — the exam is testing whether\nyou can spot the *structure* of a counting problem, not whether you can grind through a large\nfactorial. Almost every problem reduces to three questions you ask in order:\n\n1. Am I building the count from independent **stages** (pick a bread, then a cheese, then a drink)?\n2. Does **order matter** among the things I select?\n3. Are any of the items **identical**, so that some arrangements are really the same?\n\nAnswer those three and the right formula falls out.\n\n## Core concepts\n\n**The fundamental counting principle.** If one choice can be made in \\(m\\) ways and an\nindependent second choice in \\(n\\) ways, the two together can be made in \\(m \\times n\\) ways.\nStages **multiply**; they never add. Three stages with 5, 4, and 2 options give\n\\(5 \\times 4 \\times 2 = 40\\) outcomes.\n\n**Factorial.** The number of ways to arrange \\(n\\) **distinct** items in a row is\n\n\\[n! = n \\times (n-1) \\times (n-2) \\times \\cdots \\times 2 \\times 1\\]\n\nwith the convention \\(0! = 1\\). So 5 distinct books fill a shelf in \\(5! = 120\\) orders.\n\n**Permutations — order matters.** Choosing \\(k\\) items from \\(n\\) and *arranging* them (distinct\nroles, ranked positions, a seating order) is\n\n\\[{}_nP_k = \\frac{n!}{(n-k)!} = n \\times (n-1) \\times \\cdots \\times (n-k+1)\\]\n\nAssigning president, vice-president, and treasurer to 8 people: \\(8 \\times 7 \\times 6 = 336\\).\n\n**Combinations — order does not matter.** Choosing \\(k\\) items from \\(n\\) as an unordered\n*group* (a committee, a handful, a subset) is\n\n\\[{}_nC_k = \\binom{n}{k} = \\frac{n!}{k!\\,(n-k)!}\\]\n\nThe extra \\(k!\\) in the denominator divides out the \\(k!\\) orderings of the same group, which the\npermutation count treated as different. A committee of 3 from 7 people:\n\\(\\binom{7}{3} = \\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = 35\\).\n\n**A useful symmetry:** \\(\\binom{n}{k} = \\binom{n}{n-k}\\). Choosing which 5 of 7 to *include* is\nthe same as choosing which 2 to *leave out*.\n\n**Arrangements with identical items.** When some of the \\(n\\) items are indistinguishable,\ndivide \\(n!\\) by a factorial for each repeated group. The distinct arrangements of the letters in\na word with counts \\(n_1, n_2, \\dots\\) are\n\n\\[\\frac{n!}{n_1!\\,n_2!\\cdots}\\]\n\n**Circular arrangements.** Seating \\(n\\) people around a round table has only \\((n-1)!\\) distinct\narrangements, because a rotation of everyone is the same seating — fix one person and arrange the\nrest.\n\n## Worked examples\n\n**Stages multiply.** A lunch special picks one of 5 mains, one of 4 sides, one of 2 drinks. The\nthree choices are independent, so multiply: \\(5 \\times 4 \\times 2 = 40\\) specials. Adding\n(\\(5+4+2 = 11\\)) answers a different question — \"how many single items are on the menu.\"\n\n**Order or not?** Pick 3 of 7 people. If you are ranking them 1st–2nd–3rd, order matters and the\ncount is \\({}_7P_3 = 7 \\times 6 \\times 5 = 210\\). If you are just forming a group of 3, order does\nnot matter and you divide by \\(3! = 6\\): \\(\\binom{7}{3} = 210 / 6 = 35\\). Same selection, different\nquestion — the word \"committee,\" \"group,\" or \"set\" signals a combination; \"arrange,\" \"order,\"\n\"rank,\" or distinct titles signal a permutation.\n\n**Split committees multiply.** Choose exactly 2 men from 5 **and** 2 women from 4:\n\\(\\binom{5}{2} \\times \\binom{4}{2} = 10 \\times 6 = 60\\). The two selections are independent stages,\nso the counts multiply — they are not added.\n\n**Identical letters.** The word BANANA has 6 letters: A appears 3 times, N twice, B once. Treating\nall 6 as distinct overcounts, so divide by the repeats:\n\\(\\frac{6!}{3!\\,2!} = \\frac{720}{12} = 60\\).\n\n## Common traps\n\n- **Adding when you should multiply.** Independent stages multiply. Add only when you are counting\n  disjoint *cases* (\"the number is red **or** blue\"), never sequential choices.\n- **Confusing permutations and combinations.** Distinct roles, rankings, or seatings ⇒ permutation\n  (order matters). An unordered group, committee, or handful ⇒ combination (divide by \\(k!\\)).\n- **Dividing by the wrong factorial.** For a combination of \\(k\\) items you divide by \\(k!\\), not by\n  \\(k\\). \\({}_7P_3 = 210\\) becomes \\(\\binom{7}{3} = 210/3! = 35\\), not \\(210/3 = 70\\).\n- **Ignoring identical items.** Repeated letters or identical objects mean \\(n!\\) overcounts; divide\n  by a factorial for each repeated group, and **multiply** those factorials in the denominator —\n  never add them.\n- **Forgetting a stage — or double-counting order in one.** In a split selection, count each group\n  as a combination unless that group is itself ordered.\n\n## Key takeaways\n\n- Independent choices **multiply** (the fundamental counting principle); disjoint cases add.\n- Arranging \\(n\\) distinct items uses \\(n!\\); arranging \\(k\\) of \\(n\\) uses \\({}_nP_k\\).\n- **Order matters ⇒ permutation; order does not ⇒ combination.** A combination is a permutation\n  divided by \\(k!\\).\n- Identical items: divide \\(n!\\) by the factorial of each repeated group's count.\n- Round table: \\(n\\) people seat in \\((n-1)!\\) ways — fix one seat to kill the rotations."
     },
     {
       "id": "quant-statistics-descriptive",
