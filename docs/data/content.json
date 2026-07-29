@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 37,
-      "lessons": 8
+      "questions": 44,
+      "lessons": 9
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 53,
-    "lessons": 11
+    "questions": 60,
+    "lessons": 12
   },
   "questions": [
     {
@@ -1229,6 +1229,216 @@
       ]
     },
     {
+      "id": "quant-word-problems-mixtures-0038",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "mixtures",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "mixtures",
+        "concentration",
+        "percents"
+      ],
+      "choices": {
+        "A": "2.7",
+        "B": "6",
+        "C": "15",
+        "D": "34",
+        "E": "60"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A 40-liter salt solution is 15% salt by volume. How many liters of salt does the solution contain?",
+      "explanation": "The amount of a substance is its concentration times the total: multiply the percent (as a decimal)\nby the total volume.\n\n\\[0.15 \\times 40 = 6 \\text{ liters}\\]\n\nSo the solution contains **6 liters** of salt.\n\n**The traps:**\n- **C (15)** just repeats the percent number — but 15% of 40 is not 15.\n- **D (34)** is the amount of *water* (\\(40 - 6\\)), not the salt.\n- **A (2.7)** divides instead of multiplying (\\(40 \\div 15\\)).\n- **E (60)** reads \"15%\" as \"times 1.5\" (\\(40 \\times 1.5\\)).",
+      "hints": [
+        "Amount of substance = concentration (as a decimal) × total volume.",
+        "15% means \\(0.15\\), so compute \\(0.15 \\times 40\\)."
+      ]
+    },
+    {
+      "id": "quant-word-problems-mixtures-0039",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "mixtures",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "mixtures",
+        "part-whole",
+        "percents"
+      ],
+      "choices": {
+        "A": "20%",
+        "B": "25%",
+        "C": "33 1/3 %",
+        "D": "50%",
+        "E": "75%"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A trail mix is made from 3 kilograms of peanuts and 1 kilogram of raisins. What percent of the\nmixture, by weight, is raisins?",
+      "explanation": "Concentration is part over **whole**. The whole mixture weighs \\(3 + 1 = 4\\) kilograms, and the\nraisins are 1 of those kilograms:\n\n\\[\\frac{1}{4} = 0.25 = 25\\%\\]\n\nSo raisins make up **25%** of the mixture.\n\n**The traps:**\n- **C (33⅓%)** divides raisins by *peanuts* (\\(\\tfrac{1}{3}\\)) instead of by the whole (\\(\\tfrac{1}{4}\\)).\n- **E (75%)** is the *peanut* share, not the raisin share.\n- **D (50%)** assumes an even split, ignoring the 3-to-1 amounts.\n- **A (20%)** uses a total of 5 (\\(\\tfrac{1}{5}\\)) — miscounting the whole.",
+      "hints": [
+        "Percent of the mixture = (that ingredient) ÷ (total of all ingredients).",
+        "The denominator is the *whole* mixture: \\(3 + 1\\), not just the peanuts."
+      ]
+    },
+    {
+      "id": "quant-word-problems-mixtures-0040",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "mixtures",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "mixtures",
+        "weighted-average",
+        "concentration"
+      ],
+      "choices": {
+        "A": "48%",
+        "B": "50%",
+        "C": "55%",
+        "D": "60%",
+        "E": "110%"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "20 liters of a 30% acid solution is mixed with 30 liters of an 80% acid solution. What is the acid\nconcentration of the resulting mixture?",
+      "explanation": "Add up the actual **amount of acid**, then divide by the **total volume** — never average the\npercents directly.\n\nAcid from each solution:\n\n\\[0.30 \\times 20 = 6 \\text{ L} \\qquad 0.80 \\times 30 = 24 \\text{ L}\\]\n\nTotal acid \\(= 6 + 24 = 30\\) L in a total volume of \\(20 + 30 = 50\\) L:\n\n\\[\\frac{30}{50} = 60\\%\\]\n\nSo the mixture is **60%** acid. (It's above the halfway point because there's more of the strong\nsolution.)\n\n**The traps:**\n- **C (55%)** is the unweighted average \\(\\tfrac{30 + 80}{2}\\) — wrong because the volumes differ.\n- **E (110%)** adds the two percentages, which can't exceed 100%.\n- **B (50%)** swaps the volumes and concentrations (\\(0.30 \\times 30 + 0.80 \\times 20 = 25\\), then \\(\\tfrac{25}{50}\\)).\n- **A (48%)** counts only the strong solution's acid (\\(\\tfrac{24}{50}\\)), forgetting the 6 L from the weak one.",
+      "hints": [
+        "Compute the liters of acid in each solution separately, then add.",
+        "Concentration = total acid ÷ total volume; weight by the amounts, don't average the percents."
+      ]
+    },
+    {
+      "id": "quant-word-problems-mixtures-0041",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "mixtures",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "mixtures",
+        "dilution",
+        "concentration"
+      ],
+      "choices": {
+        "A": "4",
+        "B": "6",
+        "C": "10",
+        "D": "15",
+        "E": "16"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "How many liters of water must be added to 10 liters of a 40% salt solution to dilute it to a 25%\nsalt solution?",
+      "explanation": "Adding water changes the total volume but not the amount of salt, so the salt is the quantity that\nstays fixed. Start by finding it:\n\n\\[\\text{salt} = 0.40 \\times 10 = 4 \\text{ liters}\\]\n\nAfter adding \\(w\\) liters of water, the salt is 25% of the new total \\((10 + w)\\):\n\n\\[\\frac{4}{10 + w} = 0.25 \\;\\Rightarrow\\; 10 + w = \\frac{4}{0.25} = 16 \\;\\Rightarrow\\; w = 6\\]\n\nSo you must add **6 liters** of water.\n\n**The traps:**\n- **E (16)** is the new *total* volume — you still have to subtract the original 10 liters.\n- **A (4)** is the amount of salt, not the water added.\n- **D (15)** treats the 15-percentage-point drop as \\(1.5 \\times 10\\) liters.\n- **C (10)** guesses that you simply double the volume.",
+      "hints": [
+        "The salt stays constant while you add water — find that fixed amount first.",
+        "Set (salt) ÷ (new total) = 0.25, solve for the new total, then subtract the original 10 liters."
+      ]
+    },
+    {
+      "id": "quant-word-problems-mixtures-0042",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "mixtures",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "mixtures",
+        "alligation",
+        "price-mixture"
+      ],
+      "choices": {
+        "A": "5",
+        "B": "8",
+        "C": "10",
+        "D": "12",
+        "E": "15"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A shopkeeper blends coffee costing $8 per kilogram with coffee costing $12 per kilogram to make\n20 kilograms of a blend that costs $9 per kilogram. How many kilograms of the $12 coffee are in the\nblend?",
+      "explanation": "Let \\(x\\) be the kilograms of $12 coffee; then \\(20 - x\\) kilograms are the $8 coffee. The total cost\nof the blend is $9 × 20 = $180, so match the costs:\n\n\\[8(20 - x) + 12x = 180\\]\n\\[160 - 8x + 12x = 180 \\;\\Rightarrow\\; 4x = 20 \\;\\Rightarrow\\; x = 5\\]\n\nSo the blend contains **5 kilograms** of the $12 coffee. (Alligation agrees: the ratio of $12 to $8\ncoffee is \\((9-8):(12-9) = 1:3\\), so the $12 coffee is \\(\\tfrac14 \\times 20 = 5\\) kg.)\n\n**The traps:**\n- **E (15)** is the amount of the *$8* coffee (the other part), or the alligation ratio read upside down.\n- **C (10)** assumes a 50-50 split of the 20 kg.\n- **B (8)** and **D (12)** are the per-kilogram *prices*, not weights — the question asks for kilograms.",
+      "hints": [
+        "Let \\(x\\) be the $12 coffee and \\(20 - x\\) the $8 coffee; total cost is \\(9 \\times 20 = 180\\).",
+        "Alligation: the ratio of the two coffees is the inverse of their distances from $9."
+      ]
+    },
+    {
+      "id": "quant-word-problems-mixtures-0043",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "mixtures",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "mixtures",
+        "replacement",
+        "successive-dilution"
+      ],
+      "choices": {
+        "A": "3",
+        "B": "6",
+        "C": "6.75",
+        "D": "7.5",
+        "E": "9"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A 12-liter tank is full of pure acid. 3 liters are drained off and replaced with water; the tank is\nstirred, then 3 liters of the mixture are drained off and replaced with water again. How many liters\nof pure acid remain in the tank?",
+      "explanation": "Each step removes the same **fraction** of whatever acid is present, then tops up with water. Draining\n3 of 12 liters removes \\(\\tfrac{3}{12} = \\tfrac14\\) of the contents, leaving \\(\\tfrac34\\) of the acid.\nBecause the tank is refilled to 12 liters each time, the *second* draining also removes \\(\\tfrac14\\)\nof the acid then present.\n\nSo the acid is multiplied by \\(\\tfrac34\\) twice:\n\n\\[12 \\times \\left(\\frac{3}{4}\\right)^2 = 12 \\times \\frac{9}{16} = \\frac{108}{16} = 6.75 \\text{ liters}\\]\n\nSo **6.75 liters** of pure acid remain.\n\n**The traps:**\n- **E (9)** stops after the first replacement (\\(12 \\times \\tfrac34 = 9\\)).\n- **D (7.5)** subtracts the fractions instead of multiplying: \\(12\\left(1 - \\tfrac14 - \\tfrac14\\right) = 12 \\times \\tfrac12\\).\n- **B (6)** subtracts 3 liters of acid twice (\\(12 - 3 - 3\\)), as if each draining removed pure acid.\n- **A (3)** is the amount of water added, not the acid remaining.",
+      "hints": [
+        "After the first swap the liquid is a mixture, so the second draining removes acid *and* water — think in fractions, not fixed liters.",
+        "Each replacement multiplies the remaining acid by \\(\\tfrac34\\); apply it twice."
+      ]
+    },
+    {
+      "id": "quant-word-problems-mixtures-0044",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "mixtures",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "mixtures",
+        "weighted-average",
+        "solving"
+      ],
+      "choices": {
+        "A": "4",
+        "B": "5",
+        "C": "10",
+        "D": "25",
+        "E": "80"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A chemist has a 60% alcohol solution and a 10% alcohol solution. How many liters of the 60% solution\nmust be mixed with 20 liters of the 10% solution to produce a 20% alcohol solution?",
+      "explanation": "Let \\(x\\) be the liters of 60% solution added. Track the actual alcohol on each side. The alcohol\nbefore mixing must equal the alcohol after:\n\n\\[0.60x + 0.10(20) = 0.20(x + 20)\\]\n\\[0.60x + 2 = 0.20x + 4\\]\n\\[0.40x = 2 \\;\\Rightarrow\\; x = 5\\]\n\nSo you need **5 liters** of the 60% solution.\n\nCheck: alcohol \\(= 0.60(5) + 0.10(20) = 3 + 2 = 5\\) L in \\(5 + 20 = 25\\) L, and \\(\\tfrac{5}{25} = 20\\%\\). ✓\n\n**The traps:**\n- **E (80)** inverts the alligation ratio. The correct ratio of 60% to 10% solution is\n  \\((20-10):(60-20) = 10:40 = 1:4\\); flipping it to 4:1 gives \\(4 \\times 20 = 80\\).\n- **A (4)** uses the ratio's \"1 part\" as if it were already the number of liters.\n- **D (25)** is the *total* volume of the final mixture, not the amount added.\n- **C (10)** guesses half of the 20 liters.",
+      "hints": [
+        "Write \"alcohol in = alcohol out\": \\(0.60x + 0.10(20) = 0.20(x + 20)\\).",
+        "Or use alligation: the amounts are in the ratio \\((20-10):(60-20)\\), with the 10% solution being the larger share."
+      ]
+    },
+    {
       "id": "quant-word-problems-overlapping-sets-0006",
       "section": "quant",
       "topic": "word-problems",
@@ -1687,6 +1897,23 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nDescriptive statistics on GMAT Focus Quant is almost entirely about two ideas: where a data set is\n**centered** (mean, median, mode) and how **spread out** it is (range, standard deviation). The\narithmetic is light — the exam tests whether you understand what each measure does, especially how\noutliers and transformations affect them. Master a handful of moves and this topic becomes free points.\n\n## Core concepts\n\n**Mean (arithmetic average).**\n\n\\[\\text{mean} = \\frac{\\text{sum of values}}{\\text{count}}\\]\n\nThe single most useful rearrangement is **sum = mean × count**. Most \"average\" problems are really\nabout the *sum*: find it, adjust it, and divide again.\n\n**Weighted average.** When groups have different sizes, you cannot just average the group averages —\nweight each by its count:\n\n\\[\\text{overall mean} = \\frac{n_1\\bar{x}_1 + n_2\\bar{x}_2}{n_1 + n_2}\\]\n\nThe result always lands *between* the two group averages, pulled toward the larger group.\n\n**Median.** The middle value once the data is sorted.\n\n- **Odd count:** the single middle value.\n- **Even count:** the average of the two middle values.\n\nAlways sort first. The median ignores *how far away* extreme values are — only their position matters.\n\n**Mode.** The value that appears most often. A set can have no mode, one mode, or several.\n\n**Range.** \\(\\text{range} = \\text{max} - \\text{min}\\). A crude measure of spread that depends on only\ntwo numbers.\n\n**Standard deviation (SD).** Measures the *typical distance of values from the mean*. You will almost\nnever compute it by hand on the GMAT; you reason about it:\n\n- SD is **0** only when every value is identical.\n- SD depends on **spread from the mean, not on the size of the numbers**. \\(\\{1,2,3\\}\\) and\n  \\(\\{101,102,103\\}\\) have the *same* SD.\n- **Adding a constant** to every value shifts the set but leaves the spread — and therefore the SD —\n  **unchanged**.\n- **Multiplying** every value by \\(k\\) multiplies the SD by \\(|k|\\).\n\n## Worked examples\n\n**Sum trick.** The average of 6 numbers is 22. A seventh number is added and the average becomes 25.\nThe seventh number? Old sum \\(= 22 \\times 6 = 132\\); new sum \\(= 25 \\times 7 = 175\\); the added number\nis \\(175 - 132 = 43\\). (Notice it is far above 25 — it had to *pull the average up* across all seven\nvalues.)\n\n**Outlier: mean vs. median.** For \\(\\{4, 7, 9, 10, 90\\}\\), the mean is \\(120/5 = 24\\) but the median is\n\\(9\\). The lone large value \\(90\\) drags the mean far above the median while leaving the median\nuntouched. When a distribution has a long tail, mean \\(\\ne\\) median.\n\n**Spread, not magnitude.** Which has the larger SD, \\(\\{2,4,6,8,10\\}\\) or \\(\\{102,104,106,108,110\\}\\)?\nNeither — they are identical shapes shifted by 100, so the SD is the same. Bigger numbers do not mean\nbigger spread.\n\n## Common traps\n\n- **Averaging averages.** With unequal group sizes, the simple average of two means is wrong — you must\n  weight by count.\n- **Forgetting to sort before taking the median.** The median is positional; unsorted data gives a\n  meaningless \"middle.\"\n- **Assuming mean = median.** True only for symmetric data. Any outlier or skew separates them, and the\n  mean moves toward the tail.\n- **Thinking \"big numbers ⇒ big standard deviation.\"** SD measures distance from the mean, not the\n  numbers' magnitude. Adding a constant changes the mean but never the SD.\n\n## Key takeaways\n\n- Turn average problems into **sum** problems: sum = mean × count.\n- Weighted averages weight by group size and always fall between the group means.\n- Sort first, then take the median; the median ignores how extreme the outliers are, but the mean does not.\n- Standard deviation is about spread from the mean: it is 0 only for identical values, unchanged by\n  adding a constant, and independent of how large the numbers themselves are."
+    },
+    {
+      "id": "quant-word-problems-mixtures",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "mixtures",
+      "title": "Mixtures",
+      "tags": [
+        "mixtures",
+        "concentration",
+        "alligation",
+        "weighted-average"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nMixture problems ask you to combine things of different \"strengths\" — salt in water, alcohol in a\nsolution, cheap coffee with expensive coffee — and reason about the result. Almost every one of\nthem yields to a single idea: **track the pure quantity of the thing you care about, not the\npercentages.** Percentages don't add; amounts do.\n\n## Core concepts\n\n**Concentration is a part-over-whole.** For a solution,\n\n\\[\\text{concentration} = \\frac{\\text{amount of substance}}{\\text{total amount}}\\]\n\nSo 40 liters of a 15% salt solution contains \\(0.15 \\times 40 = 6\\) liters of salt. When you mix or\ndilute, the **amount of substance** is what you carry from line to line.\n\n**Mixing is a weighted average.** Combine \\(a\\) units at concentration \\(p\\) with \\(b\\) units at\nconcentration \\(q\\). Add the *amounts*, then divide by the *total*:\n\n\\[\\text{result} = \\frac{p\\,a + q\\,b}{a + b}\\]\n\nThe answer always lands **between** \\(p\\) and \\(q\\), pulled toward whichever quantity is larger.\nA simple average \\(\\tfrac{p+q}{2}\\) is only right when \\(a = b\\).\n\n**Diluting or concentrating.** Adding pure water adds to the total but **not** to the substance.\nAdding the pure substance adds to both. Set up an equation on the quantity that stays fixed:\n\n> Add \\(w\\) liters of water to 10 liters of 40% salt to reach 25%. The salt is fixed at\n> \\(0.40 \\times 10 = 4\\) liters, so \\(\\dfrac{4}{10 + w} = 0.25 \\Rightarrow 10 + w = 16 \\Rightarrow w = 6\\).\n\n**Alligation (a shortcut).** The ratio of the two quantities in a mix is the *inverse* of their\ndistances from the blend value:\n\n\\[\\frac{a}{b} = \\frac{q - m}{m - p}\\]\n\nwhere \\(m\\) is the mixture's concentration. It's the weighted average solved for the ratio — handy\nwhen a question asks \"in what ratio?\"\n\n## Worked examples\n\n**Weighted average.** Mix 20 L of 30% acid with 30 L of 80% acid. Acid \\(= 0.30(20) + 0.80(30) =\n6 + 24 = 30\\) L in \\(50\\) L total, so \\(\\tfrac{30}{50} = 60\\%\\). (Note it's above the simple average\nof 55%, because more of the stronger solution is present.)\n\n**Alligation.** In what ratio should $8/kg and $12/kg coffee be mixed to sell at $9/kg?\n\\(\\dfrac{\\text{amt of \\$8}}{\\text{amt of \\$12}} = \\dfrac{12 - 9}{9 - 8} = \\dfrac{3}{1}\\) — three parts\ncheap to one part expensive.\n\n## Common traps\n\n- **Averaging the percentages.** \\(\\tfrac{30\\% + 80\\%}{2} = 55\\%\\) is wrong unless the volumes are\n  equal. Weight by the amounts.\n- **Adding water to the substance too.** Diluting with water raises the total but leaves the amount\n  of substance unchanged — that fixed amount is your equation.\n- **Answering the wrong part.** If you solve for one component, re-read to check whether the\n  question wanted that one or the other (or the total).\n- **Inverting the alligation ratio.** The ratio of amounts is inverse to the distances — the\n  quantity *farther* from the blend value is the *smaller* share.\n\n## Key takeaways\n\n- Track the **amount** of the substance (part = concentration × total), not the percentages.\n- A mixture is a weighted average; the result sits between the inputs, nearer the larger quantity.\n- Dilution/concentration: write an equation on the quantity that stays fixed.\n- Alligation gives the ratio directly: distances from the blend value, inverted."
     },
     {
       "id": "quant-word-problems-rates-speed-distance",
