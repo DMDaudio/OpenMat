@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 44,
-      "lessons": 9
+      "questions": 51,
+      "lessons": 10
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 60,
-    "lessons": 12
+    "questions": 67,
+    "lessons": 13
   },
   "questions": [
     {
@@ -1229,6 +1229,216 @@
       ]
     },
     {
+      "id": "quant-word-problems-interest-0045",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "interest",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "interest",
+        "simple-interest"
+      ],
+      "choices": {
+        "A": "$24",
+        "B": "$120",
+        "C": "$240",
+        "D": "$249.60",
+        "E": "$1,740"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "Priya deposits $1,500 in an account paying 8% simple annual interest. How much interest does the deposit earn in 2 years?",
+      "explanation": "Simple interest is a fixed slice of the *original* principal each year:\n\n\\[I = P \\cdot r \\cdot t = 1500 \\times 0.08 \\times 2 = 240\\]\n\nSo the deposit earns **$240**.\n\n**The traps:**\n- **B ($120)** computes the interest for a single year (\\(1500 \\times 0.08\\)) and forgets to multiply by the 2 years.\n- **E ($1,740)** is the final *balance* \\(P + I = 1500 + 240\\), not the interest the question asked for.\n- **D ($249.60)** compounds the interest annually (\\(1500 \\times 1.08^2 - 1500\\)); the account pays simple interest, so nothing compounds.\n- **A ($24)** slips the decimal, using \\(0.008\\) instead of \\(0.08\\) for the rate.",
+      "hints": [
+        "Simple interest uses the original principal every year: \\(I = P \\cdot r \\cdot t\\).",
+        "The question asks for the interest earned, not the total in the account."
+      ]
+    },
+    {
+      "id": "quant-word-problems-interest-0046",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "interest",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "interest",
+        "simple-interest",
+        "balance"
+      ],
+      "choices": {
+        "A": "$192",
+        "B": "$848",
+        "C": "$992",
+        "D": "$1,010",
+        "E": "$2,720"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "An account holds $800 and earns 6% simple annual interest. What is the balance in the account after 4 years?",
+      "explanation": "First find the simple interest, then add it back to the principal:\n\n\\[I = P \\cdot r \\cdot t = 800 \\times 0.06 \\times 4 = 192\\]\n\\[A = P + I = 800 + 192 = 992\\]\n\nThe balance is **$992**.\n\n**The traps:**\n- **A ($192)** is the interest alone — the question asks for the balance, so the $800 principal must be added back.\n- **B ($848)** adds only one year of interest (\\(800 + 48\\)) instead of four.\n- **D ($1,010)** compounds annually (\\(800 \\times 1.06^4 \\approx 1{,}010\\)); simple interest does not compound.\n- **E ($2,720)** slips the decimal, treating 6% as \\(0.6\\): \\(800 + 800(0.6)(4)\\).",
+      "hints": [
+        "Compute the interest with \\(I = P \\cdot r \\cdot t\\), then add the principal for the balance.",
+        "Simple interest is the same amount each year — no compounding."
+      ]
+    },
+    {
+      "id": "quant-word-problems-interest-0047",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "interest",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "interest",
+        "compound-interest"
+      ],
+      "choices": {
+        "A": "$500",
+        "B": "$1,000",
+        "C": "$1,050",
+        "D": "$1,500",
+        "E": "$6,050"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "$5,000 is invested at 10% compounded annually. How much interest does the investment earn over 2 years?",
+      "explanation": "Compound interest adds each year's interest to the balance before the next year. The balance after 2 years is\n\n\\[A = P(1 + r)^{t} = 5000(1.10)^2 = 5000 \\times 1.21 = 6050\\]\n\nThe interest *earned* is the balance minus the principal:\n\n\\[A - P = 6050 - 5000 = 1050\\]\n\nSo the investment earns **$1,050**. (The first year earns $500; the second year earns 10% of the new $5,500 balance, or $550.)\n\n**The traps:**\n- **B ($1,000)** uses simple interest, \\(5000 \\times 0.10 \\times 2\\), ignoring that the first year's interest also earns interest.\n- **E ($6,050)** is the final *balance*, not the interest earned — the $5,000 principal must be subtracted.\n- **A ($500)** counts only the first year's interest.\n- **D ($1,500)** applies simple interest over 3 years instead of 2.",
+      "hints": [
+        "Compound balance is \\(P(1+r)^t\\); the interest earned is that balance minus \\(P\\).",
+        "Over the second year, the interest is charged on the *new* balance, not the original principal."
+      ]
+    },
+    {
+      "id": "quant-word-problems-interest-0048",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "interest",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "interest",
+        "simple-interest",
+        "rate"
+      ],
+      "choices": {
+        "A": "6%",
+        "B": "9%",
+        "C": "18%",
+        "D": "54%",
+        "E": "0.6%"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "An investment of $1,500 earns $270 in simple interest over 3 years. What is the annual interest rate?",
+      "explanation": "Start from \\(I = P \\cdot r \\cdot t\\) and solve for the rate:\n\n\\[r = \\frac{I}{P \\cdot t} = \\frac{270}{1500 \\times 3} = \\frac{270}{4500} = 0.06\\]\n\nSo the annual rate is **6%**.\n\n**The traps:**\n- **C (18%)** divides the interest by the principal but forgets the 3 years: \\(270 / 1500 = 0.18\\).\n- **B (9%)** divides by only 2 years instead of 3: \\(270 / (1500 \\times 2)\\).\n- **D (54%)** multiplies by the time instead of dividing: \\(270 \\times 3 / 1500\\).\n- **E (0.6%)** slips a decimal place in the final rate.",
+      "hints": [
+        "Rearrange \\(I = P \\cdot r \\cdot t\\) to \\(r = \\dfrac{I}{P \\cdot t}\\).",
+        "Divide by *both* the principal and the number of years."
+      ]
+    },
+    {
+      "id": "quant-word-problems-interest-0049",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "interest",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "interest",
+        "compound-interest",
+        "simple-interest",
+        "comparison"
+      ],
+      "choices": {
+        "A": "$4",
+        "B": "$40",
+        "C": "$80",
+        "D": "$400",
+        "E": "$840"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "$4,000 is invested for 2 years at 10% per year. How much more interest does the money earn if the interest is compounded annually rather than paid as simple interest?",
+      "explanation": "Compute both and subtract.\n\nSimple interest: \\(I = 4000 \\times 0.10 \\times 2 = 800\\).\n\nCompound interest: \\(A = 4000(1.10)^2 = 4000 \\times 1.21 = 4840\\), so the interest is \\(4840 - 4000 = 840\\).\n\nThe difference is \\(840 - 800 = 40\\).\n\nA faster route: over exactly 2 years the compound-minus-simple gap is \\(P r^2 = 4000 \\times (0.10)^2 = 4000 \\times 0.01 = 40\\) — the interest that the first year's $400 earns in the second year.\n\nSo compounding earns **$40** more.\n\n**The traps:**\n- **E ($840)** is the total compound interest, not the *difference* from simple interest.\n- **D ($400)** is one year's interest (\\(4000 \\times 0.10\\)), a common stand-in for the gap.\n- **C ($80)** doubles the correct gap, as if the $40 recurred in both years.\n- **A ($4)** slips a decimal, using \\(r^2 = 0.001\\) in the shortcut.",
+      "hints": [
+        "Find the simple interest and the compound interest separately, then subtract.",
+        "Over 2 years the gap equals \\(P r^2\\) — the interest earned on the first year's interest."
+      ]
+    },
+    {
+      "id": "quant-word-problems-interest-0050",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "interest",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "interest",
+        "compound-interest",
+        "semiannual-compounding"
+      ],
+      "choices": {
+        "A": "$400",
+        "B": "$800",
+        "C": "$816",
+        "D": "$1,600",
+        "E": "$1,664"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "$10,000 is invested at a nominal annual rate of 8%, compounded semiannually. How much interest does the investment earn in one year?",
+      "explanation": "Semiannual compounding means two periods per year, each at half the annual rate: \\(8\\% / 2 = 4\\%\\) per period, for \\(2\\) periods.\n\n\\[A = P\\left(1 + \\frac{R}{n}\\right)^{ny} = 10000(1.04)^2 = 10000 \\times 1.0816 = 10816\\]\n\nThe interest earned is \\(10816 - 10000 = 816\\).\n\nSo the investment earns **$816**. (First half-year: $400 of interest; second half-year: 4% of the new $10,400 balance, or $416.)\n\n**The traps:**\n- **B ($800)** ignores compounding and applies a flat 8% for the year (\\(10000 \\times 0.08\\)).\n- **A ($400)** counts only one semiannual period (\\(10000 \\times 0.04\\)).\n- **D ($1,600)** applies the full 8% to *each* half-year as simple interest (\\(10000 \\times 0.08 \\times 2\\)).\n- **E ($1,664)** compounds but forgets to halve the rate, using 8% per period: \\(10000(1.08)^2 - 10000\\).",
+      "hints": [
+        "With semiannual compounding, halve the rate and double the number of periods.",
+        "Two periods at 4% is \\(P(1.04)^2\\) — then subtract the principal for the interest."
+      ]
+    },
+    {
+      "id": "quant-word-problems-interest-0051",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "interest",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "interest",
+        "compound-interest",
+        "reverse",
+        "principal"
+      ],
+      "choices": {
+        "A": "$7,744",
+        "B": "$8,000",
+        "C": "$8,067",
+        "D": "$8,800",
+        "E": "$10,648"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A sum of money invested at 10% compounded annually grows to $9,680 after 2 years. What was the amount originally invested?",
+      "explanation": "Compound growth multiplies the principal by \\((1+r)^t\\), so to recover the principal you *divide* by that factor:\n\n\\[P = \\frac{A}{(1 + r)^t} = \\frac{9680}{(1.10)^2} = \\frac{9680}{1.21} = 8000\\]\n\nCheck: \\(8000 \\times 1.10 = 8800\\), and \\(8800 \\times 1.10 = 9680\\). ✓\n\nSo the original investment was **$8,000**.\n\n**The traps:**\n- **D ($8,800)** reverses only one of the two years, dividing by 1.10 once.\n- **A ($7,744)** takes a flat 20% off the final amount (\\(9680 \\times 0.8\\)) — but subtracting a percentage is not the inverse of compound growth.\n- **C ($8,067)** divides by 1.20, treating the growth as simple interest over 2 years.\n- **E ($10,648)** grows the amount by another year (\\(9680 \\times 1.10\\)) instead of working backward.",
+      "hints": [
+        "To undo compound growth, divide the final amount by \\((1+r)^t\\), not subtract a percentage.",
+        "Over 2 years at 10%, the factor is \\(1.10^2 = 1.21\\)."
+      ]
+    },
+    {
       "id": "quant-word-problems-mixtures-0038",
       "section": "quant",
       "topic": "word-problems",
@@ -1897,6 +2107,24 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nDescriptive statistics on GMAT Focus Quant is almost entirely about two ideas: where a data set is\n**centered** (mean, median, mode) and how **spread out** it is (range, standard deviation). The\narithmetic is light — the exam tests whether you understand what each measure does, especially how\noutliers and transformations affect them. Master a handful of moves and this topic becomes free points.\n\n## Core concepts\n\n**Mean (arithmetic average).**\n\n\\[\\text{mean} = \\frac{\\text{sum of values}}{\\text{count}}\\]\n\nThe single most useful rearrangement is **sum = mean × count**. Most \"average\" problems are really\nabout the *sum*: find it, adjust it, and divide again.\n\n**Weighted average.** When groups have different sizes, you cannot just average the group averages —\nweight each by its count:\n\n\\[\\text{overall mean} = \\frac{n_1\\bar{x}_1 + n_2\\bar{x}_2}{n_1 + n_2}\\]\n\nThe result always lands *between* the two group averages, pulled toward the larger group.\n\n**Median.** The middle value once the data is sorted.\n\n- **Odd count:** the single middle value.\n- **Even count:** the average of the two middle values.\n\nAlways sort first. The median ignores *how far away* extreme values are — only their position matters.\n\n**Mode.** The value that appears most often. A set can have no mode, one mode, or several.\n\n**Range.** \\(\\text{range} = \\text{max} - \\text{min}\\). A crude measure of spread that depends on only\ntwo numbers.\n\n**Standard deviation (SD).** Measures the *typical distance of values from the mean*. You will almost\nnever compute it by hand on the GMAT; you reason about it:\n\n- SD is **0** only when every value is identical.\n- SD depends on **spread from the mean, not on the size of the numbers**. \\(\\{1,2,3\\}\\) and\n  \\(\\{101,102,103\\}\\) have the *same* SD.\n- **Adding a constant** to every value shifts the set but leaves the spread — and therefore the SD —\n  **unchanged**.\n- **Multiplying** every value by \\(k\\) multiplies the SD by \\(|k|\\).\n\n## Worked examples\n\n**Sum trick.** The average of 6 numbers is 22. A seventh number is added and the average becomes 25.\nThe seventh number? Old sum \\(= 22 \\times 6 = 132\\); new sum \\(= 25 \\times 7 = 175\\); the added number\nis \\(175 - 132 = 43\\). (Notice it is far above 25 — it had to *pull the average up* across all seven\nvalues.)\n\n**Outlier: mean vs. median.** For \\(\\{4, 7, 9, 10, 90\\}\\), the mean is \\(120/5 = 24\\) but the median is\n\\(9\\). The lone large value \\(90\\) drags the mean far above the median while leaving the median\nuntouched. When a distribution has a long tail, mean \\(\\ne\\) median.\n\n**Spread, not magnitude.** Which has the larger SD, \\(\\{2,4,6,8,10\\}\\) or \\(\\{102,104,106,108,110\\}\\)?\nNeither — they are identical shapes shifted by 100, so the SD is the same. Bigger numbers do not mean\nbigger spread.\n\n## Common traps\n\n- **Averaging averages.** With unequal group sizes, the simple average of two means is wrong — you must\n  weight by count.\n- **Forgetting to sort before taking the median.** The median is positional; unsorted data gives a\n  meaningless \"middle.\"\n- **Assuming mean = median.** True only for symmetric data. Any outlier or skew separates them, and the\n  mean moves toward the tail.\n- **Thinking \"big numbers ⇒ big standard deviation.\"** SD measures distance from the mean, not the\n  numbers' magnitude. Adding a constant changes the mean but never the SD.\n\n## Key takeaways\n\n- Turn average problems into **sum** problems: sum = mean × count.\n- Weighted averages weight by group size and always fall between the group means.\n- Sort first, then take the median; the median ignores how extreme the outliers are, but the mean does not.\n- Standard deviation is about spread from the mean: it is 0 only for identical values, unchanged by\n  adding a constant, and independent of how large the numbers themselves are."
+    },
+    {
+      "id": "quant-word-problems-interest",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "interest",
+      "title": "Simple and Compound Interest",
+      "tags": [
+        "interest",
+        "simple-interest",
+        "compound-interest",
+        "growth",
+        "percents"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nInterest problems ask what a sum of money becomes after it earns a percentage return over time.\nThere are only two engines you need: **simple interest**, where the interest is a fixed slice of\nthe original principal every period, and **compound interest**, where each period's interest is\nitself added to the balance and earns interest afterward. Almost every GMAT interest question is a\nmatter of picking the right engine and being careful about what the question asks for — the\n**interest earned** or the **final balance**. Confusing those two is the single most common mistake.\n\n## Core concepts\n\n**Notation.** Let \\(P\\) be the principal (the starting amount), \\(r\\) the interest rate per period\nwritten as a decimal, and \\(t\\) the number of periods.\n\n**Simple interest** pays \\(r\\) of the *original* principal each period. The interest is\n\n\\[I = P \\cdot r \\cdot t\\]\n\nand the final balance (or \"amount\") is \\(A = P + I = P(1 + rt)\\). Because only the principal ever\nearns, simple interest grows in a straight line.\n\n**Compound interest** adds each period's interest to the balance before the next period, so the\nbalance grows geometrically:\n\n\\[A = P(1 + r)^{t}\\]\n\nThe **interest earned** is \\(A - P = P\\big[(1 + r)^{t} - 1\\big]\\). Notice \\(A\\) is the *balance*,\nnot the interest — subtract \\(P\\) whenever the question asks how much was *earned*.\n\n**Compounding more than once a year.** If a stated annual rate \\(R\\) is compounded \\(n\\) times per\nyear for \\(y\\) years, split the rate and multiply the periods:\n\n\\[A = P\\left(1 + \\frac{R}{n}\\right)^{n y}\\]\n\nSo 8% compounded semiannually for one year is two periods at 4%: \\(P(1.04)^2\\), **not** \\(P(1.08)\\).\n\n**Simple vs. compound over exactly 2 years — a shortcut.** For the same \\(P\\) and \\(r\\), compound\ninterest beats simple interest after 2 years by exactly\n\n\\[P r^{2}\\]\n\n(the interest that the first year's interest earns in the second year). It's a fast way to compute\nthe gap without expanding both formulas.\n\n## Worked examples\n\n**Simple interest.** $2,000 at 5% simple annual interest for 3 years earns\n\\(I = 2000 \\times 0.05 \\times 3 = 300\\), for a balance of \\(2000 + 300 = 2300\\).\n\n**Compound interest.** $5,000 at 10% compounded annually for 2 years grows to\n\\(5000(1.1)^2 = 5000 \\times 1.21 = 6050\\). The interest *earned* is \\(6050 - 5000 = 1050\\) — more\nthan the \\(1000\\) simple interest would give, because the first year's $500 itself earns 10%.\n\n**The 2-year gap.** With \\(P = 4000\\) and \\(r = 0.10\\), the difference between compound and simple\ninterest over 2 years is \\(P r^2 = 4000 \\times 0.01 = 40\\). Check: compound earns\n\\(4000(1.21) - 4000 = 840\\); simple earns \\(4000 \\times 0.1 \\times 2 = 800\\); the gap is \\(40\\). ✓\n\n## Common traps\n\n- **Balance vs. interest earned.** \\(P(1+r)^t\\) and \\(P(1+rt)\\) are *balances*. If the question\n  asks for interest, subtract the principal. Reading \"how much interest\" and answering with the\n  total is the classic trap.\n- **Compounding periods.** A rate compounded semiannually or quarterly must be divided by the\n  number of periods per year, and the exponent multiplied by it. Applying the full annual rate each\n  sub-period massively overstates the result.\n- **Simple where compound is meant (and vice versa).** Over one period they agree; after that they\n  diverge, and the difference is exactly what many questions test.\n- **Decimal slips.** 6% is \\(0.06\\), not \\(0.6\\) or \\(0.006\\). A misplaced decimal changes the\n  answer by a factor of ten.\n- **Reversing growth by subtraction.** To find the principal behind a compounded balance you must\n  *divide* by \\((1+r)^t\\); taking a flat percentage off the final amount is not the inverse.\n\n## Key takeaways\n\n- Simple interest: \\(I = Prt\\), balance \\(= P(1 + rt)\\) — linear, only the principal earns.\n- Compound interest: balance \\(= P(1+r)^t\\), interest earned \\(= P[(1+r)^t - 1]\\) — geometric.\n- Sub-annual compounding: rate \\(\\to R/n\\), periods \\(\\to ny\\).\n- The 2-year compound-minus-simple gap is \\(P r^2\\).\n- Always confirm whether the question wants the **interest** or the **final balance**."
     },
     {
       "id": "quant-word-problems-mixtures",
