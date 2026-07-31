@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 16,
-      "lessons": 5
+      "questions": 22,
+      "lessons": 6
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 32,
-    "lessons": 8
+    "questions": 38,
+    "lessons": 9
   },
   "questions": [
     {
@@ -357,6 +357,192 @@
       "hints": [
         "Percent changes compound multiplicatively. Turn each into a factor: +25% → \\(\\times 1.25\\), −20% → \\(\\times 0.80\\).",
         "Multiply the factors together and compare to 1."
+      ]
+    },
+    {
+      "id": "quant-counting-probability-combinatorics-0017",
+      "section": "quant",
+      "topic": "counting-probability",
+      "subtopic": "combinatorics",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "combinatorics",
+        "counting-principle",
+        "fundamental-counting"
+      ],
+      "choices": {
+        "A": "8",
+        "B": "9",
+        "C": "12",
+        "D": "14",
+        "E": "24"
+      },
+      "answer": "E",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A café builds a sandwich by choosing exactly one bread (3 kinds), one filling (4 kinds), and one\nsauce (2 kinds). How many different sandwiches can be made?",
+      "explanation": "The three choices are made in sequence and are independent of one another, so by the **fundamental\ncounting principle** you **multiply** the number of options at each stage:\n\n\\[3 \\times 4 \\times 2 = 24\\]\n\n**The traps:**\n\n- **B (9)** adds the options \\((3 + 4 + 2)\\) instead of multiplying. You add only when the choices are\n  mutually exclusive alternatives; here you make one choice from *each* category, so it's \"and,\" which\n  means multiply.\n- **C (12)** multiplies bread × filling \\((3 \\times 4)\\) but forgets the sauce entirely.\n- **A (8)** multiplies filling × sauce \\((4 \\times 2)\\) and drops the bread.\n- **D (14)** multiplies two categories and then *adds* the third \\((3 \\times 4 + 2)\\), mixing the\n  operations.\n\nOnly **E (24)** multiplies all three.",
+      "hints": [
+        "Each sandwich needs one bread AND one filling AND one sauce — \"and\" between independent choices means multiply.",
+        "Multiply the count at every stage; don't leave a category out."
+      ]
+    },
+    {
+      "id": "quant-counting-probability-combinatorics-0018",
+      "section": "quant",
+      "topic": "counting-probability",
+      "subtopic": "combinatorics",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "combinatorics",
+        "permutations",
+        "factorial",
+        "arrangements"
+      ],
+      "choices": {
+        "A": "15",
+        "B": "20",
+        "C": "25",
+        "D": "60",
+        "E": "120"
+      },
+      "answer": "E",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "In how many different ways can 5 distinct books be arranged in a row on a shelf?",
+      "explanation": "Arranging all 5 distinct books in order is a **permutation of 5 items**: the first position can be\nany of 5 books, the next any of the remaining 4, then 3, then 2, then 1:\n\n\\[5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120\\]\n\n**The traps:**\n\n- **A (15)** *adds* the descending counts \\((5 + 4 + 3 + 2 + 1)\\) instead of multiplying them.\n- **B (20)** stops after two positions \\((5 \\times 4)\\) — that counts arrangements of only 2 of the\n  books, not all 5.\n- **D (60)** stops after three positions \\((5 \\times 4 \\times 3)\\), arranging only 3 books.\n- **C (25)** computes \\(5^2\\), as if each slot could independently be any of 5 books; but once a book\n  is placed it can't be reused, so the pool shrinks each step.\n\nOnly **E (120)** multiplies all the way down to 1.",
+      "hints": [
+        "Once a book is placed in a spot, it can't go in another — so the number of choices drops by one at each position.",
+        "Arranging all \\(n\\) distinct items in a row is \\(n!\\)."
+      ]
+    },
+    {
+      "id": "quant-counting-probability-combinatorics-0019",
+      "section": "quant",
+      "topic": "counting-probability",
+      "subtopic": "combinatorics",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "combinatorics",
+        "combinations",
+        "committee",
+        "order-does-not-matter"
+      ],
+      "choices": {
+        "A": "21",
+        "B": "24",
+        "C": "56",
+        "D": "168",
+        "E": "336"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A committee of 3 people is to be selected from a group of 8 people. How many different committees\nare possible?",
+      "explanation": "A committee is a **selection where order does not matter** — the committee {A, B, C} is the same as\n{C, B, A}. That's a **combination**:\n\n\\[C(8,3) = \\frac{8 \\times 7 \\times 6}{3!} = \\frac{336}{6} = 56\\]\n\n**The traps:**\n\n- **E (336)** computes \\(8 \\times 7 \\times 6\\), a *permutation* — it counts every ordering of the same\n  three people as different. Since order doesn't matter for a committee, you must divide by the\n  \\(3! = 6\\) ways to arrange each trio.\n- **D (168)** starts from the 336 orderings but divides by 2 instead of by \\(3! = 6\\). Three chosen\n  people can be arranged in 6 ways, not 2.\n- **A (21)** adds \\(8 + 7 + 6\\); **B (24)** multiplies \\(8 \\times 3\\). Neither reflects choosing 3\n  distinct members from the group.\n\nOnly **C (56)** correctly divides out the ordering.",
+      "hints": [
+        "Does rearranging the same three people give a *different* committee? If no, it's a combination, not a permutation.",
+        "Take the ordered count \\(8 \\times 7 \\times 6\\) and divide by \\(3!\\) to remove the duplicate arrangements."
+      ]
+    },
+    {
+      "id": "quant-counting-probability-combinatorics-0020",
+      "section": "quant",
+      "topic": "counting-probability",
+      "subtopic": "combinatorics",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "combinatorics",
+        "combinations",
+        "groups",
+        "and-rule"
+      ],
+      "choices": {
+        "A": "10",
+        "B": "16",
+        "C": "60",
+        "D": "126",
+        "E": "240"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A committee of 4 people is formed from 5 men and 4 women. How many committees consist of exactly\n2 men and 2 women?",
+      "explanation": "Build the committee in two independent stages — choose the men **and** choose the women — then\nmultiply the counts (order doesn't matter within either group, so use combinations):\n\n\\[C(5,2) \\times C(4,2) = 10 \\times 6 = 60\\]\n\nHere \\(C(5,2) = \\dfrac{5 \\times 4}{2} = 10\\) and \\(C(4,2) = \\dfrac{4 \\times 3}{2} = 6\\).\n\n**The traps:**\n\n- **B (16)** *adds* the two counts \\((10 + 6)\\) instead of multiplying. You need 2 men *and* 2 women,\n  so the stages multiply.\n- **A (10)** stops after choosing the men \\((C(5,2))\\) and forgets to choose the women.\n- **D (126)** ignores the \"exactly 2 and 2\" requirement and just picks any 4 of the 9 people\n  \\((C(9,4) = 126)\\).\n- **E (240)** treats the picks as ordered, using permutations \\(P(5,2) \\times P(4,2) = 20 \\times 12\\);\n  but the two men on a committee aren't ranked, so order shouldn't be counted.\n\nOnly **C (60)** multiplies the two combinations.",
+      "hints": [
+        "\"Exactly 2 men and 2 women\" is a choice from each group — choose men AND women, then multiply.",
+        "Within each group the members aren't ranked, so use combinations, and \\(C(5,2)=10\\), \\(C(4,2)=6\\)."
+      ]
+    },
+    {
+      "id": "quant-counting-probability-combinatorics-0021",
+      "section": "quant",
+      "topic": "counting-probability",
+      "subtopic": "combinatorics",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "combinatorics",
+        "permutations",
+        "arrangements",
+        "restriction",
+        "block-method"
+      ],
+      "choices": {
+        "A": "24",
+        "B": "48",
+        "C": "72",
+        "D": "120",
+        "E": "240"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "Five friends are seated in a row of 5 chairs. In how many of the possible seating arrangements\nare two particular friends, Ana and Ben, seated next to each other?",
+      "explanation": "Use the **block method**: since Ana and Ben must be adjacent, glue them into a single \"super-person.\"\nThat leaves **4 units** to arrange in a row:\n\n\\[4! = 24 \\text{ ways.}\\]\n\nBut inside the block, Ana and Ben can sit in either order (Ana–Ben or Ben–Ana), which doubles the\ncount:\n\n\\[4! \\times 2 = 24 \\times 2 = 48\\]\n\n**The traps:**\n\n- **A (24)** treats the pair as one block \\((4!)\\) but forgets that Ana and Ben can swap seats within\n  the block — you must multiply by \\(2\\).\n- **D (120)** is \\(5!\\), the total number of arrangements with **no** restriction.\n- **C (72)** is the number of arrangements in which Ana and Ben are **not** together\n  \\((120 - 48)\\) — the complement of what's asked.\n- **E (240)** doubles the full \\(5!\\) \\((2 \\times 120)\\), double-counting rather than restricting.\n\nOnly **B (48)** applies the block method correctly.",
+      "hints": [
+        "Force the two friends together by treating them as a single block, then arrange the resulting units.",
+        "Don't forget the two people inside the block can still switch places with each other."
+      ]
+    },
+    {
+      "id": "quant-counting-probability-combinatorics-0022",
+      "section": "quant",
+      "topic": "counting-probability",
+      "subtopic": "combinatorics",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "combinatorics",
+        "combinations",
+        "at-least-one",
+        "complementary-counting"
+      ],
+      "choices": {
+        "A": "15",
+        "B": "60",
+        "C": "111",
+        "D": "126",
+        "E": "168"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A team of 4 is to be chosen from a group of 6 seniors and 3 juniors (9 people in all). How many\npossible teams include **at least one** junior?",
+      "explanation": "\"At least one\" invites **complementary counting**: count *all* teams, then subtract the teams that\nhave **no** junior (i.e., all seniors).\n\n- Total teams of 4 from 9: \\(C(9,4) = \\dfrac{9 \\times 8 \\times 7 \\times 6}{4!} = \\dfrac{3024}{24} = 126\\).\n- Teams with no junior (all 4 from the 6 seniors): \\(C(6,4) = C(6,2) = \\dfrac{6 \\times 5}{2} = 15\\).\n\n\\[\\text{At least one junior} = 126 - 15 = 111\\]\n\n**The traps:**\n\n- **D (126)** is the total number of teams — it forgets to remove the all-senior teams.\n- **A (15)** is the number of teams with **no** junior — the complement that should be *subtracted*,\n  not reported.\n- **E (168)** comes from \"pick 1 junior to guarantee, then any 3 of the remaining 8\":\n  \\(C(3,1) \\times C(8,3) = 3 \\times 56 = 168\\). This **over-counts** teams that have 2 or 3 juniors,\n  because each such team gets counted once for each junior that could have been the \"guaranteed\" one.\n- **B (60)** counts only the teams with **exactly one** junior \\((C(3,1) \\times C(6,3) = 3 \\times 20)\\),\n  missing teams with 2 or 3 juniors.\n\nOnly **C (111)** counts every team with at least one junior exactly once. (Check:\nexactly-1 \\(=60\\), exactly-2 \\(= C(3,2)C(6,2) = 3 \\times 15 = 45\\), exactly-3 \\(= C(3,3)C(6,1) = 6\\);\n\\(60 + 45 + 6 = 111\\).)",
+      "hints": [
+        "\"At least one\" is usually fastest as total minus none — count all teams, then subtract the teams with zero juniors.",
+        "The \"zero juniors\" case means all 4 members come from the 6 seniors."
       ]
     },
     {
@@ -983,6 +1169,24 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nPercents and ratios are the most frequently tested arithmetic ideas on GMAT Focus Quant, and\nthey hide inside word problems everywhere. Master three moves: converting between forms, handling\npercent *change*, and scaling ratios.\n\n## Core concepts\n\n**Percent as a factor.** A percent is just a number over 100. The fastest way to apply a percent\nchange is to turn it into a **multiplier**:\n\n- Increase by \\(r\\%\\): multiply by \\(1 + \\tfrac{r}{100}\\). (+25% → \\(\\times 1.25\\))\n- Decrease by \\(r\\%\\): multiply by \\(1 - \\tfrac{r}{100}\\). (−20% → \\(\\times 0.80\\))\n\n**Successive changes multiply.** Two changes in a row are multiplied, never added:\n\n\\[(+25\\%)\\text{ then }(-20\\%): \\quad 1.25 \\times 0.80 = 1.00 \\quad (\\text{no net change})\\]\n\n**Percent change formula.**\n\n\\[\\text{percent change} = \\frac{\\text{new} - \\text{old}}{\\text{old}} \\times 100\\%\\]\n\nAlways divide by the **original** value, not the new one.\n\n**Ratios scale together.** A ratio \\(a : b\\) means the quantities are \\(ak\\) and \\(bk\\) for some\nmultiplier \\(k\\). If boys : girls \\(= 3 : 5\\) and there are 24 boys, then \\(k = 8\\), so there are\n\\(5 \\times 8 = 40\\) girls.\n\n## Worked examples\n\n**Percent change.** A stock rises from $80 to $100. Percent increase \\(= \\tfrac{100 - 80}{80} = \\tfrac{20}{80} = 25\\%\\).\nNote it later falls from $100 back to $80: that's \\(\\tfrac{-20}{100} = -20\\%\\) — a *smaller* percent, because the base is now larger.\n\n**Ratio scaling.** A recipe uses flour : sugar \\(= 7 : 2\\). To use 21 cups of flour, \\(k = 3\\), so\nyou need \\(2 \\times 3 = 6\\) cups of sugar.\n\n## Common traps\n\n- **Adding successive percents.** +25% then −20% is *not* +5%; it's \\(1.25 \\times 0.80 = 1.00\\).\n- **Wrong base.** Percent change always divides by the original amount. A rise then an equal-percent fall does not return to the start.\n- **Ratio ≠ actual count.** \\(3 : 5\\) does not mean 3 and 5 — it means \\(3k\\) and \\(5k\\). Find \\(k\\) first.\n\n## Key takeaways\n\n- Convert percent changes to multipliers and multiply them for successive changes.\n- Percent change = (new − old) / old.\n- A ratio \\(a : b\\) represents \\(ak\\) and \\(bk\\); solve for the multiplier \\(k\\), then scale."
+    },
+    {
+      "id": "quant-counting-probability-combinatorics",
+      "section": "quant",
+      "topic": "counting-probability",
+      "subtopic": "combinatorics",
+      "title": "Combinatorics: Counting Arrangements & Selections",
+      "tags": [
+        "combinatorics",
+        "counting-principle",
+        "permutations",
+        "combinations",
+        "factorial"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nCombinatorics is the art of counting *how many* ways something can happen without listing them\nall. On GMAT Focus Quant the numbers stay small, so the challenge is never the arithmetic — it is\ndeciding **which counting move applies**. Three questions sort out almost everything:\n\n1. Am I making a sequence of independent choices? → **multiply** (fundamental counting principle).\n2. Am I arranging items where **order matters**? → **permutation**.\n3. Am I selecting a group where **order does not matter**? → **combination**.\n\nGet the classification right and the formula is easy.\n\n## Core concepts\n\n**Fundamental counting principle.** If one stage can happen in \\(m\\) ways and a second, independent\nstage in \\(n\\) ways, the two together happen in \\(m \\times n\\) ways. This extends to any number of\nstages — you **multiply**, never add. (You add only when the choices are mutually exclusive\nalternatives — \"either this *or* that\" — not sequential steps.)\n\n**Factorial.** \\(n! = n \\times (n-1) \\times \\cdots \\times 2 \\times 1\\), the number of ways to arrange\n\\(n\\) distinct items in a row. By convention \\(0! = 1\\).\n\n**Permutations — order matters.** The number of ways to arrange \\(k\\) of \\(n\\) distinct items in\norder:\n\n\\[P(n,k) = \\frac{n!}{(n-k)!} = n \\times (n-1) \\times \\cdots \\times (n-k+1)\\]\n\nExample: 3 of 5 books in order = \\(5 \\times 4 \\times 3 = 60\\).\n\n**Combinations — order does not matter.** The number of ways to *select* \\(k\\) of \\(n\\) distinct\nitems when arrangement is irrelevant:\n\n\\[C(n,k) = \\binom{n}{k} = \\frac{n!}{k!\\,(n-k)!} = \\frac{P(n,k)}{k!}\\]\n\nA combination is just a permutation with the internal orderings divided out. Example: a committee of\n3 from 8 people = \\(\\dfrac{8 \\times 7 \\times 6}{3!} = \\dfrac{336}{6} = 56\\).\n\nTwo handy facts: \\(C(n,k) = C(n,\\,n-k)\\) (choosing who is *in* is the same as choosing who is *out*),\nand \\(C(n,0) = C(n,n) = 1\\).\n\n## Worked examples\n\n**Multiply the stages.** A meal is one appetizer (4 options), one entrée (5), and one dessert (3).\nMeals \\(= 4 \\times 5 \\times 3 = 60\\). Independent, sequential choices → multiply.\n\n**Arrange with a restriction.** In how many ways can 5 people sit in a row if two specific people\nmust sit together? Glue the pair into a single block: now 4 units arrange in \\(4! = 24\\) ways, and the\npair can switch places inside the block in \\(2! = 2\\) ways, giving \\(24 \\times 2 = 48\\).\n\n**Split into groups.** Choose a committee of 4 from 5 men and 4 women with exactly 2 of each. Choose\nthe men *and* the women, so multiply: \\(C(5,2) \\times C(4,2) = 10 \\times 6 = 60\\).\n\n**\"At least\" → count the complement.** From 9 people, how many teams of 4 include at least one of the\n3 juniors? Counting \"at least one\" directly means adding several cases; it is faster to take *all*\nteams minus the teams with *no* junior: \\(C(9,4) - C(6,4) = 126 - 15 = 111\\).\n\n## Common traps\n\n- **Adding when you should multiply.** Sequential independent stages multiply. Adding gives a number\n  far too small.\n- **Permutation vs. combination.** If the answer to \"does rearranging the same items give a *different*\n  outcome?\" is no, use a combination. A committee of {A, B, C} is the same committee as {C, B, A} — do\n  not count the orderings. Using \\(P(n,k)\\) for a selection over-counts by a factor of \\(k!\\).\n- **Forgetting the internal order of a block.** When you glue items together for an\n  \"adjacent\" restriction, remember to multiply by the arrangements *inside* the block.\n- **Attacking \"at least one\" head-on.** Complementary counting (total − none) is almost always cleaner\n  and avoids double-counting the overlap cases.\n\n## Key takeaways\n\n- Independent, sequential choices **multiply**; mutually exclusive alternatives add.\n- **Order matters → permutation** \\(\\left(\\tfrac{n!}{(n-k)!}\\right)\\); **order doesn't → combination**\n  \\(\\left(\\tfrac{n!}{k!(n-k)!}\\right)\\). A combination is a permutation divided by \\(k!\\).\n- Break \"and\" problems into stages and multiply the counts for each stage.\n- For \"at least one,\" count the total and subtract the \"none\" case."
     },
     {
       "id": "quant-statistics-descriptive",
