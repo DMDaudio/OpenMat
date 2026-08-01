@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 16,
-      "lessons": 5
+      "questions": 23,
+      "lessons": 6
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 32,
-    "lessons": 8
+    "questions": 39,
+    "lessons": 9
   },
   "questions": [
     {
@@ -299,6 +299,216 @@
       "hints": [
         "Factor into \\((x - r_1)(x - r_2)\\); the roots make each factor zero.",
         "Or use the coefficient shortcut: sum of roots \\(= -b\\), product \\(= c\\)."
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0017",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "exponents",
+        "powers",
+        "product-rule"
+      ],
+      "choices": {
+        "A": "6561",
+        "B": "729",
+        "C": "9",
+        "D": "81",
+        "E": "1296"
+      },
+      "answer": "B",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the value of \\(3^4 \\cdot 3^2\\)?",
+      "explanation": "When you multiply two powers of the **same base**, you **add** the exponents:\n\n\\[3^4 \\cdot 3^2 = 3^{4+2} = 3^6\\]\n\nNow evaluate \\(3^6 = 729\\).\n\n**The trap:** choice **A (6561)** is \\(3^8\\) — the result of *multiplying* the exponents\n(\\(4 \\times 2 = 8\\)) instead of adding them. Multiplying exponents is the rule for a power of a\npower, \\((3^4)^2\\), not for a product of powers. Choice **C (9)** is \\(3^2\\), from subtracting the\nexponents; **D (81)** is \\(3^4\\), from using only one factor; **E (1296)** is \\(6^4\\), from adding\nthe bases \\((3+3)\\).",
+      "hints": [
+        "Same base, multiplied together — what do you do with the exponents?",
+        "Add the exponents first, then compute the single power."
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0018",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "exponents",
+        "powers",
+        "power-of-a-power"
+      ],
+      "choices": {
+        "A": "32",
+        "B": "512",
+        "C": "64",
+        "D": "8",
+        "E": "12"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the value of \\((2^3)^2\\)?",
+      "explanation": "A **power raised to a power** means you **multiply** the exponents:\n\n\\[(2^3)^2 = 2^{3 \\cdot 2} = 2^6 = 64\\]\n\n**The trap:** choice **A (32)** is \\(2^5\\), from *adding* the exponents (\\(3 + 2\\)) — that's the\nrule for multiplying powers like \\(2^3 \\cdot 2^2\\), not for a power of a power. Choice **B (512)**\nis \\(2^9\\), from reading the expression as \\(2^{(3^2)}\\). Choice **D (8)** ignores the outer\nexponent entirely (\\(2^3\\)), and **E (12)** multiplies the digits \\(2 \\cdot 3 \\cdot 2\\).",
+      "hints": [
+        "The whole quantity \\(2^3\\) is being squared.",
+        "For \\((a^m)^n\\), do you add or multiply \\(m\\) and \\(n\\)?"
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0019",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "roots",
+        "radicals",
+        "simplifying-radicals"
+      ],
+      "choices": {
+        "A": "\\(8\\sqrt{3}\\)",
+        "B": "\\(6\\sqrt{3}\\)",
+        "C": "\\(2\\sqrt{6}\\)",
+        "D": "\\(6\\sqrt{2}\\)",
+        "E": "\\(36\\sqrt{2}\\)"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "Which of the following is equal to \\(\\sqrt{72}\\)?",
+      "explanation": "To simplify a square root, factor out the **largest perfect square**. The largest perfect square\ndividing 72 is 36:\n\n\\[\\sqrt{72} = \\sqrt{36 \\cdot 2} = \\sqrt{36}\\,\\sqrt{2} = 6\\sqrt{2}\\]\n\nYou can sanity-check: \\(6\\sqrt{2} \\approx 6 \\times 1.414 = 8.49\\), and \\(\\sqrt{72} \\approx 8.49\\). ✓\n\n**The trap:** choice **E (\\(36\\sqrt{2}\\))** pulls the whole factor 36 *outside* the radical instead\nof its square root, 6. Choices **A** and **B** keep the wrong number under the radical (a mis-factor\nof 72), and **C (\\(2\\sqrt{6}\\))** equals \\(\\sqrt{24}\\), not \\(\\sqrt{72}\\). Only the perfect-square\nfactor comes out, and it comes out as its root.",
+      "hints": [
+        "Find the biggest perfect square that divides 72.",
+        "\\(\\sqrt{ab} = \\sqrt{a}\\,\\sqrt{b}\\); the perfect square leaves as its square root, not itself."
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0020",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "exponents",
+        "zero-exponent",
+        "negative-exponent"
+      ],
+      "choices": {
+        "A": "\\(\\tfrac{5}{4}\\)",
+        "B": "\\(\\tfrac{1}{4}\\)",
+        "C": "\\(-3\\)",
+        "D": "\\(\\tfrac{17}{4}\\)",
+        "E": "\\(\\tfrac{3}{4}\\)"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the value of \\(4^0 + 2^{-2}\\)?",
+      "explanation": "Handle each term with the exponent rules for zero and negative powers:\n\n- **Zero exponent:** any nonzero base to the zero power is 1, so \\(4^0 = 1\\).\n- **Negative exponent:** a negative exponent means reciprocal, so \\(2^{-2} = \\dfrac{1}{2^2} = \\dfrac{1}{4}\\).\n\nAdd them:\n\n\\[4^0 + 2^{-2} = 1 + \\frac{1}{4} = \\frac{5}{4}\\]\n\n**The trap:** choice **C (\\(-3\\))** treats \\(2^{-2}\\) as the negative number \\(-4\\) — but a negative\nexponent gives a *reciprocal*, never a negative value. Choice **B (\\(\\tfrac14\\))** comes from\n\\(4^0 = 0\\) (wrong — it's 1). Choice **D (\\(\\tfrac{17}{4}\\))** uses \\(4^0 = 4\\), and **E\n(\\(\\tfrac34\\))** reads \\(2^{-2}\\) as \\(-\\tfrac14\\).",
+      "hints": [
+        "What is any nonzero number raised to the power 0?",
+        "A negative exponent flips the base into a fraction; it does not make the value negative."
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0021",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "exponents",
+        "fractional-exponents",
+        "roots"
+      ],
+      "choices": {
+        "A": "18",
+        "B": "3",
+        "C": "729",
+        "D": "6",
+        "E": "9"
+      },
+      "answer": "E",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the value of \\(27^{2/3}\\)?",
+      "explanation": "A fractional exponent is a root and a power combined: \\(a^{m/n} = \\left(\\sqrt[n]{a}\\right)^m\\). The\ndenominator is the root, the numerator is the power. Take the **root first** to keep the numbers\nsmall:\n\n\\[27^{2/3} = \\left(\\sqrt[3]{27}\\right)^2 = 3^2 = 9\\]\n\n**The trap:** choice **A (18)** multiplies the base by the exponent, \\(27 \\cdot \\tfrac{2}{3} = 18\\)\n— but an exponent is not multiplication. Choice **B (3)** takes the cube root and forgets to square\nit. Choice **C (729)** squares 27 and ignores the cube root (\\(27^2\\)), and **D (6)** takes the cube\nroot (3) and then doubles it instead of squaring.",
+      "hints": [
+        "The denominator of the exponent tells you which root; the numerator tells you the power.",
+        "Cube-root 27 first, then apply the remaining power."
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0022",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "exponents",
+        "equations",
+        "common-base"
+      ],
+      "choices": {
+        "A": "3",
+        "B": "2",
+        "C": "6",
+        "D": "0",
+        "E": "-1"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(2^{\\,x+3} = 8^{\\,x-1}\\), what is the value of \\(x\\)?",
+      "explanation": "The two sides have different bases, so rewrite them on a **common base**. Since \\(8 = 2^3\\):\n\n\\[8^{\\,x-1} = \\left(2^3\\right)^{x-1} = 2^{\\,3(x-1)} = 2^{\\,3x-3}\\]\n\nNow both sides are powers of 2, so the exponents must be equal:\n\n\\[x + 3 = 3x - 3 \\;\\Rightarrow\\; 6 = 2x \\;\\Rightarrow\\; x = 3\\]\n\nCheck: \\(2^{3+3} = 2^6 = 64\\) and \\(8^{3-1} = 8^2 = 64\\). ✓\n\n**The trap:** choice **B (2)** comes from distributing the 3 only to the \\(x\\) and forgetting the\n\\(-1\\): writing \\(8^{x-1} = 2^{3x-1}\\) gives \\(x + 3 = 3x - 1\\), so \\(x = 2\\). You must apply the\nexponent 3 to the *entire* \\((x-1)\\). Choices **C**, **D**, and **E** come from arithmetic slips in\nsolving the linear equation.",
+      "hints": [
+        "Write 8 as a power of 2 so both sides share a base.",
+        "\\((2^3)^{x-1} = 2^{3(x-1)}\\) — distribute the 3 across the whole exponent before setting them equal."
+      ]
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots-0023",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "roots",
+        "radicals",
+        "adding-radicals"
+      ],
+      "choices": {
+        "A": "\\(\\sqrt{68}\\)",
+        "B": "\\(15\\sqrt{2}\\)",
+        "C": "\\(8\\sqrt{2}\\)",
+        "D": "8",
+        "E": "\\(2\\sqrt{2}\\)"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is \\(\\sqrt{50} + \\sqrt{18}\\) in simplest form?",
+      "explanation": "You cannot add radicals until each one is simplified to the **same radical part**. Pull out the\nperfect-square factors:\n\n\\[\\sqrt{50} = \\sqrt{25 \\cdot 2} = 5\\sqrt{2}, \\qquad \\sqrt{18} = \\sqrt{9 \\cdot 2} = 3\\sqrt{2}\\]\n\nBoth are multiples of \\(\\sqrt{2}\\), so add the coefficients:\n\n\\[5\\sqrt{2} + 3\\sqrt{2} = 8\\sqrt{2}\\]\n\n**The trap:** choice **A (\\(\\sqrt{68}\\))** adds the numbers *under* the radical (\\(50 + 18\\)) — but\n\\(\\sqrt{a} + \\sqrt{b} \\neq \\sqrt{a+b}\\). Choice **B (\\(15\\sqrt{2}\\))** multiplies the coefficients\n(\\(5 \\times 3\\)) instead of adding them; **D (8)** drops the \\(\\sqrt{2}\\) altogether; and **E\n(\\(2\\sqrt{2}\\))** subtracts the coefficients. Add coefficients only when the radical parts already\nmatch.",
+      "hints": [
+        "Simplify each square root first — what perfect squares divide 50 and 18?",
+        "Once both terms are multiples of \\(\\sqrt{2}\\), add their coefficients (don't touch the \\(\\sqrt{2}\\))."
       ]
     },
     {
@@ -967,6 +1177,23 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nA quadratic equation has the form \\(ax^2 + bx + c = 0\\). On GMAT Focus Quant, most quadratics are\nbuilt to **factor cleanly**, so factoring — not the quadratic formula — is usually the fast route.\n\n## Core concepts\n\n**Factoring \\(x^2 + bx + c\\).** Find two numbers that **multiply to \\(c\\)** and **add to \\(b\\)**.\nThen \\(x^2 + bx + c = (x + p)(x + q)\\), and the solutions make each factor zero.\n\nExample: \\(x^2 - 5x + 6\\). Two numbers multiplying to \\(+6\\) and adding to \\(-5\\) are \\(-2\\) and\n\\(-3\\), so \\((x-2)(x-3) = 0\\) and \\(x = 2\\) or \\(x = 3\\).\n\n**Sum and product shortcut.** For \\(x^2 + bx + c = 0\\):\n\n\\[\\text{sum of roots} = -b, \\qquad \\text{product of roots} = c\\]\n\nThis lets you answer \"sum/product of solutions\" questions without fully solving.\n\n**Special products** worth recognizing instantly:\n\n\\[a^2 - b^2 = (a-b)(a+b), \\quad (a+b)^2 = a^2 + 2ab + b^2, \\quad (a-b)^2 = a^2 - 2ab + b^2\\]\n\n**The quadratic formula** (fallback when factoring is ugly):\n\n\\[x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\\]\n\n## Worked examples\n\n**Factor and solve.** \\(x^2 + 2x - 15 = 0 \\Rightarrow (x+5)(x-3) = 0 \\Rightarrow x = -5 \\text{ or } 3\\).\n\n**Difference of squares.** \\(x^2 - 49 = 0 \\Rightarrow (x-7)(x+7) = 0 \\Rightarrow x = \\pm 7\\).\n\n## Common traps\n\n- **Confusing sum and product of roots.** Sum is \\(-b\\), product is \\(c\\). Read which the question wants.\n- **Dropping a solution.** A quadratic usually has *two* roots — check whether the question wants both, their sum, or only positive values.\n- **Sign errors in factoring.** Verify by expanding your factors back out.\n\n## Key takeaways\n\n- Factor into \\((x + p)(x + q)\\) where \\(pq = c\\) and \\(p + q = b\\); each factor set to zero gives a root.\n- Sum of roots \\(= -b\\), product \\(= c\\) — a fast shortcut.\n- Recognize the difference of squares and perfect-square forms on sight."
+    },
+    {
+      "id": "quant-arithmetic-exponents-roots",
+      "section": "quant",
+      "topic": "arithmetic",
+      "subtopic": "exponents-roots",
+      "title": "Exponents & Roots",
+      "tags": [
+        "exponents",
+        "roots",
+        "radicals",
+        "powers"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nExponents and roots show up throughout GMAT Focus Quant — in pure arithmetic, in algebra, and\nhidden inside word problems. Almost every mistake comes from misapplying one of a small set of\nrules, so the payoff is learning the rules cold and knowing exactly which ones do **not** exist.\n\n## Core concepts\n\n**The exponent rules (same base).**\n\n- Multiply → **add** exponents: \\(a^m \\cdot a^n = a^{m+n}\\).\n- Divide → **subtract** exponents: \\(\\dfrac{a^m}{a^n} = a^{m-n}\\).\n- Power of a power → **multiply** exponents: \\((a^m)^n = a^{mn}\\).\n\nNotice multiplying powers *adds* the exponents while a power-of-a-power *multiplies* them. Swapping\nthose two is the single most common exponent error.\n\n**Zero and negative exponents.**\n\n\\[a^0 = 1 \\quad (a \\neq 0), \\qquad a^{-n} = \\frac{1}{a^n}\\]\n\nA negative exponent means **reciprocal**, not a negative number: \\(2^{-2} = \\tfrac{1}{4}\\), not \\(-4\\).\n\n**Products and quotients of different bases.** You can only combine bases that are equal. But a\nproduct raised to a power distributes: \\((ab)^n = a^n b^n\\). That lets you rewrite a mixed base like\n\\(6^4 = (2\\cdot 3)^4 = 2^4 \\cdot 3^4\\), which is often the key to a cancellation.\n\n**Roots are fractional exponents.**\n\n\\[\\sqrt[n]{a} = a^{1/n}, \\qquad a^{m/n} = \\left(a^{1/n}\\right)^m = \\left(\\sqrt[n]{a}\\right)^m\\]\n\nSo \\(27^{2/3} = (\\sqrt[3]{27})^2 = 3^2 = 9\\). Take the root first (smaller numbers), then the power.\n\n**Simplifying square roots.** Pull out perfect-square factors: \\(\\sqrt{72} = \\sqrt{36 \\cdot 2} = 6\\sqrt{2}\\).\nRadicals **add only when the radical part matches**: \\(5\\sqrt{2} + 3\\sqrt{2} = 8\\sqrt{2}\\), but\n\\(\\sqrt{50} + \\sqrt{18}\\) must first be simplified to \\(5\\sqrt{2} + 3\\sqrt{2}\\) before you can add.\n\n**Solving equations by matching bases.** If \\(a^x = a^y\\) then \\(x = y\\). To solve \\(2^{x+3} = 8^{x-1}\\),\nrewrite everything on one base: \\(8 = 2^3\\), so \\(8^{x-1} = 2^{3(x-1)}\\), then set the exponents equal.\n\n## Worked examples\n\n**Combine powers.** \\(3^4 \\cdot 3^2 = 3^{4+2} = 3^6 = 729\\). (Not \\(3^8\\) — you add, not multiply.)\n\n**Fractional exponent.** \\(27^{2/3}\\): cube root of 27 is 3, then square it → \\(9\\).\n\n**Matching bases.** \\(2^{x+3} = 8^{x-1} \\Rightarrow 2^{x+3} = 2^{3(x-1)} = 2^{3x-3}\\). Set\n\\(x + 3 = 3x - 3 \\Rightarrow 2x = 6 \\Rightarrow x = 3\\). Check: \\(2^6 = 64 = 8^2\\). ✓\n\n## Common traps\n\n- **Multiplying the exponents when you multiply powers.** \\(3^4 \\cdot 3^2 = 3^6\\), not \\(3^8\\).\n- **Reading a negative exponent as a negative number.** \\(2^{-2} = \\tfrac14\\), not \\(-4\\).\n- **Thinking \\(a^0 = 0\\).** Any nonzero base to the zero power is \\(1\\).\n- **Adding under the radical.** \\(\\sqrt{50} + \\sqrt{18} \\neq \\sqrt{68}\\). Simplify each radical first.\n- **Multiplying a base by an exponent.** \\(27^{2/3}\\) is a root-and-power, not \\(27 \\cdot \\tfrac23 = 18\\).\n- **Forgetting to distribute a converted exponent.** \\(8^{x-1} = 2^{3(x-1)} = 2^{3x-3}\\), not \\(2^{3x-1}\\).\n\n## Key takeaways\n\n- Multiply powers → add exponents; power of a power → multiply exponents. Don't swap them.\n- \\(a^0 = 1\\) and \\(a^{-n} = 1/a^n\\) (reciprocal, never negative).\n- \\(a^{m/n} = (\\sqrt[n]{a})^m\\): take the root first, then the power.\n- Simplify radicals by pulling out perfect squares; add radicals only when the radical part matches.\n- To solve exponential equations, rewrite both sides on a common base and set the exponents equal."
     },
     {
       "id": "quant-arithmetic-percents-ratios",
