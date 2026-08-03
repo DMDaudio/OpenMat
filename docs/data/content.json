@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 58,
-      "lessons": 11
+      "questions": 65,
+      "lessons": 12
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 74,
-    "lessons": 14
+    "questions": 81,
+    "lessons": 15
   },
   "questions": [
     {
@@ -1046,6 +1046,216 @@
       "hints": [
         "Don't list divisors — factor the number into primes first.",
         "If \\(N = p^a q^b\\), the divisor count is \\((a+1)(b+1)\\). Remember the \"+1\" accounts for using the prime zero times."
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0059",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "parity",
+        "odd-even",
+        "must-be-true"
+      ],
+      "choices": {
+        "A": "n + 1",
+        "B": "n + 2",
+        "C": "2n",
+        "D": "3n",
+        "E": "n^2"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(n\\) is an even integer, which of the following must be **odd**?",
+      "explanation": "Start from \"\\(n\\) is even\" and apply the parity rules to each option:\n\n- **A. \\(n + 1\\)** — adding the odd number \\(1\\) flips even to **odd**. ✓\n- **B. \\(n + 2\\)** — adding an even number keeps parity, so this stays **even**.\n- **C. \\(2n\\)** — any integer times \\(2\\) is **even**.\n- **D. \\(3n\\)** — odd × even is **even** (the even factor \\(n\\) wins).\n- **E. \\(n^2\\)** — \\(n \\cdot n\\) is even × even = **even**.\n\nOnly \\(n + 1\\) is guaranteed odd, so the answer is **A**.\n\n**The traps:** **D (\\(3n\\))** tempts people who see the odd coefficient \\(3\\) and forget that\nmultiplying by the even \\(n\\) makes the product even. **E (\\(n^2\\))** catches the idea that\nsquaring changes parity — it does not; \\(n^2\\) has the same parity as \\(n\\).",
+      "hints": [
+        "Adding an even number leaves parity unchanged; adding an odd number flips it.",
+        "A product is even the moment any single factor is even."
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0060",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "signs",
+        "negative-numbers",
+        "products"
+      ],
+      "choices": {
+        "A": "-24",
+        "B": "-9",
+        "C": "9",
+        "D": "12",
+        "E": "24"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "What is the value of \\((-3)(-4)(-2)\\)?",
+      "explanation": "First find the magnitude, then decide the sign separately.\n\nMagnitude: \\(3 \\cdot 4 \\cdot 2 = 24\\).\n\nSign: count the negative factors. There are **three** of them — an **odd** number — so the product\nis **negative**. Therefore the value is \\(-24\\).\n\nYou can also multiply step by step: \\((-3)(-4) = +12\\) (two negatives make a positive), and then\n\\((+12)(-2) = -24\\).\n\n**The traps:**\n\n- **E (24)** has the right magnitude but the wrong sign — it treats three negatives as if they\n  cancel to positive. An odd number of negatives stays negative.\n- **D (12)** stops after multiplying the first two factors, \\((-3)(-4) = 12\\), and forgets the\n  third factor.\n- **C (9)** adds the magnitudes (\\(3 + 4 + 2\\)) instead of multiplying.\n- **B (-9)** adds the numbers keeping their signs (\\(-3 - 4 - 2\\)) instead of multiplying.",
+      "hints": [
+        "Handle magnitude and sign as two separate questions.",
+        "Count the negative factors: an odd count gives a negative product, an even count a positive one."
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0061",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "parity",
+        "products",
+        "must-be-true"
+      ],
+      "choices": {
+        "A": "m and n are both odd",
+        "B": "m and n are both even",
+        "C": "m + n is odd",
+        "D": "at least one of m and n is even",
+        "E": "m - n is odd"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(m\\) and \\(n\\) are integers and the product \\(mn\\) is odd, which of the following **must** be\ntrue?",
+      "explanation": "A product of integers is odd only when **every** factor is odd — a single even factor would make\nthe product even. Since \\(mn\\) is odd, both \\(m\\) and \\(n\\) must be odd. That makes **A** correct.\n\nCheck the rest against \"both \\(m\\) and \\(n\\) are odd\":\n\n- **B** (both even) — impossible; even factors give an even product.\n- **D** (at least one even) — same contradiction.\n- **C** (\\(m + n\\) odd) — odd + odd = **even**, so \\(m + n\\) is even, not odd.\n- **E** (\\(m - n\\) odd) — odd − odd = **even**, so this is false too.\n\nThe answer is **A**.\n\n**The traps:** **C** and **E** bait the reflex that \"odd things make odd results.\" Two odd numbers\n*add and subtract* to an even number — parity flips only when the two numbers differ in parity.",
+      "hints": [
+        "A product is odd only if none of its factors is even.",
+        "Once you know both numbers are odd, test what odd ± odd gives."
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0062",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "signs",
+        "inequalities",
+        "must-be-true"
+      ],
+      "choices": {
+        "A": "Both x and y are negative.",
+        "B": "Both x and y are positive.",
+        "C": "x and y have opposite signs.",
+        "D": "The product xy is negative.",
+        "E": "Exactly one of x and y is zero."
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(xy > 0\\) and \\(x + y < 0\\), which of the following must be true?",
+      "explanation": "Read the two conditions one at a time.\n\n\\(xy > 0\\) tells you \\(x\\) and \\(y\\) have the **same sign** — either both positive or both negative.\n(It also rules out either being \\(0\\), since that would make the product \\(0\\), not positive.)\n\n\\(x + y < 0\\) tells you their sum is negative. Two positive numbers can never sum to something\nnegative, so the \"both positive\" case is out. That leaves only **both negative**, which is\nanswer **A**.\n\n**The traps:**\n\n- **B** (both positive) contradicts \\(x + y < 0\\).\n- **C** (opposite signs) and **D** (\\(xy < 0\\)) both describe \\(xy < 0\\), the opposite of what is\n  given.\n- **E** (one is zero) is impossible: a zero factor makes \\(xy = 0\\), not \\(xy > 0\\).",
+      "hints": [
+        "\\(xy > 0\\) means the two numbers share a sign; \\(xy < 0\\) means opposite signs.",
+        "If they share a sign but add to a negative number, which sign must it be?"
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0063",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "parity",
+        "consecutive-integers",
+        "must-be-true"
+      ],
+      "choices": {
+        "A": "n^2 + n",
+        "B": "n^2 + 1",
+        "C": "2n + 1",
+        "D": "n^2",
+        "E": "n^2 - 1"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(n\\) is a positive integer, which of the following must be **even**?",
+      "explanation": "Factor where you can, and test each expression against both parities of \\(n\\).\n\n- **A. \\(n^2 + n = n(n + 1)\\)** — this is the product of two **consecutive** integers, and one of\n  any two consecutive integers is always even. So \\(n(n+1)\\) is **always even**. ✓\n- **B. \\(n^2 + 1\\)** — if \\(n\\) is even, \\(n^2 + 1\\) is odd. Not always even.\n- **C. \\(2n + 1\\)** — always **odd** (an even number plus 1).\n- **D. \\(n^2\\)** — has the same parity as \\(n\\), so it is odd whenever \\(n\\) is odd.\n- **E. \\(n^2 - 1 = (n-1)(n+1)\\)** — if \\(n\\) is even, both factors are odd, giving an odd result.\n\nOnly **A** is guaranteed even, so the answer is **A**.\n\n**The traps:** **D (\\(n^2\\))** relies on the false belief that squaring always yields an even\nnumber. **B** and **E** look symmetric to A but flip to odd when \\(n\\) is even — the deciding test\nis trying an even value of \\(n\\).",
+      "hints": [
+        "\\(n^2 + n\\) factors into \\(n(n+1)\\) — what is special about two consecutive integers?",
+        "For each option, just try \\(n = 2\\) and \\(n = 3\\); the \"must be even\" answer survives both."
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0064",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "consecutive-integers",
+        "divisibility",
+        "cannot-be-true"
+      ],
+      "choices": {
+        "A": "18",
+        "B": "33",
+        "C": "44",
+        "D": "57",
+        "E": "72"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "Which of the following **cannot** be the sum of three consecutive integers?",
+      "explanation": "Write three consecutive integers as \\(n-1\\), \\(n\\), and \\(n+1\\). Their sum is\n\n\\[(n-1) + n + (n+1) = 3n,\\]\n\nwhich is exactly \\(3\\) times the middle integer. So the sum of any three consecutive integers is\n**always a multiple of 3**. A number that is *not* divisible by 3 cannot be such a sum.\n\nCheck each option's divisibility by 3 (add the digits):\n\n- **A. 18** → \\(1+8 = 9\\), divisible by 3. Possible: \\(5 + 6 + 7\\).\n- **B. 33** → \\(3+3 = 6\\), divisible by 3. Possible: \\(10 + 11 + 12\\).\n- **C. 44** → \\(4+4 = 8\\), **not** divisible by 3. **Impossible.** ✓\n- **D. 57** → \\(5+7 = 12\\), divisible by 3. Possible: \\(18 + 19 + 20\\).\n- **E. 72** → \\(7+2 = 9\\), divisible by 3. Possible: \\(23 + 24 + 25\\).\n\nOnly \\(44\\) fails, so the answer is **C**.\n\n**The trap:** without the \"sum \\(= 3n\\)\" insight, every option looks equally plausible and you are\nleft guessing. The four wrong answers are all deliberately multiples of 3 so that only the\ndivisibility test separates them.",
+      "hints": [
+        "Represent the three integers as \\(n-1,\\ n,\\ n+1\\) and add them.",
+        "The sum simplifies to \\(3n\\), so it must be divisible by 3 — test each choice."
+      ]
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs-0065",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "parity",
+        "consecutive-integers",
+        "always-odd"
+      ],
+      "choices": {
+        "A": "n^2 + n + 1",
+        "B": "n^2 + n",
+        "C": "2n^2 + 3n",
+        "D": "n^3 + n",
+        "E": "3n + 3"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "If \\(n\\) is an integer, which of the following is **always odd**?",
+      "explanation": "The key building block is \\(n^2 + n = n(n+1)\\), the product of two consecutive integers, which is\n**always even**. Use that to read off each option's parity.\n\n- **A. \\(n^2 + n + 1\\)** — this is (always even) \\(+\\,1\\), so it is **always odd**. ✓\n- **B. \\(n^2 + n\\)** — always **even** (the consecutive-integer product itself).\n- **C. \\(2n^2 + 3n\\)** — \\(2n^2\\) is even, and \\(3n\\) has the same parity as \\(n\\); the total has\n  the parity of \\(n\\), so it is even when \\(n\\) is even. Not always odd.\n- **D. \\(n^3 + n = n(n^2 + 1)\\)** — if \\(n\\) is even the whole thing is even; if \\(n\\) is odd then\n  \\(n^2 + 1\\) is even, so it is even again. Always **even**.\n- **E. \\(3n + 3 = 3(n + 1)\\)** — its parity matches \\(n + 1\\), so it is even when \\(n\\) is odd.\n  Not always odd.\n\nOnly **A** is odd for every integer \\(n\\), so the answer is **A**.\n\n**The traps:** **C** and **E** are odd for some values of \\(n\\) (try \\(n = 1\\)) but even for\nothers (try \\(n = 2\\)) — \"sometimes odd\" is not \"always odd.\" **D** looks like it should alternate,\nbut factoring shows it is always even.",
+      "hints": [
+        "Anchor on the fact that \\(n^2 + n = n(n+1)\\) is always even, then adjust by the constant.",
+        "\"Always odd\" must survive both an even and an odd test value — check \\(n = 2\\) and \\(n = 3\\)."
       ]
     },
     {
@@ -2294,6 +2504,23 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nCombinatorics is the art of counting outcomes **without listing them all**. On GMAT Focus\nQuant the whole game is deciding a single question: **does order matter?** Get that right and\npick the matching tool, and most counting problems collapse into one line of arithmetic.\n\n## Core concepts\n\n**The factorial.** The number of ways to arrange \\(n\\) distinct objects in a row is\n\\(n!\\) (read \"\\(n\\) factorial\"):\n\n\\[n! = n \\times (n-1) \\times (n-2) \\times \\cdots \\times 2 \\times 1\\]\n\nSo \\(5! = 5\\cdot4\\cdot3\\cdot2\\cdot1 = 120\\). By convention \\(0! = 1\\).\n\n**Permutations — order matters.** The number of ways to arrange \\(k\\) objects chosen from\n\\(n\\) distinct objects, where the order of the chosen objects matters, is\n\n\\[P(n,k) = \\frac{n!}{(n-k)!} = n(n-1)\\cdots(n-k+1)\\]\n\nUse permutations for rankings, seatings, passwords, or codes — anything where \"A then B\"\ndiffers from \"B then A.\"\n\n**Combinations — order does NOT matter.** The number of ways to *choose* \\(k\\) objects from\n\\(n\\), ignoring order, is\n\n\\[C(n,k) = \\binom{n}{k} = \\frac{n!}{k!\\,(n-k)!}\\]\n\nUse combinations for committees, teams, handshakes, or any unordered selection. Notice\n\\(C(n,k) = \\dfrac{P(n,k)}{k!}\\): a combination is a permutation with the \\(k!\\) reorderings of\nthe same group divided out.\n\n**Two governing principles.**\n\n- **Multiplication (AND).** If a task is a sequence of independent stages, multiply the counts.\n  Choosing 3 seniors *and* 2 juniors: multiply \\(C(5,3)\\times C(4,2)\\).\n- **Addition (OR).** If outcomes fall into mutually exclusive cases, add the counts.\n\n**Identical items.** When some objects repeat, divide by the factorial of each repeat count.\nDistinct arrangements of a word with letter counts \\(n_1, n_2, \\dots\\) totalling \\(n\\) letters:\n\n\\[\\frac{n!}{n_1!\\,n_2!\\cdots}\\]\n\n**Circular arrangements.** Seating \\(n\\) people around a round table gives \\((n-1)!\\)\narrangements, because rotations of the same circle are not distinct — fix one person, then\narrange the rest.\n\n## Worked examples\n\n**Combination.** A book club picks 3 of its 8 members to lead a discussion. Order does not\nmatter, so \\(C(8,3) = \\dfrac{8\\cdot7\\cdot6}{3!} = \\dfrac{336}{6} = 56\\) ways.\n\n**Permutation.** Those same 8 members award a gold, silver, and bronze badge — now order\nmatters, so \\(P(8,3) = 8\\cdot7\\cdot6 = 336\\) ways. Same people, \\(3! = 6\\) times as many\noutcomes because the badges are distinguishable.\n\n**Complement (\"at least\").** From 4 men and 3 women, choose a 3-person team with at least one\nwoman. Count the total and subtract the unwanted case: \\(C(7,3) - C(4,3) = 35 - 4 = 31\\).\n\n## Common traps\n\n- **Order confusion.** The single biggest error. A committee is unordered (combination); a\n  lineup or ranking is ordered (permutation). Using \\(P\\) where \\(C\\) belongs overcounts by\n  exactly \\(k!\\).\n- **Adding instead of multiplying.** \"3 seniors AND 2 juniors\" multiplies: \\(C(5,3)\\times C(4,2)\\),\n  not \\(C(5,3)+C(4,2)\\).\n- **Forgetting repeated items.** Arranging the letters of a word with repeats requires dividing\n  \\(n!\\) by the factorial of *each* repeated letter's count — miss one and you overcount.\n- **\"At least one\" head-on.** Counting cases directly often double-counts. Use the complement:\n  total minus \"none.\"\n- **Blocks that must stay together.** Glue the block into one unit, arrange the units, then\n  multiply by the internal arrangements of the block.\n\n## Key takeaways\n\n- Ask first: **does order matter?** Yes → permutation \\(P(n,k)\\); no → combination \\(C(n,k)\\).\n- \\(C(n,k) = \\dfrac{P(n,k)}{k!}\\) — dividing out the reorderings is the whole difference.\n- Independent stages **multiply**; mutually exclusive cases **add**.\n- Repeated identical items → divide by each repeat's factorial; round tables → \\((n-1)!\\).\n- For \"at least one,\" count the complement and subtract."
+    },
+    {
+      "id": "quant-number-properties-odds-evens-signs",
+      "section": "quant",
+      "topic": "number-properties",
+      "subtopic": "odds-evens-signs",
+      "title": "Odds, Evens & Signs",
+      "tags": [
+        "parity",
+        "odd-even",
+        "signs",
+        "number-properties"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nParity (whether a number is odd or even) and sign rules are the quiet workhorses of GMAT Focus\nnumber-properties questions. On their own they look trivial, but the exam hides them inside\n\"must be true,\" \"could be true,\" and Data-Insights logic problems where you never learn the actual\nnumbers. Knowing the rules cold lets you answer those without any arithmetic at all.\n\n## Core concepts\n\n**Parity under addition and subtraction.** The result is even exactly when the two numbers share\nthe same parity:\n\n- even ± even = **even**\n- odd ± odd = **even**\n- even ± odd = **odd**\n\nA useful shortcut: adding or subtracting an **even** number never changes parity; adding or\nsubtracting an **odd** number always flips it.\n\n**Parity under multiplication.** A product is even as soon as **one** factor is even:\n\n- even × (anything) = **even**\n- odd × odd = **odd**\n\nSo a product of integers is odd only if *every* factor is odd.\n\n**Sums of several odd numbers.** Adding \\(k\\) odd numbers gives an **odd** total when \\(k\\) is odd,\nand an **even** total when \\(k\\) is even. (Each odd number flips the parity once.) Even numbers in\nthe sum never affect the parity.\n\n**Consecutive integers.** Among any two consecutive integers \\(n\\) and \\(n+1\\), exactly one is\neven, so the product \\(n(n+1)\\) is **always even**. This is why expressions like \\(n^2 + n\\) are\nguaranteed even.\n\n**Sign rules for products.** The sign of a product depends only on **how many negative factors**\nthere are:\n\n- an **even** number of negative factors → the product is **positive**\n- an **odd** number of negative factors → the product is **negative**\n- any factor of \\(0\\) → the product is \\(0\\)\n\n**Sign logic with two variables.** Two facts appear constantly:\n\n- \\(xy > 0\\) means \\(x\\) and \\(y\\) have the **same sign** (both positive or both negative).\n- \\(xy < 0\\) means they have **opposite signs**.\n\nCombine that with a fact about \\(x + y\\): if \\(xy > 0\\) and \\(x + y < 0\\), the shared sign must be\nnegative, so **both are negative**.\n\n## Worked examples\n\n**\"Must be odd.\"** If \\(n\\) is even, is \\(n + 1\\) odd? Adding the odd number \\(1\\) flips even to\nodd, so yes — always. By contrast \\(2n\\), \\(3n\\), \\(n^2\\), and \\(n + 2\\) are all still even.\n\n**Counting signs.** Evaluate \\((-3)(-4)(-2)\\). The magnitude is \\(3 \\cdot 4 \\cdot 2 = 24\\); there\nare three negative factors, an odd count, so the product is negative: \\(-24\\).\n\n**Parity from a product.** If \\(mn\\) is odd, what do you know? A product is odd only when every\nfactor is odd, so both \\(m\\) and \\(n\\) are odd — and therefore \\(m + n\\) is even.\n\n## Common traps\n\n- **Confusing \"adds up\" with \"multiplies.\"** Four copies of an odd number add to an even total\n  (even count of odds), even though each is odd.\n- **Losing track of signs.** With three negative factors the product is negative, not positive —\n  count the negatives, don't just take the magnitude.\n- **Assuming \\(n^2\\) is even.** \\(n^2\\) has the same parity as \\(n\\); it is odd whenever \\(n\\) is\n  odd.\n- **Forgetting zero.** \"\\(xy > 0\\)\" excludes \\(x = 0\\) or \\(y = 0\\); \"same sign\" quietly rules zero\n  out.\n\n## Key takeaways\n\n- Add/subtract: same parity → even, different parity → odd. Adding an even number never changes\n  parity.\n- A product is even if any factor is even; odd only if every factor is odd.\n- Product sign: even number of negatives → positive, odd number → negative, any zero → zero.\n- \\(n(n+1)\\) is always even — consecutive integers guarantee an even factor.\n- \\(xy > 0\\) means same sign; pair it with the sign of \\(x + y\\) to pin down both."
     },
     {
       "id": "quant-number-properties-remainders",
