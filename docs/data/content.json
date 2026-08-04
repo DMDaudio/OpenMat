@@ -7,8 +7,8 @@
   "stats": {
     "quant": {
       "label": "Quantitative",
-      "questions": 65,
-      "lessons": 12
+      "questions": 72,
+      "lessons": 13
     },
     "verbal": {
       "label": "Verbal",
@@ -22,8 +22,8 @@
     }
   },
   "counts": {
-    "questions": 81,
-    "lessons": 15
+    "questions": 88,
+    "lessons": 16
   },
   "questions": [
     {
@@ -2122,6 +2122,220 @@
       ]
     },
     {
+      "id": "quant-word-problems-translation-0066",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "translation",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "translation",
+        "linear-equations",
+        "setup"
+      ],
+      "choices": {
+        "A": "7",
+        "B": "10",
+        "C": "13",
+        "D": "14",
+        "E": "26"
+      },
+      "answer": "A",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "Twice a number, increased by 6, is equal to 20. What is the number?",
+      "explanation": "Translate the sentence piece by piece. Let \\(n\\) be the number.\n\n- \"Twice a number\" → \\(2n\\)\n- \"increased by 6\" → \\(+\\,6\\)\n- \"is equal to 20\" → \\(=\\,20\\)\n\nSo the equation is:\n\n\\[2n + 6 = 20\\]\n\nSolve it in the usual order — undo the addition first, then the multiplication:\n\n\\[2n = 20 - 6 = 14, \\qquad n = \\frac{14}{2} = 7\\]\n\nThe number is **7**. (Check: \\(2(7) + 6 = 20\\). ✓)\n\n**The traps:**\n- **D (14)** stops one step early: it's \\(20 - 6\\), forgetting to divide by 2.\n- **B (10)** ignores the \"\\(+6\\)\" entirely and just computes \\(20 \\div 2\\).\n- **C (13)** *adds* 6 instead of subtracting: \\((20 + 6)/2\\). Undo operations in reverse — the last\n  thing done to \\(n\\) was \"add 6,\" so subtract 6 first.\n- **E (26)** is simply \\(20 + 6\\), with no equation solved at all.",
+      "hints": [
+        "Let \\(n\\) be the number and turn each phrase into a symbol: \"twice\" is \\(\\times 2\\), \"increased by\"",
+        "To undo \\(2n + 6 = 20\\), subtract 6 first, then divide by 2."
+      ]
+    },
+    {
+      "id": "quant-word-problems-translation-0067",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "translation",
+      "type": "problem-solving",
+      "difficulty": "easy",
+      "tags": [
+        "translation",
+        "consecutive-integers",
+        "setup"
+      ],
+      "choices": {
+        "A": "23",
+        "B": "24",
+        "C": "25",
+        "D": "26",
+        "E": "72"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "The sum of three consecutive integers is 72. What is the largest of the three integers?",
+      "explanation": "Represent consecutive integers with one variable. Let the smallest be \\(n\\); the next two are\n\\(n + 1\\) and \\(n + 2\\). \"The sum … is 72\" translates to:\n\n\\[n + (n + 1) + (n + 2) = 72\\]\n\nCombine like terms — note the constants add up to \\(+3\\), not \\(0\\):\n\n\\[3n + 3 = 72 \\quad\\Rightarrow\\quad 3n = 69 \\quad\\Rightarrow\\quad n = 23\\]\n\nSo the three integers are \\(23,\\ 24,\\ 25\\), and the **largest** is **25**.\n(Check: \\(23 + 24 + 25 = 72\\). ✓)\n\n**The traps:**\n- **D (26)** comes from forgetting the \"\\(+3\\)\" correction: solving \\(3n = 72\\) gives \\(n = 24\\),\n  and calling that the smallest makes the largest \\(26\\). But the three constants sum to \\(3\\), so\n  \\(3n + 3 = 72\\).\n- **B (24)** is \\(72 \\div 3\\), the *middle* integer (the average), not the largest.\n- **A (23)** is the smallest integer — the value of \\(n\\) — not what the question asked for.\n- **E (72)** is the given total, untouched.",
+      "hints": [
+        "Call the smallest integer \\(n\\); the others are \\(n+1\\) and \\(n+2\\). Their sum is \\(3n + 3\\), not",
+        "After you find \\(n\\), the question wants the *largest* value, \\(n + 2\\) — re-read which one it asks"
+      ]
+    },
+    {
+      "id": "quant-word-problems-translation-0068",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "translation",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "translation",
+        "ages",
+        "setup"
+      ],
+      "choices": {
+        "A": "10",
+        "B": "20",
+        "C": "22",
+        "D": "24",
+        "E": "28"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "Maria is 4 years older than twice her brother's age. If the sum of their ages is 34, how old is\nMaria?",
+      "explanation": "Express both ages with a single variable. Let \\(b\\) be the brother's age. Then:\n\n- \"twice her brother's age\" → \\(2b\\)\n- \"4 years older than …\" → \\(2b + 4\\), so Maria \\(= 2b + 4\\)\n\n\"The sum of their ages is 34\" translates to:\n\n\\[b + (2b + 4) = 34\\]\n\nSolve for \\(b\\):\n\n\\[3b + 4 = 34 \\quad\\Rightarrow\\quad 3b = 30 \\quad\\Rightarrow\\quad b = 10\\]\n\nThe brother is 10, so Maria is \\(2(10) + 4 = 24\\).\n(Check: \\(10 + 24 = 34\\). ✓)\n\nThe answer is **24**.\n\n**The traps:**\n- **A (10)** is the brother's age — the variable you solved for, but not the person the question\n  asks about. Always report the requested quantity.\n- **B (20)** is \\(2b\\), forgetting the \"\\(+4\\).\"\n- **E (28)** solves the sum incorrectly as \\(3b = 36 \\Rightarrow b = 12\\) and then computes\n  \\(2b + 4\\) — a slip in isolating \\(b\\).\n- **C (22)** splits 34 loosely (near half) without setting up the relationship at all.",
+      "hints": [
+        "Let \\(b\\) be the brother's age and write Maria's age in terms of \\(b\\): \"4 more than twice \\(b\\)\"",
+        "Add the two expressions, set the sum to 34, solve for \\(b\\) — then compute *Maria's* age, not the"
+      ]
+    },
+    {
+      "id": "quant-word-problems-translation-0069",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "translation",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "translation",
+        "coins",
+        "systems",
+        "setup"
+      ],
+      "choices": {
+        "A": "8",
+        "B": "14",
+        "C": "15",
+        "D": "16",
+        "E": "20"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A jar contains only nickels (5 cents each) and dimes (10 cents each). There are 30 coins in the jar\nwith a total value of $2.30. How many dimes are in the jar?",
+      "explanation": "Two facts give two equations. Let \\(n\\) be the number of nickels and \\(d\\) the number of dimes, and\nwork in cents ($2.30 = 230 cents).\n\n- \"30 coins\" → \\(n + d = 30\\)\n- \"total value is 230 cents\" → \\(5n + 10d = 230\\)\n\nFrom the first equation, \\(n = 30 - d\\). Substitute into the value equation:\n\n\\[5(30 - d) + 10d = 230\\]\n\\[150 - 5d + 10d = 230\\]\n\\[150 + 5d = 230 \\quad\\Rightarrow\\quad 5d = 80 \\quad\\Rightarrow\\quad d = 16\\]\n\nSo there are **16 dimes** (and \\(30 - 16 = 14\\) nickels).\n(Check: \\(14 \\times 5 + 16 \\times 10 = 70 + 160 = 230\\) cents. ✓)\n\n**The traps:**\n- **B (14)** is the number of *nickels* — the other unknown. The question asks for dimes.\n- **C (15)** assumes the coins split evenly, \\(30 \\div 2\\), ignoring the value equation.\n- **E (20)** and **A (8)** come from mixing up the coin values (e.g. treating nickels as 10 cents\n  and dimes as 5) or a sign slip in the substitution. Keep 5-cent and 10-cent coins straight.",
+      "hints": [
+        "Set up two equations: one counting coins (\\(n + d = 30\\)) and one totaling value in cents",
+        "Substitute \\(n = 30 - d\\) into the value equation, then make sure you report *dimes*, not nickels."
+      ]
+    },
+    {
+      "id": "quant-word-problems-translation-0070",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "translation",
+      "type": "problem-solving",
+      "difficulty": "medium",
+      "tags": [
+        "translation",
+        "ratio",
+        "revenue",
+        "setup"
+      ],
+      "choices": {
+        "A": "20",
+        "B": "28",
+        "C": "40",
+        "D": "60",
+        "E": "84"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "A theater sold three times as many student tickets as adult tickets. Student tickets cost $6 each\nand adult tickets cost $10 each. If total ticket revenue was $560, how many student tickets were\nsold?",
+      "explanation": "Tie the two quantities to one variable using the ratio. Let \\(a\\) be the number of adult tickets.\n\"Three times as many student tickets as adult tickets\" means student tickets \\(= 3a\\).\n\nNow translate the revenue:\n\n\\[\\underbrace{6(3a)}_{\\text{student \\$}} + \\underbrace{10a}_{\\text{adult \\$}} = 560\\]\n\n\\[18a + 10a = 560 \\quad\\Rightarrow\\quad 28a = 560 \\quad\\Rightarrow\\quad a = 20\\]\n\nSo there were 20 adult tickets and \\(3a = 3(20) = 60\\) student tickets.\n(Check: \\(60 \\times \\$6 + 20 \\times \\$10 = \\$360 + \\$200 = \\$560\\). ✓)\n\nThe answer is **60**.\n\n**The traps:**\n- **A (20)** is the number of *adult* tickets, \\(a\\). The question asks for student tickets, which\n  is \\(3a\\) — don't stop at the variable you solved for.\n- **C (40)** doubles \\(a\\) instead of tripling it (\\(2a\\) rather than \\(3a\\)).\n- **B (28)** is the coefficient \\(28\\) from \\(28a = 560\\), reported by mistake.\n- **E (84)** ignores the prices and just splits the ratio across a wrong total.",
+      "hints": [
+        "Let \\(a\\) = adult tickets, so student tickets \\(= 3a\\). \"Three times as many students\" multiplies",
+        "Write revenue as \\(6(3a) + 10a = 560\\); after solving for \\(a\\), the question wants \\(3a\\)."
+      ]
+    },
+    {
+      "id": "quant-word-problems-translation-0071",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "translation",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "translation",
+        "fractions",
+        "before-after",
+        "setup"
+      ],
+      "choices": {
+        "A": "24",
+        "B": "36",
+        "C": "40",
+        "D": "60",
+        "E": "72"
+      },
+      "answer": "D",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "Two-fifths of the marbles in a bag are blue. If 12 more blue marbles were added to the bag, then\nblue marbles would make up one-half of all the marbles in the bag. How many marbles are in the bag\noriginally?",
+      "explanation": "The key is that adding blue marbles raises **both** the blue count and the total. Let \\(t\\) be the\noriginal total number of marbles. Then the original number of blue marbles is \\(\\tfrac{2}{5}t\\).\n\nAfter adding 12 blue marbles:\n\n- new blue count \\(= \\tfrac{2}{5}t + 12\\)\n- new total \\(= t + 12\\)\n\n\"Blue would make up one-half of all the marbles\" translates to:\n\n\\[\\frac{2}{5}t + 12 = \\frac{1}{2}\\,(t + 12)\\]\n\nClear the fractions by multiplying every term by 10:\n\n\\[4t + 120 = 5(t + 12) = 5t + 60\\]\n\\[120 - 60 = 5t - 4t \\quad\\Rightarrow\\quad t = 60\\]\n\nSo the bag originally holds **60** marbles.\n(Check: originally \\(\\tfrac{2}{5}(60) = 24\\) blue out of 60. Add 12 blue: \\(36\\) blue out of\n\\(72\\), and \\(36/72 = \\tfrac{1}{2}\\). ✓)\n\n**The traps:**\n- **A (24)** is the original number of *blue* marbles, \\(\\tfrac{2}{5}t\\), not the total.\n- **E (72)** is the *new* total after adding 12 — a \"which total?\" mix-up.\n- **B (36)** is the new blue count after adding 12.\n- **C (40)** results from adding 12 only to the blue side while forgetting to add it to the total,\n  i.e. solving \\(\\tfrac{2}{5}t + 12 = \\tfrac{1}{2}t\\).",
+      "hints": [
+        "Let \\(t\\) be the original total; blue \\(= \\tfrac{2}{5}t\\). Adding 12 blue marbles changes *both*",
+        "Set \\(\\tfrac{2}{5}t + 12 = \\tfrac{1}{2}(t + 12)\\), then clear fractions by multiplying through by"
+      ]
+    },
+    {
+      "id": "quant-word-problems-translation-0072",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "translation",
+      "type": "problem-solving",
+      "difficulty": "hard",
+      "tags": [
+        "translation",
+        "systems",
+        "less-than",
+        "setup"
+      ],
+      "choices": {
+        "A": "23",
+        "B": "57",
+        "C": "61",
+        "D": "65",
+        "E": "69"
+      },
+      "answer": "C",
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "prompt": "The sum of two numbers is 84. The larger number is 8 less than 3 times the smaller number. What is\nthe larger number?",
+      "explanation": "Two relationships, so express both numbers with one variable. Let \\(s\\) be the smaller number and\n\\(L\\) the larger.\n\nThe phrase \"8 less than 3 times the smaller number\" must be read right-to-left: take \\(3s\\), then\nsubtract 8. So:\n\n\\[L = 3s - 8\\]\n\n\"The sum of the two numbers is 84\" gives \\(s + L = 84\\). Substitute:\n\n\\[s + (3s - 8) = 84\\]\n\\[4s - 8 = 84 \\quad\\Rightarrow\\quad 4s = 92 \\quad\\Rightarrow\\quad s = 23\\]\n\nThen the larger number is:\n\n\\[L = 3(23) - 8 = 69 - 8 = 61\\]\n\n(Check: \\(23 + 61 = 84\\), and \\(61\\) is \\(8\\) less than \\(3 \\times 23 = 69\\). ✓)\n\nThe answer is **61**.\n\n**The traps:**\n- **A (23)** is the *smaller* number, \\(s\\). The question asks for the larger.\n- **E (69)** is \\(3s\\) — forgetting to subtract the 8 at the end.\n- **D (65)** reverses the sign, reading \"8 *more* than 3 times the smaller\" as \\(L = 3s + 8\\), which\n  gives \\(s = 19\\) and \\(L = 65\\). \"Less than\" subtracts.\n- **B (57)** mis-groups the phrase as \\(3(s - 8)\\) instead of \\(3s - 8\\), giving \\(s = 27\\) and\n  \\(L = 57\\). The \"3 times\" multiplies only the smaller number, not the whole \"\\(s - 8\\).\"",
+      "hints": [
+        "Let \\(s\\) be the smaller number. \"8 less than 3 times \\(s\\)\" is \\(3s - 8\\) (subtract *after*",
+        "Substitute into \\(s + L = 84\\), solve for \\(s\\), then compute the *larger* value \\(L\\)."
+      ]
+    },
+    {
       "id": "quant-word-problems-work-rate-0005",
       "section": "quant",
       "topic": "word-problems",
@@ -2610,6 +2824,23 @@
       "reviewers": [],
       "status": "in-review",
       "body": "## Overview\n\nNearly every rate problem rests on one relationship. Learn it, learn to organize the numbers,\nand learn the one trap that catches most test-takers: average speed.\n\n## Core concepts\n\n**The master equation.**\n\n\\[\\text{distance} = \\text{rate} \\times \\text{time}\\]\n\nRearranged as needed: \\(\\text{time} = \\dfrac{\\text{distance}}{\\text{rate}}\\) and\n\\(\\text{rate} = \\dfrac{\\text{distance}}{\\text{time}}\\).\n\n**Organize with a table.** For multi-part trips, make a row for each leg with columns\nDistance / Rate / Time. Fill in what you know, use \\(d = rt\\) to get the rest.\n\n**Average speed is total-over-total.**\n\n\\[\\text{average speed} = \\frac{\\text{total distance}}{\\text{total time}}\\]\n\nThis is almost never the simple average of the speeds, because time spent at each speed differs.\n\n## Worked examples\n\n**Basic.** A train travels 300 miles at 50 mph. Time \\(= \\tfrac{300}{50} = 6\\) hours.\n\n**Round trip (the classic trap).** You drive 120 miles at 60 mph, then return the same 120 miles\nat 40 mph. Times are \\(2\\) hours and \\(3\\) hours; total distance \\(240\\) miles, total time \\(5\\)\nhours:\n\n\\[\\text{average speed} = \\frac{240}{5} = 48 \\text{ mph}\\]\n\nNot 50. You spend more time at the slower speed, so the average is pulled below the midpoint.\n\n## Common traps\n\n- **Averaging the speeds.** For equal distances at two speeds, the average speed is the *harmonic*\n  mean, always **less** than the arithmetic mean. Compute total distance ÷ total time instead.\n- **Mismatched units.** Convert minutes to hours (or vice versa) before dividing; mixing them is a silent error.\n- **Combined/closing speed.** Two objects moving toward each other close the gap at the *sum* of\n  their speeds; moving apart, the same; one chasing the other, the *difference*.\n\n## Key takeaways\n\n- Everything comes from \\(d = rt\\); rearrange it for what you need.\n- Use a Distance/Rate/Time table for multi-leg trips.\n- Average speed = total distance / total time — never just the average of the speeds."
+    },
+    {
+      "id": "quant-word-problems-translation",
+      "section": "quant",
+      "topic": "word-problems",
+      "subtopic": "translation",
+      "title": "Translating Words into Equations",
+      "tags": [
+        "word-problem",
+        "translation",
+        "algebra",
+        "setup"
+      ],
+      "author": "openmat",
+      "reviewers": [],
+      "status": "in-review",
+      "body": "## Overview\n\nMost GMAT Focus word problems are not hard *algebra* — they are hard *reading*. The whole game is\nturning an English sentence into a correct equation. Once the equation is right, the solving is\nusually routine. This lesson is a phrasebook: it maps the words you actually see on the exam onto\nthe symbols they stand for, and it flags the phrasings that are engineered to be misread.\n\n## Core concepts\n\n**Name the unknown first.** Before writing any equation, decide what the variable is and write it\ndown: \"let \\(n\\) = the number,\" \"let \\(a\\) = adult tickets.\" Nearly every wrong answer on a word\nproblem is the value of *some* quantity in the problem — just not the one that was asked. Naming the\nunknown keeps you honest about which number to report at the end.\n\n**A translation dictionary.** These map almost every arithmetic phrase you will meet:\n\n| English | Symbol |\n|---------|--------|\n| is, was, will be, gives, results in | \\(=\\) |\n| sum, more than, increased by, added to, exceeds by | \\(+\\) |\n| difference, less than, decreased by, fewer than | \\(-\\) |\n| of, times, product, twice (\\(\\times 2\\)), triple (\\(\\times 3\\)) | \\(\\times\\) |\n| per, out of, ratio, quotient | \\(\\div\\) |\n| a number, an unknown | a variable, e.g. \\(n\\) |\n\n**Order matters for subtraction and division.** \"5 **less than** \\(x\\)\" is \\(x - 5\\), **not**\n\\(5 - x\\) — the thing after \"less than\" is what you subtract *from*. Likewise \"8 less than 3 times a\nnumber\" is \\(3n - 8\\). Read these right-to-left.\n\n**Grouping: watch what the multiplier attaches to.** \"Twice a number increased by 6\" is\n\\(2n + 6\\). \"Twice the sum of a number and 6\" is \\(2(n + 6)\\). The words *the sum of* signal a\ngroup — a set of parentheses.\n\n**Consecutive integers.** Consecutive integers are \\(n,\\ n+1,\\ n+2,\\dots\\); consecutive **even** or\n**odd** integers are \\(n,\\ n+2,\\ n+4,\\dots\\). Their sum is not \\(3n\\) — the \\(+1,+2\\) corrections\nmatter.\n\n**Two unknowns, one relationship.** When a problem describes one quantity *in terms of* another\n(\"the larger is 8 less than 3 times the smaller\"), write both in terms of a single variable, then\nuse the remaining fact (usually a sum or total) to get one equation in one unknown.\n\n## Worked examples\n\n**Basic.** \"Twice a number, increased by 6, is 20.\" Let \\(n\\) be the number:\n\\(2n + 6 = 20 \\Rightarrow 2n = 14 \\Rightarrow n = 7\\).\n\n**Two people, one variable.** \"Maria is 4 years older than twice her brother's age; their ages sum\nto 34.\" Let \\(b\\) = brother's age, so Maria \\(= 2b + 4\\). Then\n\\(b + (2b + 4) = 34 \\Rightarrow 3b = 30 \\Rightarrow b = 10\\), and Maria \\(= 2(10) + 4 = 24\\). The\nquestion asks for **Maria**, so the answer is 24 — not the 10 you solved for.\n\n**\"Less than\" order.** \"The larger of two numbers is 8 less than 3 times the smaller; the two sum to\n84.\" Smaller \\(= s\\), larger \\(= 3s - 8\\). Then \\(s + (3s - 8) = 84 \\Rightarrow 4s = 92\n\\Rightarrow s = 23\\), and the larger is \\(3(23) - 8 = 61\\).\n\n## Common traps\n\n- **Answering the wrong quantity.** You solved for the smaller number, the brother's age, or the\n  number of adults — but the question asked for the larger, Maria, or the students. Re-read the last\n  line before you bubble.\n- **Reversing subtraction/division.** \"\\(x\\) less than \\(y\\)\" is \\(y - x\\). \"The quotient of \\(x\\)\n  and \\(y\\)\" is \\(x / y\\). Getting the order backward flips the sign or inverts the fraction.\n- **Misplacing the multiplier.** \\(2n + 6\\) vs. \\(2(n + 6)\\) — \"the sum of\" is your cue to group.\n- **Forgetting the consecutive-integer correction.** Three consecutive integers summing to 72 give\n  \\(3n + 3 = 72\\), so \\(n = 23\\) — not \\(72 / 3 = 24\\).\n\n## Key takeaways\n\n- Name the unknown in words first; report the quantity the question actually asks for.\n- Use the phrase-to-symbol dictionary, and read \"less than\" / \"fewer than\" right-to-left.\n- \"The sum of …\" means parentheses — group before you multiply.\n- Express everything in one variable, then spend the last fact (a total or sum) to close the system."
     },
     {
       "id": "verbal-critical-reasoning-strengthen-weaken",
